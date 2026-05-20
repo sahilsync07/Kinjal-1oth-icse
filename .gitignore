@@ -1,0 +1,5 @@
+node_modules/
+temp_scratch/
+*.log
+.gemini/
+.DS_Store
