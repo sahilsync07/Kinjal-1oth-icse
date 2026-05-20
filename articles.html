@@ -17,17 +17,19 @@
         </div>
         <div class="nav-progress">
             <div class="progress-track">
-                <div class="progress-bar" id="top-progress-bar"></div>
+                <div class="progress-bar"></div>
             </div>
-            <div class="progress-text" id="top-progress-text">[01/10] PROGRESS: 0%</div>
+            <div class="progress-text">[01/16] PROGRESS: 0%</div>
         </div>
     </header>
 
     <!-- Main Horizontal Scrolling Container -->
     <main class="scroll-container">
 
-        <!-- Slide 01: Welcome / Introduction -->
-        <section class="slide" id="slide-01">
+        <!-- ============================================
+             SLIDE 1: WELCOME
+             ============================================ -->
+        <section class="slide active" id="slide-01">
             <div class="card">
                 <span class="meta-ref">REF_ID: 101_INTRO</span>
                 <h1>Mastering Articles</h1>
@@ -40,9 +42,10 @@
 
                 <p><strong>Rules of the System:</strong></p>
                 <ul>
-                    <li>The site scrolls horizontally. You can only move forward once you answer the quiz questions on each slide correctly.</li>
-                    <li>If you make a mistake, Artie will guide you by explaining the rule you missed.</li>
-                    <li>Read, learn, test, and graduate!</li>
+                    <li>No more automatic sliding. Use the buttons below to navigate (<strong>NEXT</strong> / <strong>BACK</strong>).</li>
+                    <li>Lesson slides explain the rules. Quiz slides test your understanding.</li>
+                    <li>To unlock a quiz's next slide, you must get a <strong>perfect score</strong> on that quiz!</li>
+                    <li>If you select a wrong answer, you will get a detailed explanation of why it is wrong and why the correct answer is right.</li>
                 </ul>
 
                 <div class="btn-container">
@@ -52,8 +55,10 @@
             </div>
         </section>
 
-        <!-- Slide 02: Indefinite Articles A vs An Sound Exception -->
-        <section class="slide" id="slide-02">
+        <!-- ============================================
+             SLIDE 2: LESSON 1 — A vs An Sound Exception
+             ============================================ -->
+        <section class="slide locked" id="slide-02">
             <div class="card">
                 <span class="meta-ref">REF_ID: 102_INDEFINITE_SOUND</span>
                 <h1>A vs. An: Sound Over Spelling</h1>
@@ -83,44 +88,66 @@
                         <tr>
                             <td class="mono-cell">Vowel spelling, consonant sound</td>
                             <td class="mono-cell">a university / a European</td>
-                            <td>Pronounced with "yu" sound (consonant)</td>
+                            <td>Pronounced with "yu" sound (consonant /j/)</td>
                         </tr>
                         <tr>
                             <td class="mono-cell">Vowel spelling, "w" sound</td>
                             <td class="mono-cell">a one-sided story</td>
-                            <td>Pronounced like "wa" (consonant)</td>
+                            <td>Pronounced like "wa" (consonant /w/)</td>
                         </tr>
                         <tr>
                             <td class="mono-cell">Consonant spelling, vowel sound</td>
-                            <td class="mono-cell">an MLA / an NCC cadet</td>
-                            <td>"M" starts with "em" sound; "N" with "en"</td>
+                            <td class="mono-cell">an MLA / an NCC cadet / an SOS</td>
+                            <td>Letters start with vowel sounds: "em", "en", "es"</td>
                         </tr>
                         <tr>
                             <td class="mono-cell">Silent H</td>
                             <td class="mono-cell">an honest man / an hour / an heir</td>
-                            <td>"H" is silent, so word starts with vowel sound</td>
+                            <td>"H" is silent, so the word starts with a vowel sound</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <div class="quiz-section" id="quiz-m1">
-                    <div class="score-summary" id="score-m1"></div>
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 1 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 3: QUIZ 1 (A vs An Sound Exceptions)
+             ============================================ -->
+        <section class="slide locked" id="slide-03">
+            <div class="card">
+                <span class="meta-ref">REF_ID: 103_QUIZ_1</span>
+                <h1>Quiz 1: A vs. An Sound Exceptions</h1>
+                
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Artie is loading...</div>
+                </div>
+
+                <div class="quiz-section" id="quiz-c1">
+                    <div class="score-summary"></div>
                 </div>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
                     <div>
-                        <button class="btn-secondary" id="check-m1">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>NEXT CHAPTER</button>
+                        <button class="btn-secondary check-btn" id="check-c1">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 03: Indefinite Articles 12 Context Rules -->
-        <section class="slide locked" id="slide-03">
+        <!-- ============================================
+             SLIDE 4: LESSON 2 — Indefinite Articles 12 Context Rules
+             ============================================ -->
+        <section class="slide locked" id="slide-04">
             <div class="card">
-                <span class="meta-ref">REF_ID: 103_INDEFINITE_CONTEXT</span>
+                <span class="meta-ref">REF_ID: 104_INDEFINITE_CONTEXT</span>
                 <h1>Indefinite Articles: 12 Usage Contexts</h1>
                 
                 <div class="companion-box">
@@ -156,7 +183,7 @@
                         </tr>
                         <tr>
                             <td class="mono-cell">4</td>
-                            <td>To refer to "each"</td>
+                            <td>To refer to "each" (rate/measure)</td>
                             <td>The electrician charges ₹1,000 <em>an hour</em>.</td>
                         </tr>
                         <tr>
@@ -202,24 +229,46 @@
                     </tbody>
                 </table>
 
-                <div class="quiz-section" id="quiz-m2">
-                    <div class="score-summary" id="score-m2"></div>
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 2 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 5: QUIZ 2 (Cumulative: Lessons 1-2)
+             ============================================ -->
+        <section class="slide locked" id="slide-05">
+            <div class="card">
+                <span class="meta-ref">REF_ID: 105_QUIZ_2</span>
+                <h1>Quiz 2: Indefinite Articles (Cumulative)</h1>
+                
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Artie is loading...</div>
+                </div>
+
+                <div class="quiz-section" id="quiz-c2">
+                    <div class="score-summary"></div>
                 </div>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
                     <div>
-                        <button class="btn-secondary" id="check-m2">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>NEXT CHAPTER</button>
+                        <button class="btn-secondary check-btn" id="check-c2">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 04: Definite Article The 14 Rules -->
-        <section class="slide locked" id="slide-04">
+        <!-- ============================================
+             SLIDE 6: LESSON 3 — Definite Article "The"
+             ============================================ -->
+        <section class="slide locked" id="slide-06">
             <div class="card">
-                <span class="meta-ref">REF_ID: 104_DEFINITE_THE</span>
+                <span class="meta-ref">REF_ID: 106_DEFINITE_THE</span>
                 <h1>The Definite Article: The</h1>
                 
                 <div class="companion-box">
@@ -256,7 +305,7 @@
                         </tr>
                         <tr>
                             <td class="mono-cell">Mountain Ranges</td>
-                            <td><em>The Alps</em>, <em>The Western Ghats</em></td>
+                            <td><em>The Alps</em>, <em>The Western Ghats</em> (Note: omit before single peaks like <em>Mount Everest</em>)</td>
                         </tr>
                         <tr>
                             <td class="mono-cell">Holy / Famous Books</td>
@@ -281,24 +330,46 @@
                     </tbody>
                 </table>
 
-                <div class="quiz-section" id="quiz-m3">
-                    <div class="score-summary" id="score-m3"></div>
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 3 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 7: QUIZ 3 (Cumulative: Lessons 1-3)
+             ============================================ -->
+        <section class="slide locked" id="slide-07">
+            <div class="card">
+                <span class="meta-ref">REF_ID: 107_QUIZ_3</span>
+                <h1>Quiz 3: Definite & Indefinite (Cumulative)</h1>
+                
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Artie is loading...</div>
+                </div>
+
+                <div class="quiz-section" id="quiz-c3">
+                    <div class="score-summary"></div>
                 </div>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
                     <div>
-                        <button class="btn-secondary" id="check-m3">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>NEXT CHAPTER</button>
+                        <button class="btn-secondary check-btn" id="check-c3">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 05: Omission of Articles -->
-        <section class="slide locked" id="slide-05">
+        <!-- ============================================
+             SLIDE 8: LESSON 4 — Omission of Articles
+             ============================================ -->
+        <section class="slide locked" id="slide-08">
             <div class="card">
-                <span class="meta-ref">REF_ID: 105_OMISSION</span>
+                <span class="meta-ref">REF_ID: 108_OMISSION</span>
                 <h1>Omission of Articles</h1>
                 
                 <div class="companion-box">
@@ -306,185 +377,274 @@
                     <div class="companion-text">Artie is loading...</div>
                 </div>
 
-                <p>Knowing when <strong>NOT</strong> to use an article is just as important! We omit articles before:</p>
+                <p>Knowing when <strong>NOT</strong> to use an article (no article / marked as <strong>x</strong>) is vital! We omit articles before:</p>
                 
                 <ul>
-                    <li><strong>Proper Nouns:</strong> e.g. <em>Jaipur</em>, <em>Rajasthan</em>.</li>
-                    <li><strong>Common Nouns in widest sense:</strong> e.g. <em>Children love to play.</em></li>
-                    <li><strong>Abstract Nouns:</strong> e.g. <em>Laughter is infectious.</em>, <em>Life is beautiful.</em></li>
-                    <li><strong>Material Nouns:</strong> e.g. <em>Gold is expensive.</em>, <em>bracelet made of silver.</em></li>
-                    <li><strong>Languages:</strong> e.g. <em>speak German</em>. (Unless used as adjective: <em>the Swedish language</em>).</li>
-                    <li><strong>Meals and Games:</strong> e.g. <em>prepared lunch</em>, <em>Cricket is my favourite.</em></li>
+                    <li><strong>Proper Nouns:</strong> e.g. <em>Jaipur</em>, <em>Rajasthan</em>, <em>Amit</em>.</li>
+                    <li><strong>Common Nouns in widest sense:</strong> e.g. <em>Children love to play.</em>, <em>Man is mortal.</em></li>
+                    <li><strong>Abstract Nouns:</strong> e.g. <em>Laughter is infectious.</em>, <em>Honesty is a virtue.</em></li>
+                    <li><strong>Material Nouns:</strong> e.g. <em>Gold is precious.</em>, <em>This bracelet is made of silver.</em></li>
+                    <li><strong>Languages:</strong> e.g. <em>speak German</em>. (Unless specifying: <em>the French language</em>).</li>
+                    <li><strong>Meals and Games:</strong> e.g. <em>prepared lunch</em>, <em>Cricket is my favorite sport.</em></li>
                 </ul>
 
                 <blockquote>
-                    <span class="tip-badge">CRITICAL RULE</span>
-                    We omit articles before places like <strong>hospital, school, college, church, bed, temple, office</strong> when referring to their <strong>primary purpose</strong>. 
-                    However, if we visit them for a <strong>secondary purpose</strong>, we use <strong>the</strong>:
+                    <span class="tip-badge">PRIMARY VS SECONDARY PURPOSE</span>
+                    We omit articles before places like <strong>hospital, school, college, church, bed, temple, prison</strong> when referring to their <strong>primary purpose</strong>:
                     <ul style="margin-top:0.25rem;">
-                        <li>Primary: <em>I reach school on time.</em> (to study)</li>
-                        <li>Secondary: <em>He has gone to the school to repair furniture.</em> (not to study)</li>
+                        <li>Primary: <em>I go to school daily.</em> (to study) / <em>The patient is in bed.</em> (to rest)</li>
+                        <li>Secondary: <em>My father went to the school to meet the principal.</em> (not to study) / <em>He sat on the bed.</em> (as a piece of furniture)</li>
                     </ul>
                 </blockquote>
 
-                <div class="quiz-section" id="quiz-m4">
-                    <div class="score-summary" id="score-m4"></div>
-                </div>
-
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
-                    <div>
-                        <button class="btn-secondary" id="check-m4">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>NEXT CHAPTER</button>
-                    </div>
+                    <button class="btn-primary btn-next">START QUIZ 4 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 06: Repetition & Few/Little -->
-        <section class="slide locked" id="slide-06">
+        <!-- ============================================
+             SLIDE 9: QUIZ 4 (Cumulative: Lessons 1-4)
+             ============================================ -->
+        <section class="slide locked" id="slide-09">
             <div class="card">
-                <span class="meta-ref">REF_ID: 106_REPETITION_QUANTITY</span>
-                <h1>Repetition & Quantity Rules</h1>
+                <span class="meta-ref">REF_ID: 109_QUIZ_4</span>
+                <h1>Quiz 4: Omission of Articles (Cumulative)</h1>
                 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
                     <div class="companion-text">Artie is loading...</div>
                 </div>
 
-                <h2>1. Repetition of Articles</h2>
+                <div class="quiz-section" id="quiz-c4">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" id="check-c4">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 10: LESSON 5 — Repetition of Articles
+             ============================================ -->
+        <section class="slide locked" id="slide-10">
+            <div class="card">
+                <span class="meta-ref">REF_ID: 110_REPETITION</span>
+                <h1>Repetition of Articles</h1>
+                
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Artie is loading...</div>
+                </div>
+
+                <p>Repeating an article alters the count of subjects and grammatical agreement:</p>
+                
                 <ul>
                     <li><strong>One item, single article:</strong> <em>a pink and purple gown</em> (one gown, two colors).</li>
                     <li><strong>Two items, multiple articles:</strong> <em>a pink and a purple gown</em> (two separate gowns).</li>
-                    <li><strong>Same Person:</strong> <em>The actor and director was awarded.</em> (single person, article before first noun).</li>
-                    <li><strong>Different Persons:</strong> <em>The actor and the director were awarded.</em> (two people, article before both).</li>
+                    <li><strong>Same Person:</strong> <em>The actor and director was awarded.</em> (single person holding two roles, article before first noun only).</li>
+                    <li><strong>Different Persons:</strong> <em>The actor and the director were awarded.</em> (two separate individuals, articles before both nouns).</li>
                 </ul>
 
-                <h2>2. Few vs. Little</h2>
+                <blockquote>
+                    <span class="tip-badge">AGREEMENT NOTE</span>
+                    Observe how the verb agrees: <em>was awarded</em> (singular) for the same person, versus <em>were awarded</em> (plural) for two different persons.
+                </blockquote>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 5 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 11: QUIZ 5 (Cumulative: Lessons 1-5)
+             ============================================ -->
+        <section class="slide locked" id="slide-11">
+            <div class="card">
+                <span class="meta-ref">REF_ID: 111_QUIZ_5</span>
+                <h1>Quiz 5: Repetition of Articles (Cumulative)</h1>
+                
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Artie is loading...</div>
+                </div>
+
+                <div class="quiz-section" id="quiz-c5">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" id="check-c5">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 12: LESSON 6 — Tricky Quantifier Phrases (Few vs Little)
+             ============================================ -->
+        <section class="slide locked" id="slide-12">
+            <div class="card">
+                <span class="meta-ref">REF_ID: 112_QUANTIFIERS</span>
+                <h1>Tricky Quantifiers: Few vs. Little</h1>
+                
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Artie is loading...</div>
+                </div>
+
+                <p>The choice between <strong>few</strong> (countable) and <strong>little</strong> (uncountable) and their articled forms is a frequent ICSE board exam target:</p>
+                
                 <table class="tech-table">
                     <thead>
                         <tr>
                             <th>Type</th>
-                            <th>Hardly Any (Negative)</th>
-                            <th>Small Number / Amount (Positive)</th>
-                            <th>All of it (Specific)</th>
+                            <th>Hardly Any (Negative meaning)</th>
+                            <th>A Small Number / Amount (Positive)</th>
+                            <th>All that is there (Specific/Definite)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="mono-cell">Countable</td>
-                            <td class="mono-cell">Few</td>
-                            <td class="mono-cell">A few</td>
-                            <td class="mono-cell">The few</td>
+                            <td class="mono-cell"><strong>Countable</strong> (e.g. students, books)</td>
+                            <td class="mono-cell"><em>Few</em><br><small>Hardly any students passed.</small></td>
+                            <td class="mono-cell"><em>A few</em><br><small>A few students passed (some).</small></td>
+                            <td class="mono-cell"><em>The few</em><br><small>The few students who passed were happy.</small></td>
                         </tr>
                         <tr>
-                            <td class="mono-cell">Uncountable</td>
-                            <td class="mono-cell">Little</td>
-                            <td class="mono-cell">A little</td>
-                            <td class="mono-cell">The little</td>
+                            <td class="mono-cell"><strong>Uncountable</strong> (e.g. water, milk, hope)</td>
+                            <td class="mono-cell"><em>Little</em><br><small>There is little hope left.</small></td>
+                            <td class="mono-cell"><em>A little</em><br><small>A little hope is enough (some).</small></td>
+                            <td class="mono-cell"><em>The little</em><br><small>The little hope he had faded away.</small></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <div class="quiz-section" id="quiz-m5">
-                    <div class="score-summary" id="score-m5"></div>
-                </div>
-
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
-                    <div>
-                        <button class="btn-secondary" id="check-m5">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>NEXT CHAPTER</button>
-                    </div>
+                    <button class="btn-primary btn-next">START QUIZ 6 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 07: Exercise I (Book Page 7-8) -->
-        <section class="slide locked" id="slide-07">
+        <!-- ============================================
+             SLIDE 13: QUIZ 6 (Cumulative: Lessons 1-6)
+             ============================================ -->
+        <section class="slide locked" id="slide-13">
             <div class="card">
-                <span class="meta-ref">REF_ID: 107_EXERCISE_I</span>
-                <h1>Textbook Exercise I</h1>
+                <span class="meta-ref">REF_ID: 113_QUIZ_6</span>
+                <h1>Quiz 6: Quantifiers & Advanced Cases (Cumulative)</h1>
                 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
                     <div class="companion-text">Artie is loading...</div>
                 </div>
 
-                <p>Complete the sentences from your book by filling in the blanks. Write <strong>a</strong>, <strong>an</strong>, <strong>the</strong> or <strong>x</strong> (if no article is required).</p>
-
-                <div class="quiz-section" id="quiz-ex1">
-                    <div class="score-summary" id="score-ex1"></div>
+                <div class="quiz-section" id="quiz-c6">
+                    <div class="score-summary"></div>
                 </div>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
                     <div>
-                        <button class="btn-secondary" id="check-ex1">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>NEXT EXERCISE</button>
+                        <button class="btn-secondary check-btn" id="check-c6">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 08: Exercise II (Book Page 8) -->
-        <section class="slide locked" id="slide-08">
+        <!-- ============================================
+             SLIDE 14: QUICK RECAP
+             ============================================ -->
+        <section class="slide locked" id="slide-14">
             <div class="card">
-                <span class="meta-ref">REF_ID: 108_EXERCISE_II</span>
-                <h1>Textbook Exercise II</h1>
+                <span class="meta-ref">REF_ID: 114_RECAP</span>
+                <h1>Quick Recap (Articles Rule Sheet)</h1>
                 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
                     <div class="companion-text">Artie is loading...</div>
                 </div>
 
-                <p>Fill in the blanks with <strong>a</strong>, <strong>an</strong>, <strong>the</strong> or <strong>x</strong> (if no article is required).</p>
+                <table class="tech-table" style="font-size:0.9rem;">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%">Article Class</th>
+                            <th style="width: 40%">Core Rule Description</th>
+                            <th style="width: 35%">Quick Verbatim Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="mono-cell">A vs An (Sound)</td><td>Based on sound, not spelling</td><td><em>a university</em> / <em>an hour</em></td></tr>
+                        <tr><td class="mono-cell">Indefinite (A/An)</td><td>Mentioned for the first time, singular countable</td><td><em>a lady</em> got down from <em>a taxi</em></td></tr>
+                        <tr><td class="mono-cell">Definite (The)</td><td>Nouns already mentioned, unique landmarks, superlatives</td><td><em>the Taj Mahal</em> / <em>the tallest member</em></td></tr>
+                        <tr><td class="mono-cell">Omission (x)</td><td>Proper/Abstract/Material nouns, primary purpose of places</td><td><em>laughter</em> is good / went to <em>school</em></td></tr>
+                        <tr><td class="mono-cell">Repetition</td><td>Determines count of distinct entities</td><td><em>a pink and a purple gown</em> (two items)</td></tr>
+                        <tr><td class="mono-cell">Quantifiers</td><td>Few/Little (neg), A few/little (pos), The few/little (specific)</td><td><em>the few</em> students who passed</td></tr>
+                    </tbody>
+                </table>
 
-                <div class="quiz-section" id="quiz-ex2">
-                    <div class="score-summary" id="score-ex2"></div>
-                </div>
+                <p style="margin-top:1rem;">Study this table well! Let's challenge ourselves with the final revision exercise.</p>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
-                    <div>
-                        <button class="btn-secondary" id="check-ex2">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>NEXT EXERCISE</button>
-                    </div>
+                    <button class="btn-primary btn-next">START MEGA REVISION <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 09: Exercise III (Book Page 8-9) -->
-        <section class="slide locked" id="slide-09">
+        <!-- ============================================
+             SLIDE 15: FINAL MEGA REVISION (30 Questions)
+             ============================================ -->
+        <section class="slide locked" id="slide-15">
             <div class="card">
-                <span class="meta-ref">REF_ID: 109_EXERCISE_III</span>
-                <h1>Textbook Exercise III (MCQs)</h1>
+                <span class="meta-ref">REF_ID: 115_MEGA_EXERCISE</span>
+                <h1>Final Mega Revision (ICSE Board Level)</h1>
                 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
                     <div class="companion-text">Artie is loading...</div>
                 </div>
 
-                <p>Select the correct articles from the book multiple-choice questions.</p>
+                <blockquote>
+                    <span class="tip-badge">OPTIONAL</span>
+                    This final mega revision is <strong>optional</strong>. You can skip it and go directly to your certificate, or challenge yourself with 30 advanced board-level questions!
+                </blockquote>
 
-                <div class="quiz-section" id="quiz-ex3">
-                    <div class="score-summary" id="score-ex3"></div>
+                <div class="quiz-section" id="quiz-mega">
+                    <div class="score-summary"></div>
                 </div>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
                     <div>
-                        <button class="btn-secondary" id="check-ex3">CHECK ANSWERS</button>
-                        <button class="btn-primary btn-next" disabled>FINISH</button>
+                        <button class="btn-secondary check-btn" id="check-mega">CHECK ANSWERS</button>
+                        <button class="btn-secondary" id="skip-mega">SKIP TO CERTIFICATE</button>
+                        <button class="btn-primary btn-next" disabled>GET CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 10: Outro / Graduation Certificate -->
-        <section class="slide locked" id="slide-10">
+        <!-- ============================================
+             SLIDE 16: GRADUATION CERTIFICATE
+             ============================================ -->
+        <section class="slide locked" id="slide-16">
             <div class="card">
-                <span class="meta-ref">REF_ID: 110_GRADUATION</span>
+                <span class="meta-ref">REF_ID: 116_GRADUATION</span>
                 <h1>Course Completed!</h1>
                 
                 <div class="companion-box">
@@ -492,22 +652,25 @@
                     <div class="companion-text">Artie is proud of you!</div>
                 </div>
 
-                <p>Congratulations, Kinjal! You have successfully walked through all chapters on Articles and solved all the textbook exercises correctly.</p>
+                <p>Congratulations, Kinjal! You have successfully completed the Articles chapter. You've mastered all the textbook and board-level guidelines!</p>
 
                 <div class="graduation-box">
                     <div class="grad-certificate">
-                        <h2 style="border: none; margin-top:0;">CERTIFICATE OF EXCELLENCE</h2>
-                        <p style="font-family: 'JetBrains Mono', monospace; font-size:1.1rem; margin:1.5rem 0;">This certifies that</p>
-                        <h1 style="font-size: 2.2rem; letter-spacing: 0.5px;">KINJAL</h1>
-                        <p style="font-family: 'JetBrains Mono', monospace; margin: 1.5rem 0 0.5rem 0;">has mastered the topic of</p>
-                        <p style="font-weight: 700; text-transform: uppercase;">ENGLISH GRAMMAR: ARTICLES</p>
-                        <p style="font-size: 0.8rem; margin-top: 2rem; color: var(--text-secondary);">Verified by Artie the Terminal Guide on <span id="cert-date">-</span></p>
+                        <h2 style="border:none;margin-top:0;">CERTIFICATE OF EXCELLENCE</h2>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin:1.5rem 0;">This certifies that</p>
+                        <h1 style="font-size:2.2rem;letter-spacing:0.5px;">KINJAL</h1>
+                        <p style="font-family:'JetBrains Mono',monospace;margin:1.5rem 0 0.5rem 0;">has mastered the topic of</p>
+                        <p style="font-weight:700;text-transform:uppercase;">ENGLISH GRAMMAR: ARTICLES</p>
+                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);">Verified by Artie the Terminal Guide on <span id="cert-date">-</span></p>
                     </div>
                 </div>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK TO EXERCISES</button>
-                    <button class="btn-primary" onclick="window.print()">PRINT CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                    <div>
+                        <a href="index.html" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;">← HOME</a>
+                        <button class="btn-primary" onclick="window.print()">PRINT CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                    </div>
                 </div>
             </div>
         </section>

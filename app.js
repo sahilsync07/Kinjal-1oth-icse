@@ -1,6 +1,8 @@
-/* app.js - Dynamic Interactive Articles Teaching System */
+/* app.js - Interactive Articles Teaching System (ICSE Class 10 Level) */
 
-// Companion Expressions (ASCII Art)
+// ============================================================
+// 1. COMPANION EXPRESSIONS (ASCII Art)
+// ============================================================
 const COMPANION_EXPRESSIONS = {
     WELCOME: ` (•‿•) \n<| |>\n / \\`,
     HAPPY: ` (*^‿^*)\n<| |>\n / \\`,
@@ -9,1301 +11,1588 @@ const COMPANION_EXPRESSIONS = {
     GRADUATION: ` \\(^ヮ^)/\n  (   )\n  /   \\`
 };
 
-// Application State
+// ============================================================
+// 2. QUESTIONS DATA — The Main Data Store
+// ============================================================
+
+// ----- QUIZ 1 (A vs An Sound Exceptions) — 5 Questions -----
+const QUESTIONS_C1 = [
+    {
+        id: 'c1_q1',
+        sentence: 'He is _____ MLA from our constituency.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Consonant spelling with vowel sound exception',
+        explanations: {
+            correct: "The letter 'M' is pronounced with an initial vowel sound 'em' (/ɛm/). Therefore, we use 'an' before 'MLA'.",
+            wrong: {
+                0: "Although 'M' is a consonant letter, 'MLA' starts with a vowel sound 'em' (/ɛm/), so 'a' is incorrect.",
+                2: "This is a general statement introducing his role for the first time, so the definite article 'the' is incorrect.",
+                3: "A singular countable noun phrase ('MLA') representing a person's role requires an indefinite article."
+            }
+        }
+    },
+    {
+        id: 'c1_q2',
+        sentence: 'She has been waiting for _____ hour.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Silent H exception',
+        explanations: {
+            correct: "The 'h' in 'hour' is silent, so the word starts with the vowel sound /aʊə/. Hence, we use 'an'.",
+            wrong: {
+                0: "Although 'hour' begins with the consonant letter 'h', the sound is a vowel sound. We must use 'an'.",
+                2: "'the' is used for a specific hour. Here, we refer to a duration of one indefinite hour.",
+                3: "A singular countable noun like 'hour' requires an article."
+            }
+        }
+    },
+    {
+        id: 'c1_q3',
+        sentence: 'It was _____ one-sided game.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 1: Vowel spelling with consonant sound exception',
+        explanations: {
+            correct: "'One-sided' begins with the vowel letter 'O' but starts with the consonant sound 'w' ('wa'). Hence, we use 'a'.",
+            wrong: {
+                1: "Do not be misled by the letter 'O'. The word starts with the consonant sound 'w' (as in 'won'), so 'an' is incorrect.",
+                2: "The game is not yet specified; it is an indefinite description, so 'the' is incorrect.",
+                3: "A singular countable noun phrase ('one-sided game') requires an article."
+            }
+        }
+    },
+    {
+        id: 'c1_q4',
+        sentence: 'His sister is studying at _____ European university.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 1: Vowel spelling with consonant sound exception',
+        explanations: {
+            correct: "'European' starts with a vowel letter but is pronounced with the consonant sound 'yu' (/j/). So we use 'a'.",
+            wrong: {
+                1: "Pronunciation determines the article. 'European' begins with the consonant sound 'yu' (/j/), so 'an' is incorrect.",
+                2: "We are introducing the university generally, not referring to a specific one already known, so 'the' is incorrect.",
+                3: "A singular countable noun phrase requires an article."
+            }
+        }
+    },
+    {
+        id: 'c1_q5',
+        sentence: 'They sent _____ SOS signal from the sinking ship.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Consonant spelling with vowel sound exception',
+        explanations: {
+            correct: "The letter 'S' is pronounced with an initial vowel sound 'es' (/ɛs/), so we use 'an'.",
+            wrong: {
+                0: "Although 'S' is a consonant letter, the abbreviation 'SOS' is pronounced starting with 'es', requiring 'an'.",
+                2: "This is the first mention of an indefinite signal, so the definite article 'the' is incorrect.",
+                3: "A singular countable noun ('signal') requires an article."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 2 (Indefinite Contexts + Sound) — 8 Questions -----
+const QUESTIONS_C2 = [
+    {
+        id: 'c2_q1',
+        sentence: 'The doctor charges five hundred rupees _____ visit.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 2: Indefinite article in the sense of "each" or "per"',
+        explanations: {
+            correct: "We use 'a' or 'an' to mean 'each' or 'per'. 'Visit' starts with a consonant sound /v/, so 'a' is correct.",
+            wrong: {
+                1: "'Visit' starts with a consonant sound /v/, so 'an' is incorrect.",
+                2: "'the' would imply a specific, unique visit. We mean 'per visit' in general.",
+                3: "An article is required to express the rate/frequency."
+            }
+        }
+    },
+    {
+        id: 'c2_q2',
+        sentence: 'What _____ beautiful scenery this is!',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 2 Exception: Scenery is uncountable',
+        explanations: {
+            correct: "Although exclamations with singular countable nouns use 'a'/'an' ('What a funny clown!'), 'scenery' is uncountable and does not take 'a' or 'an'. Thus, no article (x) is correct.",
+            wrong: {
+                0: "'scenery' is an uncountable noun. We cannot use 'a' before uncountable nouns.",
+                1: "'scenery' is uncountable and starts with a consonant sound, so 'an' is incorrect.",
+                2: "In this exclamatory pattern expressing general admiration of scenery, the definite article 'the' is omitted."
+            }
+        }
+    },
+    {
+        id: 'c2_q3',
+        sentence: '_____ Mr. Sharma came looking for you in the morning.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 2: Indefinite article with stranger names',
+        explanations: {
+            correct: "Using 'a' before a proper noun ('a Mr. Sharma') implies 'a certain person named Mr. Sharma whom the speaker does not know'.",
+            wrong: {
+                1: "'Mr.' starts with a consonant sound /m/, so 'an' is incorrect.",
+                2: "'the' would imply a specific Mr. Sharma already known to both speaker and listener. Here, it refers to a stranger.",
+                3: "Omitting the article is normal if the person is known, but to express 'a stranger named Mr. Sharma', 'a' is required."
+            }
+        }
+    },
+    {
+        id: 'c2_q4',
+        sentence: 'Copper is _____ useful metal.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 2: Classifying indefinite article + vowel sound exception',
+        explanations: {
+            correct: "'Useful' begins with a consonant sound 'yu' (/j/), so we use 'a' to classify copper as one of many useful metals.",
+            wrong: {
+                1: "'Useful' starts with the consonant sound 'yu' (/j/), not a vowel sound, so 'an' is incorrect.",
+                2: "We are classifying copper generally, not stating that it is the only specific useful metal, so 'the' is incorrect.",
+                3: "A singular countable noun phrase ('useful metal') requires an article."
+            }
+        }
+    },
+    {
+        id: 'c2_q5',
+        sentence: 'She wants to buy _____ dozen bananas.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 2: Indefinite article expressing numbers',
+        explanations: {
+            correct: "We use 'a' before numerical expressions like dozen, hundred, thousand, couple. 'Dozen' starts with a consonant sound /d/.",
+            wrong: {
+                1: "'Dozen' starts with a consonant sound, so 'an' is incorrect.",
+                2: "She wants any indefinite dozen, not a specific, previously mentioned dozen, so 'the' is incorrect.",
+                3: "An article is required before 'dozen' in this context."
+            }
+        }
+    },
+    {
+        id: 'c2_q6',
+        sentence: 'He wants to become _____ engineer.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 2: Indefinite article with occupations',
+        explanations: {
+            correct: "We use 'a' or 'an' when stating someone's profession. 'Engineer' starts with the vowel sound /ɪndʒɪˈnɪə/, so 'an' is correct.",
+            wrong: {
+                0: "'Engineer' starts with a vowel sound, so 'a' is incorrect.",
+                2: "'the' would imply he wants to be the only specific engineer in a context. Here, he wants to join the profession generally.",
+                3: "Singular countable professions require an indefinite article."
+            }
+        }
+    },
+    {
+        id: 'c2_q7',
+        sentence: 'My brother is _____ NCC cadet.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Consonant spelling with vowel sound exception',
+        explanations: {
+            correct: "The letter 'N' starts with the vowel sound 'en' (/ɛn/), so 'an' is correct before 'NCC cadet'.",
+            wrong: {
+                0: "Although 'N' is a consonant letter, the sound starts with 'en', requiring 'an'.",
+                2: "This is a general description of his status, so 'the' is incorrect.",
+                3: "A singular countable noun phrase ('NCC cadet') requires an article."
+            }
+        }
+    },
+    {
+        id: 'c2_q8',
+        sentence: 'She is _____ heir to the massive estate.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Silent H exception',
+        explanations: {
+            correct: "The 'h' in 'heir' is silent, so the word begins with the vowel sound /eə/. Thus, 'an' is correct.",
+            wrong: {
+                0: "'heir' starts with a vowel sound because the 'h' is silent, so 'a' is incorrect.",
+                2: "This is a general description of her status, so 'an' is preferred for indefinite class membership.",
+                3: "A singular countable noun requires an article."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 3 (Definite Article + Indefinite) — 10 Questions -----
+const QUESTIONS_C3 = [
+    {
+        id: 'c3_q1',
+        sentence: 'She is _____ tallest girl in the classroom.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article before superlatives',
+        explanations: {
+            correct: "We always use the definite article 'the' before superlative adjectives ('tallest').",
+            wrong: {
+                0: "Superlatives represent a unique position, so the indefinite article 'a' is incorrect.",
+                1: "'Tallest' starts with a consonant sound and is a superlative, making 'an' incorrect.",
+                3: "Superlative adjectives require the definite article 'the'."
+            }
+        }
+    },
+    {
+        id: 'c3_q2',
+        sentence: '_____ Himalayas protect India from cold northern winds.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with mountain ranges',
+        explanations: {
+            correct: "We use 'the' before the names of mountain ranges ('the Himalayas').",
+            wrong: {
+                0: "Mountain ranges are plural proper nouns and require 'the', not 'a'.",
+                1: "Himalayas begins with a consonant sound and requires the definite article.",
+                3: "Proper names of mountain ranges must be preceded by 'the'."
+            }
+        }
+    },
+    {
+        id: 'c3_q3',
+        sentence: 'We sailed across _____ Indian Ocean.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with oceans',
+        explanations: {
+            correct: "We use 'the' before names of oceans, seas, and canals ('the Indian Ocean').",
+            wrong: {
+                0: "Oceans require the definite article 'the'.",
+                1: "Although 'Indian' starts with a vowel sound, oceans are unique geographical entities requiring 'the', not 'an'.",
+                3: "Names of oceans must have 'the'."
+            }
+        }
+    },
+    {
+        id: 'c3_q4',
+        sentence: 'He reads _____ Holy Bible every morning.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with holy books',
+        explanations: {
+            correct: "We use 'the' before the names of sacred or holy books ('the Holy Bible').",
+            wrong: {
+                0: "Holy books require 'the', not 'a'.",
+                1: "Holy books require 'the', and 'Holy' starts with a consonant sound.",
+                3: "Holy books cannot be used without the definite article in this context."
+            }
+        }
+    },
+    {
+        id: 'c3_q5',
+        sentence: 'We stayed at _____ Royal Palace Hotel.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with hotels',
+        explanations: {
+            correct: "We use 'the' before the names of famous hotels, theaters, and cinemas ('the Royal Palace Hotel').",
+            wrong: {
+                0: "Names of prominent hotels require the definite article 'the'.",
+                1: "'Royal' starts with a consonant sound, and hotels require 'the'.",
+                3: "Famous hotels take the definite article 'the'."
+            }
+        }
+    },
+    {
+        id: 'c3_q6',
+        sentence: 'He is _____ best student in our class.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article before superlatives',
+        explanations: {
+            correct: "'Best' is a superlative adjective. We always use 'the' before superlatives.",
+            wrong: {
+                0: "'a' is incorrect because superlative adjectives require the unique identifier 'the'.",
+                1: "'an' is incorrect because 'best' starts with a consonant sound and requires 'the'.",
+                3: "Superlatives must be preceded by 'the'."
+            }
+        }
+    },
+    {
+        id: 'c3_q7',
+        sentence: '_____ French are proud of their food culture.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with nationalities/peoples',
+        explanations: {
+            correct: "We use 'the' before plural nouns representing national groups or peoples ('the French' meaning the French people).",
+            wrong: {
+                0: "We are referring to the entire national group, so the singular 'a' is incorrect.",
+                1: "'French' starts with a consonant sound, so 'an' is incorrect.",
+                3: "When representing a nation's people collectively, 'the' is required."
+            }
+        }
+    },
+    {
+        id: 'c3_q8',
+        sentence: '_____ United Kingdom is a sovereign country.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with compound country names',
+        explanations: {
+            correct: "We use 'the' before country names containing adjectives like 'United' or nouns like 'Kingdom', 'Republic', 'Union'.",
+            wrong: {
+                0: "Country names representing unions or kingdoms require 'the', not 'a'.",
+                1: "United starts with a consonant sound 'yu' (/j/) and requires 'the'.",
+                3: "Countries like the UK, USA, UAE must be preceded by 'the'."
+            }
+        }
+    },
+    {
+        id: 'c3_q9',
+        sentence: 'I bought a laptop. _____ laptop is very fast.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Second mention of a noun',
+        explanations: {
+            correct: "Since 'laptop' was already mentioned in the first sentence, it is now definite and takes 'the'.",
+            wrong: {
+                0: "'a' is used for the first mention. Since the laptop is now known, it is definite.",
+                1: "'laptop' starts with a consonant sound /l/, and it is definite, so 'an' is incorrect.",
+                3: "A specified singular noun requires 'the'."
+            }
+        }
+    },
+    {
+        id: 'c3_q10',
+        sentence: '_____ sun rises in the east.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with unique celestial objects',
+        explanations: {
+            correct: "We use 'the' before nouns representing unique entities in nature (the sun, the moon, the earth).",
+            wrong: {
+                0: "The sun is unique, so the classifying 'a' is incorrect.",
+                1: "'Sun' starts with a consonant sound /s/, and is unique.",
+                3: "Unique natural objects must be preceded by 'the'."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 4 (Omission + Definite + Indefinite) — 12 Questions -----
+const QUESTIONS_C4 = [
+    {
+        id: 'c4_q1',
+        sentence: '_____ gold is a precious metal.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before material nouns',
+        explanations: {
+            correct: "We omit articles before material nouns like gold, silver, iron when used in a general sense.",
+            wrong: {
+                0: "Gold is uncountable, so we cannot use the singular indefinite 'a'.",
+                1: "Gold starts with a consonant sound /ɡ/ and is uncountable, so 'an' is incorrect.",
+                2: "We are referring to gold in a general sense. 'the' is only used if it is specified (e.g., 'the gold of South Africa')."
+            }
+        }
+    },
+    {
+        id: 'c4_q2',
+        sentence: '_____ Jaipur is the capital of Rajasthan.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before proper nouns',
+        explanations: {
+            correct: "We omit articles before names of cities, states, and individual countries ('Jaipur').",
+            wrong: {
+                0: "Proper names of cities do not take indefinite articles.",
+                1: "Proper names of cities do not take articles.",
+                2: "Except for certain compound country names, geographical proper nouns (cities/states) do not take 'the'."
+            }
+        }
+    },
+    {
+        id: 'c4_q3',
+        sentence: 'The injured man was taken to _____ hospital for treatment.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Primary purpose of places (hospital)',
+        explanations: {
+            correct: "Since the injured man went for medical treatment (the primary purpose of a hospital), we omit the article.",
+            wrong: {
+                0: "We do not use 'a' before 'hospital' when referring to its primary purpose.",
+                1: "'Hospital' starts with a consonant sound /h/.",
+                2: "We use 'the' only when visiting a hospital for a secondary purpose (e.g., to visit someone or repair furniture). Here, it is primary."
+            }
+        }
+    },
+    {
+        id: 'c4_q4',
+        sentence: 'The carpenter went to _____ hospital to fix the broken door.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 4: Secondary purpose of places',
+        explanations: {
+            correct: "The carpenter went to the hospital to work (secondary purpose, not to get medical treatment), so we use 'the'.",
+            wrong: {
+                0: "The specific hospital building where he goes to work requires a definite or specific article, so 'the' is correct.",
+                1: "'Hospital' starts with a consonant sound.",
+                3: "We only omit the article for primary purpose visits. Work is a secondary purpose, requiring 'the'."
+            }
+        }
+    },
+    {
+        id: 'c4_q5',
+        sentence: 'They speak _____ French at home.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before languages',
+        explanations: {
+            correct: "We omit articles before the names of languages when they are not followed by the word 'language'.",
+            wrong: {
+                0: "Languages do not take indefinite articles.",
+                1: "Languages do not take articles.",
+                2: "We do not use 'the' before a language unless we say 'the French language'."
+            }
+        }
+    },
+    {
+        id: 'c4_q6',
+        sentence: '_____ children generally love toys.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before plural common nouns in general sense',
+        explanations: {
+            correct: "We omit articles before plural countable common nouns used in a wide, general sense.",
+            wrong: {
+                0: "'children' is plural, so the singular 'a' is incorrect.",
+                1: "'children' is plural, so 'an' is incorrect.",
+                2: "We are speaking of children in general, not a specific group of children, so 'the' is incorrect."
+            }
+        }
+    },
+    {
+        id: 'c4_q7',
+        sentence: 'We had _____ delicious lunch at a restaurant yesterday.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 4 Exception: Adjective before meals',
+        explanations: {
+            correct: "While we normally omit articles before meals ('have lunch'), we use 'a' or 'an' when the meal is preceded by an adjective ('a delicious lunch').",
+            wrong: {
+                1: "'Delicious' starts with a consonant sound /d/, so 'an' is incorrect.",
+                2: "This is the first mention of an indefinite meal, so 'the' is incorrect.",
+                3: "An article is required because of the descriptive adjective preceding the meal."
+            }
+        }
+    },
+    {
+        id: 'c4_q8',
+        sentence: 'My brother is in _____ bed because he has the flu.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Primary purpose of places (bed)',
+        explanations: {
+            correct: "When 'bed' is used for its primary purpose (sleeping or resting due to illness), we omit the article ('in bed').",
+            wrong: {
+                0: "The idiom is 'in bed', not 'in a bed', when referring to resting/sleeping.",
+                1: "'Bed' starts with a consonant sound /b/.",
+                2: "We only use 'the' when referring to bed as a physical piece of furniture."
+            }
+        }
+    },
+    {
+        id: 'c4_q9',
+        sentence: 'He sat on _____ bed to tie his shoelaces.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 4: Secondary purpose of places (bed)',
+        explanations: {
+            correct: "Here, 'bed' is referred to as a physical piece of furniture (secondary purpose), so we use 'the'.",
+            wrong: {
+                0: "'a' is incorrect because it refers to the specific bed in his room.",
+                1: "'Bed' starts with a consonant sound.",
+                3: "We need an article here because it is a physical object being used as a seat."
+            }
+        }
+    },
+    {
+        id: 'c4_q10',
+        sentence: '_____ honesty is the best policy.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before abstract nouns',
+        explanations: {
+            correct: "We omit articles before abstract nouns like honesty, virtue, wisdom when used in a general sense.",
+            wrong: {
+                0: "Abstract nouns in a general sense are uncountable and do not take 'a'.",
+                1: "Abstract nouns do not take articles.",
+                2: "We only use 'the' before abstract nouns when they are particularized (e.g., 'the honesty of the boy')."
+            }
+        }
+    },
+    {
+        id: 'c4_q11',
+        sentence: '_____ Pacific Ocean is the largest ocean on Earth.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with oceans',
+        explanations: {
+            correct: "We use 'the' before names of oceans ('the Pacific Ocean').",
+            wrong: {
+                0: "Oceans require the definite article 'the', not 'a'.",
+                1: "'Pacific' starts with a consonant sound /p/.",
+                3: "Oceans cannot be used without an article."
+            }
+        }
+    },
+    {
+        id: 'c4_q12',
+        sentence: 'We went to _____ school to attend a parent-teacher meeting.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 4: Secondary purpose of places (school)',
+        explanations: {
+            correct: "We went to the school building for a meeting (secondary purpose, not to study or teach), so we use 'the'.",
+            wrong: {
+                0: "The specific school building requires the definite article 'the' in this context.",
+                1: "'School' starts with a consonant sound /s/.",
+                3: "We only omit the article for primary purpose visits (e.g., 'children go to school')."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 5 (Repetition + Omission + Definite + Indefinite) — 15 Questions -----
+const QUESTIONS_C5 = [
+    {
+        id: 'c5_q1',
+        sentence: 'The president and _____ secretary of the club has arrived.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 5: Repetition - Same person',
+        explanations: {
+            correct: "The singular verb 'has arrived' shows that the president and secretary is a single individual holding both positions. Thus, we do not repeat the article (x).",
+            wrong: {
+                0: "An indefinite article is incorrect here. The person is the specific officer of the club.",
+                1: "'secretary' starts with a consonant sound /s/.",
+                2: "If we put 'the', it would mean two separate people ('The president and the secretary'), which would require the plural verb 'have'."
+            }
+        }
+    },
+    {
+        id: 'c5_q2',
+        sentence: 'The manager and _____ director were both present at the meeting.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 5: Repetition - Different persons',
+        explanations: {
+            correct: "The plural verb 'were' shows that the manager and the director are two separate individuals. Hence, we must repeat the definite article 'the'.",
+            wrong: {
+                0: "Since 'manager' has 'The', the second subject also needs 'the' to denote the specific director.",
+                1: "'director' starts with a consonant sound /d/.",
+                3: "Omitting the article (x) would make it a single person holding both titles, which contradicts the plural verb 'were'."
+            }
+        }
+    },
+    {
+        id: 'c5_q3',
+        sentence: 'She bought a black and _____ white gown.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 5: Repetition - Single item with dual qualities',
+        explanations: {
+            correct: "Since 'gown' is singular, she bought one gown that is both black and white. Thus, no article (x) is repeated before 'white'.",
+            wrong: {
+                0: "If you write 'a', it would imply two separate gowns (a black one and a white one), which contradicts the singular 'gown'.",
+                1: "'white' starts with a consonant sound /w/.",
+                2: "'the' is incorrect for this general purchase description."
+            }
+        }
+    },
+    {
+        id: 'c5_q4',
+        sentence: 'She bought a black and _____ white dog.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 5: Repetition - Two separate items',
+        explanations: {
+            correct: "Wait! If the noun 'dog' is singular, but we have 'a black and a white dog', it means she bought two dogs. The repeated article 'a' indicates two separate animals.",
+            wrong: {
+                1: "'white' starts with a consonant sound /w/, so 'an' is incorrect.",
+                2: "'the' is incorrect as the purchase is indefinite.",
+                3: "If we omit the article, it would mean one dog of mixed colors. Repeating 'a' specifically indicates two separate dogs."
+            }
+        }
+    },
+    {
+        id: 'c5_q5',
+        sentence: 'The novelist and _____ poet is dead.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 5: Repetition - Same person',
+        explanations: {
+            correct: "The singular verb 'is' indicates the novelist and poet was the same person. Thus, we omit the article (x) before 'poet'.",
+            wrong: {
+                0: "Indefinite articles are not used in this specific identification.",
+                1: "'poet' starts with a consonant sound /p/.",
+                2: "Putting 'the' would make it two separate people, which would require the plural verb 'are'."
+            }
+        }
+    },
+    {
+        id: 'c5_q6',
+        sentence: 'The novelist and _____ poet are dead.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 5: Repetition - Different persons',
+        explanations: {
+            correct: "The plural verb 'are' indicates that the novelist and the poet are two separate individuals. Hence, the definite article 'the' must be repeated.",
+            wrong: {
+                0: "'a' is incorrect because the first noun has the definite article 'The'.",
+                1: "'poet' starts with a consonant sound.",
+                3: "Omitting the article (x) would treat them as the same person, contradicting the plural verb 'are'."
+            }
+        }
+    },
+    {
+        id: 'c5_q7',
+        sentence: '_____ Shakespeare of India is Kalidasa.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Proper noun particularized as a description',
+        explanations: {
+            correct: "When a proper noun is used to represent a famous type or is particularized by a descriptive phrase ('of India'), we use 'the'.",
+            wrong: {
+                0: "Kalidasa is not 'a general' Shakespeare; he is the unique equivalent, so 'the' is correct.",
+                1: "'Shakespeare' starts with a consonant sound /ʃ/.",
+                3: "We must use 'the' because the name is acting as a common descriptive title modified by 'of India'."
+            }
+        }
+    },
+    {
+        id: 'c5_q8',
+        sentence: '_____ Mount Everest is the highest peak in the world.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before individual peaks',
+        explanations: {
+            correct: "We omit articles before names of individual mountain peaks ('Mount Everest'), unlike mountain ranges.",
+            wrong: {
+                0: "Individual peaks do not take indefinite articles.",
+                1: "Individual peaks do not take articles.",
+                2: "While mountain ranges take 'the' ('the Himalayas'), single peaks like 'Mount Everest' or 'Mount Abu' take no article."
+            }
+        }
+    },
+    {
+        id: 'c5_q9',
+        sentence: 'I want to buy _____ orange.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Indefinite article before vowel sound',
+        explanations: {
+            correct: "'Orange' starts with the vowel sound /ˈɒr.ɪndʒ/, so 'an' is correct.",
+            wrong: {
+                0: "'a' is incorrect because 'orange' starts with a vowel sound.",
+                2: "'the' is incorrect because we are referring to any general, unspecified orange.",
+                3: "Singular countable nouns require an article."
+            }
+        }
+    },
+    {
+        id: 'c5_q10',
+        sentence: '_____ tea is grown in Assam.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before material/agricultural nouns in general sense',
+        explanations: {
+            correct: "We omit articles before uncountable common/material nouns used in a general sense.",
+            wrong: {
+                0: "Tea is uncountable, so we cannot use 'a'.",
+                1: "Tea is uncountable, so 'an' is incorrect.",
+                2: "We are speaking of tea in general, not a specific tea, so 'the' is omitted."
+            }
+        }
+    },
+    {
+        id: 'c5_q11',
+        sentence: 'She is learning to play _____ sitar.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with musical instruments',
+        explanations: {
+            correct: "We use 'the' before musical instruments when learning or playing them.",
+            wrong: {
+                0: "We use 'the' when referring to playing or learning the instrument as a skill.",
+                1: "'Sitar' starts with a consonant sound /s/.",
+                3: "Musical instruments in this context require 'the'."
+            }
+        }
+    },
+    {
+        id: 'c5_q12',
+        sentence: '_____ water in this well is dirty.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with particularized uncountable nouns',
+        explanations: {
+            correct: "While we normally omit articles before 'water' in general, here it is particularized by 'in this well', so we use 'the'.",
+            wrong: {
+                0: "Water is uncountable, so 'a' is incorrect.",
+                1: "Water is uncountable, so 'an' is incorrect.",
+                3: "Because the water is specific to this well, we cannot omit the article."
+            }
+        }
+    },
+    {
+        id: 'c5_q13',
+        sentence: 'He went to _____ college to submit his application form.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 4: Secondary purpose of places (college)',
+        explanations: {
+            correct: "He went to college to submit a form (secondary purpose, not as a student to study), so we use 'the'.",
+            wrong: {
+                0: "The specific college building requires 'the'.",
+                1: "'College' starts with a consonant sound /k/.",
+                3: "We only omit the article when going for the primary purpose of study."
+            }
+        }
+    },
+    {
+        id: 'c5_q14',
+        sentence: '_____ school starts at 8:00 AM.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Primary purpose of places (school)',
+        explanations: {
+            correct: "This refers to the primary educational sessions at school in general, so we omit the article.",
+            wrong: {
+                0: "School here represents a general educational institution, so 'a' is incorrect.",
+                1: "'School' starts with a consonant sound.",
+                2: "'the school' would refer to a specific building. Here we mean the school day/session."
+            }
+        }
+    },
+    {
+        id: 'c5_q15',
+        sentence: 'What _____ lovely surprise!',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 2: Indefinite article in exclamations',
+        explanations: {
+            correct: "In exclamatory sentences before singular countable nouns, we use 'a' or 'an'. 'Lovely' starts with a consonant sound /l/, so 'a' is correct.",
+            wrong: {
+                1: "'Lovely' starts with a consonant sound, so 'an' is incorrect.",
+                2: "Exclamatory surprise phrases use the indefinite article, not 'the'.",
+                3: "A singular countable noun ('surprise') in an exclamation requires the indefinite article."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 6 (Quantifier Phrases: Few vs Little) — 20 Questions -----
+const QUESTIONS_C6 = [
+    {
+        id: 'c6_q1',
+        sentence: 'There is _____ milk left in the jug; it is almost empty.',
+        options: ['few', 'a few', 'little', 'a little'],
+        correct: 2,
+        rule: 'Rule 6: Quantifiers - Uncountable negative',
+        explanations: {
+            correct: "'Milk' is uncountable, and 'almost empty' indicates a negative, nearly zero quantity. So we use 'little' (hardly any).",
+            wrong: {
+                0: "'few' is used for countable nouns. Milk is uncountable.",
+                1: "'a few' is used for countable nouns.",
+                3: "'a little' has a positive meaning (some). Since the jug is almost empty, 'little' is appropriate."
+            }
+        }
+    },
+    {
+        id: 'c6_q2',
+        sentence: 'He has _____ friends in the city, so he feels lonely.',
+        options: ['few', 'a few', 'little', 'a little'],
+        correct: 0,
+        rule: 'Rule 6: Quantifiers - Countable negative',
+        explanations: {
+            correct: "'Friends' is countable, and feeling 'lonely' implies a negative sense (hardly any friends). So we use 'few'.",
+            wrong: {
+                1: "'a few' means 'some' (positive), which would contradict feeling lonely.",
+                2: "'little' is used for uncountable nouns. 'Friends' is countable.",
+                3: "'a little' is used for uncountable nouns."
+            }
+        }
+    },
+    {
+        id: 'c6_q3',
+        sentence: '_____ money she had was spent on medicines.',
+        options: ['few', 'the few', 'little', 'the little'],
+        correct: 3,
+        rule: 'Rule 6: Quantifiers - Uncountable specific',
+        explanations: {
+            correct: "We refer to the specific, total amount of money she possessed. Since 'money' is uncountable, we use 'the little'.",
+            wrong: {
+                0: "'few' is for countable nouns.",
+                1: "'the few' is for specific countable nouns.",
+                2: "'little' means 'hardly any' in a general sense, not the specific amount she had."
+            }
+        }
+    },
+    {
+        id: 'c6_q4',
+        sentence: '_____ students who attended the lecture were very attentive.',
+        options: ['few', 'the few', 'little', 'the little'],
+        correct: 1,
+        rule: 'Rule 6: Quantifiers - Countable specific',
+        explanations: {
+            correct: "We are referring to the specific, small number of students who were present. Since they are countable, we use 'the few'.",
+            wrong: {
+                0: "'few' means 'hardly any' in general. We need the specific group here.",
+                2: "'little' is for uncountable nouns.",
+                3: "'the little' is for specific uncountable nouns."
+            }
+        }
+    },
+    {
+        id: 'c6_q5',
+        sentence: 'Could you give me _____ advice on this matter?',
+        options: ['a few', 'little', 'a little', 'the little'],
+        correct: 2,
+        rule: 'Rule 6: Quantifiers - Uncountable positive',
+        explanations: {
+            correct: "'Advice' is uncountable. The speaker is asking for 'some' (positive sense) advice, so 'a little' is correct.",
+            wrong: {
+                0: "'a few' is for countable nouns. 'Advice' is uncountable.",
+                1: "'little' means 'hardly any', which doesn't fit a polite request for help.",
+                3: "'the little' refers to a specific total amount, which is not implied here."
+            }
+        }
+    },
+    {
+        id: 'c6_q6',
+        sentence: 'I have _____ questions to ask before we start.',
+        options: ['few', 'a few', 'little', 'a little'],
+        correct: 1,
+        rule: 'Rule 6: Quantifiers - Countable positive',
+        explanations: {
+            correct: "'Questions' is countable, and the speaker wants to ask 'some' (positive sense) questions. So we use 'a few'.",
+            wrong: {
+                0: "'few' would mean 'hardly any' in a negative sense, which does not fit this statement.",
+                2: "'little' is for uncountable nouns.",
+                3: "'a little' is for uncountable nouns."
+            }
+        }
+    },
+    {
+        id: 'c6_q7',
+        sentence: '_____ knowledge is a dangerous thing.',
+        options: ['few', 'a few', 'little', 'a little'],
+        correct: 3,
+        rule: 'Rule 6: Quantifiers - Proverbs / Uncountable positive',
+        explanations: {
+            correct: "The famous proverb is 'A little knowledge is a dangerous thing' (having a small, incomplete amount of knowledge).",
+            wrong: {
+                0: "'few' is for countable nouns.",
+                1: "'a few' is for countable nouns.",
+                2: "'little' would mean having zero knowledge, which is not what the proverb describes."
+            }
+        }
+    },
+    {
+        id: 'c6_q8',
+        sentence: 'He has _____ hope of recovery; he is terminally ill.',
+        options: ['few', 'a few', 'little', 'a little'],
+        correct: 2,
+        rule: 'Rule 6: Quantifiers - Uncountable negative',
+        explanations: {
+            correct: "'Hope' is uncountable, and being 'terminally ill' implies almost zero hope (negative sense). So we use 'little'.",
+            wrong: {
+                0: "'few' is for countable nouns.",
+                1: "'a few' is for countable nouns.",
+                3: "'a little' means 'some' hope, which contradicts the negative context of being terminally ill."
+            }
+        }
+    },
+    {
+        id: 'c6_q9',
+        sentence: '_____ words he spoke were full of wisdom.',
+        options: ['few', 'a few', 'the few', 'the little'],
+        correct: 2,
+        rule: 'Rule 6: Quantifiers - Countable specific',
+        explanations: {
+            correct: "We refer to the specific, small number of words that he actually spoke. Since words are countable, we use 'the few'.",
+            wrong: {
+                0: "'few' is generic and negative.",
+                1: "'a few' is positive but not specific.",
+                3: "'the little' is for specific uncountable nouns."
+            }
+        }
+    },
+    {
+        id: 'c6_q10',
+        sentence: 'There is _____ water in the pond; it has dried up.',
+        options: ['few', 'a few', 'little', 'a little'],
+        correct: 2,
+        rule: 'Rule 6: Quantifiers - Uncountable negative',
+        explanations: {
+            correct: "'Water' is uncountable, and 'dried up' tells us there is almost zero water, so 'little' is correct.",
+            wrong: {
+                0: "'few' is for countable nouns.",
+                1: "'a few' is for countable nouns.",
+                3: "'a little' means 'some' water, which contradicts the pond being dried up."
+            }
+        }
+    },
+    {
+        id: 'c6_q11',
+        sentence: '_____ MLA from Lucknow was arrested yesterday.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Consonant spelling with vowel sound exception',
+        explanations: {
+            correct: "The letter 'M' starts with the vowel sound 'em' (/ɛm/), so 'an MLA' is correct.",
+            wrong: {
+                0: "Although 'M' is a consonant letter, the sound starts with 'em', requiring 'an'.",
+                2: "'the' is used for a specific, previously known MLA. Here we are introducing an indefinite MLA for the first time.",
+                3: "A singular countable noun ('MLA') requires an article."
+            }
+        }
+    },
+    {
+        id: 'c6_q12',
+        sentence: 'My uncle has bought _____ new house in Lucknow.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 2: Indefinite article first mention',
+        explanations: {
+            correct: "We are introducing a new house for the first time. 'New' starts with a consonant sound /n/, so 'a' is correct.",
+            wrong: {
+                1: "'New' starts with a consonant sound, so 'an' is incorrect.",
+                2: "This is the first mention of the house, so it is not yet definite.",
+                3: "A singular countable noun ('house') requires an article."
+            }
+        }
+    },
+    {
+        id: 'c6_q13',
+        sentence: '_____ Lucknow of today is different from the old Lucknow.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Proper noun particularized by descriptive phrase',
+        explanations: {
+            correct: "While we normally omit articles before city names like Lucknow, here it is specified by the phrase 'of today', requiring 'the'.",
+            wrong: {
+                0: "The description is unique and specific, so 'a' is incorrect.",
+                1: "'Lucknow' starts with a consonant sound.",
+                3: "Because the city is specified in time ('of today'), we cannot omit the article."
+            }
+        }
+    },
+    {
+        id: 'c6_q14',
+        sentence: '_____ lion is the king of the jungle.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Singular noun representing a class',
+        explanations: {
+            correct: "We use 'the' before a singular noun when it represents a whole class of animals or things ('the lion').",
+            wrong: {
+                0: "'a lion' is possible in a classifying sense, but 'the lion' is the standard textbook form to represent the entire species.",
+                1: "'Lion' starts with a consonant sound /l/.",
+                3: "A singular countable noun representing a class requires 'the'."
+            }
+        }
+    },
+    {
+        id: 'c6_q15',
+        sentence: 'He is _____ honest boy.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Silent H exception',
+        explanations: {
+            correct: "'Honest' has a silent 'h', starting with a vowel sound, so we use 'an'.",
+            wrong: {
+                0: "Although 'honest' starts with the letter 'h', the sound is a vowel sound, so 'a' is incorrect.",
+                2: "This is a general description of his character, so 'the' is incorrect.",
+                3: "A singular countable noun phrase ('honest boy') requires an article."
+            }
+        }
+    },
+    {
+        id: 'c6_q16',
+        sentence: 'The doctor advised him to take _____ rest.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before uncountable nouns',
+        explanations: {
+            correct: "'Rest' is uncountable in this context, so we omit the article ('take rest').",
+            wrong: {
+                0: "We do not say 'take a rest' in standard formal textbook contexts, though it is common in speech. 'Rest' is treated as uncountable.",
+                1: "'Rest' starts with a consonant sound /r/.",
+                2: "The doctor did not advise him to take a specific, previously mentioned rest, so 'the' is omitted."
+            }
+        }
+    },
+    {
+        id: 'c6_q17',
+        sentence: 'She is _____ architect by profession.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 2: Indefinite article with occupations',
+        explanations: {
+            correct: "We use 'an' before professions starting with a vowel sound. 'Architect' starts with /ˈɑː.kɪ.tekt/.",
+            wrong: {
+                0: "'Architect' starts with a vowel sound, so 'a' is incorrect.",
+                2: "'the' is incorrect because she is one of many architects in the general class.",
+                3: "Singular countable professions require an article."
+            }
+        }
+    },
+    {
+        id: 'c6_q18',
+        sentence: '_____ Bhagavad Gita is a holy book of the Hindus.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with holy books',
+        explanations: {
+            correct: "We use 'the' before the names of sacred or holy books ('the Bhagavad Gita').",
+            wrong: {
+                0: "Holy books require 'the', not 'a'.",
+                1: "'Bhagavad' starts with a consonant sound /b/.",
+                3: "Sacred books must have the definite article."
+            }
+        }
+    },
+    {
+        id: 'c6_q19',
+        sentence: 'I like to play _____ football in the evening.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before games/sports',
+        explanations: {
+            correct: "We omit articles before the names of games and sports ('play football').",
+            wrong: {
+                0: "We do not say 'play a football'.",
+                1: "Sports names do not take articles.",
+                2: "We do not use 'the' before sports names in general contexts."
+            }
+        }
+    },
+    {
+        id: 'c6_q20',
+        sentence: '_____ USA is a superpower.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with abbreviated/compound countries',
+        explanations: {
+            correct: "We use 'the' before names of countries that are abbreviations or contain words like 'States' ('the USA').",
+            wrong: {
+                0: "'a' is incorrect because it is a unique, specific nation.",
+                1: "'USA' begins with the consonant sound 'yu' (/j/).",
+                3: "Abbreviated country names like USA, UK, UAE require 'the'."
+            }
+        }
+    }
+];
+
+// ----- MEGA REVISION (Mixed Board-level) — 30 Questions -----
+const QUESTIONS_MEGA = [
+    {
+        id: 'mega_q1',
+        sentence: 'The richer you grow, _____ greedier you become.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article in parallel comparatives',
+        explanations: {
+            correct: "We use 'the' before comparatives in parallel structures (e.g., 'the more, the merrier'; 'the richer, the greedier').",
+            wrong: {
+                0: "Parallel structures require the definite article 'the', not 'a'.",
+                1: "'Greedier' starts with a consonant sound /ɡ/.",
+                3: "We cannot omit 'the' in this double comparative pattern."
+            }
+        }
+    },
+    {
+        id: 'mega_q2',
+        sentence: 'This is _____ unique opportunity to showcase your talent.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 1: Vowel spelling with consonant sound exception',
+        explanations: {
+            correct: "'Unique' starts with the vowel letter 'U' but is pronounced with the consonant sound 'yu' (/j/), so it takes 'a'.",
+            wrong: {
+                1: "Pronunciation determines the article. 'Unique' begins with a consonant sound 'yu', so 'an' is incorrect.",
+                2: "This is an indefinite description, classifying this as one unique opportunity among others, so 'a' is correct.",
+                3: "A singular countable noun phrase ('unique opportunity') requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q3',
+        sentence: '_____ Quran is the holy book of Islam.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with holy books',
+        explanations: {
+            correct: "We use 'the' before the names of holy books ('the Quran').",
+            wrong: {
+                0: "Holy books require 'the', not 'a'.",
+                1: "'Quran' starts with a consonant sound /k/.",
+                3: "Sacred books cannot be used without the definite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q4',
+        sentence: 'He is _____ honor to his country.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Silent H exception',
+        explanations: {
+            correct: "'Honor' has a silent 'h', starting with the vowel sound /ˈɒn.ər/, so we use 'an'.",
+            wrong: {
+                0: "Although 'honor' starts with a consonant letter, the sound is a vowel sound, so 'a' is incorrect.",
+                2: "This is a general description of his contribution, so 'an' is correct.",
+                3: "A singular countable noun phrase requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q5',
+        sentence: '_____ Ganges is a sacred river.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with rivers',
+        explanations: {
+            correct: "We use 'the' before the names of rivers ('the Ganges').",
+            wrong: {
+                0: "Rivers are unique proper nouns and require 'the', not 'a'.",
+                1: "'Ganges' starts with a consonant sound /ɡ/.",
+                3: "River names must be preceded by 'the'."
+            }
+        }
+    },
+    {
+        id: 'mega_q6',
+        sentence: '_____ gold of South Africa is famous worldwide.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Particularized material noun',
+        explanations: {
+            correct: "Although we normally omit articles before material nouns ('gold'), here it is particularized by 'of South Africa', so we use 'the'.",
+            wrong: {
+                0: "'Gold' is uncountable, so 'a' is incorrect.",
+                1: "'Gold' is uncountable and starts with a consonant sound.",
+                3: "Because the gold is specified, we must use the definite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q7',
+        sentence: 'She is _____ university student.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 1: Vowel spelling with consonant sound exception',
+        explanations: {
+            correct: "'University' begins with a consonant sound 'yu' (/j/), so it takes the indefinite article 'a'.",
+            wrong: {
+                1: "Do not be misled by the letter 'U'. The pronunciation starts with a consonant sound 'yu', so 'an' is incorrect.",
+                2: "This is a general description, so the indefinite article 'a' is correct.",
+                3: "A singular countable noun phrase requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q8',
+        sentence: 'We stayed at _____ Hilton Hotel last week.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with hotels',
+        explanations: {
+            correct: "We use 'the' before the names of famous hotels ('the Hilton Hotel').",
+            wrong: {
+                0: "Famous hotels take the definite article 'the', not 'a'.",
+                1: "'Hilton' starts with a consonant sound /h/.",
+                3: "Famous hotel names require the definite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q9',
+        sentence: '_____ Times of India is a popular daily.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with newspapers',
+        explanations: {
+            correct: "We use 'the' before the names of newspapers ('the Times of India').",
+            wrong: {
+                0: "Newspaper titles require 'the', not 'a'.",
+                1: "'Times' starts with a consonant sound /t/.",
+                3: "Newspaper titles must be preceded by 'the'."
+            }
+        }
+    },
+    {
+        id: 'mega_q10',
+        sentence: '_____ iron is a useful metal.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before material nouns',
+        explanations: {
+            correct: "We omit articles before material nouns like iron, copper, gold when used in a general sense.",
+            wrong: {
+                0: "'Iron' is uncountable, so 'a' is incorrect.",
+                1: "'Iron' starts with a vowel sound but is an uncountable material noun in a general sense, so we omit the article.",
+                2: "We are speaking of iron generally, not a specific piece of iron, so 'the' is omitted."
+            }
+        }
+    },
+    {
+        id: 'mega_q11',
+        sentence: 'He has joined _____ union of railway workers.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 1: Vowel spelling with consonant sound exception',
+        explanations: {
+            correct: "'Union' starts with a consonant sound 'yu' (/j/), so it takes the indefinite article 'a'.",
+            wrong: {
+                1: "Pronunciation determines the article. 'Union' starts with the consonant sound 'yu', so 'an' is incorrect.",
+                2: "'the' would imply it is the only union in existence. 'A' is used to classify it.",
+                3: "A singular countable noun ('union') requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q12',
+        sentence: '_____ book you want is out of stock.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with specified nouns',
+        explanations: {
+            correct: "The noun 'book' is specified by the clause 'you want', making it a definite book. Thus, we use 'the'.",
+            wrong: {
+                0: "The book is not generic; it is the specific book that you want, so 'a' is incorrect.",
+                1: "'Book' starts with a consonant sound.",
+                3: "A specified singular noun requires the definite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q13',
+        sentence: 'He returned after _____ hour.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Silent H exception',
+        explanations: {
+            correct: "'Hour' begins with a silent 'h', starting with a vowel sound. Thus, 'an' is correct.",
+            wrong: {
+                0: "Although 'hour' begins with 'h', the sound is a vowel sound, so 'a' is incorrect.",
+                2: "He returned after an indefinite duration of one hour, so 'the' is incorrect.",
+                3: "A singular countable noun ('hour') requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q14',
+        sentence: 'He is _____ European by birth.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 1: Vowel spelling with consonant sound exception',
+        explanations: {
+            correct: "'European' begins with the consonant sound 'yu' (/j/), so it takes 'a'.",
+            wrong: {
+                1: "Sound determines the article. 'European' begins with a consonant sound, so 'an' is incorrect.",
+                2: "This is a general classification of his origin, so 'the' is incorrect.",
+                3: "A singular countable noun ('European') requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q15',
+        sentence: 'The train was delayed by _____ hour.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 1,
+        rule: 'Rule 1: Silent H exception',
+        explanations: {
+            correct: "'Hour' begins with a silent 'h' (vowel sound), so we use 'an'.",
+            wrong: {
+                0: "'Hour' has a silent 'h' and starts with a vowel sound, so 'a' is incorrect.",
+                2: "The delay is an indefinite period of one hour, so 'the' is incorrect.",
+                3: "A singular countable noun requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q16',
+        sentence: '_____ Sri Lanka is an island nation south of India.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before country names',
+        explanations: {
+            correct: "We omit articles before names of single countries like Sri Lanka, India, France.",
+            wrong: {
+                0: "We do not use 'a' before country names.",
+                1: "Country names do not take articles.",
+                2: "We only use 'the' before countries that contain words like Union, Kingdom, Republic, or are plural (e.g., The Maldives)."
+            }
+        }
+    },
+    {
+        id: 'mega_q17',
+        sentence: 'The rich should be kind to _____ poor.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article before adjectives representing a class',
+        explanations: {
+            correct: "We use 'the' before adjectives like 'rich', 'poor', 'blind', 'injured' to represent a whole class of people.",
+            wrong: {
+                0: "'a poor' is grammatically incomplete without a noun ('a poor person'). Here, 'poor' is used as a plural noun class.",
+                1: "'poor' starts with a consonant sound /p/.",
+                3: "When referring to the class of poor people collectively, the article 'the' is required."
+            }
+        }
+    },
+    {
+        id: 'mega_q18',
+        sentence: 'I bought _____ one-way ticket to Delhi.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 1: Vowel spelling with consonant sound exception',
+        explanations: {
+            correct: "'One-way' starts with the consonant sound 'w' ('wa'), so we use 'a'.",
+            wrong: {
+                1: "Do not be misled by the letter 'O'. The first sound is a consonant 'w', so 'an' is incorrect.",
+                2: "This is a general purchase, not a specific ticket, so 'the' is incorrect.",
+                3: "A singular countable noun phrase ('one-way ticket') requires an article."
+            }
+        }
+    },
+    {
+        id: 'mega_q19',
+        sentence: '_____ English is the language of the people of England.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission before languages',
+        explanations: {
+            correct: "We omit articles before names of languages when they stand alone ('English').",
+            wrong: {
+                0: "Languages do not take indefinite articles.",
+                1: "Languages do not take articles.",
+                2: "We only use 'the' before a language if followed by 'language' ('the English language') or when referring to the people ('the English')."
+            }
+        }
+    },
+    {
+        id: 'mega_q20',
+        sentence: '_____ English language is spoken all over the world.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with specified languages',
+        explanations: {
+            correct: "When a language name is followed by the word 'language', we must use the definite article 'the' ('the English language').",
+            wrong: {
+                0: "The specific language name followed by 'language' requires the definite article.",
+                1: "'English' starts with a vowel sound but this construction requires 'the'.",
+                3: "We cannot omit the article when the word 'language' follows the language name."
+            }
+        }
+    },
+    {
+        id: 'mega_q21',
+        sentence: '_____ Bible is a sacred text.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with holy books',
+        explanations: {
+            correct: "We use 'the' before names of holy books ('the Bible').",
+            wrong: {
+                0: "Holy books require 'the', not 'a'.",
+                1: "'Bible' starts with a consonant sound /b/.",
+                3: "Sacred books must have the definite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q22',
+        sentence: '_____ primary purpose of school is education.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with unique descriptive nouns',
+        explanations: {
+            correct: "The noun 'purpose' is specified by 'primary' and 'of school', representing a unique, specific purpose. Thus, we use 'the'.",
+            wrong: {
+                0: "This is a specific, unique purpose, so 'a' is incorrect.",
+                1: "'Primary' starts with a consonant sound /p/.",
+                3: "A specified unique noun phrase requires the definite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q23',
+        sentence: 'He went to _____ school to pick up his report card.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 4: Secondary purpose of places (school)',
+        explanations: {
+            correct: "He went to the school building for a secondary purpose (not to study or teach as a student/teacher), so we use 'the'.",
+            wrong: {
+                0: "The specific school building requires 'the'.",
+                1: "'School' starts with a consonant sound.",
+                3: "We only omit the article when going for the primary purpose of study."
+            }
+        }
+    },
+    {
+        id: 'mega_q24',
+        sentence: '_____ children are playing in the park.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with specific plurals',
+        explanations: {
+            correct: "Here, we are referring to a specific, observable group of children playing in the park, so we use 'the'.",
+            wrong: {
+                0: "'children' is plural, so 'a' is incorrect.",
+                1: "'children' is plural, so 'an' is incorrect.",
+                3: "Although we omit articles for children in general ('children love play'), here they are a specific group in a specific park, requiring 'the'."
+            }
+        }
+    },
+    {
+        id: 'mega_q25',
+        sentence: '_____ man is a social animal.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 3,
+        rule: 'Rule 4: Omission with common nouns in widest sense',
+        explanations: {
+            correct: "We omit articles before 'man' or 'woman' when used in the widest, universal sense representing humanity.",
+            wrong: {
+                0: "In this universal sense, 'man' does not take 'a'.",
+                1: "'Man' starts with a consonant sound.",
+                2: "Using 'the man' would refer to a specific individual, which contradicts the general philosophical statement."
+            }
+        }
+    },
+    {
+        id: 'mega_q26',
+        sentence: '_____ beauty of Cleopatra was legendary.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with particularized abstract nouns',
+        explanations: {
+            correct: "While we normally omit articles before abstract nouns like 'beauty', here it is specified by the phrase 'of Cleopatra', so we use 'the'.",
+            wrong: {
+                0: "'Beauty' in this specific context is not a general indefinite quality, so 'a' is incorrect.",
+                1: "'Beauty' starts with a consonant sound /b/.",
+                3: "We cannot omit the article because the abstract noun is specified."
+            }
+        }
+    },
+    {
+        id: 'mega_q27',
+        sentence: 'He is studying to be _____ doctor.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 0,
+        rule: 'Rule 2: Indefinite article with occupations',
+        explanations: {
+            correct: "We use 'a' or 'an' when stating someone's profession. 'Doctor' starts with a consonant sound /d/, so 'a' is correct.",
+            wrong: {
+                1: "'Doctor' starts with a consonant sound, so 'an' is incorrect.",
+                2: "'the' would imply he is studying to be a specific, unique doctor. He is studying to join the profession generally.",
+                3: "Singular countable professions require an indefinite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q28',
+        sentence: '_____ Taj Mahal is a monument of love.',
+        options: ['a', 'an', 'the', 'x'],
+        correct: 2,
+        rule: 'Rule 3: Definite article with historical monuments',
+        explanations: {
+            correct: "We use 'the' before names of unique historical buildings and monuments ('the Taj Mahal').",
+            wrong: {
+                0: "Historical monuments are unique and require 'the', not 'a'.",
+                1: "'Taj' starts with a consonant sound /t/.",
+                3: "Unique historical landmarks must have the definite article."
+            }
+        }
+    },
+    {
+        id: 'mega_q29',
+        sentence: 'I have _____ little money left, so I can buy a ticket.',
+        options: ['few', 'a few', 'little', 'a little'],
+        correct: 3,
+        rule: 'Rule 6: Quantifiers - Uncountable positive',
+        explanations: {
+            correct: "'Money' is uncountable, and being able to buy a ticket implies a positive sense (having some money). So we use 'a little'.",
+            wrong: {
+                0: "'few' is for countable nouns.",
+                1: "'a few' is for countable nouns.",
+                2: "'little' would mean 'hardly any', which would make buying a ticket impossible."
+            }
+        }
+    },
+    {
+        id: 'mega_q30',
+        sentence: '_____ few friends he has are all very supportive.',
+        options: ['few', 'the few', 'little', 'the little'],
+        correct: 1,
+        rule: 'Rule 6: Quantifiers - Countable specific',
+        explanations: {
+            correct: "We refer to the specific, small number of friends that he has. Since friends are countable, we use 'the few'.",
+            wrong: {
+                0: "'few' means 'hardly any' in a general sense.",
+                2: "'little' is for uncountable nouns.",
+                3: "'the little' is for specific uncountable nouns."
+            }
+        }
+    }
+];
+
+// Combine all questions into a lookup map
+const ALL_QUESTIONS = {};
+const ALL_SECTIONS = {
+    c1: QUESTIONS_C1,
+    c2: QUESTIONS_C2,
+    c3: QUESTIONS_C3,
+    c4: QUESTIONS_C4,
+    c5: QUESTIONS_C5,
+    c6: QUESTIONS_C6,
+    mega: QUESTIONS_MEGA
+};
+
+// Build the lookup
+for (const [sectionId, questions] of Object.entries(ALL_SECTIONS)) {
+    questions.forEach(q => {
+        ALL_QUESTIONS[q.id] = q;
+    });
+}
+
+// ============================================================
+// 3. APP STATE
+// ============================================================
 const APP_STATE = {
     currentSlideIndex: 0,
-    unlockedSlideIndex: 1, // Slide 0 (Welcome) and Slide 1 (A vs An) are unlocked by default
-    totalSlides: 10,
-    sectionResults: {}
+    unlockedSlideIndex: 0,  // Slide 0 starts unlocked. Interleaved lessons unlock next slide.
+    totalSlides: 16,
+    sectionResults: {}  // track scores per section
 };
 
-// Quiz Data Structure
-const QUIZ_DATA = {
-    m1: [
-        {
-            text: "1. She boiled {m1_q1_1} egg in {m1_q1_2} pan.",
-            blanks: {
-                m1_q1_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 1, // "an"
-                    explanations: {
-                        correct: "'an' is used before words beginning with a vowel sound. 'Egg' starts with the vowel sound /e/.",
-                        wrong: {
-                            0: "'a' is used before consonant sounds. Since 'egg' starts with the vowel sound /e/, 'a' is incorrect.",
-                            2: "'the' is used for specific or definite items. Here, it is the first mention of any egg in general, so we use the indefinite article.",
-                            3: "Singular countable nouns like 'egg' cannot be used without an article in this context."
-                        }
-                    }
-                },
-                m1_q1_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'a' is used before words beginning with a consonant sound. 'Pan' starts with the consonant sound /p/.",
-                        wrong: {
-                            1: "'an' is used before vowel sounds. 'Pan' starts with the consonant sound /p/, so 'an' is incorrect.",
-                            2: "This is the first mention of a pan, so it is indefinite. 'the' is only used for specific pans.",
-                            3: "A singular countable noun like 'pan' requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "2. Renu met {m1_q2_1} European lady at {m1_q2_2} university.",
-            blanks: {
-                m1_q2_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'European' starts with a vowel letter (E) but is pronounced with a consonant sound 'yu' (/j/). Therefore, we use 'a' (Book Page 1).",
-                        wrong: {
-                            1: "You might be misled by the letter 'E', but article choice depends on sound. 'European' is pronounced with the consonant sound 'yu' (/j/), so 'an' is incorrect.",
-                            2: "Renu met an unspecified European lady for the first time, so we use the indefinite article.",
-                            3: "A singular countable noun phrase like 'European lady' requires an article."
-                        }
-                    }
-                },
-                m1_q2_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'University' begins with a consonant sound 'yu' (/j/). Therefore, we use the indefinite article 'a' (Book Page 1).",
-                        wrong: {
-                            1: "Although 'university' begins with the vowel letter 'U', it is pronounced with the consonant sound 'yu' (/j/), so 'an' is incorrect.",
-                            2: "Here, university is referred to generally, not a specific one already known to the listener, so the indefinite 'a' is appropriate.",
-                            3: "A singular countable noun in this context requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "3. A Mr Sinha wants {m1_q3_1} one-way ticket.",
-            blanks: {
-                m1_q3_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'One-way' starts with the vowel letter 'O' but is pronounced with the consonant sound 'w' ('wa'). So we use 'a' (Book Page 1).",
-                        wrong: {
-                            1: "Do not be misled by the letter 'O'. The pronunciation starts with a consonant sound 'w' (as in 'won'), so 'an' is incorrect.",
-                            2: "He wants any general one-way ticket, not a specific one, so 'the' is incorrect.",
-                            3: "A singular countable noun phrase ('one-way ticket') requires an article."
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    m2: [
-        {
-            text: "1. The electrician charges ₹1,000 {m2_q1} hour. (Rule 4)",
-            blanks: {
-                m2_q1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 1, // "an"
-                    explanations: {
-                        correct: "'Hour' starts with a silent 'h', so the initial sound is the vowel sound /aʊə/. Hence, we use 'an' to mean 'per' or 'each' hour (Book Page 2).",
-                        wrong: {
-                            0: "Although 'hour' starts with the consonant letter 'h', the 'h' is silent. The word is pronounced with a vowel sound, so we must use 'an'.",
-                            2: "We are referring to a rate per unit of time ('each hour'), not a specific hour, so the definite article 'the' is incorrect.",
-                            3: "We need an article to express the rate/measure 'per hour'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "2. What {m2_q2} funny clown he is! (Rule 9)",
-            blanks: {
-                m2_q2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "In exclamatory sentences starting with 'What' followed by a singular countable noun, we use the indefinite article 'a' (or 'an'). 'Funny' starts with a consonant sound /f/ (Book Page 3 Rule 9).",
-                        wrong: {
-                            1: "'Funny' starts with the consonant sound /f/, so 'an' is incorrect.",
-                            2: "Exclamatory patterns expressing surprise or emotion use the indefinite article 'a'/'an', not 'the'.",
-                            3: "The exclamation requires the indefinite article for natural structure."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "3. She saves ₹10,000 {m2_q3} month. (Rule 4)",
-            blanks: {
-                m2_q3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "To represent the sense of 'per' or 'each' with singular time periods, we use 'a'. 'Month' starts with a consonant sound /m/ (Book Page 2 Rule 4).",
-                        wrong: {
-                            1: "'Month' starts with a consonant sound /m/, so 'an' is incorrect.",
-                            2: "'the' would refer to a specific calendar month. We mean 'every month' in general, so we use 'a'.",
-                            3: "An article is required to express the frequency rate."
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    m3: [
-        {
-            text: "1. I bought a car. {m3_q1} car has six air bags for safety.",
-            blanks: {
-                m3_q1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'car' is mentioned for the second time, making it a specific, definite noun already known to the reader. Thus we use 'the' (Book Page 3 Rule 1).",
-                        wrong: {
-                            0: "'a' is used for the first mention of an indefinite noun. Since the car has already been introduced, it is now definite.",
-                            1: "'car' begins with a consonant sound /k/ and is already definite, so 'an' is doubly incorrect.",
-                            3: "A singular countable noun being specified requires the definite article 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "2. Shirish is {m3_q2} tallest member in this group.",
-            blanks: {
-                m3_q2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'Tallest' is a superlative adjective. We always use the definite article 'the' before superlative adjectives (Book Page 3 Rule 6).",
-                        wrong: {
-                            0: "We cannot use the indefinite article 'a' before a superlative adjective because there can only be one 'tallest' member, making it unique and definite.",
-                            1: "'Tallest' begins with a consonant sound /t/ and is a superlative, so 'an' is incorrect.",
-                            3: "Superlative constructions require 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "3. She is learning to play {m3_q3} sitar.",
-            blanks: {
-                m3_q3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before the names of musical instruments when learning to play them or playing them (Book Page 4 Rule 11).",
-                        wrong: {
-                            0: "While 'a sitar' refers to a physical instrument ('I bought a sitar'), when referring to the skill or art of playing it, we use 'the'.",
-                            1: "'Sitar' starts with a consonant sound /s/, so 'an' is incorrect.",
-                            3: "Names of musical instruments in this learning context require 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "4. We will visit {m3_q4_1} Western Ghats and sail across {m3_q4_2} Indian Ocean.",
-            blanks: {
-                m3_q4_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before the names of mountain ranges (like the Western Ghats) (Book Page 4).",
-                        wrong: {
-                            0: "Mountain ranges are unique geographical systems and require the definite article 'the'.",
-                            1: "'Western' begins with a consonant sound /w/, so 'an' is incorrect.",
-                            3: "Geographical features like mountain ranges cannot be used without an article."
-                        }
-                    }
-                },
-                m3_q4_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before the names of oceans, seas, and rivers (like the Indian Ocean) (Book Page 4).",
-                        wrong: {
-                            0: "Oceans are unique geographical bodies and require the definite article 'the'.",
-                            1: "'Indian' starts with a vowel sound but is an ocean name, so it requires 'the', not 'an'.",
-                            3: "Ocean names must take 'the'."
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    m4: [
-        {
-            text: "1. Mother has gone to office. {m4_q1} (Primary purpose)",
-            blanks: {
-                m4_q1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "We omit articles ('x') before school, college, church, bed, table, hospital, market, prison, or office when they are visited for their primary purpose (e.g. working at the office) (Book Page 5 Rule 6).",
-                        wrong: {
-                            0: "Using 'an office' (with 'an') would refer to a random office building. Here, 'gone to office' is an idiom for going to work, so no article is used.",
-                            1: "'an' is incorrect because the primary purpose phrase 'go to office' takes no article.",
-                            2: "We omit 'the' when referring to the primary purpose of going to work/office. 'Gone to the office' would mean a specific office building for a different reason."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "2. She went to {m4_q2} hospital to meet her friend. (Secondary purpose)",
-            blanks: {
-                m4_q2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "When places like hospital, school, or church are visited for a secondary purpose (visiting a friend, rather than receiving medical treatment), we must use the definite article 'the' (Book Page 5 Exception).",
-                        wrong: {
-                            0: "'a' is incorrect because the speaker is referring to the specific hospital where the friend is admitted.",
-                            1: "'Hospital' begins with a consonant sound /h/, so 'an' is incorrect.",
-                            3: "We only omit the article ('x') if she went as a patient (primary purpose). Since she went to visit a friend (secondary purpose), we need 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "3. He cannot speak {m4_q3} German at all. (Language as noun)",
-            blanks: {
-                m4_q3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "We do not use articles ('x') before the names of languages (like German, Hindi, English) when used as nouns (Book Page 5 Rule 7).",
-                        wrong: {
-                            0: "Languages are uncountable and do not take 'a'.",
-                            1: "'German' starts with a consonant sound, so 'an' is incorrect.",
-                            2: "If we say 'the German language', we use 'the'. But before the language name alone ('speak German'), we omit the article."
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    m5: [
-        {
-            text: "1. She has a pink and {m5_q1} purple gown (two gowns intended).",
-            blanks: {
-                m5_q1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "To indicate two separate gowns, we must repeat the article before both adjectives: 'a pink and a purple gown' (Book Page 7 Rule 2).",
-                        wrong: {
-                            1: "'Purple' begins with a consonant sound /p/, so 'an' is incorrect.",
-                            2: "Since the gowns are indefinite singular countable items, 'the' is incorrect.",
-                            3: "If we omit the article ('x'), it would mean she has a single gown that is both pink and purple. Since two gowns are intended, we must repeat the article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "2. The actor and director {m5_q2} (was/were) awarded yesterday.",
-            blanks: {
-                m5_q2: {
-                    options: ["was", "were"],
-                    correct: 0, // "was"
-                    explanations: {
-                        correct: "Since the article 'the' is only placed before the first noun ('actor'), it refers to a single person who is both the actor and the director. Hence, we use the singular verb 'was' (Book Page 7 Rule 3).",
-                        wrong: {
-                            1: "If it were 'The actor and the director', it would refer to two separate people, requiring 'were'. But only one article is used, meaning it is one person (singular)."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "3. Due to heavy rains, {m5_q3} (few / a few / the few) students attended school.",
-            blanks: {
-                m5_q3: {
-                    options: ["few", "a few", "the few"],
-                    correct: 0, // "few"
-                    explanations: {
-                        correct: "'few' has a negative meaning (hardly any). Because of heavy rains, almost no students attended school, making the negative 'few' the correct choice (Book Page 7).",
-                        wrong: {
-                            1: "'a few' has a positive meaning (some, a small number). Here, the heavy rains suggest a negative situation (hardly any students came), so 'few' is better.",
-                            2: "'the few' means 'all of the small number that exists'. There is no qualification or relative clause defining a specific small group, so it is incorrect."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "4. Could you give me {m5_q4} (little / a little / the little) water?",
-            blanks: {
-                m5_q4: {
-                    options: ["little", "a little", "the little"],
-                    correct: 1, // "a little"
-                    explanations: {
-                        correct: "'a little' has a positive meaning (some amount). Asking for 'a little water' means asking for some water to drink (Book Page 7).",
-                        wrong: {
-                            0: "'little' has a negative meaning (almost none). Asking for 'little water' would mean asking for almost no water, which is grammatically and logically incorrect for a request.",
-                            2: "'the little' means 'all of the small amount that is there'. This only works if followed by a clarifying clause like 'the little water that is in the bottle'."
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    ex1: [
-        {
-            text: "1. Sneha was attending {ex1_q1_1} meeting which had been going on for {ex1_q1_2} hour, when she was called to {ex1_q1_3} auditorium of her college.",
-            blanks: {
-                ex1_q1_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'a' is correct because she is attending an indefinite, singular countable meeting mentioned for the first time.",
-                        wrong: {
-                            1: "'meeting' starts with the consonant sound /m/, so 'an' is incorrect.",
-                            2: "The meeting is not yet specified to the reader, so we use the indefinite article.",
-                            3: "A singular countable noun 'meeting' requires an article."
-                        }
-                    }
-                },
-                ex1_q1_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 1, // "an"
-                    explanations: {
-                        correct: "'hour' has a silent 'h' and starts with a vowel sound, so it takes 'an'.",
-                        wrong: {
-                            0: "'hour' has a silent 'h', making its first sound a vowel sound. We must use 'an'.",
-                            2: "We mean any single hour of duration (indefinite), not a specific calendar hour, so 'the' is incorrect.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex1_q1_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "The auditorium is particularized by the phrase 'of her college', making it a specific, definite place. Thus, we use 'the'.",
-                        wrong: {
-                            0: "The auditorium is not generic; it is specified as the one belonging to 'her college', so we use the definite article 'the'.",
-                            1: "'auditorium' starts with a vowel sound, but because it is definite, we use 'the', not 'an'.",
-                            3: "A specified singular noun requires 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "2. We saw {ex1_q2_1} herd of {ex1_q2_2} cattle grazing in {ex1_q2_3} valley.",
-            blanks: {
-                ex1_q2_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'a' is correct because 'herd' is a singular collective noun mentioned for the first time.",
-                        wrong: {
-                            1: "'herd' begins with the consonant sound /h/, so 'an' is incorrect.",
-                            2: "It is the first mention of the herd, so it is indefinite.",
-                            3: "A singular collective noun requires an article."
-                        }
-                    }
-                },
-                ex1_q2_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "'cattle' is a plural common noun used in a general sense, so no article is needed.",
-                        wrong: {
-                            0: "'cattle' is plural, so the singular 'a' is incorrect.",
-                            1: "'cattle' is plural, so 'an' is incorrect.",
-                            2: "We are referring to cattle in general, not a specific group of cattle that we already know, so 'the' is omitted."
-                        }
-                    }
-                },
-                ex1_q2_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' because the valley is a specific, definite location where the event took place.",
-                        wrong: {
-                            0: "The speaker refers to the specific valley they were observing, so the definite article 'the' is required.",
-                            1: "'valley' begins with a consonant sound, so 'an' is incorrect.",
-                            3: "A singular geographical feature like a valley requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "3. {ex1_q3_1} Gateway of {ex1_q3_2} India is {ex1_q3_3} well-known historical landmark.",
-            blanks: {
-                ex1_q3_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before names of unique monuments and historical buildings like 'The Gateway of India'.",
-                        wrong: {
-                            0: "Historical monuments are unique and require the definite article 'the'.",
-                            1: "'Gateway' starts with a consonant sound, so 'an' is incorrect.",
-                            3: "Unique historical landmarks require 'the'."
-                        }
-                    }
-                },
-                ex1_q3_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "India is a proper noun (name of a country), so we omit the article.",
-                        wrong: {
-                            0: "We do not use 'a' before country names.",
-                            1: "We do not use 'an' before country names.",
-                            2: "Countries (except those containing words like Republic, Kingdom, States, or plural names like Netherlands) do not take 'the'."
-                        }
-                    }
-                },
-                ex1_q3_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "We use 'a' to classify it as one of many well-known landmarks. 'Well-known' starts with a consonant sound /w/.",
-                        wrong: {
-                            1: "'Well-known' starts with a consonant sound /w/, so 'an' is incorrect.",
-                            2: "There are many historical landmarks in the world; this is one of them, so we use the classifying indefinite article 'a'.",
-                            3: "A singular countable noun phrase requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "4. {ex1_q4_1} honesty is {ex1_q4_2} noble virtue. Let us live by {ex1_q4_3} truth.",
-            blanks: {
-                ex1_q4_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "'honesty' is an abstract noun used in a general sense, so it does not take an article.",
-                        wrong: {
-                            0: "Abstract nouns in a general sense do not take articles.",
-                            1: "Abstract nouns in a general sense do not take articles.",
-                            2: "We only use 'the' if it is particularized (e.g., 'the honesty of the boy'). In general sense, it takes no article."
-                        }
-                    }
-                },
-                ex1_q4_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'a' is correct because 'noble virtue' is a singular description of honesty. 'Noble' starts with a consonant sound /n/.",
-                        wrong: {
-                            1: "'Noble' starts with a consonant sound, so 'an' is incorrect.",
-                            2: "This is a general description, so the indefinite article 'a' is appropriate.",
-                            3: "A singular countable noun phrase ('noble virtue') requires an article."
-                        }
-                    }
-                },
-                ex1_q4_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' with unique abstract concepts when they are particularized or idiomatic, as in 'live by the truth'.",
-                        wrong: {
-                            0: "'truth' is treated as a unique, definite concept in this phrase, so it takes 'the'.",
-                            1: "'truth' starts with a consonant sound /t/, so 'an' is incorrect.",
-                            3: "The phrase is 'live by the truth', which requires the definite article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "5. {ex1_q5_1} runaway road-roller hit {ex1_q5_2} parked car. {ex1_q5_3} car was damaged badly.",
-            blanks: {
-                ex1_q5_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'a' is correct because it is the first mention of a singular countable noun ('runaway road-roller').",
-                        wrong: {
-                            1: "'runaway' starts with a consonant sound /r/, so 'an' is incorrect.",
-                            2: "This is the first mention of the road-roller, so it is indefinite.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex1_q5_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "First mention of a singular countable noun ('parked car'), so we use 'a'.",
-                        wrong: {
-                            1: "'parked' starts with a consonant sound /p/, so 'an' is incorrect.",
-                            2: "This is the first mention of the car, so it is indefinite.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex1_q5_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "This is the second mention of the car, which makes it a specific, definite car. Thus we use 'the'.",
-                        wrong: {
-                            0: "The car has already been introduced, so it is now a definite noun, requiring 'the'.",
-                            1: "The car is definite and starts with a consonant sound, so 'an' is incorrect.",
-                            3: "A specified singular countable noun requires 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "6. {ex1_q6_1} wisdom of {ex1_q6_2} King Solomon is known to all. He was {ex1_q6_3} wise ruler.",
-            blanks: {
-                ex1_q6_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "Although 'wisdom' is an abstract noun, it is particularized here by the phrase 'of King Solomon'. Therefore, it requires the definite article 'the'.",
-                        wrong: {
-                            0: "'wisdom' is uncountable and here is a specific wisdom, so 'a' is incorrect.",
-                            1: "Starts with a consonant sound and is a specific wisdom, so 'an' is incorrect.",
-                            3: "We must use 'the' because the wisdom is specified ('of King Solomon')."
-                        }
-                    }
-                },
-                ex1_q6_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "We omit articles before proper nouns and titles like 'King Solomon'.",
-                        wrong: {
-                            0: "Proper nouns with titles do not take indefinite articles.",
-                            1: "Proper nouns with titles do not take indefinite articles.",
-                            2: "We do not use 'the' before proper names with titles like King Solomon (unless referring to a specific dynasty, which isn't the case here)."
-                        }
-                    }
-                },
-                ex1_q6_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "We use 'a' to classify him as one of many wise rulers. 'Wise' starts with a consonant sound /w/.",
-                        wrong: {
-                            1: "'Wise' starts with a consonant sound, so 'an' is incorrect.",
-                            2: "This is a general descriptive classification, not a unique superlative, so the indefinite 'a' is correct.",
-                            3: "A singular countable noun phrase ('wise ruler') requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "7. Let {ex1_q7_1} child sleep. Do not make {ex1_q7_2} noise.",
-            blanks: {
-                ex1_q7_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "The speaker is referring to a specific child who is sleeping, making it a definite noun. Hence we use 'the'.",
-                        wrong: {
-                            0: "'a child' would mean any child in the world, but here the speaker is talking about a specific child nearby.",
-                            1: "'child' begins with a consonant sound /tʃ/, so 'an' is incorrect.",
-                            3: "A specified singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex1_q7_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'make a noise' is a standard English idiom that requires the indefinite article 'a'.",
-                        wrong: {
-                            1: "'noise' begins with a consonant sound /n/, so 'an' is incorrect.",
-                            2: "The idiom is 'make a noise', not 'make the noise'.",
-                            3: "Although 'noise' can be uncountable, in the idiom 'make a noise', the article 'a' is required."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "8. {ex1_q8_1} children are very happy today. {ex1_q8_2} school has declared {ex1_q8_3} holiday.",
-            blanks: {
-                ex1_q8_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' because we are talking about a specific group of children (e.g., the students of the school), not children worldwide in general.",
-                        wrong: {
-                            0: "'children' is plural, so 'a' is grammatically incorrect.",
-                            1: "'children' is plural, so 'an' is grammatically incorrect.",
-                            3: "Omitting the article would mean children in general all over the world, but only these specific children are happy about their school holiday."
-                        }
-                    }
-                },
-                ex1_q8_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' because we are referring to the specific school that these children attend.",
-                        wrong: {
-                            0: "'a school' would mean some random school, but it is the specific school of these children.",
-                            1: "'school' begins with a consonant sound /s/, so 'an' is incorrect.",
-                            3: "The specific school being referred to requires the definite article."
-                        }
-                    }
-                },
-                ex1_q8_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'holiday' is a singular countable noun mentioned for the first time, starting with a consonant sound /h/, so we use 'a'.",
-                        wrong: {
-                            1: "'holiday' starts with the consonant sound /h/, so 'an' is incorrect.",
-                            2: "It is the first mention of a holiday, so it is indefinite.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "9. {ex1_q9_1} rich should help {ex1_q9_2} poor.",
-            blanks: {
-                ex1_q9_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "When an adjective like 'rich' is used to represent a whole class of people, it requires the definite article 'the' and is treated as plural.",
-                        wrong: {
-                            0: "'a rich' is grammatically incomplete. We can say 'a rich man', but to refer to the class of rich people, we say 'the rich'.",
-                            1: "'rich' starts with a consonant sound, and we need 'the' to represent the entire class.",
-                            3: "We must use 'the' when using adjectives as plural nouns for a class of people."
-                        }
-                    }
-                },
-                ex1_q9_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "Similar to 'the rich', 'the poor' represents the whole class of poor people, requiring the definite article 'the'.",
-                        wrong: {
-                            0: "We must say 'the poor' to represent the entire group, not 'a poor' (unless followed by a noun like 'a poor man').",
-                            1: "'poor' begins with a consonant sound, so 'an' is incorrect.",
-                            3: "Adjectives representing a class of people require 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "10. We decided to divide {ex1_q10_1} money among {ex1_q10_2} poor. {ex1_q10_3} decision was appreciated by {ex1_q10_4} residents of our colony.",
-            blanks: {
-                ex1_q10_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' because the money is specific (the money they had collected or decided to divide).",
-                        wrong: {
-                            0: "Money is uncountable, so 'a money' is incorrect. Also, it is a specific sum.",
-                            1: "Money is uncountable, and starts with a consonant sound.",
-                            3: "Since it refers to a specific amount of money being divided, the definite article 'the' is required."
-                        }
-                    }
-                },
-                ex1_q10_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before 'poor' to represent the class of poor people.",
-                        wrong: {
-                            0: "To refer to the class of poor people, we use 'the poor'.",
-                            1: "'poor' starts with a consonant sound, so 'an' is incorrect.",
-                            3: "Adjectives representing a class of people require 'the'."
-                        }
-                    }
-                },
-                ex1_q10_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'decision' refers to the specific decision to divide the money, which was just mentioned. Hence it is definite and takes 'the'.",
-                        wrong: {
-                            0: "The decision is already known to the reader, so it is definite, not indefinite.",
-                            1: "'decision' begins with a consonant sound, so 'an' is incorrect.",
-                            3: "A specified singular noun requires 'the'."
-                        }
-                    }
-                },
-                ex1_q10_4: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'residents' is particularized by the phrase 'of our colony', making it specific. Thus, we use 'the'.",
-                        wrong: {
-                            0: "'residents' is plural, so 'a' is incorrect.",
-                            1: "'residents' is plural, so 'an' is incorrect.",
-                            3: "We need 'the' because the plural noun is specified by the following phrase."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "11. Dr Verma is {ex1_q11_1} famous cardiologist. He works in {ex1_q11_2} government hospital.",
-            blanks: {
-                ex1_q11_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'a' is correct because we are describing his profession/classification for the first time. 'Famous' starts with a consonant sound /f/.",
-                        wrong: {
-                            1: "'Famous' starts with a consonant sound, so 'an' is incorrect.",
-                            2: "This is a general description, not saying he is the only famous cardiologist in the world, so we use 'a'.",
-                            3: "A singular countable noun phrase ('famous cardiologist') requires an article."
-                        }
-                    }
-                },
-                ex1_q11_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "He works in any general government hospital (not specified), starting with a consonant sound /ɡ/, so we use 'a'.",
-                        wrong: {
-                            1: "'government' begins with a consonant sound, so 'an' is incorrect.",
-                            2: "The speaker does not specify which government hospital, so it is indefinite.",
-                            3: "A hospital being referred to generally as a workplace (not as his primary treatment venue as a patient) requires the indefinite article 'a'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "12. We should try to help {ex1_q12_1} needy.",
-            blanks: {
-                ex1_q12_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "Similar to 'the poor' and 'the rich', 'the needy' represents the whole class of needy people, requiring the definite article 'the'.",
-                        wrong: {
-                            0: "We must use 'the' to represent the entire group, not 'a'.",
-                            1: "'needy' begins with a consonant sound /n/, so 'an' is incorrect.",
-                            3: "Adjectives representing a class of people require 'the'."
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    ex2: [
-        {
-            text: "(a) With {ex2_q_a_1} little care you can easily solve {ex2_q_a_2} problem.",
-            blanks: {
-                ex2_q_a_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'a little' care has a positive meaning (some care). With some care, you can solve the problem.",
-                        wrong: {
-                            1: "'little' starts with a consonant sound, so 'an' is incorrect.",
-                            2: "'the little' would mean all the small amount of care that exists, but here we just mean 'some care' (positive).",
-                            3: "Using 'little care' (without 'a') has a negative meaning (almost no care), which is logically incorrect since care is needed to solve the problem."
-                        }
-                    }
-                },
-                ex2_q_a_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "You solve a specific problem that you are facing, making it definite. Thus we use 'the'.",
-                        wrong: {
-                            0: "We are referring to the specific problem at hand, so 'the' is correct.",
-                            1: "'problem' begins with a consonant sound /p/, so 'an' is incorrect.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(b) Which is {ex2_q_b_1} largest fresh-water lake in India?",
-            blanks: {
-                ex2_q_b_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'largest' is a superlative adjective, which always takes the definite article 'the'.",
-                        wrong: {
-                            0: "We cannot use 'a' with superlatives because there is only one largest lake.",
-                            1: "'largest' begins with a consonant sound, so 'an' is incorrect.",
-                            3: "Superlative constructions require 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(c) {ex2_q_c_1} honest man is always respected by {ex2_q_c_2} people of all classes and communities.",
-            blanks: {
-                ex2_q_c_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 1, // "an"
-                    explanations: {
-                        correct: "'Honest' has a silent 'h' and begins with a vowel sound /ɒ/. Therefore, it takes 'an'.",
-                        wrong: {
-                            0: "Although 'honest' starts with the letter 'h', it is silent. The vowel sound requires 'an'.",
-                            2: "This is a general statement about any honest man, so the indefinite article is correct.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex2_q_c_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'people' is plural, but it is particularized by the phrase 'of all classes and communities'. Hence, it requires the definite article 'the'.",
-                        wrong: {
-                            0: "'people' is plural, so 'a' is grammatically incorrect.",
-                            1: "'people' is plural, so 'an' is grammatically incorrect.",
-                            3: "Since the people are specified by the following phrase, 'the' is required."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(d) {ex2_q_d_1} apples are {ex2_q_d_2} expensive, but {ex2_q_d_3} mangoes are {ex2_q_d_4} more expensive.",
-            blanks: {
-                ex2_q_d_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "We are speaking of apples in general, so no article is needed before the plural noun.",
-                        wrong: {
-                            0: "'apples' is plural, so 'a' is incorrect.",
-                            1: "'apples' is plural, so 'an' is incorrect.",
-                            2: "We are referring to apples generally, not a specific batch, so 'the' is omitted."
-                        }
-                    }
-                },
-                ex2_q_d_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "'expensive' is an adjective, and we do not use articles before adjectives when they are not followed by a noun.",
-                        wrong: {
-                            0: "No article before a standalone adjective.",
-                            1: "No article before a standalone adjective.",
-                            2: "No article before a standalone adjective."
-                        }
-                    }
-                },
-                ex2_q_d_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "We are speaking of mangoes in general, so no article is needed before the plural noun.",
-                        wrong: {
-                            0: "'mangoes' is plural, so 'a' is incorrect.",
-                            1: "'mangoes' is plural, so 'an' is incorrect.",
-                            2: "We are referring to mangoes generally, not a specific batch, so 'the' is omitted."
-                        }
-                    }
-                },
-                ex2_q_d_4: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "'more expensive' is an adjective phrase, and we do not use articles before standalone adjectives.",
-                        wrong: {
-                            0: "No article before a standalone adjective.",
-                            1: "No article before a standalone adjective.",
-                            2: "No article before a standalone adjective."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(e) Many heroes gave {ex2_q_e_1} life to save {ex2_q_e_2} motherland.",
-            blanks: {
-                ex2_q_e_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "In this idiomatic phrase 'gave life' (where life is abstract), no article is used.",
-                        wrong: {
-                            0: "Using 'gave a life' would sound like they gave one singular external life. 'Gave life' is the idiom.",
-                            1: "Starts with a consonant sound and takes no article.",
-                            2: "We are referring to the abstract sacrifice, so 'gave life' is the standard expression."
-                        }
-                    }
-                },
-                ex2_q_e_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "They saved their specific country, the motherland. Hence, we use the definite article 'the'.",
-                        wrong: {
-                            0: "There is only one motherland for these heroes, so the definite article 'the' is appropriate.",
-                            1: "'motherland' starts with a consonant sound, so 'an' is incorrect.",
-                            3: "A singular countable noun like 'motherland' requires an article in this context."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(f) {ex2_q_f_1} postman delivered {ex2_q_f_2} parcel. When mother opened {ex2_q_f_3} parcel she found {ex2_q_f_4} woollen cardigan inside.",
-            blanks: {
-                ex2_q_f_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "The postman who regularly delivers to the house is a specific person known in this context, so we use 'the'.",
-                        wrong: {
-                            0: "'a postman' implies any random postman, but in a household context, it refers to 'the postman' who serves the area.",
-                            1: "'postman' starts with a consonant sound, so 'an' is incorrect.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex2_q_f_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "This is the first mention of a singular countable noun ('parcel'), so we use 'a'.",
-                        wrong: {
-                            1: "'parcel' starts with a consonant sound /p/, so 'an' is incorrect.",
-                            2: "It is the first time the parcel is mentioned, so it is indefinite.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex2_q_f_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "This is the second mention of the parcel, so it is now definite.",
-                        wrong: {
-                            0: "The parcel is now specified, so it requires 'the'.",
-                            1: "The parcel is definite and starts with a consonant sound, so 'an' is incorrect.",
-                            3: "A specified singular countable noun requires 'the'."
-                        }
-                    }
-                },
-                ex2_q_f_4: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "This is the first mention of a singular countable noun ('woollen cardigan'), starting with a consonant sound /w/, so we use 'a'.",
-                        wrong: {
-                            1: "'woollen' starts with a consonant sound /w/, so 'an' is incorrect.",
-                            2: "It is the first mention of the cardigan, so it is indefinite.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(g) I really liked {ex2_q_g_1} pen that you gifted me.",
-            blanks: {
-                ex2_q_g_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'pen' is particularized by the relative clause 'that you gifted me'. Therefore, it requires 'the'.",
-                        wrong: {
-                            0: "The pen is not any random pen; it is the specific one you gifted, so we use 'the'.",
-                            1: "'pen' starts with a consonant sound, so 'an' is incorrect.",
-                            3: "A singular countable noun specified by a relative clause requires 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(h) My grandmother is {ex2_q_h_1} old lady. She reads {ex2_q_h_2} Bhagavad Gita daily.",
-            blanks: {
-                ex2_q_h_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 1, // "an"
-                    explanations: {
-                        correct: "'Old' begins with a vowel sound /əʊ/, so we use 'an'.",
-                        wrong: {
-                            0: "'Old' begins with a vowel sound, so 'a' is incorrect.",
-                            2: "This is a general description/classification of her, so we use the indefinite article.",
-                            3: "A singular countable noun phrase ('old lady') requires an article."
-                        }
-                    }
-                },
-                ex2_q_h_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before the names of holy books (like the Bhagavad Gita, the Bible, the Quran).",
-                        wrong: {
-                            0: "Holy books are unique and require the definite article 'the'.",
-                            1: "'Bhagavad' begins with a consonant sound, and holy books require 'the'.",
-                            3: "Holy book names cannot be used without an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(i) {ex2_q_i_1} teacher taught us {ex2_q_i_2} interesting lesson about {ex2_q_i_3} stars, {ex2_q_i_4} planets, and {ex2_q_i_5} solar system today.",
-            blanks: {
-                ex2_q_i_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "In a school context, it refers to 'the teacher' of their class (specific and definite).",
-                        wrong: {
-                            0: "'a teacher' would mean any teacher in the world, but here it is the specific teacher who taught their class today.",
-                            1: "'teacher' begins with a consonant sound, so 'an' is incorrect.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                },
-                ex2_q_i_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 1, // "an"
-                    explanations: {
-                        correct: "'Interesting' begins with a vowel sound /ɪ/, so we use 'an'.",
-                        wrong: {
-                            0: "'Interesting' begins with a vowel sound, so 'a' is incorrect.",
-                            2: "It is the first mention of the lesson, which is not yet specified to the reader, so we use 'an'.",
-                            3: "A singular countable noun phrase ('interesting lesson') requires an article."
-                        }
-                    }
-                },
-                ex2_q_i_3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before names of unique astronomical/celestial bodies (like the stars).",
-                        wrong: {
-                            0: "'stars' is plural, so 'a' is incorrect.",
-                            1: "'stars' is plural, so 'an' is incorrect.",
-                            3: "Names of astronomical bodies require the definite article 'the'."
-                        }
-                    }
-                },
-                ex2_q_i_4: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "Similar to 'the stars', we use 'the' before the names of unique celestial bodies (the planets).",
-                        wrong: {
-                            0: "'planets' is plural, so 'a' is incorrect.",
-                            1: "'planets' is plural, so 'an' is incorrect.",
-                            3: "Names of astronomical bodies require 'the'."
-                        }
-                    }
-                },
-                ex2_q_i_5: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "The solar system is a unique astronomical system, so it requires 'the'.",
-                        wrong: {
-                            0: "There is only one solar system, so the definite article 'the' is required.",
-                            1: "'solar' begins with a consonant sound, so 'an' is incorrect.",
-                            3: "Unique astronomical terms require 'the'."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(j) What time do you have {ex2_q_j_1} lunch?",
-            blanks: {
-                ex2_q_j_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 3, // "x"
-                    explanations: {
-                        correct: "We omit articles ('x') before the names of regular meals (lunch, dinner, breakfast) when used in a general sense.",
-                        wrong: {
-                            0: "Meals are uncountable and do not take 'a' in a general sense.",
-                            1: "'lunch' begins with a consonant sound, so 'an' is incorrect.",
-                            2: "We only use 'the' if referring to a specific meal (e.g. 'the lunch we had yesterday'). Here it is general, so no article is used."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "(k) My brother plays {ex2_q_k_1} guitar.",
-            blanks: {
-                ex2_q_k_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "We use 'the' before names of musical instruments when referring to playing them.",
-                        wrong: {
-                            0: "'a guitar' refers to a physical instrument ('I bought a guitar'), but playing the instrument requires 'the'.",
-                            1: "'guitar' starts with a consonant sound /ɡ/, so 'an' is incorrect.",
-                            3: "Names of musical instruments in this context require 'the'."
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    ex3: [
-        {
-            text: "1. You must be {ex3_q1} guest. We have been expecting you.",
-            blanks: {
-                ex3_q1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "'the' is correct because the guest is expected and therefore specific and definite.",
-                        wrong: {
-                            0: "'a' implies any guest, but since the hosts are expecting this specific person, they are a definite guest.",
-                            1: "'guest' starts with a consonant sound, so 'an' is incorrect.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "2. The guest is {ex3_q2} European.",
-            blanks: {
-                ex3_q2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'European' starts with a vowel letter (E) but is pronounced with a consonant sound 'yu' (/j/), so it takes 'a'.",
-                        wrong: {
-                            1: "Although it starts with the letter 'E', the sound is a consonant 'yu' (/j/), so 'an' is incorrect.",
-                            2: "This is a general description of the guest's nationality/origin, not specifying a unique European, so 'a' is appropriate.",
-                            3: "A singular countable noun class description requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "3. Renu got {ex3_q3} one-way ticket to Kochi.",
-            blanks: {
-                ex3_q3: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'One-way' starts with the vowel letter 'O' but is pronounced with the consonant sound 'w' ('wa'), so it takes 'a'.",
-                        wrong: {
-                            1: "'One-way' has a consonant sound 'w' at the beginning, so it cannot take 'an'.",
-                            2: "Renu got an unspecified ticket, so we use 'a', not 'the'.",
-                            3: "A singular countable noun phrase requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "4. I found {ex3_q4_1} one-rupee coin in {ex3_q4_2} park.",
-            blanks: {
-                ex3_q4_1: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 0, // "a"
-                    explanations: {
-                        correct: "'One-rupee' starts with the vowel letter 'O' but is pronounced with the consonant sound 'w' ('wa'). Hence, it takes 'a'.",
-                        wrong: {
-                            1: "Pronunciation starts with a consonant sound 'w' (as in 'won'), so 'an' is incorrect.",
-                            2: "First mention of a coin, so it is indefinite.",
-                            3: "A singular countable noun phrase requires an article."
-                        }
-                    }
-                },
-                ex3_q4_2: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "The speaker is referring to the specific local park (a definite place known to the listener). Hence we use 'the'.",
-                        wrong: {
-                            0: "Usually, when referring to the local park in a neighborhood context, we use the definite article 'the'.",
-                            1: "'park' starts with a consonant sound /p/, so 'an' is incorrect.",
-                            3: "A singular countable noun requires an article."
-                        }
-                    }
-                }
-            }
-        },
-        {
-            text: "5. The more she gets, {ex3_q5} more she wants.",
-            blanks: {
-                ex3_q5: {
-                    options: ["a", "an", "the", "x"],
-                    correct: 2, // "the"
-                    explanations: {
-                        correct: "This is a parallel comparative structure ('The comparative..., the comparative...'). Therefore, we must use 'the' before the second comparative.",
-                        wrong: {
-                            0: "Comparative structures of this type always require 'the' for both parts of the comparison.",
-                            1: "'more' begins with a consonant sound, so 'an' is incorrect.",
-                            3: "We must use 'the' before both comparatives in this parallel construction."
-                        }
-                    }
-                }
-            }
-        }
-    ]
-};
+// ============================================================
+// 4. FUNCTIONS
+// ============================================================
 
-// Initialize Application
-document.addEventListener('DOMContentLoaded', () => {
-    // Render all quizzes
-    Object.entries(QUIZ_DATA).forEach(([sectionId, questions]) => {
-        renderQuiz(sectionId, questions);
-    });
+// ----- Navigation -----
 
-    scrollToSlide(0);
-    updateProgress();
-    updateCompanionText("WELCOME", "Hey Kinjal! I'm Artie, your grammar buddy. Let's master Articles together. Slide right to start!");
-    
-    // Set up navigation event listeners
-    document.querySelectorAll('.btn-next').forEach(btn => {
-        btn.addEventListener('click', () => {
-            navigateSlide(1);
-        });
-    });
-
-    document.querySelectorAll('.btn-prev').forEach(btn => {
-        btn.addEventListener('click', () => {
-            navigateSlide(-1);
-        });
-    });
-
-    // Check Answers buttons
-    document.getElementById('check-m1').addEventListener('click', () => checkSection('m1'));
-    document.getElementById('check-m2').addEventListener('click', () => checkSection('m2'));
-    document.getElementById('check-m3').addEventListener('click', () => checkSection('m3'));
-    document.getElementById('check-m4').addEventListener('click', () => checkSection('m4'));
-    document.getElementById('check-m5').addEventListener('click', () => checkSection('m5'));
-    document.getElementById('check-ex1').addEventListener('click', () => checkSection('ex1'));
-    document.getElementById('check-ex2').addEventListener('click', () => checkSection('ex2'));
-    document.getElementById('check-ex3').addEventListener('click', () => checkSection('ex3'));
-
-    // Auto-show certificate when last slide is active/unlocked
-    const allSlides = document.querySelectorAll('.slide');
-    if (allSlides.length > 0) {
-        const lastSlide = allSlides[allSlides.length - 1];
-        const observer = new MutationObserver(() => {
-            if (!lastSlide.classList.contains('locked')) {
-                showCertificate();
-            }
-        });
-        observer.observe(lastSlide, { attributes: true, attributeFilter: ['class'] });
-    }
-});
-
-// Navigate Slide
 function navigateSlide(direction) {
-    const nextIndex = APP_STATE.currentSlideIndex + direction;
+    let nextIndex = APP_STATE.currentSlideIndex + direction;
+
+    // If we are moving forward from a lesson/info slide, automatically unlock the next slide (which is a quiz)
+    if (direction === 1 && [0, 1, 3, 5, 7, 9, 11, 13].includes(APP_STATE.currentSlideIndex)) {
+        if (nextIndex > APP_STATE.unlockedSlideIndex) {
+            const allSlides = document.querySelectorAll('.slide');
+            if (allSlides[nextIndex]) {
+                allSlides[nextIndex].classList.remove('locked');
+                APP_STATE.unlockedSlideIndex = nextIndex;
+                updateProgress();
+            }
+        }
+    }
+
     if (nextIndex >= 0 && nextIndex <= APP_STATE.unlockedSlideIndex && nextIndex < APP_STATE.totalSlides) {
         APP_STATE.currentSlideIndex = nextIndex;
         scrollToSlide(nextIndex);
@@ -1312,7 +1601,6 @@ function navigateSlide(direction) {
     }
 }
 
-// Set active slide element
 function scrollToSlide(index) {
     const slides = document.querySelectorAll('.slide');
     slides.forEach((slide, idx) => {
@@ -1324,7 +1612,6 @@ function scrollToSlide(index) {
     });
 }
 
-// Unlock Slide in DOM by removing .locked class
 function unlockNextSlide() {
     const nextSlideIndex = APP_STATE.unlockedSlideIndex + 1;
     const allSlides = document.querySelectorAll('.slide');
@@ -1332,8 +1619,8 @@ function unlockNextSlide() {
         allSlides[nextSlideIndex].classList.remove('locked');
         APP_STATE.unlockedSlideIndex = nextSlideIndex;
         updateProgress();
-        
-        // Enable the Next button on the current active slide card
+
+        // Enable the Next button on the current active slide
         const activeCard = allSlides[APP_STATE.currentSlideIndex];
         const nextBtn = activeCard.querySelector('.btn-next');
         if (nextBtn) {
@@ -1342,16 +1629,17 @@ function unlockNextSlide() {
     }
 }
 
-// Progress calculations
 function updateProgress() {
     const bar = document.querySelector('.progress-bar');
     const text = document.querySelector('.progress-text');
+    if (!bar || !text) return;
     const percentage = Math.round((APP_STATE.unlockedSlideIndex / (APP_STATE.totalSlides - 1)) * 100);
-    if (bar) bar.style.width = `${percentage}%`;
-    if (text) text.textContent = `[${String(APP_STATE.currentSlideIndex + 1).padStart(2, '0')}/${String(APP_STATE.totalSlides).padStart(2, '0')}] PROGRESS: ${percentage}%`;
+    bar.style.width = `${percentage}%`;
+    text.textContent = `[${String(APP_STATE.currentSlideIndex + 1).padStart(2, '0')}/${String(APP_STATE.totalSlides).padStart(2, '0')}] PROGRESS: ${percentage}%`;
 }
 
-// Change Artie's Face & Text
+// ----- Companion -----
+
 function updateCompanionText(faceKey, text) {
     const companionBoxes = document.querySelectorAll('.companion-box');
     companionBoxes.forEach(box => {
@@ -1365,128 +1653,167 @@ function updateCompanionText(faceKey, text) {
     });
 }
 
-// Set standard updates for each slide
 function updateCompanionForSlide(index) {
     const slidesData = [
-        "Welcome! Let's get started. Use the 'Next' button to advance.",
-        "Module 1: Let's learn A vs. An rules and exception sounds. Fill in the blanks and check answers to unlock!",
-        "Module 2: There are specific contexts where we use A or An. Read the rules and practice!",
-        "Module 3: Now let's explore 'The' (Definite Article) and its contexts + proper nouns.",
-        "Module 4: Important! Sometimes we omit articles. Let's see when NOT to use them.",
-        "Module 5: Almost there! Learn about repeating articles for dual items, and using Few/Little.",
-        "Exercise I: Let's practice the first set of 12 full sentences directly from your grammar book!",
-        "Exercise II: Great! Now let's practice the next 11 sentences from your book.",
-        "Exercise III: Final Multiple Choice Quiz. 5 questions from the book to prove your mastery!",
-        "Hooray! You reached the end. Here is your graduation certificate, Kinjal!"
+        "Hey Kinjal! I'm Artie, your grammar buddy. Ready to master Articles (A, An, The)? Click next to start! 🎯",
+        "Lesson 1: A vs. An. Remember, choice depends on the first sound of the following word, not spelling! 🗣️",
+        "Quiz 1: Let's test your understanding of A vs. An sound exceptions. Choose the correct option below! 📝",
+        "Lesson 2: Indefinite Articles. The book outlines 12 specific contexts where we use A or An.",
+        "Quiz 2: Cumulative quiz covering A vs. An sounds and usage contexts. Watch out for exceptions! 🔍",
+        "Lesson 3: Definite Article 'The'. Learn the 14 rules including proper nouns, mountain ranges, and hotels.",
+        "Quiz 3: Cumulative quiz covering definite and indefinite articles. Ready to show off? 🧠",
+        "Lesson 4: Omission of Articles. Knowing when NOT to use an article is crucial for ICSE board exams!",
+        "Quiz 4: Cumulative quiz including omission rules. Is it 'in bed' or 'in the bed'? Let's check! ⚡",
+        "Lesson 5: Repetition of Articles. How repeating an article determines single vs. dual entities.",
+        "Quiz 5: Cumulative quiz covering repetition rules. Watch out for verb agreement hints! 🎓",
+        "Lesson 6: Tricky Quantifiers. Few vs. Little, a few/little, and the few/little. A classic exam target!",
+        "Quiz 6: Cumulative quiz covering quantifiers and advanced board-level cases. You are almost there! 💎",
+        "Quick Recap: A handy cheat sheet summarizing all articles and quantifier rules. 🛡️",
+        "Mega Revision: The ultimate challenge! 30 mixed board-level questions. This is optional but highly recommended! 🔥",
+        "Congratulations, Kinjal! You have conquered the Articles chapter. Here is your certificate! 🏆"
     ];
-    
+
     let face = "WELCOME";
-    if (index === APP_STATE.totalSlides - 1) face = "GRADUATION";
+    if ([2, 4, 6, 8, 10, 12, 14].includes(index)) face = "THINKING";
+    if ([1, 3, 5, 7, 9, 11, 13].includes(index)) face = "HAPPY";
+    if (index === 15) face = "GRADUATION";
+
     updateCompanionText(face, slidesData[index] || "");
 }
 
-// Dynamic Question Rendering
-function renderQuiz(sectionId, questions) {
-    const container = document.getElementById(`quiz-${sectionId}`);
-    if (!container) return;
+// ----- Quiz Engine -----
 
-    const originalScoreSummary = container.querySelector('.score-summary');
-    container.innerHTML = ''; // Clear fallback or existing HTML
+function checkSection(sectionId) {
+    const selects = document.querySelectorAll(`select.dropdown-select[data-qid^="${sectionId}_"]`);
+    let totalQuestions = 0;
+    let correctCount = 0;
+    let errorDetails = [];
 
-    questions.forEach((q, index) => {
-        const block = document.createElement('div');
-        block.className = 'question-block';
+    selects.forEach(select => {
+        const qid = select.dataset.qid;
+        const question = ALL_QUESTIONS[qid];
+        if (!question) return;
 
-        const qSentence = document.createElement('div');
-        qSentence.className = 'blank-fill-container';
+        totalQuestions++;
+        const selectedIndex = parseInt(select.value, 10);
+        const explanationPanel = document.querySelector(`.explanation-panel[data-explain="${qid}"]`);
 
-        // Parse sentence text and insert select elements
-        let htmlText = q.text;
+        if (selectedIndex === question.correct) {
+            // Correct answer
+            correctCount++;
+            select.classList.remove('incorrect');
+            select.classList.add('correct');
 
-        Object.entries(q.blanks).forEach(([key, blank]) => {
-            let selectHTML = `<select class="dropdown-select" data-qid="${key}">`;
-            selectHTML += `<option value="" disabled selected>— Choose —</option>`;
-            blank.options.forEach((opt, optIndex) => {
-                // Format 'x' option to look nice to user
-                const displayOpt = opt === 'x' ? 'No article (x)' : opt;
-                selectHTML += `<option value="${optIndex}">${displayOpt}</option>`;
+            if (explanationPanel) {
+                explanationPanel.innerHTML = `
+                    <div class="result-correct">
+                        <strong>✅ Correct!</strong> ${question.explanations.correct}
+                    </div>
+                `;
+                explanationPanel.classList.add('visible');
+            }
+        } else {
+            // Wrong answer
+            select.classList.remove('correct');
+            select.classList.add('incorrect');
+
+            const selectedOption = question.options[selectedIndex];
+            const correctOption = question.options[question.correct];
+
+            // Get specific wrong explanation
+            let wrongExplanation = '';
+            if (isNaN(selectedIndex)) {
+                wrongExplanation = 'Please select an option before checking.';
+            } else if (question.explanations.wrong[selectedIndex] !== undefined) {
+                wrongExplanation = question.explanations.wrong[selectedIndex];
+            } else {
+                wrongExplanation = `'${selectedOption}' is not the right choice here.`;
+            }
+
+            // Make 'x' print nicely in explanation
+            const displaySelected = selectedOption === 'x' ? 'No article (x)' : selectedOption;
+            const displayCorrect = correctOption === 'x' ? 'No article (x)' : correctOption;
+
+            if (explanationPanel) {
+                explanationPanel.innerHTML = `
+                    <div class="result-wrong">
+                        <strong>❌ Incorrect.</strong> You chose '<em>${displaySelected || "nothing"}</em>'. ${wrongExplanation}
+                    </div>
+                    <div class="result-correct" style="margin-top: 0.5rem;">
+                        <strong>✅ Correct answer: '<em>${displayCorrect}</em>'.</strong> ${question.explanations.correct}
+                    </div>
+                `;
+                explanationPanel.classList.add('visible');
+            }
+
+            errorDetails.push({
+                qid: qid,
+                selected: selectedOption,
+                correct: correctOption,
+                explanation: wrongExplanation
             });
-            selectHTML += `</select>`;
-
-            htmlText = htmlText.replace(`{${key}}`, selectHTML);
-        });
-
-        qSentence.innerHTML = htmlText;
-        block.appendChild(qSentence);
-
-        // Append explanations and toggle buttons for each blank
-        const keys = Object.keys(q.blanks);
-        keys.forEach((key, kIndex) => {
-            const blank = q.blanks[key];
-            const labelSuffix = keys.length > 1 ? ` (Blank ${kIndex + 1})` : '';
-
-            const expPanel = document.createElement('div');
-            expPanel.className = 'explanation-panel';
-            expPanel.dataset.explain = key;
-            block.appendChild(expPanel);
-
-            const btnExplain = document.createElement('button');
-            btnExplain.className = 'btn-explain';
-            btnExplain.dataset.explainfor = key;
-            btnExplain.textContent = `SHOW FULL EXPLANATION${labelSuffix}`;
-            btnExplain.addEventListener('click', () => {
-                toggleFullExplanation(key, blank, q.text, labelSuffix);
-            });
-            block.appendChild(btnExplain);
-
-            const fullExpPanel = document.createElement('div');
-            fullExpPanel.className = 'full-explanation';
-            fullExpPanel.dataset.fullexplain = key;
-            block.appendChild(fullExpPanel);
-        });
-
-        container.appendChild(block);
+        }
     });
 
-    if (originalScoreSummary) {
-        container.appendChild(originalScoreSummary);
-        originalScoreSummary.classList.remove('visible');
-        originalScoreSummary.innerHTML = '';
-    } else {
-        const scoreDiv = document.createElement('div');
-        scoreDiv.className = 'score-summary';
-        scoreDiv.id = `score-${sectionId}`;
-        container.appendChild(scoreDiv);
+    // Store section results
+    APP_STATE.sectionResults[sectionId] = {
+        total: totalQuestions,
+        correct: correctCount,
+        percentage: totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0
+    };
+
+    // Show score summary
+    const feedbackBox = document.querySelector(`.slide:not(.locked) .score-summary`);
+    if (feedbackBox) {
+        feedbackBox.classList.add('visible');
+        if (correctCount === totalQuestions) {
+            feedbackBox.innerHTML = `
+                <div class="score-number">${correctCount}/${totalQuestions}</div>
+                <div class="score-label">Perfect Score! All answers correct!</div>
+                <p style="margin-top: 0.5rem; font-size: 0.95rem;">The next section is now unlocked. Click next to continue.</p>
+            `;
+            updateCompanionText("HAPPY", `Perfect! You got all ${totalQuestions} questions right! Next section is now unlocked! 🌟`);
+            unlockNextSlide();
+        } else {
+            feedbackBox.innerHTML = `
+                <div class="score-number">${correctCount}/${totalQuestions}</div>
+                <div class="score-label">Keep trying! Score: ${APP_STATE.sectionResults[sectionId].percentage}%</div>
+                <p style="margin-top: 0.5rem; font-size: 0.95rem;">Review the explanations below, fix your answers, and try again. You need a perfect score to unlock the next section.</p>
+            `;
+            updateCompanionText("THINKING", `You got ${correctCount} out of ${totalQuestions} correct. Review the explanations and try again — you can do this! 💪`);
+        }
     }
+
+    return { total: totalQuestions, correct: correctCount };
 }
 
-// Toggle Full Explanation Panel
-function toggleFullExplanation(qid, blank, sentenceText, labelSuffix) {
+function toggleFullExplanation(qid) {
     const fullExplanationPanel = document.querySelector(`.full-explanation[data-fullexplain="${qid}"]`);
     if (!fullExplanationPanel) return;
 
+    // Toggle visibility
     if (fullExplanationPanel.classList.contains('visible')) {
         fullExplanationPanel.classList.remove('visible');
         return;
     }
 
-    // Clean placeholder tokens from sentence text for display
-    let cleanedSentence = sentenceText;
-    cleanedSentence = cleanedSentence.replace(/\{[a-zA-Z0-9_]+\}/g, "_____");
+    const question = ALL_QUESTIONS[qid];
+    if (!question) return;
 
-    let analysisHTML = `<h4>📝 Full Analysis${labelSuffix}</h4>`;
-    analysisHTML += `<p class="analysis-sentence"><em>"${cleanedSentence}"</em></p>`;
+    // Build full analysis of ALL options
+    let analysisHTML = `<h4>📝 Full Analysis — ${question.rule}</h4>`;
+    analysisHTML += `<p class="analysis-sentence"><em>"${question.sentence}"</em></p>`;
 
-    blank.options.forEach((option, index) => {
-        const isCorrect = index === blank.correct;
+    question.options.forEach((option, index) => {
+        const isCorrect = index === question.correct;
         const icon = isCorrect ? '✅' : '❌';
         const label = isCorrect ? 'CORRECT' : 'INCORRECT';
         let explanation = '';
 
         if (isCorrect) {
-            explanation = blank.explanations.correct;
+            explanation = question.explanations.correct;
         } else {
-            explanation = blank.explanations.wrong[index] || `'${option}' is not the correct choice.`;
+            explanation = question.explanations.wrong[index] || `'${option}' is not the correct choice.`;
         }
 
         const displayOption = option === 'x' ? 'No article (x)' : option;
@@ -1503,103 +1830,8 @@ function toggleFullExplanation(qid, blank, sentenceText, labelSuffix) {
     fullExplanationPanel.classList.add('visible');
 }
 
-// Check Section Answers
-function checkSection(sectionId) {
-    const selects = document.querySelectorAll(`#quiz-${sectionId} select.dropdown-select`);
-    const questions = QUIZ_DATA[sectionId];
-    if (!questions) return;
+// ----- Certificate -----
 
-    let totalBlanks = 0;
-    let correctCount = 0;
-
-    selects.forEach(select => {
-        const qid = select.dataset.qid;
-        // Find the blank description in data
-        let foundBlank = null;
-        questions.forEach(q => {
-            if (q.blanks[qid]) {
-                foundBlank = q.blanks[qid];
-            }
-        });
-
-        if (!foundBlank) return;
-        totalBlanks++;
-
-        const selectedIndex = select.value === "" ? -1 : parseInt(select.value, 10);
-        const explanationPanel = document.querySelector(`.explanation-panel[data-explain="${qid}"]`);
-
-        if (selectedIndex === foundBlank.correct) {
-            correctCount++;
-            select.classList.remove('incorrect');
-            select.classList.add('correct');
-
-            if (explanationPanel) {
-                explanationPanel.innerHTML = `
-                    <div class="result-correct">
-                        <strong>✅ Correct!</strong> ${foundBlank.explanations.correct}
-                    </div>
-                `;
-                explanationPanel.classList.add('visible');
-            }
-        } else {
-            select.classList.remove('correct');
-            select.classList.add('incorrect');
-
-            const selectedOption = selectedIndex === -1 ? 'None' : foundBlank.options[selectedIndex];
-            const correctOption = foundBlank.options[foundBlank.correct];
-
-            const wrongExplanation = (selectedIndex !== -1 && foundBlank.explanations.wrong[selectedIndex]) 
-                ? foundBlank.explanations.wrong[selectedIndex] 
-                : "You must select the correct article or omission ('x').";
-
-            const displaySelected = selectedOption === 'x' ? 'No article (x)' : selectedOption;
-            const displayCorrect = correctOption === 'x' ? 'No article (x)' : correctOption;
-
-            if (explanationPanel) {
-                explanationPanel.innerHTML = `
-                    <div class="result-wrong">
-                        <strong>❌ Incorrect.</strong> You chose '<em>${displaySelected}</em>'. ${wrongExplanation}
-                    </div>
-                    <div class="result-correct" style="margin-top: 0.5rem;">
-                        <strong>✅ Correct answer: '<em>${displayCorrect}</em>'.</strong> ${foundBlank.explanations.correct}
-                    </div>
-                `;
-                explanationPanel.classList.add('visible');
-            }
-        }
-    });
-
-    // Store section results
-    APP_STATE.sectionResults[sectionId] = {
-        total: totalBlanks,
-        correct: correctCount,
-        percentage: totalBlanks > 0 ? Math.round((correctCount / totalBlanks) * 100) : 0
-    };
-
-    // Show score summary
-    const feedbackBox = document.querySelector(`.slide:not(.locked) .score-summary`);
-    if (feedbackBox) {
-        feedbackBox.classList.add('visible');
-        if (correctCount === totalBlanks) {
-            feedbackBox.innerHTML = `
-                <div class="score-number">${correctCount}/${totalBlanks}</div>
-                <div class="score-label">Perfect Score! All answers correct!</div>
-                <p style="margin-top: 0.5rem; font-size: 0.95rem;">The next section is now unlocked. Slide right to continue.</p>
-            `;
-            updateCompanionText("HAPPY", `Perfect! You got all ${totalBlanks} questions right! Next section is now unlocked! 🌟`);
-            unlockNextSlide();
-        } else {
-            feedbackBox.innerHTML = `
-                <div class="score-number">${correctCount}/${totalBlanks}</div>
-                <div class="score-label">Keep trying! Score: ${APP_STATE.sectionResults[sectionId].percentage}%</div>
-                <p style="margin-top: 0.5rem; font-size: 0.95rem;">Review the explanations below, fix your answers, and try again. You need a perfect score to unlock the next section.</p>
-            `;
-            updateCompanionText("THINKING", `You got ${correctCount} out of ${totalBlanks} correct. Review the explanations and try again — you can do this! 💪`);
-        }
-    }
-}
-
-// Show graduation certificate details
 function showCertificate() {
     const dateStr = new Date().toLocaleDateString('en-US', {
         year: 'numeric',
@@ -1611,11 +1843,12 @@ function showCertificate() {
         certDate.textContent = dateStr;
     }
 
+    // Populate score summary if available
     const certScore = document.getElementById('cert-score');
     if (certScore) {
         let totalCorrect = 0;
         let totalQuestions = 0;
-        for (const [_, result] of Object.entries(APP_STATE.sectionResults)) {
+        for (const [section, result] of Object.entries(APP_STATE.sectionResults)) {
             totalCorrect += result.correct;
             totalQuestions += result.total;
         }
@@ -1624,3 +1857,198 @@ function showCertificate() {
         }
     }
 }
+
+// ============================================================
+// 4. DYNAMIC QUESTION RENDERING
+// ============================================================
+function renderArticlesQuestions() {
+    const sections = {
+        c1: QUESTIONS_C1,
+        c2: QUESTIONS_C2,
+        c3: QUESTIONS_C3,
+        c4: QUESTIONS_C4,
+        c5: QUESTIONS_C5,
+        c6: QUESTIONS_C6,
+        mega: QUESTIONS_MEGA
+    };
+
+    for (const [sectionId, questions] of Object.entries(sections)) {
+        const container = document.getElementById(`quiz-${sectionId}`);
+        if (!container) continue;
+
+        const originalScoreSummary = container.querySelector('.score-summary');
+
+        container.innerHTML = ''; // Clear fallback/existing HTML
+
+        questions.forEach((q, index) => {
+            const block = document.createElement('div');
+            block.className = 'question-block';
+            block.dataset.q = q.id;
+
+            const qSentence = document.createElement('div');
+            qSentence.className = 'q-sentence';
+
+            const numSpan = document.createElement('span');
+            numSpan.className = 'q-number';
+            numSpan.textContent = `${index + 1}. `;
+            qSentence.appendChild(numSpan);
+
+            // Split sentence around the blank "_____"
+            const parts = q.sentence.split('_____');
+
+            // Add first part of sentence
+            const part1 = document.createTextNode(parts[0]);
+            qSentence.appendChild(part1);
+
+            // Create select element
+            const select = document.createElement('select');
+            select.className = 'dropdown-select';
+            select.dataset.qid = q.id;
+
+            const placeholder = document.createElement('option');
+            placeholder.value = '';
+            placeholder.disabled = true;
+            placeholder.selected = true;
+            placeholder.textContent = '— Choose —';
+            select.appendChild(placeholder);
+
+            q.options.forEach((optText, optIndex) => {
+                const opt = optText === 'x' ? 'No article (x)' : optText;
+                const optEl = document.createElement('option');
+                optEl.value = optIndex;
+                optEl.textContent = opt;
+                select.appendChild(optEl);
+            });
+            qSentence.appendChild(select);
+
+            // Add second part of sentence
+            if (parts[1]) {
+                const part2 = document.createTextNode(parts[1]);
+                qSentence.appendChild(part2);
+            }
+
+            // Add rule tag
+            if (q.rule) {
+                const ruleTag = document.createElement('span');
+                ruleTag.className = 'q-rule-tag';
+                ruleTag.textContent = q.rule.split(':')[0];
+                qSentence.appendChild(ruleTag);
+            }
+
+            block.appendChild(qSentence);
+
+            // Add explanation panel
+            const expPanel = document.createElement('div');
+            expPanel.className = 'explanation-panel';
+            expPanel.dataset.explain = q.id;
+            block.appendChild(expPanel);
+
+            // Add full explanation button
+            const btnExplain = document.createElement('button');
+            btnExplain.className = 'btn-explain';
+            btnExplain.dataset.explainfor = q.id;
+            btnExplain.textContent = 'SHOW FULL EXPLANATION';
+            btnExplain.addEventListener('click', () => {
+                toggleFullExplanation(q.id);
+            });
+            block.appendChild(btnExplain);
+
+            // Add full explanation panel
+            const fullExpPanel = document.createElement('div');
+            fullExpPanel.className = 'full-explanation';
+            fullExpPanel.dataset.fullexplain = q.id;
+            block.appendChild(fullExpPanel);
+
+            container.appendChild(block);
+        });
+
+        // Re-append or create score summary
+        if (originalScoreSummary) {
+            container.appendChild(originalScoreSummary);
+            originalScoreSummary.classList.remove('visible');
+            originalScoreSummary.innerHTML = '';
+        } else {
+            const scoreDiv = document.createElement('div');
+            scoreDiv.className = 'score-summary';
+            scoreDiv.id = `score-${sectionId}`;
+            container.appendChild(scoreDiv);
+        }
+    }
+}
+
+// ============================================================
+// 5. DOMContentLoaded INIT
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial setup
+    renderArticlesQuestions();
+    scrollToSlide(0);
+    updateProgress();
+    updateCompanionText("WELCOME", "Hey Kinjal! I'm Artie, your grammar buddy. Ready to master English Articles? Click next to start! 🎯");
+
+    // ----- Bind Navigation Buttons -----
+    document.querySelectorAll('.btn-next').forEach(btn => {
+        btn.addEventListener('click', () => {
+            navigateSlide(1);
+        });
+    });
+
+    document.querySelectorAll('.btn-prev').forEach(btn => {
+        btn.addEventListener('click', () => {
+            navigateSlide(-1);
+        });
+    });
+
+    // ----- Bind Check Buttons -----
+    const checkC1 = document.getElementById('check-c1');
+    if (checkC1) checkC1.addEventListener('click', () => checkSection('c1'));
+
+    const checkC2 = document.getElementById('check-c2');
+    if (checkC2) checkC2.addEventListener('click', () => checkSection('c2'));
+
+    const checkC3 = document.getElementById('check-c3');
+    if (checkC3) checkC3.addEventListener('click', () => checkSection('c3'));
+
+    const checkC4 = document.getElementById('check-c4');
+    if (checkC4) checkC4.addEventListener('click', () => checkSection('c4'));
+
+    const checkC5 = document.getElementById('check-c5');
+    if (checkC5) checkC5.addEventListener('click', () => checkSection('c5'));
+
+    const checkC6 = document.getElementById('check-c6');
+    if (checkC6) checkC6.addEventListener('click', () => checkSection('c6'));
+
+    const checkMega = document.getElementById('check-mega');
+    if (checkMega) checkMega.addEventListener('click', () => checkSection('mega'));
+
+    // ----- Skip to Certificate (Mega is optional) -----
+    const skipToEndBtn = document.getElementById('skip-mega');
+    if (skipToEndBtn) {
+        skipToEndBtn.addEventListener('click', () => {
+            // Unlock Graduation (Slide 16, index 15)
+            const allSlides = document.querySelectorAll('.slide');
+            if (allSlides[15]) {
+                allSlides[15].classList.remove('locked');
+                APP_STATE.unlockedSlideIndex = 15;
+            }
+            APP_STATE.currentSlideIndex = 15;
+            scrollToSlide(15);
+            updateProgress();
+            updateCompanionForSlide(15);
+        });
+    }
+
+    // ----- Certificate slide detection -----
+    // When the last slide is reached, auto-show certificate
+    const allSlides = document.querySelectorAll('.slide');
+    if (allSlides.length > 0) {
+        const lastSlide = allSlides[allSlides.length - 1];
+        const observer = new MutationObserver(() => {
+            if (!lastSlide.classList.contains('locked')) {
+                showCertificate();
+            }
+        });
+        observer.observe(lastSlide, { attributes: true, attributeFilter: ['class'] });
+    }
+});

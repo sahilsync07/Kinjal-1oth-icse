@@ -1,4 +1,4 @@
-/* sva.js - Interactive Subject-Verb Agreement Teaching System */
+/* sva.js - Interactive Subject-Verb Agreement Teaching System (ICSE Class 10 Level) */
 
 // ============================================================
 // 1. COMPANION EXPRESSIONS (ASCII Art)
@@ -15,1371 +15,1529 @@ const COMPANION_EXPRESSIONS = {
 // 2. QUESTIONS DATA — The Main Data Store
 // ============================================================
 
-// ----- SECTION: exA (Rules 1-5) — 15 questions -----
-const QUESTIONS_EXA = [
+// ----- QUIZ 1 (Rules 1-3) — 5 Questions -----
+const QUESTIONS_C1 = [
     {
-        id: 'exA_q1',
-        sentence: 'The bouquet of roses _____ beautiful.',
-        options: ['is', 'are', 'has', 'have'],
-        correct: 0,
+        id: 'c1_q1',
+        sentence: 'The bouquet of red roses _____ a beautiful scent.',
+        options: ['emit', 'emits', 'are emitting', 'have emitted'],
+        correct: 1,
         rule: 'Rule 1: Prepositional phrases do not change the subject',
         explanations: {
-            correct: "'The bouquet' is a singular subject. The phrase 'of roses' is a prepositional phrase that does NOT change the subject. A singular subject takes the singular verb 'is'.",
+            correct: "'The bouquet' is the singular subject. 'Of red roses' is a prepositional phrase modifying the subject. The verb agrees with 'bouquet', so 'emits' (singular) is correct.",
             wrong: {
-                1: "'Are' is a plural verb. You may have been confused by 'roses' (plural), but 'roses' is inside the prepositional phrase 'of roses' — the actual subject is 'the bouquet' (singular).",
-                2: "'Has' indicates possession, but this sentence describes a quality ('beautiful'). We need the linking verb 'is', not the possessive verb 'has'.",
-                3: "'Have' is both plural AND the wrong verb type. The subject 'bouquet' is singular and needs the linking verb 'is', not 'have'."
+                0: "'Emit' is plural. The subject is 'bouquet' (singular), not 'roses' (plural).",
+                2: "'Are emitting' is plural. Prepositional phrases do not change the singular subject 'bouquet'.",
+                3: "'Have emitted' is plural. 'The bouquet' requires the singular helper 'has'."
             }
         }
     },
     {
-        id: 'exA_q2',
-        sentence: 'The list of items _____ on the desk.',
+        id: 'c1_q2',
+        sentence: 'The chief engineer, accompanied by his assistants, _____ inspect the bridge.',
+        options: ['were planning to', 'are planning to', 'plans to', 'have planned to'],
+        correct: 2,
+        rule: 'Rule 2: Intervening phrases do not affect subject number',
+        explanations: {
+            correct: "'The chief engineer' is the singular subject. Phrases like 'accompanied by' do not count as part of the subject. Hence, the singular verb 'plans to' is correct.",
+            wrong: {
+                0: "'Were planning to' is plural. The phrase 'accompanied by...' does not make the subject plural.",
+                1: "'Are planning to' is plural. Only the chief engineer is the grammatical subject.",
+                3: "'Have planned to' is plural. The subject remains 'the chief engineer'."
+            }
+        }
+    },
+    {
+        id: 'c1_q3',
+        sentence: 'Bread and butter _____ our daily breakfast.',
+        options: ['constitutes', 'constitute', 'are constituting', 'have constituted'],
+        correct: 0,
+        rule: 'Rule 3 Exception: Single ideas/objects take singular verbs',
+        explanations: {
+            correct: "'Bread and butter' is considered a single compound concept/meal here, so it takes the singular verb 'constitutes'.",
+            wrong: {
+                1: "'Constitute' is plural. While joined by 'and', 'bread and butter' represents a unified food item/breakfast concept.",
+                2: "'Are constituting' is plural. A singular verb is required for a single concept.",
+                3: "'Have constituted' is plural. Use 'has' or singular forms for a unified concept."
+            }
+        }
+    },
+    {
+        id: 'c1_q4',
+        sentence: 'The director and producer of the film _____ just arrived.',
+        options: ['have', 'has', 'were', 'are'],
+        correct: 1,
+        rule: 'Rule 3 Exception: Joint ownership/same person',
+        explanations: {
+            correct: "The single article 'The' before 'director and producer' shows that both roles are held by the same individual (singular), so 'has' is correct.",
+            wrong: {
+                0: "'Have' is plural. If it were two different people, it would say 'The director and the producer'.",
+                2: "'Were' is plural and doesn't form the present perfect tense with 'arrived'.",
+                3: "'Are' is plural and is grammatically incorrect with the past participle 'arrived'."
+            }
+        }
+    },
+    {
+        id: 'c1_q5',
+        sentence: 'Each boy and every girl _____ given a prize.',
+        options: ['were', 'was', 'are', 'have been'],
+        correct: 1,
+        rule: 'Rule 3 Exception: Preceded by each/every',
+        explanations: {
+            correct: "When compound subjects joined by 'and' are preceded by 'each' or 'every', they take a singular verb, making 'was' correct.",
+            wrong: {
+                0: "'Were' is plural. Preceding 'each' or 'every' makes the compound subject grammatically singular.",
+                2: "'Are' is plural. The sentence requires a singular verb.",
+                3: "'Have been' is plural. A singular verb is required."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 2 (Rules 1-5 cumulative) — 8 Questions -----
+const QUESTIONS_C2 = [
+    {
+        id: 'c2_q1',
+        sentence: 'Neither the teacher nor the students _____ present at the meeting.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 4: Alternative subjects (proximity rule)',
+        explanations: {
+            correct: "For subjects joined by 'neither... nor', the verb agrees with the closer subject. 'Students' is plural, so 'were' is correct.",
+            wrong: {
+                0: "'Was' is singular. The verb must agree with 'students' (plural), which is closer.",
+                2: "'Is' is singular. The closer subject 'students' is plural.",
+                3: "'Has been' is singular. The closer subject 'students' is plural."
+            }
+        }
+    },
+    {
+        id: 'c2_q2',
+        sentence: 'Either the players or the coach _____ to blame for the defeat.',
+        options: ['are', 'were', 'is', 'have been'],
+        correct: 2,
+        rule: 'Rule 4: Alternative subjects (proximity rule)',
+        explanations: {
+            correct: "For subjects joined by 'either... or', the verb agrees with the closer subject. 'Coach' is singular, so the singular 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. The closer subject is 'coach' (singular).",
+                1: "'Were' is plural. The closer subject is 'coach' (singular).",
+                3: "'Have been' is plural. The closer subject is 'coach' (singular)."
+            }
+        }
+    },
+    {
+        id: 'c2_q3',
+        sentence: 'Each of the candidates _____ to be interviewed separately.',
+        options: ['has', 'have', 'are', 'were'],
+        correct: 0,
+        rule: 'Rule 5: Singular indefinite pronouns',
+        explanations: {
+            correct: "'Each' is always singular. 'Of the candidates' is a prepositional phrase. The verb agrees with 'each', so 'has' is correct.",
+            wrong: {
+                1: "'Have' is plural. 'Each' is grammatically singular and requires a singular verb.",
+                2: "'Are' is plural. The singular pronoun 'each' must be paired with a singular verb.",
+                3: "'Were' is plural. A singular verb is required."
+            }
+        }
+    },
+    {
+        id: 'c2_q4',
+        sentence: 'Someone in the audience _____ loudly during the performance.',
+        options: ['cough', 'coughs', 'are coughing', 'were coughing'],
+        correct: 1,
+        rule: 'Rule 5: Singular indefinite pronouns',
+        explanations: {
+            correct: "'Someone' is a singular indefinite pronoun, so it takes the singular verb 'coughs'.",
+            wrong: {
+                0: "'Cough' is plural. Singular pronouns like 'someone' require the third-person singular verb form.",
+                2: "'Are coughing' is plural. 'Someone' is singular.",
+                3: "'Were coughing' is plural. 'Someone' is singular."
+            }
+        }
+    },
+    {
+        id: 'c2_q5',
+        sentence: 'Neither of the two books _____ interesting to read.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 5: Singular indefinite pronouns',
+        explanations: {
+            correct: "'Neither' is a singular indefinite pronoun. The verb agrees with 'neither', so 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. The pronoun 'neither' is singular, regardless of 'books'.",
+                2: "'Were' is plural. The pronoun 'neither' is singular.",
+                3: "'Have been' is plural. The pronoun 'neither' is singular."
+            }
+        }
+    },
+    {
+        id: 'c2_q6',
+        sentence: 'The quality of these mangoes _____ not good.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 1: Prepositional phrases',
+        explanations: {
+            correct: "The subject is 'quality' (singular), not 'mangoes' (plural). Thus, 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. The subject is 'quality' (singular).",
+                2: "'Were' is plural. The subject is 'quality' (singular).",
+                3: "'Have been' is plural. The subject is 'quality' (singular)."
+            }
+        }
+    },
+    {
+        id: 'c2_q7',
+        sentence: 'The teacher, as well as her pupils, _____ excited about the field trip.',
+        options: ['were', 'are', 'is', 'have been'],
+        correct: 2,
+        rule: 'Rule 2: Intervening phrases',
+        explanations: {
+            correct: "'The teacher' is the singular subject. 'As well as her pupils' does not change the subject's singular number, so 'is' is correct.",
+            wrong: {
+                0: "'Were' is plural. 'As well as' phrases do not make the subject plural.",
+                1: "'Are' is plural. Only 'the teacher' is the grammatical subject.",
+                3: "'Have been' is plural. The subject is singular."
+            }
+        }
+    },
+    {
+        id: 'c2_q8',
+        sentence: 'Fire and water _____ not agree.',
+        options: ['does', 'do', 'is', 'are'],
+        correct: 1,
+        rule: 'Rule 3: Compound subjects joined by and',
+        explanations: {
+            correct: "'Fire and water' are two distinct elements joined by 'and', so they require the plural verb 'do'.",
+            wrong: {
+                0: "'Does' is singular. 'Fire and water' are two separate things, making the subject plural.",
+                2: "'Is' is singular and doesn't fit grammatically with the verb 'agree'.",
+                3: "'Are' is plural but doesn't form a correct auxiliary structure with 'agree' here. We need the helper 'do'."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 3 (Rules 1-8 cumulative) — 10 Questions -----
+const QUESTIONS_C3 = [
+    {
+        id: 'c3_q1',
+        sentence: 'Both of the novels _____ worth reading.',
+        options: ['is', 'are', 'has been', 'was'],
+        correct: 1,
+        rule: 'Rule 6: Plural indefinite pronouns',
+        explanations: {
+            correct: "'Both' is a plural indefinite pronoun and always takes a plural verb, so 'are' is correct.",
+            wrong: {
+                0: "'Is' is singular. 'Both' is always plural.",
+                2: "'Has been' is singular. 'Both' is plural.",
+                3: "'Was' is singular. 'Both' is plural."
+            }
+        }
+    },
+    {
+        id: 'c3_q2',
+        sentence: 'Several of the team members _____ absent today.',
+        options: ['is', 'are', 'was', 'has been'],
+        correct: 1,
+        rule: 'Rule 6: Plural indefinite pronouns',
+        explanations: {
+            correct: "'Several' is a plural indefinite pronoun and takes a plural verb, so 'are' is correct.",
+            wrong: {
+                0: "'Is' is singular. 'Several' is plural.",
+                2: "'Was' is singular. 'Several' is plural.",
+                3: "'Has been' is singular. 'Several' is plural."
+            }
+        }
+    },
+    {
+        id: 'c3_q3',
+        sentence: 'Some of the spilled milk _____ on the table.',
         options: ['is', 'are', 'were', 'have been'],
         correct: 0,
-        rule: 'Rule 1: Prepositional phrases do not change the subject',
+        rule: 'Rule 7: SANAM indefinite pronouns (milk is uncountable)',
         explanations: {
-            correct: "'The list' is the subject (singular). 'Of items' is a prepositional phrase — it does not affect the verb. A singular subject takes 'is'.",
+            correct: "'Some' refers to 'milk', which is uncountable and singular, so it takes the singular verb 'is'.",
             wrong: {
-                1: "'Are' is plural. The word 'items' may mislead you, but 'items' is inside the prepositional phrase. The subject 'list' is singular.",
-                2: "'Were' is past tense and plural. The sentence is in the present tense and the subject 'list' is singular, so 'is' is correct.",
-                3: "'Have been' is plural (present perfect). The subject 'list' is singular and the sentence is simple present tense."
+                1: "'Are' is plural. 'Milk' is uncountable and requires a singular verb.",
+                2: "'Were' is plural. 'Milk' is uncountable and singular.",
+                3: "'Have been' is plural. Uncountable nouns are singular."
             }
         }
     },
     {
-        id: 'exA_q3',
-        sentence: 'The quality of these mangoes _____ good.',
+        id: 'c3_q4',
+        sentence: 'Some of the fresh apples _____ rotten.',
+        options: ['is', 'are', 'was', 'has been'],
+        correct: 1,
+        rule: 'Rule 7: SANAM indefinite pronouns (apples is plural countable)',
+        explanations: {
+            correct: "'Some' refers to 'apples', which is a plural countable noun, so it takes the plural verb 'are'.",
+            wrong: {
+                0: "'Is' is singular. 'Some' here refers to the plural 'apples'.",
+                2: "'Was' is singular. 'Some' here refers to the plural 'apples'.",
+                3: "'Has been' is singular. 'Some' here refers to the plural 'apples'."
+            }
+        }
+    },
+    {
+        id: 'c3_q5',
+        sentence: 'None of the homework _____ completed yet.',
         options: ['are', 'is', 'were', 'have been'],
         correct: 1,
-        rule: 'Rule 1: Prepositional phrases do not change the subject',
+        rule: 'Rule 7: SANAM indefinite pronouns (homework is uncountable)',
         explanations: {
-            correct: "'The quality' is the subject (singular). 'Of these mangoes' is a prepositional phrase. A singular subject takes the singular verb 'is'.",
+            correct: "'None' refers to 'homework', which is uncountable and singular, so the singular verb 'is' is correct.",
             wrong: {
-                0: "'Are' is plural. Don't be misled by 'mangoes' — it sits inside the prepositional phrase and is not the subject. The subject is 'quality' (singular).",
-                2: "'Were' is past tense and plural. The sentence uses simple present tense and the singular subject 'quality'.",
-                3: "'Have been' is plural (present perfect continuous). The singular subject 'quality' needs 'is'."
+                0: "'Are' is plural. 'Homework' is uncountable and singular.",
+                2: "'Were' is plural. 'Homework' is uncountable and singular.",
+                3: "'Have been' is plural. 'Homework' is uncountable and singular."
             }
         }
     },
     {
-        id: 'exA_q4',
-        sentence: 'Bread and butter _____ a common breakfast.',
-        options: ['is', 'are', 'were', 'have'],
+        id: 'c3_q6',
+        sentence: 'The committee _____ agreed on the new policy.',
+        options: ['have', 'has', 'are', 'were'],
+        correct: 1,
+        rule: 'Rule 8: Collective nouns (acting as a unit)',
+        explanations: {
+            correct: "The committee is acting as a single, unified group here, so it takes the singular verb 'has'.",
+            wrong: {
+                0: "'Have' is plural. Since the committee is in agreement as a single unit, a singular verb is required.",
+                2: "'Are' is plural and grammatically incorrect with the past participle 'agreed'.",
+                3: "'Were' is plural and grammatically incorrect here."
+            }
+        }
+    },
+    {
+        id: 'c3_q7',
+        sentence: 'The committee _____ divided in their opinions.',
+        options: ['is', 'are', 'was', 'has been'],
+        correct: 1,
+        rule: 'Rule 8: Collective nouns (acting individually)',
+        explanations: {
+            correct: "The committee members are divided and acting as individuals (indicated by 'their'), so it takes the plural verb 'are'.",
+            wrong: {
+                0: "'Is' is singular. The pronoun 'their' and the division of opinions show members are acting individually, requiring a plural verb.",
+                2: "'Was' is singular. Individual division requires a plural verb.",
+                3: "'Has been' is singular. Individual division requires a plural verb."
+            }
+        }
+    },
+    {
+        id: 'c3_q8',
+        sentence: 'Neither the manager nor the clerks _____ the keys.',
+        options: ['has', 'have', 'is having', 'was having'],
+        correct: 1,
+        rule: 'Rule 4: Proximity rule',
+        explanations: {
+            correct: "The verb agrees with the closer subject, 'clerks', which is plural, so 'have' is correct.",
+            wrong: {
+                0: "'Has' is singular. The closer subject 'clerks' is plural.",
+                2: "'Is having' is singular. The closer subject 'clerks' is plural.",
+                3: "'Was having' is singular. The closer subject 'clerks' is plural."
+            }
+        }
+    },
+    {
+        id: 'c3_q9',
+        sentence: 'Everybody in the class _____ the answer.',
+        options: ['know', 'knows', 'are knowing', 'have known'],
+        correct: 1,
+        rule: 'Rule 5: Singular indefinite pronouns',
+        explanations: {
+            correct: "'Everybody' is a singular indefinite pronoun, so it takes the singular verb 'knows'.",
+            wrong: {
+                0: "'Know' is plural. Indefinite pronouns like 'everybody' are singular.",
+                2: "'Are knowing' is plural. 'Everybody' requires a singular verb.",
+                3: "'Have known' is plural. 'Everybody' requires a singular verb."
+            }
+        }
+    },
+    {
+        id: 'c3_q10',
+        sentence: 'The horse and carriage _____ outside the gate.',
+        options: ['stand', 'stands', 'are standing', 'were standing'],
+        correct: 1,
+        rule: 'Rule 3 Exception: Single concept/entity',
+        explanations: {
+            correct: "'The horse and carriage' represents a single unit/vehicle, so it takes the singular verb 'stands'.",
+            wrong: {
+                0: "'Stand' is plural. 'Horse and carriage' refers to a single combined unit, not separate entities.",
+                2: "'Are standing' is plural. 'Horse and carriage' is treated as a single unit.",
+                3: "'Were standing' is plural. 'Horse and carriage' is treated as a single unit."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 4 (Rules 1-11 cumulative) — 12 Questions -----
+const QUESTIONS_C4 = [
+    {
+        id: 'c4_q1',
+        sentence: 'Mathematics _____ an interesting but challenging subject.',
+        options: ['is', 'are', 'were', 'have been'],
         correct: 0,
-        rule: 'Rule 2: Compound subjects treated as a single unit take singular verb',
+        rule: 'Rule 9: Nouns plural in form but singular in meaning',
         explanations: {
-            correct: "'Bread and butter' is a compound subject that refers to a single concept (one dish), not two separate items. When two nouns joined by 'and' refer to the same thing or idea, they take a singular verb.",
+            correct: "'Mathematics' is a singular academic subject, so it takes the singular verb 'is'.",
             wrong: {
-                1: "'Are' would be correct if 'bread' and 'butter' were two separate items. But 'bread and butter' is a fixed expression referring to one dish, so it takes a singular verb.",
-                2: "'Were' is past tense and plural. The sentence is present tense and 'bread and butter' as a single concept takes a singular verb.",
-                3: "'Have' is plural and means possession, which doesn't fit 'is a common breakfast' — we need the linking verb 'is'."
+                1: "'Are' is plural. 'Mathematics' is singular despite ending in 's'.",
+                2: "'Were' is plural. 'Mathematics' is singular.",
+                3: "'Have been' is plural. 'Mathematics' is singular."
             }
         }
     },
     {
-        id: 'exA_q5',
-        sentence: 'My friend and mentor _____ guided me well.',
-        options: ['has', 'have', 'is', 'are'],
+        id: 'c4_q2',
+        sentence: 'The news from the border _____ very encouraging.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 9: Nouns plural in form but singular in meaning',
+        explanations: {
+            correct: "'News' is uncountable and grammatically singular, so it takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. 'News' is singular despite ending in 's'.",
+                2: "'Were' is plural. 'News' is singular.",
+                3: "'Have been' is plural. 'News' is singular."
+            }
+        }
+    },
+    {
+        id: 'c4_q3',
+        sentence: 'These scissors _____ too blunt to cut paper.',
+        options: ['is', 'are', 'was', 'has been'],
+        correct: 1,
+        rule: 'Rule 10: Nouns that are always plural',
+        explanations: {
+            correct: "'Scissors' is a noun that is always plural and takes a plural verb, so 'are' is correct.",
+            wrong: {
+                0: "'Is' is singular. 'Scissors' is always plural unless preceded by 'a pair of'.",
+                2: "'Was' is singular. 'Scissors' is always plural.",
+                3: "'Has been' is singular. 'Scissors' is always plural."
+            }
+        }
+    },
+    {
+        id: 'c4_q4',
+        sentence: 'A new pair of trousers _____ in the closet.',
+        options: ['are hanging', 'hang', 'is hanging', 'were hanging'],
+        correct: 2,
+        rule: 'Rule 10: Plural nouns preceded by "a pair of"',
+        explanations: {
+            correct: "When 'trousers' is preceded by 'a pair of', the subject becomes the singular 'pair', so 'is hanging' is correct.",
+            wrong: {
+                0: "'Are hanging' is plural. The subject is 'pair' (singular), not 'trousers'.",
+                1: "'Hang' is plural. The subject is 'pair' (singular).",
+                3: "'Were hanging' is plural. The subject is 'pair' (singular)."
+            }
+        }
+    },
+    {
+        id: 'c4_q5',
+        sentence: 'Fifty dollars _____ a large sum of money for this book.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 11: Expressions of money as a single unit',
+        explanations: {
+            correct: "An expression of money ('Fifty dollars') is treated as a single sum/unit, so it takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. Sums of money are treated as singular units.",
+                2: "'Were' is plural. Sums of money are treated as singular units.",
+                3: "'Have been' is plural. Sums of money are treated as singular units."
+            }
+        }
+    },
+    {
+        id: 'c4_q6',
+        sentence: 'Ten kilometers _____ a long distance to walk daily.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 11: Expressions of distance as a single unit',
+        explanations: {
+            correct: "Distances ('Ten kilometers') are considered a single unit of measurement, so they take the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. Distances are treated as singular units.",
+                2: "'Were' is plural. Distances are treated as singular units.",
+                3: "'Have been' is plural. Distances are treated as singular units."
+            }
+        }
+    },
+    {
+        id: 'c4_q7',
+        sentence: 'The jury _____ arguing among themselves over the verdict.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 8: Collective nouns (acting individually)',
+        explanations: {
+            correct: "The phrase 'among themselves' shows the members of the jury are acting as individuals, so the plural verb 'were' is correct.",
+            wrong: {
+                0: "'Was' is singular. The jury members are acting individually, so a plural verb is needed.",
+                2: "'Is' is singular. The individual action requires a plural verb.",
+                3: "'Has been' is singular. The individual action requires a plural verb."
+            }
+        }
+    },
+    {
+        id: 'c4_q8',
+        sentence: 'All of the cake _____ eaten by the children.',
+        options: ['were', 'was', 'are', 'have been'],
+        correct: 1,
+        rule: 'Rule 7: SANAM indefinite pronouns (cake is singular countable/mass)',
+        explanations: {
+            correct: "'All' refers to 'cake' (singular/mass), so it takes the singular verb 'was'.",
+            wrong: {
+                0: "'Were' is plural. Since 'cake' is singular, 'all' is singular.",
+                2: "'Are' is plural. Since 'cake' is singular, 'all' is singular.",
+                3: "'Have been' is plural. Since 'cake' is singular, 'all' is singular."
+            }
+        }
+    },
+    {
+        id: 'c4_q9',
+        sentence: 'Everyone who attended the seminar _____ given a handbook.',
+        options: ['was', 'were', 'are', 'have been'],
         correct: 0,
-        rule: 'Rule 2: Two nouns referring to the same person take singular verb',
+        rule: 'Rule 5: Singular indefinite pronouns',
         explanations: {
-            correct: "'My friend and mentor' refers to ONE person who is both a friend and a mentor (only one article 'my' before both nouns). When two nouns refer to the same person, the verb is singular — 'has'.",
+            correct: "'Everyone' is a singular indefinite pronoun, so it takes the singular verb 'was'.",
             wrong: {
-                1: "'Have' would be correct if we were talking about two different people ('My friend and my mentor have...'). But since there's only one article, it's one person.",
-                2: "'Is' is a linking verb, but the sentence needs an auxiliary verb for the past participle 'guided'. 'Has guided' (present perfect) is the correct form.",
-                3: "'Are' is both plural and the wrong verb type. The subject is one person, and we need 'has' as an auxiliary for 'guided'."
+                1: "'Were' is plural. 'Everyone' is always singular.",
+                2: "'Are' is plural. 'Everyone' is always singular.",
+                3: "'Have been' is plural. 'Everyone' is always singular."
             }
         }
     },
     {
-        id: 'exA_q6',
-        sentence: 'Tom and Jerry _____ playing in the garden.',
-        options: ['is', 'are', 'was', 'has'],
-        correct: 1,
-        rule: 'Rule 2: Two separate subjects joined by "and" take plural verb',
-        explanations: {
-            correct: "'Tom and Jerry' are two separate individuals joined by 'and'. When two distinct subjects are connected by 'and', they form a plural subject and take a plural verb — 'are'.",
-            wrong: {
-                0: "'Is' is singular. Two separate people (Tom AND Jerry) make a plural subject, requiring the plural verb 'are'.",
-                2: "'Was' is singular past tense. The sentence uses present continuous ('playing'), so we need 'are playing', not 'was playing'.",
-                3: "'Has' doesn't work with the present continuous tense. We need 'are playing', not 'has playing'."
-            }
-        }
-    },
-    {
-        id: 'exA_q7',
-        sentence: 'Either the students or the teacher _____ responsible.',
-        options: ['are', 'is', 'were', 'have'],
-        correct: 1,
-        rule: 'Rule 3: Either/or — verb agrees with the nearer subject',
-        explanations: {
-            correct: "In 'either...or' constructions, the verb agrees with the NEARER subject. 'The teacher' (singular) is closer to the verb, so the verb is singular — 'is'.",
-            wrong: {
-                0: "'Are' is plural. Although 'students' is plural, in 'either...or' sentences, the verb agrees with the nearer subject, which is 'teacher' (singular).",
-                2: "'Were' is past tense. The sentence is in the present tense. Also, proximity rule applies: 'teacher' (singular) is nearer.",
-                3: "'Have' doesn't fit as a linking verb here. The sentence needs 'is' to link the subject to 'responsible'."
-            }
-        }
-    },
-    {
-        id: 'exA_q8',
-        sentence: 'Neither the captain nor the players _____ ready.',
-        options: ['is', 'was', 'are', 'has'],
+        id: 'c4_q10',
+        sentence: 'The captain, together with his crew, _____ commended for bravery.',
+        options: ['were', 'are', 'was', 'have been'],
         correct: 2,
-        rule: 'Rule 3: Neither/nor — verb agrees with the nearer subject',
+        rule: 'Rule 2: Intervening phrases',
         explanations: {
-            correct: "In 'neither...nor' constructions, the verb agrees with the NEARER subject. 'The players' (plural) is closer to the verb, so the verb is plural — 'are'.",
+            correct: "The subject is the singular 'captain'. The phrase 'together with his crew' is parenthetical and does not change the subject's number, so 'was' is correct.",
             wrong: {
-                0: "'Is' is singular. The nearer subject 'players' is plural, so the verb must be plural ('are').",
-                1: "'Was' is singular past tense. The nearer subject 'players' is plural, and the sentence is present tense.",
-                3: "'Has' is singular and doesn't work as a linking verb with the adjective 'ready'. We need 'are ready'."
+                0: "'Were' is plural. Parenthetical phrases do not affect the singular subject 'captain'.",
+                1: "'Are' is plural. The subject is 'captain' (singular).",
+                3: "'Have been' is plural. The subject is 'captain' (singular)."
             }
         }
     },
     {
-        id: 'exA_q9',
-        sentence: 'Either you or I _____ to attend the meeting.',
-        options: ['has', 'have', 'am', 'is'],
-        correct: 2,
-        rule: 'Rule 3: Either/or — verb agrees with the nearer subject',
-        explanations: {
-            correct: "In 'either...or' sentences, the verb agrees with the nearer subject. 'I' is the nearer subject, and 'I' takes 'am'. Hence, 'Either you or I am to attend...'",
-            wrong: {
-                0: "'Has' doesn't agree with either 'you' or 'I'. The nearer subject 'I' requires 'am'.",
-                1: "'Have' agrees with 'you' but not with 'I' (the nearer subject). The proximity rule says the verb matches the closer subject.",
-                3: "'Is' is third person. 'I' is first person, so we need 'am'."
-            }
-        }
-    },
-    {
-        id: 'exA_q10',
-        sentence: 'The teacher, along with her students, _____ going on a trip.',
-        options: ['are', 'is', 'were', 'have'],
-        correct: 1,
-        rule: 'Rule 4: Phrases like "along with" do not change the subject',
-        explanations: {
-            correct: "'Along with' is a phrase that does NOT make the subject plural. The actual subject is 'the teacher' (singular). Phrases like 'along with', 'as well as', 'together with', 'in addition to' are parenthetical — they don't affect subject-verb agreement.",
-            wrong: {
-                0: "'Are' is plural. You may think 'teacher + students = plural', but 'along with her students' is a parenthetical phrase. Only 'the teacher' is the subject.",
-                2: "'Were' is past tense and plural. The subject 'teacher' is singular and the sentence is present continuous.",
-                3: "'Have' doesn't fit the sentence structure. We need 'is going', not 'have going'."
-            }
-        }
-    },
-    {
-        id: 'exA_q11',
-        sentence: 'The Principal, as well as the teachers, _____ present at the meeting.',
-        options: ['were', 'was', 'are', 'have been'],
-        correct: 1,
-        rule: 'Rule 4: "As well as" does not change the subject',
-        explanations: {
-            correct: "'As well as' does NOT make the subject plural. The subject is 'The Principal' (singular). 'As well as the teachers' is a parenthetical phrase. Hence the singular verb 'was'.",
-            wrong: {
-                0: "'Were' is plural. Despite 'teachers' appearing in the sentence, 'as well as the teachers' is parenthetical. The subject 'The Principal' is singular.",
-                2: "'Are' is present tense and plural. The sentence implies past tense (meeting that happened) and the subject is singular.",
-                3: "'Have been' is plural (present perfect). The singular subject 'The Principal' takes 'was'."
-            }
-        }
-    },
-    {
-        id: 'exA_q12',
-        sentence: 'The actress, together with her manager, _____ arrived at the venue.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 4: "Together with" does not change the subject',
-        explanations: {
-            correct: "'Together with' does NOT make the subject plural. The subject is 'the actress' (singular). So the verb must be singular — 'has arrived'.",
-            wrong: {
-                0: "'Have' is plural. 'Together with her manager' is a parenthetical phrase. Only 'the actress' (singular) is the subject.",
-                2: "'Are' doesn't work with the past participle 'arrived' in this context. We need 'has arrived' (present perfect).",
-                3: "'Were' is past plural. The subject is singular and the sentence uses present perfect tense ('has arrived')."
-            }
-        }
-    },
-    {
-        id: 'exA_q13',
-        sentence: 'The boys and the girls _____ excited about the picnic.',
-        options: ['is', 'was', 'are', 'has'],
-        correct: 2,
-        rule: 'Rule 2: Two separate subjects joined by "and" take plural verb',
-        explanations: {
-            correct: "'The boys and the girls' are two distinct groups joined by 'and', forming a plural subject. A plural subject takes the plural verb 'are'.",
-            wrong: {
-                0: "'Is' is singular. Two groups joined by 'and' make a plural subject needing 'are'.",
-                1: "'Was' is singular past tense. The subject is plural and the sentence uses present tense.",
-                3: "'Has' is singular. The plural subject 'boys and girls' needs 'are', not 'has'."
-            }
-        }
-    },
-    {
-        id: 'exA_q14',
-        sentence: 'Neither Riya nor her sisters _____ interested in cooking.',
-        options: ['is', 'was', 'are', 'has been'],
-        correct: 2,
-        rule: 'Rule 3: Neither/nor — verb agrees with the nearer subject',
-        explanations: {
-            correct: "In 'neither...nor', the verb agrees with the NEARER subject. 'Her sisters' (plural) is closer to the verb, so we use the plural verb 'are'.",
-            wrong: {
-                0: "'Is' is singular. The nearer subject 'her sisters' is plural, so we need the plural verb 'are'.",
-                1: "'Was' is singular past tense. The nearer subject is plural and the sentence is present tense.",
-                3: "'Has been' is singular (present perfect). The nearer subject 'sisters' is plural, requiring 'are'."
-            }
-        }
-    },
-    {
-        id: 'exA_q15',
-        sentence: 'The captain, in addition to the players, _____ praised by the coach.',
-        options: ['were', 'was', 'are', 'have been'],
-        correct: 1,
-        rule: 'Rule 4: "In addition to" does not change the subject',
-        explanations: {
-            correct: "'In addition to' is a parenthetical phrase — it does NOT make the subject plural. The subject is 'The captain' (singular), so the verb is 'was'.",
-            wrong: {
-                0: "'Were' is plural. 'In addition to the players' is parenthetical and doesn't change the singular subject 'The captain'.",
-                2: "'Are' is present tense and plural. The sentence is past tense and the subject is singular.",
-                3: "'Have been' is plural (present perfect). The singular subject 'The captain' requires 'was'."
-            }
-        }
-    }
-];
-
-// ----- SECTION: exB (Rules 6-10) — 15 questions -----
-const QUESTIONS_EXB = [
-    {
-        id: 'exB_q1',
-        sentence: 'The jury _____ divided in its opinion.',
-        options: ['are', 'is', 'were', 'have'],
-        correct: 1,
-        rule: 'Rule 6: Collective nouns — singular when acting as a unit',
-        explanations: {
-            correct: "'The jury' is a collective noun. When the group acts as a single unit (one opinion being divided), it takes a singular verb — 'is'.",
-            wrong: {
-                0: "'Are' is plural. Although a jury has many members, when we refer to the jury as a single body, we use a singular verb.",
-                2: "'Were' is past tense and plural. The sentence is present tense and the collective noun takes a singular verb.",
-                3: "'Have' doesn't fit as a linking verb. The sentence needs 'is divided', not 'have divided'."
-            }
-        }
-    },
-    {
-        id: 'exB_q2',
-        sentence: 'The committee _____ announced its decision.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 6: Collective nouns — singular when acting as a unit',
-        explanations: {
-            correct: "'The committee' is a collective noun acting as one body (making one decision). It takes the singular verb 'has'.",
-            wrong: {
-                0: "'Have' is plural. The committee is acting as a unified body ('its decision'), so it takes the singular 'has'.",
-                2: "'Are' doesn't work with 'announced' in this sentence structure. We need 'has announced' (present perfect).",
-                3: "'Were' is past plural. The committee is singular and the sentence is present perfect tense."
-            }
-        }
-    },
-    {
-        id: 'exB_q3',
-        sentence: 'Each of the students _____ given a certificate.',
-        options: ['were', 'was', 'are', 'have been'],
-        correct: 1,
-        rule: 'Rule 7: Each/every/everyone takes singular verb',
-        explanations: {
-            correct: "'Each' always takes a singular verb, regardless of what follows. 'Each of the students' = each individual student. So 'was given' is correct.",
-            wrong: {
-                0: "'Were' is plural. Even though 'students' is plural, the subject word is 'each', which is always singular.",
-                2: "'Are' is plural and present tense. 'Each' is singular and the sentence is past tense ('was given').",
-                3: "'Have been' is plural. 'Each' is always treated as singular — use 'was' or 'has been'."
-            }
-        }
-    },
-    {
-        id: 'exB_q4',
-        sentence: 'Every boy and every girl _____ to participate.',
-        options: ['want', 'wants', 'are wanting', 'have wanted'],
-        correct: 1,
-        rule: 'Rule 7: Every + noun takes singular verb',
-        explanations: {
-            correct: "'Every' makes each noun singular individually. 'Every boy' is singular and 'every girl' is singular. When 'every' precedes each noun joined by 'and', the verb is still singular — 'wants'.",
-            wrong: {
-                0: "'Want' is plural. Even though there are two nouns, 'every' before each noun makes the subject singular.",
-                2: "'Are wanting' is plural and uses progressive tense unnecessarily. 'Every' demands a singular verb.",
-                3: "'Have wanted' is plural (present perfect). 'Every' makes the subject singular."
-            }
-        }
-    },
-    {
-        id: 'exB_q5',
-        sentence: 'Everyone in the class _____ completed the assignment.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 7: Everyone takes singular verb',
-        explanations: {
-            correct: "'Everyone' is an indefinite pronoun that is always singular. 'In the class' is a prepositional phrase that doesn't affect the verb. So 'has completed' is correct.",
-            wrong: {
-                0: "'Have' is plural. 'Everyone' is always singular, even though it refers to multiple people conceptually.",
-                2: "'Are' doesn't work with the past participle 'completed' in this structure. We need 'has completed'.",
-                3: "'Were' is past plural. 'Everyone' is singular."
-            }
-        }
-    },
-    {
-        id: 'exB_q6',
-        sentence: 'Some of the cake _____ been eaten.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 8: Some/all/most — depends on the noun that follows',
-        explanations: {
-            correct: "'Some' can be singular or plural depending on the noun it refers to. 'Cake' is an uncountable noun (singular), so 'some of the cake' takes the singular verb 'has'.",
-            wrong: {
-                0: "'Have' is plural. Since 'cake' is uncountable (singular), 'some of the cake' takes the singular verb 'has'.",
-                2: "'Are' is plural and present tense. 'Cake' is uncountable (treated as singular). We need 'has been'.",
-                3: "'Were' is past plural. We need singular 'has been eaten'."
-            }
-        }
-    },
-    {
-        id: 'exB_q7',
-        sentence: 'Some of the books _____ missing from the shelf.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 8: Some/all/most — depends on the noun that follows',
-        explanations: {
-            correct: "'Some' takes a plural verb when it refers to a countable plural noun. 'Books' is plural, so 'some of the books' takes 'are'.",
-            wrong: {
-                0: "'Is' is singular. 'Books' is a plural countable noun, so 'some of the books' is plural — use 'are'.",
-                2: "'Was' is singular past tense. The noun 'books' is plural, so 'some of the books' needs 'are'.",
-                3: "'Has been' is singular. 'Books' is plural, requiring 'are missing'."
-            }
-        }
-    },
-    {
-        id: 'exB_q8',
-        sentence: 'All the furniture _____ been shifted to the new house.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 8: Some/all/most — depends on the noun (furniture is uncountable)',
-        explanations: {
-            correct: "'Furniture' is an uncountable noun (always singular). 'All the furniture' takes a singular verb — 'has been shifted'.",
-            wrong: {
-                0: "'Have' is plural. Despite 'all' suggesting many items, 'furniture' is uncountable and treated as singular.",
-                2: "'Are' is plural. 'Furniture' is uncountable (singular) — we need singular 'has'.",
-                3: "'Were' is plural past. 'Furniture' is uncountable and singular."
-            }
-        }
-    },
-    {
-        id: 'exB_q9',
-        sentence: 'The news _____ very disturbing.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 9: Uncountable/special nouns — news, mathematics, physics take singular verb',
-        explanations: {
-            correct: "'News' looks plural because it ends in 's', but it is always a singular uncountable noun. It takes the singular verb 'is'.",
-            wrong: {
-                0: "'Are' is plural. 'News' is singular despite ending in 's'. It's an uncountable noun.",
-                2: "'Were' is plural past. 'News' is always singular.",
-                3: "'Have been' is plural. 'News' is always treated as singular — use 'is' or 'has been'."
-            }
-        }
-    },
-    {
-        id: 'exB_q10',
-        sentence: 'Mathematics _____ my favourite subject.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 9: Subject names ending in -s take singular verb',
-        explanations: {
-            correct: "Subject names like 'Mathematics', 'Physics', 'Economics' look plural but are always singular. They take the singular verb 'is'.",
-            wrong: {
-                0: "'Are' is plural. 'Mathematics' is a singular noun despite ending in '-ics'.",
-                2: "'Were' is past plural. 'Mathematics' is singular (present tense sentence).",
-                3: "'Have been' is plural. 'Mathematics' is always singular."
-            }
-        }
-    },
-    {
-        id: 'exB_q11',
-        sentence: 'Physics _____ a challenging subject for many students.',
-        options: ['are', 'is', 'have been', 'were'],
-        correct: 1,
-        rule: 'Rule 9: Subject names ending in -s take singular verb',
-        explanations: {
-            correct: "'Physics' ends in '-ics' but is treated as a singular noun (it's a single field of study). It takes the singular verb 'is'.",
-            wrong: {
-                0: "'Are' is plural. 'Physics' is a singular noun despite its ending.",
-                2: "'Have been' is plural. 'Physics' is singular.",
-                3: "'Were' is past plural. 'Physics' is singular and the sentence is present tense."
-            }
-        }
-    },
-    {
-        id: 'exB_q12',
-        sentence: 'The number of students _____ increasing every year.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 10: "The number of" takes singular verb',
-        explanations: {
-            correct: "'The number of' is a fixed phrase that takes a SINGULAR verb. It refers to a specific count/figure. So 'The number of students is increasing' is correct.",
-            wrong: {
-                0: "'Are' is plural. Don't confuse 'the number of' with 'a number of'. 'THE number of' = singular (one number/figure).",
-                2: "'Were' is past plural. 'The number of' is singular and the sentence is present continuous.",
-                3: "'Have been' is plural. 'The number of' always takes a singular verb."
-            }
-        }
-    },
-    {
-        id: 'exB_q13',
-        sentence: 'A number of students _____ absent today.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 10: "A number of" takes plural verb',
-        explanations: {
-            correct: "'A number of' means 'many/several' and takes a PLURAL verb. 'A number of students are absent' is correct. Compare: 'THE number of' (singular) vs 'A number of' (plural).",
-            wrong: {
-                0: "'Is' is singular. 'A number of' means 'many' and takes a plural verb 'are'.",
-                2: "'Was' is singular past. 'A number of' takes a plural verb. Use 'were' if past tense.",
-                3: "'Has been' is singular. 'A number of' always takes a plural verb — use 'have been' if present perfect."
-            }
-        }
-    },
-    {
-        id: 'exB_q14',
-        sentence: 'Measles _____ a contagious disease.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 9: Disease names ending in -s take singular verb',
-        explanations: {
-            correct: "'Measles' ends in '-s' but is a singular noun (it's one disease). Like 'news' and 'mathematics', it takes a singular verb — 'is'.",
-            wrong: {
-                0: "'Are' is plural. 'Measles' is a singular noun despite its '-s' ending.",
-                2: "'Were' is past plural. 'Measles' is singular and this is a general truth (present tense).",
-                3: "'Have been' is plural. 'Measles' is always singular."
-            }
-        }
-    },
-    {
-        id: 'exB_q15',
-        sentence: 'Each boy and each girl _____ received a prize.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 7: Each + noun takes singular verb',
-        explanations: {
-            correct: "When 'each' appears before every noun in a compound subject, the verb is singular. 'Each boy' = singular, 'each girl' = singular. So 'has received' is correct.",
-            wrong: {
-                0: "'Have' is plural. 'Each' makes each noun individual and singular. The verb must be singular.",
-                2: "'Are' doesn't work with 'received'. We need 'has received' (present perfect).",
-                3: "'Were' is past plural. 'Each' demands a singular verb."
-            }
-        }
-    }
-];
-
-// ----- SECTION: exC (Rules 11-15) — 15 questions -----
-const QUESTIONS_EXC = [
-    {
-        id: 'exC_q1',
-        sentence: 'The Arabian Nights _____ an interesting book.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 11: Titles and names of books take singular verb',
-        explanations: {
-            correct: "Titles of books, movies, and works are treated as a single entity regardless of their form. 'The Arabian Nights' is ONE book, so it takes the singular verb 'is'.",
-            wrong: {
-                0: "'Are' is plural. Even though the title contains 'Nights' (plural), the title as a whole refers to one book — singular.",
-                2: "'Were' is past plural. Titles are singular and this sentence is present tense (general truth).",
-                3: "'Have been' is plural. The title of a book is always treated as singular."
-            }
-        }
-    },
-    {
-        id: 'exC_q2',
-        sentence: 'Gulliver\'s Travels _____ written by Jonathan Swift.',
-        options: ['were', 'was', 'are', 'have been'],
-        correct: 1,
-        rule: 'Rule 11: Titles of books take singular verb',
-        explanations: {
-            correct: "'Gulliver's Travels' is the title of a book — a single work. Titles of books always take a singular verb, so 'was written' is correct.",
-            wrong: {
-                0: "'Were' is plural. Despite 'Travels' looking plural, the title refers to one book.",
-                2: "'Are' is present tense and plural. The book was written in the past, and the title is singular.",
-                3: "'Have been' is plural. Book titles are singular."
-            }
-        }
-    },
-    {
-        id: 'exC_q3',
-        sentence: 'Ten kilometres _____ a long distance to walk.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 12: Distances, amounts, and time periods take singular verb',
-        explanations: {
-            correct: "When a distance, amount, or time period is thought of as a single unit, it takes a singular verb. 'Ten kilometres' is one distance, so it takes 'is'.",
-            wrong: {
-                0: "'Are' is plural. Although 'ten kilometres' involves a number, the distance as a whole is treated as one unit — singular.",
-                2: "'Were' is past plural. Distances as single units are singular, and this is present tense.",
-                3: "'Have been' is plural. The distance as a unit takes singular 'is'."
-            }
-        }
-    },
-    {
-        id: 'exC_q4',
-        sentence: 'Five hundred rupees _____ a reasonable price for this shirt.',
-        options: ['are', 'is', 'were', 'seem'],
-        correct: 1,
-        rule: 'Rule 12: Amounts of money take singular verb',
-        explanations: {
-            correct: "When an amount of money is considered as a whole sum, it takes a singular verb. 'Five hundred rupees' is one amount, so 'is' is correct.",
-            wrong: {
-                0: "'Are' is plural. The amount 'five hundred rupees' is considered as one lump sum — singular.",
-                2: "'Were' is past tense. The sentence is present tense.",
-                3: "'Seem' is plural. When amounts are considered as one unit, use singular 'is', not 'seem'."
-            }
-        }
-    },
-    {
-        id: 'exC_q5',
-        sentence: 'Three hours _____ enough time to complete the paper.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 12: Time periods as single units take singular verb',
-        explanations: {
-            correct: "'Three hours' is treated as a single block of time. When time periods are considered as a unit, they take a singular verb — 'is'.",
-            wrong: {
-                0: "'Are' is plural. 'Three hours' as a single time period takes a singular verb.",
-                2: "'Were' is past plural. The sentence is present tense and the time unit is singular.",
-                3: "'Have been' is plural. Time periods as units take singular 'is'."
-            }
-        }
-    },
-    {
-        id: 'exC_q6',
-        sentence: 'There _____ a book and two pens on the table.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 13: "There" + be — verb agrees with the first noun',
-        explanations: {
-            correct: "In sentences beginning with 'there', the verb agrees with the FIRST subject that follows. 'A book' (singular) comes first, so the verb is singular — 'is'.",
-            wrong: {
-                0: "'Are' is plural. Although there are also 'two pens', the verb agrees with the first noun 'a book' (singular).",
-                2: "'Were' is past plural. The sentence is present tense and the first noun is singular.",
-                3: "'Have been' is plural. The verb matches the first noun 'a book' — singular 'is'."
-            }
-        }
-    },
-    {
-        id: 'exC_q7',
-        sentence: 'There _____ many reasons to be optimistic.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 13: "There" + be — verb agrees with the subject that follows',
-        explanations: {
-            correct: "'Many reasons' is the subject (plural) that follows 'there'. The verb must agree with it — 'are'.",
-            wrong: {
-                0: "'Is' is singular. 'Many reasons' is plural, so we need the plural verb 'are'.",
-                2: "'Was' is singular past tense. 'Reasons' is plural and the sentence is present tense.",
-                3: "'Has been' is singular. 'Reasons' (plural) needs 'are' or 'have been'."
-            }
-        }
-    },
-    {
-        id: 'exC_q8',
-        sentence: 'Here _____ the books you ordered.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 14: Inverted sentences — verb agrees with the actual subject',
-        explanations: {
-            correct: "In inverted sentences (verb before subject), the verb still agrees with the actual subject. 'The books' (plural) is the subject, so 'are' is correct.",
-            wrong: {
-                0: "'Is' is singular. The subject 'books' is plural, requiring 'are'.",
-                2: "'Was' is singular past. 'Books' is plural.",
-                3: "'Has been' is singular. 'Books' (plural) needs 'are' or 'have been'."
-            }
-        }
-    },
-    {
-        id: 'exC_q9',
-        sentence: 'On the wall _____ two beautiful paintings.',
-        options: ['hangs', 'hang', 'is hanging', 'has hung'],
-        correct: 1,
-        rule: 'Rule 14: Inverted sentences — verb agrees with the actual subject',
-        explanations: {
-            correct: "This is an inverted sentence. The actual subject 'two beautiful paintings' (plural) comes after the verb. So the plural verb 'hang' is correct.",
-            wrong: {
-                0: "'Hangs' is singular. The subject 'two paintings' is plural, so use 'hang'.",
-                2: "'Is hanging' is singular. 'Two paintings' is plural — use 'are hanging' if you want progressive tense.",
-                3: "'Has hung' is singular. The plural subject 'paintings' needs 'have hung' if past participle."
-            }
-        }
-    },
-    {
-        id: 'exC_q10',
-        sentence: 'It is I who _____ responsible for this.',
-        options: ['is', 'am', 'are', 'was'],
-        correct: 1,
-        rule: 'Rule 15: Relative pronoun "who" agrees with its antecedent',
-        explanations: {
-            correct: "The relative pronoun 'who' takes the verb that agrees with its antecedent. Here, 'who' refers to 'I' (first person singular), so the verb is 'am'.",
-            wrong: {
-                0: "'Is' is third person. 'Who' refers to 'I' (first person), so the verb must be 'am'.",
-                2: "'Are' is plural. 'Who' refers to 'I' (first person singular), so 'am' is correct.",
-                3: "'Was' is past tense. The sentence uses present tense ('It is I who...')."
-            }
-        }
-    },
-    {
-        id: 'exC_q11',
-        sentence: 'She is one of those girls who _____ always prepared.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 15: "One of those...who" — who refers to the plural noun',
-        explanations: {
-            correct: "In 'one of those [plural noun] who...' constructions, 'who' refers to the plural noun ('girls'), not 'one'. So the verb is plural — 'are'.",
-            wrong: {
-                0: "'Is' is singular. 'Who' refers to 'girls' (plural), not 'one'. Many girls are always prepared, and she is one of them.",
-                2: "'Was' is past singular. 'Who' refers to 'girls' (plural) and the sentence is present tense.",
-                3: "'Has been' is singular. 'Who' refers to the plural 'girls' — use 'have been' if present perfect."
-            }
-        }
-    },
-    {
-        id: 'exC_q12',
-        sentence: 'The dog that _____ barking belongs to our neighbour.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 15: Relative pronoun "that" agrees with its antecedent',
-        explanations: {
-            correct: "'That' refers to 'the dog' (singular). The verb must agree with the antecedent, so 'is barking' is correct.",
-            wrong: {
-                0: "'Are' is plural. 'That' refers to 'dog' (singular), so the verb is 'is'.",
-                2: "'Were' is past plural. 'Dog' is singular and the sentence is present tense.",
-                3: "'Have been' is plural. 'Dog' is singular — use 'has been' if present perfect."
-            }
-        }
-    },
-    {
-        id: 'exC_q13',
-        sentence: 'The students who _____ hardworking will succeed.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 15: Relative pronoun "who" agrees with its antecedent',
-        explanations: {
-            correct: "'Who' refers to 'students' (plural). The verb agrees with the antecedent — 'are hardworking'.",
-            wrong: {
-                0: "'Is' is singular. 'Who' refers to 'students' (plural), so we use 'are'.",
-                2: "'Was' is singular past. 'Students' is plural and the sentence is present tense (general truth).",
-                3: "'Has been' is singular. 'Students' is plural — use 'have been'."
-            }
-        }
-    },
-    {
-        id: 'exC_q14',
-        sentence: 'There _____ several mistakes in your essay.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 13: "There" + be — verb agrees with the noun that follows',
-        explanations: {
-            correct: "'Several mistakes' (plural) is the subject. In 'there + be' sentences, the verb agrees with the noun that follows. 'Are' is the plural verb.",
-            wrong: {
-                0: "'Is' is singular. 'Several mistakes' is plural, requiring 'are'.",
-                2: "'Was' is singular past. 'Mistakes' is plural and the sentence is present tense.",
-                3: "'Has been' is singular. 'Mistakes' is plural — use 'have been'."
-            }
-        }
-    },
-    {
-        id: 'exC_q15',
-        sentence: 'Under the bridge _____ a family of ducks.',
-        options: ['live', 'lives', 'are living', 'have lived'],
-        correct: 1,
-        rule: 'Rule 14: Inverted sentences — verb agrees with the actual subject',
-        explanations: {
-            correct: "This is an inverted sentence. The subject 'a family' (singular) comes after the verb. The singular verb 'lives' is correct.",
-            wrong: {
-                0: "'Live' is plural. The subject 'a family' is singular (collective noun), so 'lives' is correct.",
-                2: "'Are living' is plural. 'A family' is singular — use 'is living' if progressive.",
-                3: "'Have lived' is plural. 'A family' is singular — use 'has lived'."
-            }
-        }
-    }
-];
-
-// ----- SECTION: exMix (Mixed Concepts) — 20 questions -----
-const QUESTIONS_EXMIX = [
-    {
-        id: 'exMix_q1',
-        sentence: 'One of the boys _____ missing from the class.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 1: "One of" takes singular verb',
-        explanations: {
-            correct: "'One' is the subject (singular). 'Of the boys' is a prepositional phrase. The verb agrees with 'one' — singular 'is'.",
-            wrong: {
-                0: "'Are' is plural. The subject is 'one' (not 'boys'). 'Of the boys' is a prepositional phrase.",
-                2: "'Were' is past plural. 'One' is singular and the sentence is present tense.",
-                3: "'Have been' is plural. 'One' is singular — use 'has been'."
-            }
-        }
-    },
-    {
-        id: 'exMix_q2',
-        sentence: 'The team _____ celebrating their victory.',
-        options: ['is', 'are', 'was', 'has'],
-        correct: 1,
-        rule: 'Rule 6: Collective noun — plural when members act individually',
-        explanations: {
-            correct: "When members of a collective noun act individually (each member celebrating in their own way — indicated by 'their'), the verb can be plural. 'Are celebrating' is correct here.",
-            wrong: {
-                0: "'Is' would be correct if the team acted as a single unit, but 'their' suggests individual members celebrating separately.",
-                2: "'Was' is past singular. The sentence is present continuous and the use of 'their' suggests plural.",
-                3: "'Has' doesn't fit the continuous tense 'celebrating'. We need 'are celebrating'."
-            }
-        }
-    },
-    {
-        id: 'exMix_q3',
-        sentence: 'Neither the teacher nor the students _____ happy with the results.',
-        options: ['is', 'was', 'are', 'has been'],
-        correct: 2,
-        rule: 'Rule 3: Neither/nor — proximity rule',
-        explanations: {
-            correct: "With 'neither...nor', the verb agrees with the nearer subject. 'Students' (plural) is nearer to the verb, so 'are' is correct.",
-            wrong: {
-                0: "'Is' is singular. The nearer subject 'students' is plural.",
-                1: "'Was' is singular past. The nearer subject 'students' is plural and the sentence is present tense.",
-                3: "'Has been' is singular. The nearer subject 'students' is plural."
-            }
-        }
-    },
-    {
-        id: 'exMix_q4',
-        sentence: 'A large number of trees _____ been cut down.',
+        id: 'c4_q11',
+        sentence: 'Few of the students _____ solved this difficult problem.',
         options: ['has', 'have', 'is', 'was'],
         correct: 1,
-        rule: 'Rule 10: "A number of" takes plural verb',
+        rule: 'Rule 6: Plural indefinite pronouns',
         explanations: {
-            correct: "'A number of' means 'many' and takes a PLURAL verb. So 'have been cut down' is correct.",
+            correct: "'Few' is a plural indefinite pronoun and takes the plural verb 'have'.",
             wrong: {
-                0: "'Has' is singular. 'A number of' (meaning many) always takes a plural verb.",
-                2: "'Is' doesn't work with 'been cut down'. We need 'have been' (present perfect passive).",
-                3: "'Was' is singular past. 'A number of' takes a plural verb."
+                0: "'Has' is singular. 'Few' is plural.",
+                2: "'Is' is singular. 'Few' is plural.",
+                3: "'Was' is singular. 'Few' is plural."
             }
         }
     },
     {
-        id: 'exMix_q5',
-        sentence: 'The number of accidents _____ decreased this year.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 10: "The number of" takes singular verb',
-        explanations: {
-            correct: "'The number of' refers to a specific count and takes a SINGULAR verb — 'has decreased'.",
-            wrong: {
-                0: "'Have' is plural. 'THE number of' (specific count) takes a singular verb, unlike 'A number of'.",
-                2: "'Are' doesn't fit with 'decreased'. We need 'has decreased' (present perfect).",
-                3: "'Were' is plural past. 'The number of' is singular."
-            }
-        }
-    },
-    {
-        id: 'exMix_q6',
-        sentence: 'Slow and steady _____ the race.',
-        options: ['win', 'wins', 'are winning', 'have won'],
-        correct: 1,
-        rule: 'Rule 2: Compound subject as single concept takes singular verb',
-        explanations: {
-            correct: "'Slow and steady' is a proverbial expression treated as a single concept. It takes a singular verb — 'wins'. This is a well-known proverb.",
-            wrong: {
-                0: "'Win' is plural. 'Slow and steady' is a fixed phrase representing one idea, taking a singular verb.",
-                2: "'Are winning' is plural and progressive. The proverb uses simple present singular.",
-                3: "'Have won' is plural perfect. The proverb uses simple present singular 'wins'."
-            }
-        }
-    },
-    {
-        id: 'exMix_q7',
-        sentence: 'All the milk _____ been consumed.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 8: All + uncountable noun takes singular verb',
-        explanations: {
-            correct: "'Milk' is an uncountable noun. 'All the milk' takes a singular verb because the noun it refers to is uncountable — 'has been consumed'.",
-            wrong: {
-                0: "'Have' is plural. 'Milk' is uncountable (singular), so 'all the milk' takes singular 'has'.",
-                2: "'Are' doesn't work with 'been consumed'. We need 'has been'.",
-                3: "'Were' is plural past. 'Milk' is uncountable — singular."
-            }
-        }
-    },
-    {
-        id: 'exMix_q8',
-        sentence: 'There _____ two cats and a dog in the yard.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 13: "There" + be — verb agrees with the first noun',
-        explanations: {
-            correct: "In 'there + be' sentences, the verb agrees with the first subject. 'Two cats' (plural) comes first, so the verb is 'are'.",
-            wrong: {
-                0: "'Is' is singular. The first noun 'two cats' is plural, requiring 'are'.",
-                2: "'Was' is singular past. 'Two cats' is plural and the sentence is present tense.",
-                3: "'Has been' is singular. 'Two cats' is plural."
-            }
-        }
-    },
-    {
-        id: 'exMix_q9',
-        sentence: 'Economics _____ a popular subject in college.',
+        id: 'c4_q12',
+        sentence: 'The design of these new buildings _____ very modern.',
         options: ['are', 'is', 'were', 'have been'],
         correct: 1,
-        rule: 'Rule 9: Subject names ending in -s take singular verb',
+        rule: 'Rule 1: Prepositional phrases',
         explanations: {
-            correct: "'Economics' is a subject/field of study. Like 'Mathematics' and 'Physics', it takes a singular verb — 'is'.",
+            correct: "The subject is 'design' (singular), not 'buildings' (plural). Thus, 'is' is correct.",
             wrong: {
-                0: "'Are' is plural. 'Economics' is a singular noun despite ending in '-ics'.",
-                2: "'Were' is past plural. 'Economics' is singular and this is present tense.",
-                3: "'Have been' is plural. 'Economics' is always singular."
-            }
-        }
-    },
-    {
-        id: 'exMix_q10',
-        sentence: 'The scissors _____ on the table.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 9: Paired instruments (scissors, trousers) take plural verb',
-        explanations: {
-            correct: "'Scissors' is a paired instrument that is always treated as plural (like trousers, spectacles, pliers). It takes the plural verb 'are'.",
-            wrong: {
-                0: "'Is' is singular. 'Scissors' is always plural. Use 'a pair of scissors is' if you want singular.",
-                2: "'Was' is singular past. 'Scissors' is always plural.",
-                3: "'Has been' is singular. 'Scissors' is always plural — use 'have been'."
-            }
-        }
-    },
-    {
-        id: 'exMix_q11',
-        sentence: 'Not only the students but also the teacher _____ surprised.',
-        options: ['were', 'was', 'are', 'have been'],
-        correct: 1,
-        rule: 'Rule 3: Not only...but also — proximity rule',
-        explanations: {
-            correct: "In 'not only...but also' constructions, the verb agrees with the NEARER subject. 'The teacher' (singular) is nearer, so 'was' is correct.",
-            wrong: {
-                0: "'Were' is plural. The nearer subject 'teacher' is singular, so we need 'was'.",
-                2: "'Are' is present plural. The nearer subject 'teacher' is singular.",
-                3: "'Have been' is plural. The nearer subject 'teacher' is singular."
-            }
-        }
-    },
-    {
-        id: 'exMix_q12',
-        sentence: 'Each of these flowers _____ a unique fragrance.',
-        options: ['have', 'has', 'are having', 'had'],
-        correct: 1,
-        rule: 'Rule 7: Each takes singular verb',
-        explanations: {
-            correct: "'Each' is always singular. 'Of these flowers' is a prepositional phrase. The verb agrees with 'each' — singular 'has'.",
-            wrong: {
-                0: "'Have' is plural. 'Each' is always singular regardless of the noun that follows.",
-                2: "'Are having' is plural and progressive. 'Each' is singular.",
-                3: "'Had' is past tense. The sentence describes a general truth (present tense)."
-            }
-        }
-    },
-    {
-        id: 'exMix_q13',
-        sentence: 'The poet and philosopher _____ dead.',
-        options: ['are', 'is', 'were', 'have'],
-        correct: 1,
-        rule: 'Rule 2: Two nouns referring to the same person — singular verb',
-        explanations: {
-            correct: "'The poet and philosopher' uses ONE article before both nouns, meaning one person who is both poet and philosopher. One person = singular verb 'is'.",
-            wrong: {
-                0: "'Are' is plural. Since there's only one article ('the') before both nouns, it's one person — singular.",
-                2: "'Were' is past plural. One person (singular) and the sentence is present tense.",
-                3: "'Have' is plural. One person = singular verb."
-            }
-        }
-    },
-    {
-        id: 'exMix_q14',
-        sentence: 'Twenty thousand rupees _____ stolen from the safe.',
-        options: ['were', 'was', 'are', 'have been'],
-        correct: 1,
-        rule: 'Rule 12: Amounts of money treated as single unit — singular verb',
-        explanations: {
-            correct: "'Twenty thousand rupees' is an amount of money treated as a single sum. It takes the singular verb 'was stolen'.",
-            wrong: {
-                0: "'Were' is plural. The amount 'twenty thousand rupees' is one sum — singular.",
-                2: "'Are' is present plural. The sentence is past tense and the amount is singular.",
-                3: "'Have been' is plural. The sum is singular — use 'has been'."
-            }
-        }
-    },
-    {
-        id: 'exMix_q15',
-        sentence: 'Either of the two roads _____ to the market.',
-        options: ['lead', 'leads', 'are leading', 'have led'],
-        correct: 1,
-        rule: 'Rule 3: Either of takes singular verb',
-        explanations: {
-            correct: "'Either of' means 'any one of' and is always singular. 'Either of the two roads' = one road. The singular verb 'leads' is correct.",
-            wrong: {
-                0: "'Lead' is plural. 'Either of' is always singular — it refers to one of the two.",
-                2: "'Are leading' is plural. 'Either of' is singular — use 'is leading'.",
-                3: "'Have led' is plural. 'Either of' is singular — use 'has led'."
-            }
-        }
-    },
-    {
-        id: 'exMix_q16',
-        sentence: 'The rich _____ not always happy.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 14: Adjectives used as nouns (the + adjective = plural)',
-        explanations: {
-            correct: "'The rich' means 'rich people' — it's an adjective used as a plural noun. It takes the plural verb 'are'.",
-            wrong: {
-                0: "'Is' is singular. 'The rich' = 'rich people' (plural), so we need 'are'.",
-                2: "'Was' is singular past. 'The rich' is plural and this is a general statement (present tense).",
-                3: "'Has been' is singular. 'The rich' is plural."
-            }
-        }
-    },
-    {
-        id: 'exMix_q17',
-        sentence: 'It is you who _____ to blame.',
-        options: ['is', 'am', 'are', 'was'],
-        correct: 2,
-        rule: 'Rule 15: Relative pronoun agrees with its antecedent',
-        explanations: {
-            correct: "'Who' refers to 'you' (second person). The verb must agree with the antecedent — 'are'. 'It is you who are to blame.'",
-            wrong: {
-                0: "'Is' is third person singular. 'Who' refers to 'you', which takes 'are'.",
-                1: "'Am' is first person. 'Who' refers to 'you' (second person), so 'are' is correct.",
-                3: "'Was' is past tense. The sentence is present tense ('It is you who...')."
-            }
-        }
-    },
-    {
-        id: 'exMix_q18',
-        sentence: 'The furniture in all the rooms _____ been polished.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 9: Furniture is uncountable — singular verb',
-        explanations: {
-            correct: "'Furniture' is an uncountable noun, always singular. 'In all the rooms' is a prepositional phrase. The verb is singular — 'has been polished'.",
-            wrong: {
-                0: "'Have' is plural. 'Furniture' is uncountable and always takes a singular verb.",
-                2: "'Are' doesn't work with 'been polished'. We need 'has been'.",
-                3: "'Were' is plural past. 'Furniture' is uncountable (singular)."
-            }
-        }
-    },
-    {
-        id: 'exMix_q19',
-        sentence: 'Most of the work _____ been completed.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 8: Most + uncountable noun takes singular verb',
-        explanations: {
-            correct: "'Work' is an uncountable noun. 'Most of the work' takes a singular verb — 'has been completed'.",
-            wrong: {
-                0: "'Have' is plural. 'Work' is uncountable (singular), so 'most of the work' takes 'has'.",
-                2: "'Are' doesn't fit with 'been completed'. We need 'has been'.",
-                3: "'Were' is plural past. 'Work' is uncountable — singular."
-            }
-        }
-    },
-    {
-        id: 'exMix_q20',
-        sentence: 'The poet and the painter _____ coming to the exhibition.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 2: Two separate subjects with separate articles — plural verb',
-        explanations: {
-            correct: "'The poet' and 'the painter' have SEPARATE articles, meaning they are two different people. Two people = plural verb 'are'.",
-            wrong: {
-                0: "'Is' is singular. The two separate articles ('the poet' and 'the painter') indicate two people — plural.",
-                2: "'Was' is singular past. Two people and present continuous tense.",
-                3: "'Has been' is singular. Two people need 'have been'."
+                0: "'Are' is plural. The subject is 'design' (singular).",
+                2: "'Were' is plural. The subject is 'design' (singular).",
+                3: "'Have been' is plural. The subject is 'design' (singular)."
             }
         }
     }
 ];
 
-// ----- SECTION: exMega (Optional Mega Exercise) — 25 questions -----
-const QUESTIONS_EXMEGA = [
+// ----- QUIZ 5 (Rules 1-15 cumulative) — 15 Questions -----
+const QUESTIONS_C5 = [
     {
-        id: 'exMega_q1',
-        sentence: 'The pack of wolves _____ howling at the moon.',
+        id: 'c5_q1',
+        sentence: 'Two-thirds of the playground _____ covered in snow.',
         options: ['are', 'is', 'were', 'have been'],
         correct: 1,
-        rule: 'Rule 1: Prepositional phrase does not change the subject',
+        rule: 'Rule 12: Fractions and percentages (playground is singular)',
         explanations: {
-            correct: "'The pack' is the subject (singular collective noun). 'Of wolves' is a prepositional phrase. The verb agrees with 'pack' — singular 'is'.",
+            correct: "'Two-thirds' refers to 'playground' (singular), so it takes the singular verb 'is'.",
             wrong: {
-                0: "'Are' is plural. 'Wolves' is inside the prepositional phrase. The subject 'pack' is singular.",
-                2: "'Were' is past plural. 'Pack' is singular and sentence is present continuous.",
-                3: "'Have been' is plural. 'Pack' is singular."
+                0: "'Are' is plural. The fraction refers to a singular playground.",
+                2: "'Were' is plural. The fraction refers to a singular playground.",
+                3: "'Have been' is plural. The fraction refers to a singular playground."
             }
         }
     },
     {
-        id: 'exMega_q2',
-        sentence: 'Neither his friends nor he _____ interested in the project.',
-        options: ['are', 'is', 'were', 'have been'],
+        id: 'c5_q2',
+        sentence: 'Two-thirds of the books _____ been sold.',
+        options: ['has', 'have', 'is', 'was'],
         correct: 1,
-        rule: 'Rule 3: Neither/nor — proximity rule',
+        rule: 'Rule 12: Fractions and percentages (books is plural)',
         explanations: {
-            correct: "In 'neither...nor', the verb agrees with the nearer subject. 'He' (singular, third person) is nearer, so the verb is 'is'.",
+            correct: "'Two-thirds' refers to 'books' (plural), so it takes the plural verb 'have'.",
             wrong: {
-                0: "'Are' is plural. The nearer subject 'he' is singular.",
-                2: "'Were' is past plural. 'He' is singular and sentence is present tense.",
-                3: "'Have been' is plural. The nearer subject 'he' is singular."
+                0: "'Has' is singular. The fraction refers to plural books, requiring a plural verb.",
+                2: "'Is' is singular and grammatically incorrect with the past participle 'been sold'.",
+                3: "'Was' is singular and grammatically incorrect."
             }
         }
     },
     {
-        id: 'exMega_q3',
-        sentence: 'The wages of sin _____ death.',
-        options: ['are', 'is', 'were', 'have been'],
+        id: 'c5_q3',
+        sentence: 'There _____ many reasons for his failure.',
+        options: ['is', 'are', 'was', 'has been'],
         correct: 1,
-        rule: 'Rule 11: Famous quotations/proverbs treated as single statements',
+        rule: 'Rule 13: "There/Here" structures',
         explanations: {
-            correct: "This is a biblical proverb where 'the wages of sin' is treated as a single concept/idea. It takes the singular verb 'is'. Additionally, 'wages' here means 'payment/reward' as a singular concept.",
+            correct: "The subject comes after the verb. 'Reasons' is plural, so 'are' is correct.",
             wrong: {
-                0: "'Are' seems logical because 'wages' looks plural, but in this proverbial usage, 'wages' means 'the consequence' — a singular concept.",
-                2: "'Were' is past tense. This is a timeless truth expressed in present tense.",
-                3: "'Have been' is plural. The concept is singular."
+                0: "'Is' is singular. The subject 'reasons' is plural.",
+                2: "'Was' is singular. The subject 'reasons' is plural.",
+                3: "'Has been' is singular. The subject 'reasons' is plural."
             }
         }
     },
     {
-        id: 'exMega_q4',
-        sentence: 'The manager, besides his assistants, _____ been questioned.',
-        options: ['have', 'has', 'are', 'were'],
+        id: 'c5_q4',
+        sentence: 'Here _____ the latest edition of the books.',
+        options: ['comes', 'come', 'are coming', 'have come'],
+        correct: 0,
+        rule: 'Rule 13: "There/Here" structures',
+        explanations: {
+            correct: "The subject is 'edition' (singular), which follows the verb, so 'comes' is correct.",
+            wrong: {
+                1: "'Come' is plural. The subject 'edition' is singular, not the prepositional object 'books'.",
+                2: "'Are coming' is plural. The subject 'edition' is singular.",
+                3: "'Have come' is plural. The subject 'edition' is singular."
+            }
+        }
+    },
+    {
+        id: 'c5_q5',
+        sentence: 'High up in the mountains _____ the hermits.',
+        options: ['live', 'lives', 'is living', 'has lived'],
+        correct: 0,
+        rule: 'Rule 14: Inverted sentences',
+        explanations: {
+            correct: "The subject is 'hermits' (plural), which follows the verb. Thus, 'live' is correct.",
+            wrong: {
+                1: "'Lives' is singular. The subject is 'hermits' (plural).",
+                2: "'Is living' is singular. The subject is 'hermits' (plural).",
+                3: "'Has lived' is singular. The subject is 'hermits' (plural)."
+            }
+        }
+    },
+    {
+        id: 'c5_q6',
+        sentence: 'He is the man who _____ our local council.',
+        options: ['lead', 'leads', 'are leading', 'have led'],
         correct: 1,
-        rule: 'Rule 4: "Besides" does not change the subject',
+        rule: 'Rule 15: Relative pronouns (antecedent is man)',
         explanations: {
-            correct: "'Besides' functions like 'along with' — it's a parenthetical phrase that doesn't change the subject. The subject 'the manager' (singular) takes 'has'.",
+            correct: "The relative pronoun 'who' refers to 'man' (singular), so it takes the singular verb 'leads'.",
             wrong: {
-                0: "'Have' is plural. 'Besides his assistants' is parenthetical. Only 'the manager' is the subject.",
-                2: "'Are' doesn't work with 'been questioned'. We need 'has been'.",
-                3: "'Were' is plural past. The subject is singular."
+                0: "'Lead' is plural. The relative pronoun refers to 'man' (singular).",
+                2: "'Are leading' is plural. The antecedent is singular.",
+                3: "'Have led' is plural. The antecedent is singular."
             }
         }
     },
     {
-        id: 'exMega_q5',
-        sentence: 'Many a student _____ failed in the examination.',
-        options: ['have', 'has', 'are', 'were'],
-        correct: 1,
-        rule: 'Rule 7: "Many a" takes singular verb',
+        id: 'c5_q7',
+        sentence: 'She is one of those mothers who _____ too much about their children.',
+        options: ['worry', 'worries', 'is worrying', 'has worried'],
+        correct: 0,
+        rule: 'Rule 15: Relative pronouns (antecedent is mothers)',
         explanations: {
-            correct: "'Many a' means 'many' but grammatically it is ALWAYS followed by a singular noun and singular verb. 'Many a student has failed' is correct.",
+            correct: "In the structure 'one of those [plural noun] who', the relative pronoun 'who' refers to the plural 'mothers', so the plural verb 'worry' is correct.",
             wrong: {
-                0: "'Have' is plural. Despite 'many a' meaning 'many', the construction 'many a + singular noun' always takes a singular verb.",
-                2: "'Are' doesn't work with 'failed' in this structure. We need 'has failed'.",
-                3: "'Were' is plural. 'Many a' takes singular verb."
+                1: "'Worries' is singular. The relative pronoun 'who' refers to the plural antecedent 'mothers', not 'one'.",
+                2: "'Is worrying' is singular. The relative pronoun refers to the plural antecedent 'mothers'.",
+                3: "'Has worried' is singular. The relative pronoun refers to the plural antecedent 'mothers'."
             }
         }
     },
     {
-        id: 'exMega_q6',
-        sentence: 'A pair of shoes _____ lying under the bed.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 12: "A pair of" is singular',
-        explanations: {
-            correct: "'A pair of shoes' is singular because 'a pair' is the subject (one pair). When you say 'a pair of', the verb agrees with 'pair' (singular) — 'is'.",
-            wrong: {
-                0: "'Are' is plural. The subject is 'a pair' (singular), not 'shoes'. The verb agrees with 'pair'.",
-                2: "'Were' is past plural. 'A pair' is singular and the sentence is present continuous.",
-                3: "'Have been' is plural. 'A pair' is singular."
-            }
-        }
-    },
-    {
-        id: 'exMega_q7',
+        id: 'c5_q8',
         sentence: 'No news _____ good news.',
         options: ['are', 'is', 'were', 'have been'],
         correct: 1,
-        rule: 'Rule 9: News is always singular',
+        rule: 'Rule 9: News is singular',
         explanations: {
-            correct: "'News' is always a singular uncountable noun, even though it ends in 's'. 'No news is good news' — both uses of 'news' are singular.",
+            correct: "'News' is singular, so it takes the singular verb 'is'.",
             wrong: {
-                0: "'Are' is plural. 'News' is uncountable and always singular.",
-                2: "'Were' is past plural. 'News' is singular and this is a proverb (present tense).",
+                0: "'Are' is plural. 'News' is always singular.",
+                2: "'Were' is plural. 'News' is always singular.",
                 3: "'Have been' is plural. 'News' is always singular."
             }
         }
     },
     {
-        id: 'exMega_q8',
-        sentence: 'The audience _____ requested to take their seats.',
-        options: ['is', 'are', 'was', 'has'],
-        correct: 2,
-        rule: 'Rule 6: Collective noun — plural when members act individually',
+        id: 'c5_q9',
+        sentence: 'A pair of spectacles _____ lying on the desk.',
+        options: ['are', 'was', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 10: Spectacles preceded by "a pair of"',
         explanations: {
-            correct: "The word 'their' indicates the audience members are acting individually (each taking their own seat). When collective noun members act separately, use a plural verb. Also 'was requested' works as past tense singular.",
+            correct: "Preceded by 'a pair of', the singular noun 'pair' is the grammatical subject, so 'was' is correct.",
             wrong: {
-                0: "'Is' is present tense. The sentence uses past tense context ('requested to take their seats').",
-                1: "'Are' is present plural. The sentence is past tense. 'Were' would be the plural past option.",
-                3: "'Has' doesn't fit with 'requested to take'. We need 'was requested'."
+                0: "'Are' is plural. The subject is the singular 'pair'.",
+                2: "'Were' is plural. The subject is the singular 'pair'.",
+                3: "'Have been' is plural. The subject is the singular 'pair'."
             }
         }
     },
     {
-        id: 'exMega_q9',
-        sentence: 'Not only the players but also the captain _____ praised.',
+        id: 'c5_q10',
+        sentence: 'Ten thousand rupees _____ spent on the decorations.',
         options: ['were', 'was', 'are', 'have been'],
         correct: 1,
-        rule: 'Rule 3: Not only...but also — proximity rule',
+        rule: 'Rule 11: Money as a single sum',
         explanations: {
-            correct: "In 'not only...but also', the verb agrees with the NEARER subject. 'The captain' (singular) is nearer, so 'was' is correct.",
+            correct: "A sum of money ('Ten thousand rupees') is considered a single unit/amount, so the singular verb 'was' is correct.",
             wrong: {
-                0: "'Were' is plural. The nearer subject 'captain' is singular.",
-                2: "'Are' is present plural. The nearer subject is singular and the sentence is past tense.",
-                3: "'Have been' is plural. The nearer subject 'captain' is singular."
+                0: "'Were' is plural. Sums of money are treated as singular units.",
+                2: "'Are' is plural. Sums of money are treated as singular units.",
+                3: "'Have been' is plural. Sums of money are treated as singular units."
             }
         }
     },
     {
-        id: 'exMega_q10',
-        sentence: 'Two-thirds of the city _____ been flooded.',
+        id: 'c5_q11',
+        sentence: 'The audience _____ spellbound by the performance.',
+        options: ['were', 'was', 'are', 'have been'],
+        correct: 1,
+        rule: 'Rule 8: Collective nouns (acting as a unit)',
+        explanations: {
+            correct: "The collective noun 'audience' acts as a single, unified group here, so it takes the singular verb 'was'.",
+            wrong: {
+                0: "'Were' is plural. The audience acts as a single unit in this context.",
+                2: "'Are' is plural. The audience acts as a single unit in this context.",
+                3: "'Have been' is plural. The audience acts as a single unit in this context."
+            }
+        }
+    },
+    {
+        id: 'c5_q12',
+        sentence: 'No one _____ permitted to enter the laboratory without authorization.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 5: Indefinite pronouns',
+        explanations: {
+            correct: "'No one' is a singular indefinite pronoun, so it takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. 'No one' is singular.",
+                2: "'Were' is plural. 'No one' is singular.",
+                3: "'Have been' is plural. 'No one' is singular."
+            }
+        }
+    },
+    {
+        id: 'c5_q13',
+        sentence: 'Neither the manager nor the employees _____ about the changes.',
+        options: ['knows', 'know', 'is knowing', 'has known'],
+        correct: 1,
+        rule: 'Rule 4: Proximity rule',
+        explanations: {
+            correct: "With 'neither... nor', the verb agrees with the closer subject. 'Employees' is plural, so 'know' is correct.",
+            wrong: {
+                0: "'Knows' is singular. The closer subject 'employees' is plural.",
+                2: "'Is knowing' is singular and grammatically incorrect.",
+                3: "'Has known' is singular. The closer subject is plural."
+            }
+        }
+    },
+    {
+        id: 'c5_q14',
+        sentence: 'Rice and curry _____ his favorite dish.',
+        options: ['is', 'are', 'were', 'have been'],
+        correct: 0,
+        rule: 'Rule 3 Exception: Single food concept',
+        explanations: {
+            correct: "'Rice and curry' is a singular compound concept (a single dish/meal), so it takes the singular verb 'is'.",
+            wrong: {
+                1: "'Are' is plural. 'Rice and curry' represents a single meal unit here.",
+                2: "'Were' is plural. It represents a single dish unit.",
+                3: "'Have been' is plural. It represents a single dish unit."
+            }
+        }
+    },
+    {
+        id: 'c5_q15',
+        sentence: 'The president, accompanied by the ministers, _____ arriving shortly.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 2: Intervening phrases',
+        explanations: {
+            correct: "The subject is 'president' (singular). The phrase starting with 'accompanied by' does not change the subject's number, so 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. Intervening phrases do not affect the singular subject president.",
+                2: "'Were' is plural. Intervening phrases do not affect the singular subject.",
+                3: "'Have been' is plural. The subject is singular."
+            }
+        }
+    }
+];
+
+// ----- QUIZ 6 (Rules 1-15 + Bonus cumulative) — 20 Questions -----
+const QUESTIONS_C6 = [
+    {
+        id: 'c6_q1',
+        sentence: 'Many a student _____ made the same mistake in the exam.',
+        options: ['have', 'has', 'were', 'are'],
+        correct: 1,
+        rule: 'Bonus Rule: "Many a" + singular noun takes a singular verb',
+        explanations: {
+            correct: "The structure 'Many a' + singular noun takes a singular verb, so 'has' is correct.",
+            wrong: {
+                0: "'Have' is plural. 'Many a' grammatically requires a singular verb.",
+                2: "'Were' is plural and grammatically incorrect.",
+                3: "'Are' is plural and grammatically incorrect."
+            }
+        }
+    },
+    {
+        id: 'c6_q2',
+        sentence: 'More than one worker _____ complained about the noise.',
+        options: ['have', 'has', 'were', 'are'],
+        correct: 1,
+        rule: 'Bonus Rule: "More than one" + singular noun takes a singular verb',
+        explanations: {
+            correct: "Although the meaning is plural, the phrase 'More than one' + singular noun grammatically requires a singular verb, so 'has' is correct.",
+            wrong: {
+                0: "'Have' is plural. 'More than one' takes a singular verb based on the singular noun 'worker'.",
+                2: "'Were' is plural and grammatically incorrect.",
+                3: "'Are' is plural and grammatically incorrect."
+            }
+        }
+    },
+    {
+        id: 'c6_q3',
+        sentence: 'The number of accidents _____ decreasing this year.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Bonus Rule: "The number of" is singular',
+        explanations: {
+            correct: "'The number of' refers to the specific number/quantity itself, which is singular, so it takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. 'The number of' is singular, unlike 'A number of'.",
+                2: "'Were' is plural. 'The number of' is singular.",
+                3: "'Have been' is plural. 'The number of' is singular."
+            }
+        }
+    },
+    {
+        id: 'c6_q4',
+        sentence: 'A number of protesters _____ gathered outside.',
+        options: ['has', 'have', 'is', 'was'],
+        correct: 1,
+        rule: 'Bonus Rule: "A number of" is plural',
+        explanations: {
+            correct: "'A number of' is a collective modifier meaning 'several' or 'many' and takes a plural verb, so 'have' is correct.",
+            wrong: {
+                0: "'Has' is singular. 'A number of' is always plural, unlike 'The number of'.",
+                2: "'Is' is singular. 'A number of' requires a plural verb.",
+                3: "'Was' is singular. 'A number of' requires a plural verb."
+            }
+        }
+    },
+    {
+        id: 'c6_q5',
+        sentence: 'He is the only one of the students who _____ scored full marks.',
+        options: ['have', 'has', 'were', 'are'],
+        correct: 1,
+        rule: 'Rule 15 Exception: "the only one of those who" is singular',
+        explanations: {
+            correct: "While 'one of those who' takes a plural verb, 'the only one of those who' focuses on the single individual, requiring the singular verb 'has'.",
+            wrong: {
+                0: "'Have' is plural. The phrase 'the only one' restricts the subject to a singular entity, requiring 'has'.",
+                2: "'Were' is plural and doesn't fit grammatically.",
+                3: "'Are' is plural and doesn't fit grammatically."
+            }
+        }
+    },
+    {
+        id: 'c6_q6',
+        sentence: 'Fifty percent of the forest _____ been destroyed.',
         options: ['have', 'has', 'are', 'were'],
         correct: 1,
-        rule: 'Rule 8: Fractions — depends on the noun',
+        rule: 'Rule 12: Fractions and percentages (forest is singular)',
         explanations: {
-            correct: "'City' is a singular noun. When a fraction refers to a singular/uncountable noun, the verb is singular. 'Two-thirds of the city has been flooded.'",
+            correct: "'Fifty percent' refers to 'forest', which is singular/uncountable, so it takes the singular verb 'has'.",
             wrong: {
-                0: "'Have' is plural. The noun 'city' is singular, so the fraction takes a singular verb.",
-                2: "'Are' doesn't fit with 'been flooded'. We need 'has been'.",
-                3: "'Were' is plural past. 'City' is singular."
+                0: "'Have' is plural. The percentage refers to a singular forest.",
+                2: "'Are' is plural and incorrect with the past participle 'been'.",
+                3: "'Were' is plural and incorrect."
             }
         }
     },
     {
-        id: 'exMega_q11',
-        sentence: 'Two-thirds of the apples _____ rotten.',
+        id: 'c6_q7',
+        sentence: 'Fifty percent of the trees _____ been cut down.',
+        options: ['has', 'have', 'is', 'was'],
+        correct: 1,
+        rule: 'Rule 12: Fractions and percentages (trees is plural)',
+        explanations: {
+            correct: "'Fifty percent' refers to 'trees', which is plural countable, so it takes the plural verb 'have'.",
+            wrong: {
+                0: "'Has' is singular. The percentage refers to plural trees, requiring a plural verb.",
+                2: "'Is' is singular and incorrect with 'been'.",
+                3: "'Was' is singular and incorrect."
+            }
+        }
+    },
+    {
+        id: 'c6_q8',
+        sentence: 'There _____ a book and three pens on the desk.',
         options: ['is', 'are', 'was', 'has been'],
         correct: 1,
-        rule: 'Rule 8: Fractions — depends on the noun',
+        rule: 'Rule 13: "There/Here" with compound subjects',
         explanations: {
-            correct: "'Apples' is a plural countable noun. When a fraction refers to a plural noun, the verb is plural — 'are'.",
+            correct: "When 'there' is followed by a compound subject, the subject ('a book and three pens') is plural, so 'are' is correct.",
             wrong: {
-                0: "'Is' is singular. 'Apples' is plural, so 'two-thirds of the apples' takes a plural verb.",
-                2: "'Was' is singular past. 'Apples' is plural and sentence is present tense.",
-                3: "'Has been' is singular. 'Apples' is plural — use 'have been'."
+                0: "'Is' is singular. Although 'a book' is singular, the compound subject 'a book and three pens' is plural.",
+                2: "'Was' is singular. The compound subject is plural.",
+                3: "'Has been' is singular. The compound subject is plural."
             }
         }
     },
     {
-        id: 'exMega_q12',
-        sentence: 'The police _____ investigating the case.',
+        id: 'c6_q9',
+        sentence: 'Down the street _____ the parade of musicians.',
+        options: ['march', 'marches', 'are marching', 'have marched'],
+        correct: 1,
+        rule: 'Rule 14: Inverted sentences (subject is parade)',
+        explanations: {
+            correct: "The subject is 'parade' (singular), not 'musicians' (plural). Thus, the singular 'marches' is correct.",
+            wrong: {
+                0: "'March' is plural. The subject 'parade' is singular.",
+                2: "'Are marching' is plural. The subject 'parade' is singular.",
+                3: "'Have marched' is plural. The subject 'parade' is singular."
+            }
+        }
+    },
+    {
+        id: 'c6_q10',
+        sentence: 'His spectacles _____ missing.',
         options: ['is', 'are', 'was', 'has been'],
         correct: 1,
-        rule: 'Rule 9: "Police" is always plural',
+        rule: 'Rule 10: Nouns that are always plural',
         explanations: {
-            correct: "'Police' is always treated as a plural noun (like 'people'). It takes the plural verb 'are investigating'.",
+            correct: "'Spectacles' is a noun that is always plural, so it takes the plural verb 'are'.",
             wrong: {
-                0: "'Is' is singular. 'Police' is always plural.",
-                2: "'Was' is singular past. 'Police' is always plural — use 'were' for past.",
-                3: "'Has been' is singular. 'Police' is always plural — use 'have been'."
+                0: "'Is' is singular. 'Spectacles' is grammatically plural.",
+                2: "'Was' is singular. 'Spectacles' is grammatically plural.",
+                3: "'Has been' is singular. 'Spectacles' is grammatically plural."
             }
         }
     },
     {
-        id: 'exMega_q13',
-        sentence: 'Cattle _____ grazing in the field.',
+        id: 'c6_q11',
+        sentence: 'Measles _____ a common childhood disease.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 9: Nouns plural in form but singular in meaning',
+        explanations: {
+            correct: "'Measles' is a singular disease name, so it takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. 'Measles' is a singular disease name.",
+                2: "'Were' is plural. 'Measles' is singular.",
+                3: "'Have been' is plural. 'Measles' is singular."
+            }
+        }
+    },
+    {
+        id: 'c6_q12',
+        sentence: 'The office staff _____ very pleased with the new bonuses.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 8: Collective nouns (acting individually)',
+        explanations: {
+            correct: "The staff members are receiving individual bonuses and feeling pleased individually, so the plural verb 'were' is correct.",
+            wrong: {
+                0: "'Was' is singular. The context implies individual staff members, requiring a plural verb.",
+                2: "'Is' is singular. The individual context requires a plural verb.",
+                3: "'Has been' is singular. The individual context requires a plural verb."
+            }
+        }
+    },
+    {
+        id: 'c6_q13',
+        sentence: 'None of the fresh milk _____ sour.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 7: SANAM pronouns (milk is uncountable)',
+        explanations: {
+            correct: "'None' refers to 'milk' (uncountable/singular), so it takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. 'Milk' is uncountable and requires a singular verb.",
+                2: "'Were' is plural. 'Milk' requires a singular verb.",
+                3: "'Have been' is plural. 'Milk' requires a singular verb."
+            }
+        }
+    },
+    {
+        id: 'c6_q14',
+        sentence: 'None of the candidates _____ arrived yet.',
+        options: ['has', 'have', 'is', 'are'],
+        correct: 1,
+        rule: 'Rule 7: SANAM pronouns (candidates is plural countable)',
+        explanations: {
+            correct: "'None' refers to the plural 'candidates', so it takes the plural verb 'have'.",
+            wrong: {
+                0: "'Has' is singular. 'None' refers to the plural 'candidates' here, which requires a plural verb.",
+                2: "'Is' is singular and incorrect with the past participle 'arrived'.",
+                3: "'Are' is plural but doesn't form the present perfect tense with 'arrived'."
+            }
+        }
+    },
+    {
+        id: 'c6_q15',
+        sentence: 'Many of the workers _____ unhappy with the decision.',
         options: ['is', 'are', 'was', 'has been'],
         correct: 1,
-        rule: 'Rule 9: "Cattle" is always plural',
+        rule: 'Rule 6: Plural indefinite pronouns',
         explanations: {
-            correct: "'Cattle' is always a plural noun (there is no singular form 'cattle'). It takes the plural verb 'are'.",
+            correct: "'Many' is a plural indefinite pronoun, so it takes the plural verb 'are'.",
             wrong: {
-                0: "'Is' is singular. 'Cattle' is always plural.",
-                2: "'Was' is singular past. 'Cattle' is always plural.",
-                3: "'Has been' is singular. 'Cattle' is always plural."
+                0: "'Is' is singular. 'Many' is always plural.",
+                2: "'Was' is singular. 'Many' is always plural.",
+                3: "'Has been' is singular. 'Many' is always plural."
             }
         }
     },
     {
-        id: 'exMega_q14',
-        sentence: 'The United States _____ a large country.',
-        options: ['are', 'is', 'were', 'have been'],
+        id: 'c6_q16',
+        sentence: 'Everybody in the meeting _____ to agree with the plan.',
+        options: ['seem', 'seems', 'are seeming', 'have seemed'],
         correct: 1,
-        rule: 'Rule 11: Country names (even plural-looking) take singular verb',
+        rule: 'Rule 5: Singular indefinite pronouns',
         explanations: {
-            correct: "'The United States' is the name of one country. Country names, even if they look plural, are treated as singular — 'is'.",
+            correct: "'Everybody' is a singular indefinite pronoun, so it takes the singular verb 'seems'.",
             wrong: {
-                0: "'Are' is plural. 'The United States' is one country = singular.",
-                2: "'Were' is past plural. It's one country and this is present tense.",
-                3: "'Have been' is plural. One country = singular."
+                0: "'Seem' is plural. Indefinite pronouns like 'everybody' are singular.",
+                2: "'Are seeming' is plural. 'Everybody' is singular.",
+                3: "'Have seemed' is plural. 'Everybody' is singular."
             }
         }
     },
     {
-        id: 'exMega_q15',
-        sentence: 'Nobody _____ what happened last night.',
-        options: ['know', 'knows', 'are knowing', 'have known'],
-        correct: 1,
-        rule: 'Rule 7: Nobody/no one is always singular',
-        explanations: {
-            correct: "'Nobody' is an indefinite pronoun that is always singular. It takes the singular verb 'knows'.",
-            wrong: {
-                0: "'Know' is plural. 'Nobody' is always singular and takes 'knows'.",
-                2: "'Are knowing' is plural and incorrect — 'know' is a stative verb that isn't normally used in continuous form.",
-                3: "'Have known' is plural. 'Nobody' is singular — use 'has known'."
-            }
-        }
-    },
-    {
-        id: 'exMega_q16',
-        sentence: 'The information given in the reports _____ unreliable.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 9: Information is uncountable — singular verb',
-        explanations: {
-            correct: "'Information' is an uncountable noun, always singular. 'Given in the reports' is a phrase modifying 'information'. The verb is singular — 'is'.",
-            wrong: {
-                0: "'Are' is plural. 'Information' is uncountable and always singular.",
-                2: "'Were' is past plural. 'Information' is singular and sentence is present tense.",
-                3: "'Have been' is plural. 'Information' is always singular."
-            }
-        }
-    },
-    {
-        id: 'exMega_q17',
-        sentence: 'Ham and eggs _____ my favourite breakfast.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 2: Compound subject as single dish — singular verb',
-        explanations: {
-            correct: "'Ham and eggs' is a single dish/breakfast combination, not two separate items. Compound subjects that form one concept take a singular verb — 'is'.",
-            wrong: {
-                0: "'Are' would be correct if ham and eggs were separate items, but as a single breakfast dish, it's singular.",
-                2: "'Were' is past plural. The dish is singular and this is present tense.",
-                3: "'Have been' is plural. One dish = singular."
-            }
-        }
-    },
-    {
-        id: 'exMega_q18',
-        sentence: 'The jury _____ arguing among themselves.',
+        id: 'c6_q17',
+        sentence: 'Either the principal or the teachers _____ speaking now.',
         options: ['is', 'are', 'was', 'has been'],
         correct: 1,
-        rule: 'Rule 6: Collective noun — plural when members act individually',
+        rule: 'Rule 4: Proximity rule',
         explanations: {
-            correct: "'Arguing among themselves' shows the jury members are acting individually (disagreeing with each other). When collective noun members act separately, use plural — 'are'.",
+            correct: "With 'either... or', the verb agrees with the closer subject. 'Teachers' is plural, so 'are' is correct.",
             wrong: {
-                0: "'Is' would apply if the jury acted as a unit, but 'among themselves' indicates individual actions.",
-                2: "'Was' is singular past. The members are acting individually (plural) and the sentence is present continuous.",
-                3: "'Has been' is singular. The individual actions require a plural verb."
+                0: "'Is' is singular. The closer subject 'teachers' is plural.",
+                2: "'Was' is singular. The closer subject 'teachers' is plural.",
+                3: "'Has been' is singular. The closer subject 'teachers' is plural."
             }
         }
     },
     {
-        id: 'exMega_q19',
-        sentence: 'More than one student _____ absent today.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 7: "More than one" takes singular verb',
+        id: 'c6_q18',
+        sentence: 'Time and tide _____ for no man.',
+        options: ['wait', 'waits', 'is waiting', 'has waited'],
+        correct: 0,
+        rule: 'Rule 3: Compound subjects joined by and',
         explanations: {
-            correct: "'More than one' is grammatically singular despite referring to multiple entities. 'More than one student' takes the singular verb 'is'.",
+            correct: "'Time and tide' are two distinct concepts joined by 'and', so they require the plural verb 'wait'.",
             wrong: {
-                0: "'Are' is plural. Despite the logical meaning (multiple students), 'more than one + singular noun' always takes a singular verb.",
-                2: "'Were' is past plural. 'More than one' is singular and sentence is present tense.",
-                3: "'Have been' is plural. 'More than one' takes singular verb."
+                1: "'Waits' is singular. 'Time and tide' are separate entities, making the subject plural.",
+                2: "'Is waiting' is singular. The subject is plural.",
+                3: "'Has waited' is singular. The subject is plural."
             }
         }
     },
     {
-        id: 'exMega_q20',
-        sentence: 'The boy who _____ standing there is my brother.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 15: Relative pronoun agrees with its antecedent',
+        id: 'c6_q19',
+        sentence: 'The house, in addition to the outbuildings, _____ destroyed in the fire.',
+        options: ['were', 'are', 'was', 'have been'],
+        correct: 2,
+        rule: 'Rule 2: Intervening phrases',
         explanations: {
-            correct: "'Who' refers to 'the boy' (singular). The verb agrees with the antecedent — 'is standing'.",
+            correct: "'The house' is the singular subject. 'In addition to' phrases do not change the subject's number, so 'was' is correct.",
             wrong: {
-                0: "'Are' is plural. 'Who' refers to 'boy' (singular), so we need 'is'.",
-                2: "'Were' is past plural. 'Boy' is singular and sentence is present tense.",
-                3: "'Have been' is plural. 'Boy' is singular."
+                0: "'Were' is plural. Intervening phrases do not affect the singular subject 'house'.",
+                1: "'Are' is plural. The subject is 'house' (singular).",
+                3: "'Have been' is plural. The subject is singular."
             }
         }
     },
     {
-        id: 'exMega_q21',
-        sentence: 'Fifty miles _____ a long distance for a child to walk.',
-        options: ['are', 'is', 'were', 'seem'],
-        correct: 1,
-        rule: 'Rule 12: Distances as single units take singular verb',
-        explanations: {
-            correct: "'Fifty miles' is a distance treated as a single unit. It takes the singular verb 'is'.",
-            wrong: {
-                0: "'Are' is plural. Distances treated as single units are singular.",
-                2: "'Were' is past plural. The distance unit is singular and sentence is present tense.",
-                3: "'Seem' is plural base form. One distance unit takes singular 'seems' or 'is'."
-            }
-        }
-    },
-    {
-        id: 'exMega_q22',
-        sentence: 'Either Neha or her parents _____ going to attend the function.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 3: Either/or — proximity rule',
-        explanations: {
-            correct: "With 'either...or', the verb agrees with the NEARER subject. 'Her parents' (plural) is nearer, so the verb is 'are'.",
-            wrong: {
-                0: "'Is' is singular. The nearer subject 'parents' is plural, requiring 'are'.",
-                2: "'Was' is singular past. 'Parents' is plural and sentence is present continuous.",
-                3: "'Has been' is singular. 'Parents' is plural."
-            }
-        }
-    },
-    {
-        id: 'exMega_q23',
-        sentence: 'The advice given by my parents _____ always valuable.',
-        options: ['are', 'is', 'were', 'have been'],
-        correct: 1,
-        rule: 'Rule 9: Advice is uncountable — singular verb',
-        explanations: {
-            correct: "'Advice' is an uncountable noun (singular). 'Given by my parents' is a phrase modifying 'advice'. The verb is singular — 'is'.",
-            wrong: {
-                0: "'Are' is plural. 'Advice' is uncountable and always singular.",
-                2: "'Were' is past plural. 'Advice' is singular and this is present tense.",
-                3: "'Have been' is plural. 'Advice' is always singular."
-            }
-        }
-    },
-    {
-        id: 'exMega_q24',
-        sentence: 'It is the workers who _____ on strike.',
-        options: ['is', 'are', 'was', 'has been'],
-        correct: 1,
-        rule: 'Rule 15: Relative pronoun agrees with antecedent',
-        explanations: {
-            correct: "'Who' refers to 'workers' (plural). The verb must agree — 'are on strike'.",
-            wrong: {
-                0: "'Is' is singular. 'Who' refers to 'workers' (plural), requiring 'are'.",
-                2: "'Was' is singular past. 'Workers' is plural.",
-                3: "'Has been' is singular. 'Workers' is plural — use 'have been'."
-            }
-        }
-    },
-    {
-        id: 'exMega_q25',
-        sentence: 'The headmaster, accompanied by his staff, _____ arrived.',
+        id: 'c6_q20',
+        sentence: 'A team of medical experts _____ arrived to help.',
         options: ['have', 'has', 'are', 'were'],
         correct: 1,
-        rule: 'Rule 4: "Accompanied by" does not change the subject',
+        rule: 'Rule 1: Prepositional phrases (subject is team)',
         explanations: {
-            correct: "'Accompanied by' is a parenthetical phrase (like 'along with'). The subject is 'the headmaster' (singular). The verb is singular — 'has arrived'.",
+            correct: "The subject is 'team' (singular), not 'experts' (plural). Thus, 'has' is correct.",
             wrong: {
-                0: "'Have' is plural. 'Accompanied by his staff' doesn't make the subject plural. Only 'the headmaster' is the subject.",
-                2: "'Are' doesn't fit with 'arrived'. We need 'has arrived'.",
-                3: "'Were' is plural past. The subject is singular."
+                0: "'Have' is plural. The subject is 'team' (singular).",
+                2: "'Are' is plural and incorrect with the past participle 'arrived'.",
+                3: "'Were' is plural and incorrect with 'arrived'."
+            }
+        }
+    }
+];
+
+// ----- MEGA REVISION (Mixed Board-level) — 30 Questions -----
+const QUESTIONS_MEGA = [
+    {
+        id: 'mega_q1',
+        sentence: 'Every book, map, and chart in the library _____ cataloged.',
+        options: ['have been', 'has been', 'are', 'were'],
+        correct: 1,
+        rule: 'Rule 3 Exception: Preceded by every',
+        explanations: {
+            correct: "When compound subjects are preceded by 'every', they take a singular verb, so 'has been' is correct.",
+            wrong: {
+                0: "'Have been' is plural. Preceding 'every' makes the subject singular.",
+                2: "'Are' is plural. The subject is singular.",
+                3: "'Were' is plural. The subject is singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q2',
+        sentence: 'Neither the manager nor his assistants _____ willing to sign.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 4: Proximity rule',
+        explanations: {
+            correct: "The verb agrees with the closer subject, 'assistants' (plural), so 'were' is correct.",
+            wrong: {
+                0: "'Was' is singular. The closer subject is plural.",
+                2: "'Is' is singular. The closer subject is plural.",
+                3: "'Has been' is singular. The closer subject is plural."
+            }
+        }
+    },
+    {
+        id: 'mega_q3',
+        sentence: 'The jury _____ split in their opinions on the verdict.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 8: Collective nouns (split opinion)',
+        explanations: {
+            correct: "The division in opinions (marked by 'their') shows the jury members are acting as individuals, requiring the plural verb 'were'.",
+            wrong: {
+                0: "'Was' is singular. The jury is divided, so it takes a plural verb.",
+                2: "'Is' is singular. The divided collective noun requires a plural verb.",
+                3: "'Has been' is singular. The divided collective noun requires a plural verb."
+            }
+        }
+    },
+    {
+        id: 'mega_q4',
+        sentence: 'He is one of those players who _____ never satisfied with their performance.',
+        options: ['are', 'is', 'was', 'has been'],
+        correct: 0,
+        rule: 'Rule 15: Relative pronouns (antecedent is players)',
+        explanations: {
+            correct: "'Who' refers to the plural antecedent 'players', so it takes the plural verb 'are'.",
+            wrong: {
+                1: "'Is' is singular. The relative pronoun refers to the plural antecedent 'players', not 'one'.",
+                2: "'Was' is singular. The antecedent is plural.",
+                3: "'Has been' is singular. The antecedent is plural."
+            }
+        }
+    },
+    {
+        id: 'mega_q5',
+        sentence: 'Ten dollars _____ too much to pay for a cup of coffee.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 11: Money as a single unit',
+        explanations: {
+            correct: "'Ten dollars' is treated as a single sum, so it takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. Expressions of money are treated as singular units.",
+                2: "'Were' is plural. Money units are treated as singular.",
+                3: "'Have been' is plural. Money units are treated as singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q6',
+        sentence: 'Politics _____ a dirty game, according to many philosophers.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 9: Nouns plural in form but singular in meaning',
+        explanations: {
+            correct: "'Politics' is singular in meaning and takes the singular verb 'is'.",
+            wrong: {
+                0: "'Are' is plural. 'Politics' is singular.",
+                2: "'Were' is plural. 'Politics' is singular.",
+                3: "'Have been' is plural. 'Politics' is singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q7',
+        sentence: 'A pair of shears _____ needed for pruning the hedges.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 10: Plural nouns preceded by "a pair of"',
+        explanations: {
+            correct: "With 'a pair of', the subject is 'pair' (singular), so 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. The subject is 'pair' (singular).",
+                2: "'Were' is plural. The subject is 'pair' (singular).",
+                3: "'Have been' is plural. The subject is 'pair' (singular)."
+            }
+        }
+    },
+    {
+        id: 'mega_q8',
+        sentence: 'There _____ a list of names posted on the bulletin board.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 13: "There/Here" (subject is list)',
+        explanations: {
+            correct: "The subject is 'list' (singular), which follows the verb. Thus, 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. The subject is 'list' (singular), not 'names' (plural).",
+                2: "'Were' is plural. The subject is 'list' (singular).",
+                3: "'Have been' is plural. The subject is 'list' (singular)."
+            }
+        }
+    },
+    {
+        id: 'mega_q9',
+        sentence: 'Some of the wheat _____ ruined by the heavy rains.',
+        options: ['were', 'was', 'are', 'have been'],
+        correct: 1,
+        rule: 'Rule 7: SANAM indefinite pronouns (wheat is uncountable)',
+        explanations: {
+            correct: "'Some' refers to 'wheat' (uncountable/singular), so the singular verb 'was' is correct.",
+            wrong: {
+                0: "'Were' is plural. 'Wheat' is uncountable and singular.",
+                2: "'Are' is plural. 'Wheat' is uncountable and singular.",
+                3: "'Have been' is plural. 'Wheat' is uncountable and singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q10',
+        sentence: 'Neither of the proposals _____ to be acceptable.',
+        options: ['seem', 'seems', 'are seeming', 'have seemed'],
+        correct: 1,
+        rule: 'Rule 5: Singular indefinite pronouns',
+        explanations: {
+            correct: "'Neither' is a singular indefinite pronoun, so it takes the singular verb 'seems'.",
+            wrong: {
+                0: "'Seem' is plural. 'Neither' requires a singular verb.",
+                2: "'Are seeming' is plural. 'Neither' is singular.",
+                3: "'Have seemed' is plural. 'Neither' is singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q11',
+        sentence: 'The captain, along with the coach and manager, _____ attending.',
+        options: ['are', 'were', 'is', 'have been'],
+        correct: 2,
+        rule: 'Rule 2: Intervening phrases',
+        explanations: {
+            correct: "The subject is the singular 'captain'. The phrase starting with 'along with' does not affect the number, so 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. Intervening phrases do not alter the singular subject 'captain'.",
+                1: "'Were' is plural. Intervening phrases do not alter the singular subject.",
+                3: "'Have been' is plural. The subject is singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q12',
+        sentence: 'Many a man _____ lost his life in the search for gold.',
+        options: ['have', 'has', 'were', 'are'],
+        correct: 1,
+        rule: 'Bonus Rule: "Many a" + singular noun takes a singular verb',
+        explanations: {
+            correct: "'Many a' + singular noun takes the singular verb 'has'.",
+            wrong: {
+                0: "'Have' is plural. 'Many a' grammatically requires a singular verb.",
+                2: "'Were' is plural and grammatically incorrect.",
+                3: "'Are' is plural and grammatically incorrect."
+            }
+        }
+    },
+    {
+        id: 'mega_q13',
+        sentence: 'More than one candidate _____ submitted their application.',
+        options: ['have', 'has', 'were', 'are'],
+        correct: 1,
+        rule: 'Bonus Rule: "More than one" + singular noun takes a singular verb',
+        explanations: {
+            correct: "'More than one' followed by a singular noun takes the singular verb 'has'.",
+            wrong: {
+                0: "'Have' is plural. 'More than one' takes a singular verb based on the singular noun 'candidate'.",
+                2: "'Were' is plural and grammatically incorrect.",
+                3: "'Are' is plural and grammatically incorrect."
+            }
+        }
+    },
+    {
+        id: 'mega_q14',
+        sentence: 'The number of students enrolled _____ growing every semester.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Bonus Rule: "The number of" is singular',
+        explanations: {
+            correct: "'The number of' refers to the specific number, which is singular, so it takes 'is'.",
+            wrong: {
+                0: "'Are' is plural. 'The number of' is singular, unlike 'A number of'.",
+                2: "'Were' is plural. 'The number of' is singular.",
+                3: "'Have been' is plural. 'The number of' is singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q15',
+        sentence: 'A number of students _____ complained about the scheduling.',
+        options: ['has', 'have', 'is', 'was'],
+        correct: 1,
+        rule: 'Bonus Rule: "A number of" is plural',
+        explanations: {
+            correct: "'A number of' functions as a plural modifier meaning 'several', so it takes 'have'.",
+            wrong: {
+                0: "'Has' is singular. 'A number of' is plural, unlike 'The number of'.",
+                2: "'Is' is singular. 'A number of' requires a plural verb.",
+                3: "'Was' is singular. 'A number of' requires a plural verb."
+            }
+        }
+    },
+    {
+        id: 'mega_q16',
+        sentence: 'Three-fourths of the forest _____ been logged.',
+        options: ['have', 'has', 'are', 'were'],
+        correct: 1,
+        rule: 'Rule 12: Fractions (forest is singular)',
+        explanations: {
+            correct: "The fraction refers to 'forest' (singular/mass), so it takes the singular verb 'has'.",
+            wrong: {
+                0: "'Have' is plural. The fraction refers to a singular forest.",
+                2: "'Are' is plural and incorrect with 'been'.",
+                3: "'Were' is plural and incorrect."
+            }
+        }
+    },
+    {
+        id: 'mega_q17',
+        sentence: 'Three-fourths of the houses _____ damaged in the storm.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 12: Fractions (houses is plural)',
+        explanations: {
+            correct: "The fraction refers to 'houses' (plural), so it takes the plural verb 'were'.",
+            wrong: {
+                0: "'Was' is singular. The fraction refers to plural houses.",
+                2: "'Is' is singular. The fraction refers to plural houses.",
+                3: "'Has been' is singular. The fraction refers to plural houses."
+            }
+        }
+    },
+    {
+        id: 'mega_q18',
+        sentence: 'Here _____ the results of the final examinations.',
+        options: ['is', 'are', 'was', 'has been'],
+        correct: 1,
+        rule: 'Rule 13: "There/Here" (subject is results)',
+        explanations: {
+            correct: "The subject 'results' (plural) follows the verb, so the plural 'are' is correct.",
+            wrong: {
+                0: "'Is' is singular. The subject 'results' is plural.",
+                2: "'Was' is singular. The subject 'results' is plural.",
+                3: "'Has been' is singular. The subject 'results' is plural."
+            }
+        }
+    },
+    {
+        id: 'mega_q19',
+        sentence: 'Into the room _____ the principal and the teachers.',
+        options: ['walks', 'walk', 'is walking', 'has walked'],
+        correct: 1,
+        rule: 'Rule 14: Inverted sentences (subject is principal and teachers)',
+        explanations: {
+            correct: "The subject is compound: 'the principal and the teachers' (plural), so 'walk' is correct.",
+            wrong: {
+                0: "'Walks' is singular. The subject is compound and plural.",
+                2: "'Is walking' is singular. The subject is compound and plural.",
+                3: "'Has walked' is singular. The subject is compound and plural."
+            }
+        }
+    },
+    {
+        id: 'mega_q20',
+        sentence: 'He is the only one of the applicants who _____ a doctorate degree.',
+        options: ['hold', 'holds', 'are holding', 'have held'],
+        correct: 1,
+        rule: 'Rule 15 Exception: "the only one of those who" is singular',
+        explanations: {
+            correct: "'The only one' makes the antecedent singular, so 'holds' is correct.",
+            wrong: {
+                0: "'Hold' is plural. The phrase 'the only one' restricts the subject to a singular entity, requiring 'holds'.",
+                2: "'Are holding' is plural. The subject is singular.",
+                3: "'Have held' is plural. The subject is singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q21',
+        sentence: 'The state of his affairs _____ extremely critical.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 1: Prepositional phrases (subject is state)',
+        explanations: {
+            correct: "The subject is 'state' (singular), not 'affairs' (plural). Thus, 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. The subject is 'state' (singular).",
+                2: "'Were' is plural. The subject is 'state' (singular).",
+                3: "'Have been' is plural. The subject is 'state' (singular)."
+            }
+        }
+    },
+    {
+        id: 'mega_q22',
+        sentence: 'Slow and steady _____ the race.',
+        options: ['win', 'wins', 'are winning', 'have won'],
+        correct: 1,
+        rule: 'Rule 3 Exception: Single proverb/concept',
+        explanations: {
+            correct: "'Slow and steady' represents a single unified concept/proverb, so it takes the singular verb 'wins'.",
+            wrong: {
+                0: "'Win' is plural. As a proverb and single concept, it takes a singular verb.",
+                2: "'Are winning' is plural. It represents a single concept.",
+                3: "'Have won' is plural. It represents a single concept."
+            }
+        }
+    },
+    {
+        id: 'mega_q23',
+        sentence: 'Neither he nor you _____ expected to attend the ceremony.',
+        options: ['is', 'are', 'was', 'has been'],
+        correct: 1,
+        rule: 'Rule 4: Proximity rule (agrees with you)',
+        explanations: {
+            correct: "With 'neither... nor', the verb agrees with the closer subject. 'You' takes 'are', so 'are' is correct.",
+            wrong: {
+                0: "'Is' is incorrect. 'You' cannot be paired with 'is'.",
+                2: "'Was' is incorrect. 'You' cannot be paired with 'was'.",
+                3: "'Has been' is incorrect. 'You' requires 'have been' or 'are'."
+            }
+        }
+    },
+    {
+        id: 'mega_q24',
+        sentence: 'Each of the players _____ given a participation medal.',
+        options: ['were', 'was', 'are', 'have been'],
+        correct: 1,
+        rule: 'Rule 5: Singular indefinite pronouns',
+        explanations: {
+            correct: "'Each' is always singular, so it takes 'was'.",
+            wrong: {
+                0: "'Were' is plural. 'Each' is singular.",
+                2: "'Are' is plural. 'Each' is singular.",
+                3: "'Have been' is plural. 'Each' is singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q25',
+        sentence: 'Several of the paintings _____ damaged during transport.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 6: Plural indefinite pronouns',
+        explanations: {
+            correct: "'Several' is a plural indefinite pronoun, so it takes 'were'.",
+            wrong: {
+                0: "'Was' is singular. 'Several' is plural.",
+                2: "'Is' is singular. 'Several' is plural.",
+                3: "'Has been' is singular. 'Several' is plural."
+            }
+        }
+    },
+    {
+        id: 'mega_q26',
+        sentence: 'All of the information _____ been verified.',
+        options: ['have', 'has', 'are', 'were'],
+        correct: 1,
+        rule: 'Rule 7: SANAM pronouns (information is uncountable)',
+        explanations: {
+            correct: "'All' refers to 'information' (uncountable/singular), so it takes 'has'.",
+            wrong: {
+                0: "'Have' is plural. 'Information' is uncountable and singular.",
+                2: "'Are' is plural and incorrect with 'been'.",
+                3: "'Were' is plural and incorrect."
+            }
+        }
+    },
+    {
+        id: 'mega_q27',
+        sentence: 'The herd of cattle _____ grazing in the meadow.',
+        options: ['are', 'is', 'were', 'have been'],
+        correct: 1,
+        rule: 'Rule 8: Collective nouns (acting as a unit)',
+        explanations: {
+            correct: "'Herd' is a collective noun acting as a single unit, so the singular verb 'is' is correct.",
+            wrong: {
+                0: "'Are' is plural. The subject is the singular collective noun 'herd'.",
+                2: "'Were' is plural. The subject is singular 'herd'.",
+                3: "'Have been' is plural. The subject is singular 'herd'."
+            }
+        }
+    },
+    {
+        id: 'mega_q28',
+        sentence: 'The trousers he bought yesterday _____ very expensive.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 10: Nouns that are always plural',
+        explanations: {
+            correct: "'Trousers' is always plural, so it takes the plural verb 'were'.",
+            wrong: {
+                0: "'Was' is singular. 'Trousers' requires a plural verb.",
+                2: "'Is' is singular. 'Trousers' requires a plural verb.",
+                3: "'Has been' is singular. 'Trousers' requires a plural verb."
+            }
+        }
+    },
+    {
+        id: 'mega_q29',
+        sentence: 'Gulliver\'s Travels _____ written by Jonathan Swift.',
+        options: ['were', 'was', 'are', 'have been'],
+        correct: 1,
+        rule: 'Rule 9: Titles of books are singular',
+        explanations: {
+            correct: "'Gulliver's Travels' is the title of a single book, so it takes the singular verb 'was'.",
+            wrong: {
+                0: "'Were' is plural. Titles of books are treated as singular.",
+                2: "'Are' is plural. Titles of books are treated as singular.",
+                3: "'Have been' is plural. Titles of books are treated as singular."
+            }
+        }
+    },
+    {
+        id: 'mega_q30',
+        sentence: 'She is one of the girls who _____ selected for the tournament.',
+        options: ['was', 'were', 'is', 'has been'],
+        correct: 1,
+        rule: 'Rule 15: Relative pronouns (antecedent is girls)',
+        explanations: {
+            correct: "The relative pronoun 'who' refers to the plural antecedent 'girls', so it takes the plural verb 'were'.",
+            wrong: {
+                0: "'Was' is singular. The relative pronoun refers to the plural antecedent 'girls', not 'one'.",
+                2: "'Is' is singular. The antecedent is plural.",
+                3: "'Has been' is singular. The antecedent is plural."
             }
         }
     }
@@ -1388,11 +1546,13 @@ const QUESTIONS_EXMEGA = [
 // Combine all questions into a lookup map
 const ALL_QUESTIONS = {};
 const ALL_SECTIONS = {
-    exA: QUESTIONS_EXA,
-    exB: QUESTIONS_EXB,
-    exC: QUESTIONS_EXC,
-    exMix: QUESTIONS_EXMIX,
-    exMega: QUESTIONS_EXMEGA
+    c1: QUESTIONS_C1,
+    c2: QUESTIONS_C2,
+    c3: QUESTIONS_C3,
+    c4: QUESTIONS_C4,
+    c5: QUESTIONS_C5,
+    c6: QUESTIONS_C6,
+    mega: QUESTIONS_MEGA
 };
 
 // Build the lookup
@@ -1407,8 +1567,8 @@ for (const [sectionId, questions] of Object.entries(ALL_SECTIONS)) {
 // ============================================================
 const SVA_STATE = {
     currentSlideIndex: 0,
-    unlockedSlideIndex: 8,  // Slides 0-8 are lessons/unlocked by default. Slide 9 is first quiz (Exercise A).
-    totalSlides: 14,
+    unlockedSlideIndex: 0,  // Slide 0 starts unlocked. Interleaved lessons unlock next slide.
+    totalSlides: 16,
     sectionResults: {}  // track scores per section
 };
 
@@ -1419,7 +1579,20 @@ const SVA_STATE = {
 // ----- Navigation -----
 
 function navigateSlide(direction) {
-    const nextIndex = SVA_STATE.currentSlideIndex + direction;
+    let nextIndex = SVA_STATE.currentSlideIndex + direction;
+
+    // If we are moving forward from a lesson/info slide, automatically unlock the next slide (which is a quiz)
+    if (direction === 1 && [0, 1, 3, 5, 7, 9, 11, 13].includes(SVA_STATE.currentSlideIndex)) {
+        if (nextIndex > SVA_STATE.unlockedSlideIndex) {
+            const allSlides = document.querySelectorAll('.slide');
+            if (allSlides[nextIndex]) {
+                allSlides[nextIndex].classList.remove('locked');
+                SVA_STATE.unlockedSlideIndex = nextIndex;
+                updateProgress();
+            }
+        }
+    }
+
     if (nextIndex >= 0 && nextIndex <= SVA_STATE.unlockedSlideIndex && nextIndex < SVA_STATE.totalSlides) {
         SVA_STATE.currentSlideIndex = nextIndex;
         scrollToSlide(nextIndex);
@@ -1483,26 +1656,27 @@ function updateCompanionText(faceKey, text) {
 function updateCompanionForSlide(index) {
     const slidesData = [
         "Hey Kinjal! I'm Artie, your grammar buddy. Ready to conquer Subject-Verb Agreement? Slide right to start! 🎯",
-        "Rule Group 1-5: These are the foundation! Learn about singular/plural subjects, compound subjects, either/or, and sneaky intervening phrases.",
-        "Rule Group 6-10: Collective nouns, 'each/every', some/all depends on the noun, and the tricky 'the number of' vs 'a number of'!",
-        "Rule Group 11-15: Titles, distances, 'there + be', inverted sentences, and relative pronouns. Almost done with theory!",
-        "Quick Recap: Let's review all 15 rules at a glance before diving into practice. Knowledge is power! 💪",
-        "Exercise A: 15 questions on Rules 1-5. Show me what you've learned about basic agreement and tricky phrases!",
-        "Exercise B: 15 questions on Rules 6-10. Collective nouns, uncountable nouns, and 'the number of' await!",
-        "Exercise C: 15 questions on Rules 11-15. Titles, distances, inverted sentences, and relative pronouns!",
-        "Mixed Exercise: 20 questions mixing ALL rules! This is the real test. Stay focused, you've got this! 🔥",
-        "Pre-Mega Checkpoint: You've come so far! Ready for the ultimate challenge? The Mega Exercise is optional but rewarding!",
-        "MEGA Exercise: 25 tricky questions covering every rule. This is ICSE-board level difficulty. Bring it on! 💎",
-        "Review Time: Check your overall performance across all sections. Identify areas for improvement.",
-        "Final Summary: You've mastered Subject-Verb Agreement! Let's celebrate your achievement! 🎉",
-        "Congratulations, Kinjal! Here is your graduation certificate. You are now an SVA champion! 🏆"
+        "Rules 1-3: Singular vs. Plural, Intervening Phrases, and Compound Subjects joined by 'and'. Take notes!",
+        "Quiz 1: Let's test your understanding of Rules 1-3. Select the correct options below! 📝",
+        "Rules 4-5: Compound subjects with 'or/nor', and singular indefinite pronouns like 'each/everyone'.",
+        "Quiz 2: Cumulative quiz covering Rules 1-5. Keep an eye on those singular indefinite pronouns! 🔍",
+        "Rules 6-8: Plural indefinite pronouns, SANAM pronouns, and collective nouns (jury, committee).",
+        "Quiz 3: Cumulative quiz covering Rules 1-8. Watch out for collective nouns acting as individual members! 🧠",
+        "Rules 9-11: Nouns plural in form but singular in meaning, always-plural nouns, and units of measurement.",
+        "Quiz 4: Cumulative quiz covering Rules 1-11. Is physics singular or plural? Let's find out! ⚡",
+        "Rules 12-15: Fractions, percentages, 'there/here' structures, inverted sentences, and relative pronouns.",
+        "Quiz 5: Cumulative quiz covering Rules 1-15. This covers all the standard textbook rules! 🎓",
+        "Bonus Rules: 'Many a', 'more than one', and the difference between 'The number of' vs 'A number of'.",
+        "Quiz 6: Cumulative quiz covering Rules 1-15 + Bonus Rules. Show me your mastery of the advanced rules! 💎",
+        "Quick Recap: A handy cheat sheet of all rules before we face the final boss! 🛡️",
+        "Mega Revision: The ultimate test! 30 advanced, board-level questions. This is optional, but highly recommended! 🔥",
+        "Congratulations, Kinjal! You have conquered Subject-Verb Agreement. Here is your certificate! 🏆"
     ];
 
     let face = "WELCOME";
-    if (index >= 5 && index <= 8) face = "THINKING";
-    if (index === 9) face = "HAPPY";
-    if (index === 10) face = "SHOCKED";
-    if (index === SVA_STATE.totalSlides - 1) face = "GRADUATION";
+    if ([2, 4, 6, 8, 10, 12, 14].includes(index)) face = "THINKING";
+    if ([1, 3, 5, 7, 9, 11, 13].includes(index)) face = "HAPPY";
+    if (index === 15) face = "GRADUATION";
 
     updateCompanionText(face, slidesData[index] || "");
 }
@@ -1548,7 +1722,9 @@ function checkSection(sectionId) {
 
             // Get specific wrong explanation
             let wrongExplanation = '';
-            if (question.explanations.wrong[selectedIndex] !== undefined) {
+            if (isNaN(selectedIndex)) {
+                wrongExplanation = 'Please select an option before checking.';
+            } else if (question.explanations.wrong[selectedIndex] !== undefined) {
                 wrongExplanation = question.explanations.wrong[selectedIndex];
             } else {
                 wrongExplanation = `'${selectedOption}' is not the right choice here.`;
@@ -1557,7 +1733,7 @@ function checkSection(sectionId) {
             if (explanationPanel) {
                 explanationPanel.innerHTML = `
                     <div class="result-wrong">
-                        <strong>❌ Incorrect.</strong> You chose '<em>${selectedOption}</em>'. ${wrongExplanation}
+                        <strong>❌ Incorrect.</strong> You chose '<em>${selectedOption || "nothing"}</em>'. ${wrongExplanation}
                     </div>
                     <div class="result-correct" style="margin-top: 0.5rem;">
                         <strong>✅ Correct answer: '<em>${correctOption}</em>'.</strong> ${question.explanations.correct}
@@ -1590,7 +1766,7 @@ function checkSection(sectionId) {
             feedbackBox.innerHTML = `
                 <div class="score-number">${correctCount}/${totalQuestions}</div>
                 <div class="score-label">Perfect Score! All answers correct!</div>
-                <p style="margin-top: 0.5rem; font-size: 0.95rem;">The next section is now unlocked. Slide right to continue.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.95rem;">The next section is now unlocked. Click next to continue.</p>
             `;
             updateCompanionText("HAPPY", `Perfect! You got all ${totalQuestions} questions right! Next section is now unlocked! 🌟`);
             unlockNextSlide();
@@ -1681,11 +1857,13 @@ function showCertificate() {
 // ============================================================
 function renderSVAQuestions() {
     const sections = {
-        exA: QUESTIONS_EXA,
-        exB: QUESTIONS_EXB,
-        exC: QUESTIONS_EXC,
-        exMix: QUESTIONS_EXMIX,
-        exMega: QUESTIONS_EXMEGA
+        c1: QUESTIONS_C1,
+        c2: QUESTIONS_C2,
+        c3: QUESTIONS_C3,
+        c4: QUESTIONS_C4,
+        c5: QUESTIONS_C5,
+        c6: QUESTIONS_C6,
+        mega: QUESTIONS_MEGA
     };
 
     for (const [sectionId, questions] of Object.entries(sections)) {
@@ -1693,9 +1871,9 @@ function renderSVAQuestions() {
         if (!container) continue;
 
         const originalScoreSummary = container.querySelector('.score-summary');
-        
+
         container.innerHTML = ''; // Clear fallback/existing HTML
-        
+
         questions.forEach((q, index) => {
             const block = document.createElement('div');
             block.className = 'question-block';
@@ -1711,7 +1889,7 @@ function renderSVAQuestions() {
 
             // Split sentence around the blank "_____"
             const parts = q.sentence.split('_____');
-            
+
             // Add first part of sentence
             const part1 = document.createTextNode(parts[0]);
             qSentence.appendChild(part1);
@@ -1746,7 +1924,7 @@ function renderSVAQuestions() {
             if (q.rule) {
                 const ruleTag = document.createElement('span');
                 ruleTag.className = 'q-rule-tag';
-                ruleTag.textContent = q.rule.split(':')[0]; 
+                ruleTag.textContent = q.rule.split(':')[0];
                 qSentence.appendChild(ruleTag);
             }
 
@@ -1800,7 +1978,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSVAQuestions();
     scrollToSlide(0);
     updateProgress();
-    updateCompanionText("WELCOME", "Hey Kinjal! I'm Artie, your grammar buddy. Ready to conquer Subject-Verb Agreement? Slide right to start! 🎯");
+    updateCompanionText("WELCOME", "Hey Kinjal! I'm Artie, your grammar buddy. Ready to conquer Subject-Verb Agreement? Click next to start! 🎯");
 
     // ----- Bind Navigation Buttons -----
     document.querySelectorAll('.btn-next').forEach(btn => {
@@ -1816,27 +1994,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ----- Bind Check Buttons -----
-    const checkExA = document.getElementById('check-exA');
-    if (checkExA) checkExA.addEventListener('click', () => checkSection('exA'));
+    const checkC1 = document.getElementById('check-c1');
+    if (checkC1) checkC1.addEventListener('click', () => checkSection('c1'));
 
-    const checkExB = document.getElementById('check-exB');
-    if (checkExB) checkExB.addEventListener('click', () => checkSection('exB'));
+    const checkC2 = document.getElementById('check-c2');
+    if (checkC2) checkC2.addEventListener('click', () => checkSection('c2'));
 
-    const checkExC = document.getElementById('check-exC');
-    if (checkExC) checkExC.addEventListener('click', () => checkSection('exC'));
+    const checkC3 = document.getElementById('check-c3');
+    if (checkC3) checkC3.addEventListener('click', () => checkSection('c3'));
 
-    const checkExMix = document.getElementById('check-exMix');
-    if (checkExMix) checkExMix.addEventListener('click', () => checkSection('exMix'));
+    const checkC4 = document.getElementById('check-c4');
+    if (checkC4) checkC4.addEventListener('click', () => checkSection('c4'));
 
-    const checkExMega = document.getElementById('check-exMega');
-    if (checkExMega) checkExMega.addEventListener('click', () => checkSection('exMega'));
+    const checkC5 = document.getElementById('check-c5');
+    if (checkC5) checkC5.addEventListener('click', () => checkSection('c5'));
+
+    const checkC6 = document.getElementById('check-c6');
+    if (checkC6) checkC6.addEventListener('click', () => checkSection('c6'));
+
+    const checkMega = document.getElementById('check-mega');
+    if (checkMega) checkMega.addEventListener('click', () => checkSection('mega'));
 
     // ----- Skip to Certificate (Mega is optional) -----
     const skipToEndBtn = document.getElementById('skip-mega');
     if (skipToEndBtn) {
         skipToEndBtn.addEventListener('click', () => {
-            unlockNextSlide();
-            navigateSlide(1);
+            // Unlock Graduation (Slide 16, index 15)
+            const allSlides = document.querySelectorAll('.slide');
+            if (allSlides[15]) {
+                allSlides[15].classList.remove('locked');
+                SVA_STATE.unlockedSlideIndex = 15;
+            }
+            SVA_STATE.currentSlideIndex = 15;
+            scrollToSlide(15);
+            updateProgress();
+            updateCompanionForSlide(15);
         });
     }
 
