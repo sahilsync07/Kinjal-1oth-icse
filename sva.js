@@ -1407,7 +1407,7 @@ for (const [sectionId, questions] of Object.entries(ALL_SECTIONS)) {
 // ============================================================
 const SVA_STATE = {
     currentSlideIndex: 0,
-    unlockedSlideIndex: 1,  // slide 0 = welcome, slide 1 = first teaching slide (unlocked)
+    unlockedSlideIndex: 8,  // Slides 0-8 are lessons/unlocked by default. Slide 9 is first quiz (Exercise A).
     totalSlides: 14,
     sectionResults: {}  // track scores per section
 };
@@ -1429,29 +1429,14 @@ function navigateSlide(direction) {
 }
 
 function scrollToSlide(index) {
-    const slides = document.querySelectorAll('.slide:not(.locked)');
-    if (slides[index]) {
-        slides[index].scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-let isScrolling = false;
-function handleScrollInterception() {
-    if (isScrolling) return;
-    const container = document.querySelector('.scroll-container');
-    const scrollLeft = container.scrollLeft;
-    const width = window.innerWidth;
-    const targetIndex = Math.round(scrollLeft / width);
-
-    if (targetIndex > SVA_STATE.unlockedSlideIndex) {
-        isScrolling = true;
-        scrollToSlide(SVA_STATE.currentSlideIndex);
-        setTimeout(() => { isScrolling = false; }, 500);
-    } else if (targetIndex !== SVA_STATE.currentSlideIndex) {
-        SVA_STATE.currentSlideIndex = targetIndex;
-        updateProgress();
-        updateCompanionForSlide(targetIndex);
-    }
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach((slide, idx) => {
+        if (idx === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
 }
 
 function unlockNextSlide() {
@@ -1813,6 +1798,7 @@ function renderSVAQuestions() {
 document.addEventListener('DOMContentLoaded', () => {
     // Initial setup
     renderSVAQuestions();
+    scrollToSlide(0);
     updateProgress();
     updateCompanionText("WELCOME", "Hey Kinjal! I'm Artie, your grammar buddy. Ready to conquer Subject-Verb Agreement? Slide right to start! 🎯");
 
@@ -1844,12 +1830,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const checkExMega = document.getElementById('check-exMega');
     if (checkExMega) checkExMega.addEventListener('click', () => checkSection('exMega'));
-
-    // ----- Bind Scroll Interception -----
-    const container = document.querySelector('.scroll-container');
-    if (container) {
-        container.addEventListener('scroll', handleScrollInterception);
-    }
 
     // ----- Skip to Certificate (Mega is optional) -----
     const skipToEndBtn = document.getElementById('skip-mega');

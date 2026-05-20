@@ -96,36 +96,28 @@ header {
 /* Scroll Container */
 .scroll-container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
     width: 100vw;
     height: calc(100vh - 60px);
     margin-top: 60px;
 }
 
-/* Hide scrollbar but keep functionality */
-.scroll-container::-webkit-scrollbar {
-    display: none;
-}
-.scroll-container {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
 /* Slide Definition */
 .slide {
+    display: none !important;
     flex: 0 0 100vw;
     width: 100vw;
     height: 100%;
-    scroll-snap-align: start;
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     overflow-y: auto;
     background-color: var(--canvas-bg);
+}
+
+.slide.active {
+    display: flex !important;
 }
 
 .slide.locked {

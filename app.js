@@ -12,7 +12,7 @@ const COMPANION_EXPRESSIONS = {
 // Application State
 const APP_STATE = {
     currentSlideIndex: 0,
-    unlockedSlideIndex: 0,
+    unlockedSlideIndex: 1, // Slide 0 (Welcome) and Slide 1 (A vs An) are unlocked by default
     totalSlides: 10,
     sectionResults: {}
 };
@@ -1261,6 +1261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderQuiz(sectionId, questions);
     });
 
+    scrollToSlide(0);
     updateProgress();
     updateCompanionText("WELCOME", "Hey Kinjal! I'm Artie, your grammar buddy. Let's master Articles together. Slide right to start!");
     
@@ -1287,12 +1288,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('check-ex2').addEventListener('click', () => checkSection('ex2'));
     document.getElementById('check-ex3').addEventListener('click', () => checkSection('ex3'));
 
-    // Prevent direct manual scroll past unlocked slides
-    const container = document.querySelector('.scroll-container');
-    if (container) {
-        container.addEventListener('scroll', handleScrollInterception);
-    }
-
     // Auto-show certificate when last slide is active/unlocked
     const allSlides = document.querySelectorAll('.slide');
     if (allSlides.length > 0) {
@@ -1317,33 +1312,16 @@ function navigateSlide(direction) {
     }
 }
 
-// Scroll to slide element
+// Set active slide element
 function scrollToSlide(index) {
-    const slides = document.querySelectorAll('.slide:not(.locked)');
-    if (slides[index]) {
-        slides[index].scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// Track and block unauthorized scrolls
-let isScrolling = false;
-function handleScrollInterception() {
-    if (isScrolling) return;
-    const container = document.querySelector('.scroll-container');
-    const scrollLeft = container.scrollLeft;
-    const width = window.innerWidth;
-    const targetIndex = Math.round(scrollLeft / width);
-
-    if (targetIndex > APP_STATE.unlockedSlideIndex) {
-        isScrolling = true;
-        // Snap back to unlocked
-        scrollToSlide(APP_STATE.currentSlideIndex);
-        setTimeout(() => { isScrolling = false; }, 500);
-    } else if (targetIndex !== APP_STATE.currentSlideIndex) {
-        APP_STATE.currentSlideIndex = targetIndex;
-        updateProgress();
-        updateCompanionForSlide(targetIndex);
-    }
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach((slide, idx) => {
+        if (idx === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
 }
 
 // Unlock Slide in DOM by removing .locked class
