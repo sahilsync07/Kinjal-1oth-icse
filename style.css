@@ -909,6 +909,423 @@ button:active {
 }
 
 /* =======================================
+   SUBJECT DIVIDERS
+   ======================================= */
+
+.subject-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.subject-divider-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.subject-divider-text {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.subject-divider-line {
+    flex: 1;
+    height: 2px;
+    background-color: var(--border-color);
+}
+
+/* =======================================
+   LOCKED / COMING SOON CARDS
+   ======================================= */
+
+.chapter-card.chapter-locked {
+    cursor: default;
+    opacity: 0.55;
+    border-style: dashed;
+}
+
+.chapter-card.chapter-locked:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+}
+
+.chapter-card.chapter-locked::before {
+    border-style: dashed;
+}
+
+.chapter-lock {
+    font-size: 1.4rem;
+    min-width: 40px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.chapter-tag.tag-coming {
+    background-color: var(--border-color);
+    color: #ffffff;
+    border-color: var(--border-color);
+}
+
+/* =======================================
+   INFO FAB BUTTON
+   ======================================= */
+
+.info-fab {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 auto 2rem;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--border-color);
+    color: #ffffff;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+
+.info-fab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background-color: #1a1a1a;
+}
+
+.info-fab:active {
+    transform: scale(0.97);
+}
+
+.info-fab-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-style: italic;
+    flex-shrink: 0;
+}
+
+/* =======================================
+   INFO MODAL
+   ======================================= */
+
+.info-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.info-modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-modal {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    width: 95vw;
+    max-width: 1050px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+    overflow: hidden;
+}
+
+.info-modal-overlay.visible .info-modal {
+    transform: translateY(0);
+}
+
+.info-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.info-modal-title {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    text-transform: uppercase;
+}
+
+.info-modal-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin: 0.25rem 0 0;
+    letter-spacing: 0.5px;
+}
+
+.info-modal-close {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.15s ease;
+}
+
+.info-modal-close:hover {
+    background-color: var(--canvas-bg);
+}
+
+/* Tab bar */
+.info-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--canvas-bg);
+    flex-shrink: 0;
+}
+
+.info-tab {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background-color: var(--card-bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.15s ease;
+}
+
+.info-tab:hover {
+    background-color: var(--canvas-bg);
+    color: var(--text-primary);
+}
+
+.info-tab.active {
+    background-color: var(--border-color);
+    color: #ffffff;
+    border-color: var(--border-color);
+}
+
+/* Legend */
+.info-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    padding: 0.6rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #fafafa;
+    flex-shrink: 0;
+}
+
+.legend-group {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legend-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.legend-badge {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Badge colours */
+.badge-easy {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.badge-moderate {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+.badge-difficult {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.badge-short {
+    background-color: #e0e7ff;
+    color: #3730a3;
+    border: 1px solid #a5b4fc;
+}
+
+.badge-normal {
+    background-color: #f3e8ff;
+    color: #6b21a8;
+    border: 1px solid #c4b5fd;
+}
+
+.badge-lengthy {
+    background-color: #fce7f3;
+    color: #9d174d;
+    border: 1px solid #f9a8d4;
+}
+
+/* Table container */
+.info-table-wrap {
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+}
+
+.info-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.info-table th {
+    background-color: var(--border-color);
+    color: #ffffff;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border: none;
+}
+
+.info-table td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.info-table tbody tr:hover td {
+    background-color: #f9fafb;
+}
+
+.info-table .col-num {
+    width: 40px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+.info-table .col-subject {
+    width: 130px;
+}
+
+.info-table .col-diff,
+.info-table .col-length {
+    width: 100px;
+    text-align: center;
+}
+
+.table-subject-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 2px;
+    background-color: var(--canvas-bg);
+    border: 1px solid #d1d5db;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.table-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: inline-block;
+}
+
+/* Modal footer */
+.info-modal-footer {
+    padding: 0.75rem 1.5rem;
+    border-top: 2px solid var(--border-color);
+    background-color: var(--canvas-bg);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+/* =======================================
    RESPONSIVE
    ======================================= */
 
@@ -932,7 +1349,8 @@ button:active {
         font-size: 2rem;
     }
 
-    .chapter-arrow {
+    .chapter-arrow,
+    .chapter-lock {
         display: none;
     }
 
@@ -954,5 +1372,63 @@ button:active {
 
     .card {
         padding: 1.5rem;
+    }
+
+    /* Info Modal Responsive */
+    .info-modal {
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        border-radius: 0;
+        height: 100vh;
+    }
+
+    .info-modal-header {
+        padding: 1rem;
+    }
+
+    .info-modal-title {
+        font-size: 0.85rem;
+    }
+
+    .info-tabs {
+        padding: 0.5rem 1rem;
+        gap: 0.35rem;
+    }
+
+    .info-tab {
+        font-size: 0.55rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .info-legend {
+        padding: 0.5rem 1rem;
+        gap: 0.5rem 1rem;
+    }
+
+    .info-table td {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .info-table .col-subject {
+        display: none;
+    }
+
+    .info-table th.col-subject {
+        display: none;
+    }
+
+    .info-fab {
+        font-size: 0.7rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .subject-divider {
+        margin-top: 1.5rem;
+    }
+
+    .subject-divider-text {
+        font-size: 0.65rem;
     }
 }
