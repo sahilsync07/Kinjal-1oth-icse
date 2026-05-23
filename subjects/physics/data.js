@@ -1,6 +1,24 @@
 window.ICSE_CHAPTERS = window.ICSE_CHAPTERS || [];
 window.ICSE_CHAPTERS.push(
-    { num: 29, subject: "physics",    name: "Force",                             difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Turning effect of force, centre of gravity, uniform/non-uniform motion, equilibrium, and moment of force calculations." },
+    {
+        num: 29,
+        subject: "physics",
+        name: "Force",
+        difficulty: "Moderate",
+        length: "Normal",
+        tags: ["6 SLIDES", "20 NUMERICALS", "CIRCULAR MOTION"],
+        href: "subjects/physics/force.html",
+        desc: "Turning effect of force, centre of gravity, uniform/non-uniform motion, equilibrium, and moment of force calculations.",
+        modules: [
+            { name: "Lesson: Moment of a Force (Torque) & Equilibrium", type: "summary", href: "subjects/physics/force.html#slide-02" },
+            { name: "Quiz: Torque & Moments", type: "test", href: "subjects/physics/force.html#slide-03" },
+            { name: "Lesson: Principle of Moments & Center of Gravity", type: "summary", href: "subjects/physics/force.html#slide-04" },
+            { name: "Quiz: Balancing & CG", type: "test", href: "subjects/physics/force.html#slide-05" },
+            { name: "Lesson: Uniform Circular Motion", type: "summary", href: "subjects/physics/force.html#slide-06" },
+            { name: "Quiz: Circular Motion", type: "test", href: "subjects/physics/force.html#slide-07" },
+            { name: "Quiz: Mega Revision Force Challenges", type: "test", href: "subjects/physics/force.html#slide-08" }
+        ]
+    },
     { num: 30, subject: "physics",    name: "Work, Energy & Power",              difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Work done, kinetic/potential energy, conservation of energy, power, and energy transformation numerical problems." },
     { num: 31, subject: "physics",    name: "Machines",                          difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Levers (classes I, II, III), pulleys, mechanical advantage, velocity ratio, efficiency, and ideal vs real machines." },
     { num: 32, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Laws of refraction, Snell's law, refractive index, critical angle, total internal reflection, and real/apparent depth." },

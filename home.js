@@ -279,6 +279,37 @@ function renderTable(filter) {
                 </table>
             </div>
         `;
+    } else if (filter === 'physics') {
+        weightageContainer.style.display = 'block';
+        weightageContainer.innerHTML = `
+            <div style="margin-top: 2rem;">
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">1. QUESTION FORMAT WEIGHTAGE (80 MARKS)</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>SECTION</th><th>CONTENT AREA</th><th>FORMAT</th><th>MARKS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Section A (Compulsory)</td><td>Entire Syllabus</td><td>MCQs (15), Short Answers / Simple Numericals (25)</td><td>40 Marks</td></tr>
+                        <tr><td>Section B (Choice-based)</td><td>Entire Syllabus</td><td>Attempt 4 out of 6 Structured Long Questions</td><td>40 Marks (4x10)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">2. CHAPTER-WISE INDICATIVE WEIGHTAGE</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>UNIT / THEME</th><th>INDICATIVE MARKS (Out of 80)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1. Mechanics (Force, Work, Power & Energy, Machines)</td><td>~18 - 20 Marks</td></tr>
+                        <tr><td>2. Light (Refraction, Lens, Spectrum)</td><td>~16 - 18 Marks</td></tr>
+                        <tr><td>3. Sound</td><td>~8 - 10 Marks</td></tr>
+                        <tr><td>4. Electricity and Magnetism (Current, Household, Electromagnetism)</td><td>~18 - 20 Marks</td></tr>
+                        <tr><td>5. Heat (Calorimetry)</td><td>~10 - 12 Marks</td></tr>
+                        <tr><td>6. Modern Physics (Radioactivity)</td><td>~6 - 8 Marks</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        `;
     } else {
         weightageContainer.style.display = 'none';
         weightageContainer.innerHTML = '';
