@@ -1606,6 +1606,7 @@ function scrollToSlide(index) {
     slides.forEach((slide, idx) => {
         if (idx === index) {
             slide.classList.add('active');
+            slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
         } else {
             slide.classList.remove('active');
         }
@@ -1763,7 +1764,9 @@ function checkSection(sectionId) {
     };
 
     // Show score summary
-    const feedbackBox = document.querySelector(`.slide:not(.locked) .score-summary`);
+    const firstSelect = selects[0];
+    const slide = firstSelect ? firstSelect.closest('.slide') : null;
+    const feedbackBox = slide ? slide.querySelector('.score-summary') : null;
     if (feedbackBox) {
         feedbackBox.classList.add('visible');
         if (correctCount === totalQuestions) {

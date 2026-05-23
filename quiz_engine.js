@@ -174,7 +174,9 @@ function checkSection(sectionId) {
         percentage: totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0
     };
 
-    const feedbackBox = document.querySelector(`.slide:not(.locked) .score-summary`);
+    const container = document.getElementById(`quiz-${sectionId}`);
+    const slide = container ? container.closest('.slide') : null;
+    const feedbackBox = slide ? slide.querySelector('.score-summary') : null;
     if (feedbackBox) {
         feedbackBox.classList.add('visible');
         if (correctCount === totalQuestions && totalQuestions > 0) {
@@ -192,7 +194,7 @@ function checkSection(sectionId) {
                 <p style="margin-top: 0.5rem; font-size: 0.95rem;">You need a perfect score to unlock the next section. Review explanations and try again!</p>
             `;
             updateCompanionText("THINKING", `You got ${correctCount} out of ${totalQuestions}. Review the explanations and fix your answers to proceed! (o_O)`);
-            const nextBtn = document.querySelector(`.slide:not(.locked) .btn-next`);
+            const nextBtn = slide ? slide.querySelector('.btn-next') : null;
             if (nextBtn) nextBtn.setAttribute('disabled', 'true');
         }
     }
