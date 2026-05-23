@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refraction at Plane Surfaces — Physics ICSE | Kinjal's Learning Hub</title>
-    <meta name="description" content="Interactive ICSE Class 10 Physics lesson on Refraction at Plane Surfaces — laws of refraction, Snell's law, critical angle, total internal reflection, and prism paths.">
+    <meta name="description" content="Interactive ICSE Class 10 Physics chapter on Refraction at Plane Surfaces — Snell's law, refractive index, glass slab, real/apparent depth, critical angle, total internal reflection, with detailed quizzes and step-by-step numerical explanations.">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link rel="stylesheet" href="../../style.css">
 </head>
@@ -15,13 +15,13 @@
         <div class="logo-section">
             <div class="logo-dot"></div>
             <a href="../../index.html" style="text-decoration:none;color:inherit;margin-right:1rem;">← HOME</a>
-            <span>REFRACT_PLANE // KINJAL</span>
+            <span>REFRACTION // KINJAL</span>
         </div>
         <div class="nav-progress">
             <div class="progress-track">
-                <div class="progress-bar" style="width: 0%;"></div>
+                <div class="progress-bar"></div>
             </div>
-            <div class="progress-text">[01/06] PROGRESS: 0%</div>
+            <div class="progress-text">[01/09] PROGRESS: 0%</div>
         </div>
     </header>
 
@@ -35,7 +35,7 @@
             <div class="card">
                 <span class="meta-ref">REF_ID: PHY_04_INTRO</span>
                 <h1>Chapter 4: Refraction at Plane Surfaces</h1>
-                <p>Welcome, Kinjal! Today we master the bending of light: **Refraction at Plane Surfaces**. When light travels from one transparent medium to another, its direction changes due to a change in speed. In this chapter, we will master **Snell's Law**, calculate **Refractive Indices**, study **Real vs. Apparent Depth**, and explore **Critical Angles** and **Total Internal Reflection (TIR)** through prisms and blocks.</p>
+                <p>Welcome, Kinjal! In this chapter, we will master the behaviour of light when it passes from one transparent medium to another: <strong>Refraction</strong>. We will learn the <strong>Laws of Refraction</strong>, calculate angles using <strong>Snell's Law</strong>, define <strong>Absolute &amp; Relative Refractive Index</strong>, trace rays through a <strong>Rectangular Glass Slab</strong>, compute <strong>Real &amp; Apparent Depth</strong>, and explore <strong>Critical Angle &amp; Total Internal Reflection</strong> — including its stunning applications in optical fibres, mirages, and diamond brilliance!</p>
 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
@@ -44,15 +44,18 @@
 
                 <p><strong>Chapter Outline:</strong></p>
                 <ul>
-                    <li><strong>Lesson 1</strong>: Bending Rules — Laws of Refraction, Snell's Law, & Depth Ratios</li>
-                    <li><strong>Quiz 1</strong>: Ray bending, Snell's index, and apparent depth numericals</li>
-                    <li><strong>Lesson 2</strong>: Optical Boundaries — Critical Angle, Total Internal Reflection, & Prism Paths</li>
-                    <li><strong>Mega Quiz</strong>: Ultimate board-style review of plane refraction, critical bounds, and prism tracing</li>
+                    <li><strong>Lesson 1</strong>: Laws of Refraction, Snell's Law, Absolute &amp; Relative Refractive Index</li>
+                    <li><strong>Quiz 1</strong>: Snell's law numericals &amp; refractive index calculations</li>
+                    <li><strong>Lesson 2</strong>: Refraction through Glass Slab, Lateral Displacement, Real &amp; Apparent Depth</li>
+                    <li><strong>Quiz 2</strong>: Glass slab tracing, depth numericals, &amp; applications</li>
+                    <li><strong>Lesson 3</strong>: Critical Angle &amp; Total Internal Reflection (conditions, applications)</li>
+                    <li><strong>Quiz 3</strong>: TIR conditions, critical angle numericals, &amp; real-world phenomena</li>
+                    <li><strong>Mega Quiz</strong>: Master-level cumulative board-style challenges</li>
                 </ul>
 
                 <blockquote>
-                    <span class="tip-badge">BOARD CRITICAL</span>
-                    When light passes from a **rarer** to a **denser** medium, it bends **towards the normal** and its speed **decreases**. When moving from **denser** to **rarer**, it bends **away from the normal** and its speed **increases**. Frequency **never** changes during refraction as it depends solely on the source of light.
+                    <span class="tip-badge">ICSE 2027 SYLLABUS</span>
+                    This chapter covers: Refraction of light at a plane surface, laws of refraction, Snell's law, refractive index (absolute &amp; relative), lateral displacement through glass slab, real and apparent depth, critical angle, total internal reflection (conditions &amp; applications), relation between critical angle and refractive index.
                 </blockquote>
 
                 <div class="btn-container">
@@ -63,35 +66,60 @@
         </section>
 
         <!-- ============================================
-             SLIDE 2: LESSON 1 — Laws, Snell's Law, and Depth Ratios
+             SLIDE 2: LESSON 1 — Laws of Refraction & Snell's Law
              ============================================ -->
         <section class="slide locked" id="slide-02">
             <div class="card">
                 <span class="meta-ref">REF_ID: PHY_04_L1</span>
-                <h1>Refraction & Real/Apparent Depth</h1>
+                <h1>Laws of Refraction &amp; Snell's Law</h1>
 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
                     <div class="companion-text">Loading Phys-Bot...</div>
                 </div>
 
-                <h2>1. Refraction & Cause</h2>
-                <p>Refraction is the change in the direction of path of light when it passes from one transparent medium to another. The primary cause of refraction is the **difference in the speed of light in different media** (Speed in vacuum: $3 \times 10^8\text{ m/s}$, Speed in glass: $2 \times 10^8\text{ m/s}$).</p>
+                <h2>1. What is Refraction?</h2>
+                <p>Refraction is the change in direction of a ray of light as it passes obliquely from one transparent medium to another. It occurs because the <strong>speed of light changes</strong> when entering a different medium.</p>
+                <ul>
+                    <li><strong>Denser → Rarer:</strong> Light bends <strong>away from</strong> the normal (angle of refraction &gt; angle of incidence). Speed increases.</li>
+                    <li><strong>Rarer → Denser:</strong> Light bends <strong>towards</strong> the normal (angle of refraction &lt; angle of incidence). Speed decreases.</li>
+                    <li><strong>Normal incidence (i = 0°):</strong> Light passes straight through without bending, but speed still changes.</li>
+                </ul>
 
-                <h2>2. Laws of Refraction & Snell's Law</h2>
+                <h2>2. Laws of Refraction</h2>
                 <ol>
-                    <li>The incident ray, the refracted ray, and the normal at the point of incidence all lie in the same plane.</li>
-                    <li><strong>Snell's Law:</strong> The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media.
-                        <br><span style="font-family:var(--font-mono); font-weight:bold; color:var(--text-primary);">Refractive Index ($_1\mu_2$) = sin(i) / sin(r) = v₁ / v₂ = &lambda;₁ / &lambda;₂</span>
-                        <br>Where $v$ is speed and $\lambda$ is wavelength.
+                    <li><strong>First Law:</strong> The incident ray, the refracted ray, and the normal at the point of incidence all lie in the <strong>same plane</strong>.</li>
+                    <li><strong>Second Law (Snell's Law):</strong> The ratio of the sine of the angle of incidence to the sine of the angle of refraction is a <strong>constant</strong> for a given pair of media and for light of a given wavelength:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;font-size:1.1rem;border:1px solid var(--border-color);padding:0.75rem;background:rgba(0,0,0,0.02);">sin i / sin r = constant = <sub>1</sub>μ<sub>2</sub> (refractive index of medium 2 w.r.t. medium 1)</span>
                     </li>
                 </ol>
 
-                <h2>3. Real and Apparent Depth</h2>
-                <p>Due to refraction, an object placed in a denser medium (like a coin in water) appears raised when viewed from a rarer medium.
-                    <br><span style="font-family:var(--font-mono); font-weight:bold;">Refractive Index (&mu;) = Real Depth / Apparent Depth</span>
-                    <br><span style="font-family:var(--font-mono); font-weight:bold;">Shift = Real Depth - Apparent Depth = Real Depth &times; (1 - 1/&mu;)</span>
-                </p>
+                <h2>3. Refractive Index</h2>
+                <ul>
+                    <li><strong>Absolute Refractive Index (μ):</strong> Ratio of speed of light in vacuum ($c$) to speed of light in the medium ($v$):
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">μ = c / v</span>
+                        Since $c > v$ for all media, $\mu$ is always <strong>greater than 1</strong>. A higher $\mu$ means a denser (slower) medium.
+                    </li>
+                    <li><strong>Relative Refractive Index (<sub>1</sub>μ<sub>2</sub>):</strong> Refractive index of medium 2 with respect to medium 1:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;"><sub>1</sub>μ<sub>2</sub> = μ<sub>2</sub> / μ<sub>1</sub> = v<sub>1</sub> / v<sub>2</sub></span>
+                    </li>
+                    <li><strong>Reciprocal Relation:</strong>
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;"><sub>1</sub>μ<sub>2</sub> = 1 / <sub>2</sub>μ<sub>1</sub></span>
+                    </li>
+                </ul>
+
+                <h2>4. Key Values</h2>
+                <table class="tech-table" style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.05);"><th style="border:1px solid var(--border-color); padding:8px;">Medium</th><th style="border:1px solid var(--border-color); padding:8px;">Abs. Refractive Index (μ)</th><th style="border:1px solid var(--border-color); padding:8px;">Speed of Light</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Vacuum / Air</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">1.00</td><td style="border:1px solid var(--border-color); padding:8px;">3 × 10⁸ m/s</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Water</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">1.33</td><td style="border:1px solid var(--border-color); padding:8px;">2.25 × 10⁸ m/s</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Glass (Crown)</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">1.52</td><td style="border:1px solid var(--border-color); padding:8px;">1.97 × 10⁸ m/s</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Diamond</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">2.42</td><td style="border:1px solid var(--border-color); padding:8px;">1.24 × 10⁸ m/s</td></tr>
+                    </tbody>
+                </table>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
@@ -106,7 +134,7 @@
         <section class="slide locked" id="slide-03">
             <div class="card">
                 <span class="meta-ref">REF_ID: PHY_04_Q1</span>
-                <h1>Quiz 1: Bending Rules & Depths</h1>
+                <h1>Quiz 1: Snell's Law &amp; Refractive Index</h1>
 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
@@ -128,53 +156,179 @@
         </section>
 
         <!-- ============================================
-             SLIDE 4: LESSON 2 — Critical Angle, TIR, and Prisms
+             SLIDE 4: LESSON 2 — Glass Slab & Real/Apparent Depth
              ============================================ -->
         <section class="slide locked" id="slide-04">
             <div class="card">
                 <span class="meta-ref">REF_ID: PHY_04_L2</span>
-                <h1>Critical Angle & Total Internal Reflection</h1>
+                <h1>Glass Slab &amp; Real/Apparent Depth</h1>
 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
                     <div class="companion-text">Loading Phys-Bot...</div>
                 </div>
 
-                <h2>1. Critical Angle ($C$)</h2>
-                <p>The angle of incidence in the **denser medium** for which the angle of refraction in the **rarer medium** is $90^\circ$.
-                    <br><span style="font-family:var(--font-mono); font-weight:bold;">sin(C) = 1 / &mu;</span> (where $\mu$ is refractive index of denser medium relative to rarer).
-                    <br><em>Factors affecting C:</em> Critical angle increases with temperature and wavelength (Red has larger C than Violet).
-                </p>
-
-                <h2>2. Total Internal Reflection (TIR)</h2>
-                <p>When a ray of light travelling in a denser medium strikes the interface of a rarer medium at an angle of incidence **greater than the critical angle**, the ray is completely reflected back into the denser medium.
-                    <br><em>Two Conditions for TIR:</em>
-                    <ol>
-                        <li>Light must travel from a **denser to a rarer** medium.</li>
-                        <li>Angle of incidence must be **greater than the critical angle** ($i > C$).</li>
-                    </ol>
-                </p>
-
-                <h2>3. TIR in Prisms</h2>
+                <h2>1. Refraction Through a Rectangular Glass Slab</h2>
+                <p>When a ray of light passes through a rectangular glass slab with parallel faces:</p>
                 <ul>
-                    <li><strong>45°-45°-90° Prism (Right-angled Isosceles):</strong> Glass critical angle is ~42°. Light entering normally strikes the inside hypotenuse at 45° ($i > C$), undergoing TIR. Used to deviate rays by 90° (periscopes) or 180° (binoculars).</li>
-                    <li><strong>Equilateral Prism (60°-60°-60°):</strong> Light entering normally strikes inside face at 60° undergoing TIR, deviating rays by 60°.</li>
+                    <li>At the <strong>first face</strong> (air → glass): Ray bends <strong>towards</strong> the normal (enters denser medium).</li>
+                    <li>At the <strong>second face</strong> (glass → air): Ray bends <strong>away from</strong> the normal (enters rarer medium) by exactly the same amount.</li>
+                    <li>The <strong>emergent ray is parallel</strong> to the incident ray but <strong>laterally displaced</strong> (shifted sideways). The angle of emergence equals the angle of incidence ($e = i$).</li>
+                </ul>
+
+                <h2>2. Lateral Displacement</h2>
+                <p>The perpendicular distance between the incident ray produced forward and the emergent ray is called the <strong>lateral displacement (d)</strong>.</p>
+                <p><em>Lateral displacement increases when:</em></p>
+                <ol>
+                    <li>The <strong>thickness</strong> of the glass slab increases.</li>
+                    <li>The <strong>angle of incidence</strong> increases (from 0° towards 90°).</li>
+                    <li>The <strong>refractive index</strong> of the slab material increases (denser glass causes more bending).</li>
+                </ol>
+                <p><em>At normal incidence ($i = 0°$): lateral displacement is <strong>zero</strong> (ray passes straight through undeviated).</em></p>
+
+                <h2>3. Real Depth &amp; Apparent Depth</h2>
+                <p>When viewing an object placed in a denser medium (like a coin at the bottom of a pool) from a rarer medium (like air):</p>
+                <ul>
+                    <li>The object appears to be <strong>raised up</strong> (closer to the surface) than it actually is.</li>
+                    <li><strong>Apparent Depth &lt; Real Depth</strong> (object appears shallower).</li>
+                </ul>
+                <p style="font-family:var(--font-mono);font-weight:bold;margin:1.5rem 0;text-align:center;font-size:1.1rem;border:1px solid var(--border-color);padding:0.75rem;background:rgba(0,0,0,0.02);">
+                    μ = Real Depth / Apparent Depth
+                </p>
+                <p style="font-family:var(--font-mono);font-weight:bold;margin:0.5rem 0;text-align:center;font-size:1rem;">
+                    Shift (Rise) = Real Depth − Apparent Depth = Real Depth × (1 − 1/μ)
+                </p>
+
+                <h2>4. Applications &amp; Examples</h2>
+                <ul>
+                    <li>A <strong>swimming pool</strong> appears shallower than its actual depth.</li>
+                    <li>A <strong>coin at the bottom</strong> of a glass of water appears raised.</li>
+                    <li>A <strong>stick partially immersed</strong> in water appears bent at the water surface.</li>
+                    <li><strong>Stars twinkle</strong> due to atmospheric refraction (varying density layers).</li>
+                    <li><strong>Sun appears to rise 2 minutes early</strong> and set 2 minutes late due to atmospheric refraction.</li>
                 </ul>
 
                 <div class="btn-container">
                     <button class="btn-secondary btn-prev">BACK</button>
-                    <button class="btn-primary btn-next">START MEGA QUIZ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    <button class="btn-primary btn-next">START QUIZ 2 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                 </div>
             </div>
         </section>
 
         <!-- ============================================
-             SLIDE 5: MEGA QUIZ
+             SLIDE 5: QUIZ 2
              ============================================ -->
         <section class="slide locked" id="slide-05">
             <div class="card">
+                <span class="meta-ref">REF_ID: PHY_04_Q2</span>
+                <h1>Quiz 2: Glass Slab &amp; Depth Problems</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q2">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q2">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 6: LESSON 3 — Critical Angle & TIR
+             ============================================ -->
+        <section class="slide locked" id="slide-06">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_04_L3</span>
+                <h1>Critical Angle &amp; Total Internal Reflection</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Critical Angle (i<sub>c</sub>)</h2>
+                <p>The critical angle is the angle of incidence in the <strong>denser medium</strong> for which the angle of refraction in the rarer medium is exactly <strong>90°</strong> (the refracted ray grazes along the surface).</p>
+                <p style="font-family:var(--font-mono);font-weight:bold;margin:1.5rem 0;text-align:center;font-size:1.1rem;border:1px solid var(--border-color);padding:0.75rem;background:rgba(0,0,0,0.02);">
+                    μ = 1 / sin i<sub>c</sub>  &nbsp;⟹&nbsp;  sin i<sub>c</sub> = 1 / μ
+                </p>
+                <p><em>A medium with a higher refractive index (denser) has a smaller critical angle.</em></p>
+                <table class="tech-table" style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.05);"><th style="border:1px solid var(--border-color); padding:8px;">Medium (w.r.t. air)</th><th style="border:1px solid var(--border-color); padding:8px;">μ</th><th style="border:1px solid var(--border-color); padding:8px;">Critical Angle (i<sub>c</sub>)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Water</td><td style="border:1px solid var(--border-color); padding:8px;">1.33</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">48.75°</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Crown Glass</td><td style="border:1px solid var(--border-color); padding:8px;">1.52</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">41.14°</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Diamond</td><td style="border:1px solid var(--border-color); padding:8px;">2.42</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">24.41°</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>2. Total Internal Reflection (TIR)</h2>
+                <p>When light travels from a <strong>denser</strong> to a <strong>rarer</strong> medium at an angle of incidence <strong>greater than the critical angle</strong>, the light is <strong>completely reflected back</strong> into the denser medium. No refraction occurs — the surface acts as a perfect mirror.</p>
+                <p><strong>Two Essential Conditions for TIR:</strong></p>
+                <ol>
+                    <li>Light must travel from a <strong>denser medium to a rarer medium</strong> (e.g., glass → air, water → air).</li>
+                    <li>The angle of incidence in the denser medium must be <strong>greater than the critical angle</strong> ($i > i_c$).</li>
+                </ol>
+
+                <h2>3. Applications of TIR</h2>
+                <ul>
+                    <li><strong>Optical Fibres:</strong> Light enters a thin glass fibre at one end and undergoes TIR repeatedly at the walls, travelling long distances without signal loss. Used in telecommunications, endoscopy, and internet cables.</li>
+                    <li><strong>Brilliance of Diamond:</strong> Diamond has a very small critical angle (24.41°). Most light entering the diamond undergoes multiple TIR before emerging, producing extraordinary sparkle and fire.</li>
+                    <li><strong>Mirage:</strong> On hot days, air near the ground is rarer (less dense, lower μ) than the cooler air above. Light from the sky undergoes progressive refraction through these layers and eventually TIR, creating an illusion of water on the road.</li>
+                    <li><strong>Totally Reflecting Prisms (45°–90°–45°):</strong> Used in periscopes, binoculars, and SLR cameras instead of plane mirrors (produce brighter, sharper reflections with zero light absorption).</li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 3 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 7: QUIZ 3
+             ============================================ -->
+        <section class="slide locked" id="slide-07">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_04_Q3</span>
+                <h1>Quiz 3: Critical Angle &amp; TIR</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q3">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q3">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>MEGA REVISION <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 8: MEGA QUIZ
+             ============================================ -->
+        <section class="slide locked" id="slide-08">
+            <div class="card">
                 <span class="meta-ref">REF_ID: PHY_04_MEGA</span>
-                <h1>Mega Quiz: Refraction Mastery</h1>
+                <h1>Mega Revision: Board-Level Refraction Challenges</h1>
 
                 <div class="companion-box">
                     <div class="companion-avatar">(•‿•)</div>
@@ -196,9 +350,9 @@
         </section>
 
         <!-- ============================================
-             SLIDE 6: GRADUATION
+             SLIDE 9: GRADUATION
              ============================================ -->
-        <section class="slide locked" id="slide-06">
+        <section class="slide locked" id="slide-09">
             <div class="card">
                 <span class="meta-ref">REF_ID: PHY_04_GRADUATION</span>
                 <h1>Chapter Completed!</h1>
@@ -208,7 +362,7 @@
                     <div class="companion-text">Phys-Bot is extremely proud of you!</div>
                 </div>
 
-                <p>Outstanding job, Kinjal! You have successfully mastered **Chapter 4: Refraction at Plane Surfaces**. You have conquered all wave bends, Snell's formulas, apparent shifts, critical boundaries, and prism TIR tracks!</p>
+                <p>Congratulations, Kinjal! You have successfully completed <strong>Chapter 4: Refraction at Plane Surfaces</strong>. You have mastered Snell's Law numericals, refractive index inter-conversions, glass slab lateral displacement factors, real/apparent depth calculations, critical angle-μ relationships, and Total Internal Reflection applications!</p>
 
                 <div class="graduation-box" style="margin: 2rem 0; border: 4px double var(--border-color); padding: 2rem; text-align: center; background: rgba(0,0,0,0.01);">
                     <div class="grad-certificate">
@@ -218,7 +372,7 @@
                         <p style="font-family:'JetBrains Mono',monospace;margin:1.5rem 0 0.5rem 0;">has mastered the topic of</p>
                         <p style="font-weight:700;font-family:var(--font-mono);text-transform:uppercase;font-size:1.2rem;color:var(--text-primary);">PHYSICS: CHAPTER 4 - REFRACTION AT PLANE SURFACES</p>
                         <p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;margin-top:1.5rem;">With Final Score: <span id="cert-score" style="font-weight:700;">-</span></p>
-                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);font-family:var(--font-mono);">Verified by Phys-Bot the optical chronicler on <span id="cert-date">-</span></p>
+                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);font-family:var(--font-mono);">Verified by Phys-Bot the Optics Master on <span id="cert-date">-</span></p>
                     </div>
                 </div>
 

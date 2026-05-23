@@ -55,17 +55,23 @@ window.ICSE_CHAPTERS.push(
             { name: "Quiz: Mega Revision Machines Challenges", type: "test", href: "subjects/physics/machines.html#slide-06" }
         ]
     },
-    { num: 4, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/refraction_plane.html", desc: "Laws of refraction, Snell's law, refractive index, critical angle, total internal reflection, and real/apparent depth.", modules: [
-        { name: "Lesson: Refraction & Apparent Depth", type: "summary", href: "subjects/physics/refraction_plane.html#slide-02" },
-        { name: "Quiz: Bending Rules & Depths", type: "test", href: "subjects/physics/refraction_plane.html#slide-03" },
-        { name: "Lesson: Critical Angle & TIR", type: "summary", href: "subjects/physics/refraction_plane.html#slide-04" },
-        { name: "Mega Quiz: Refraction Mastery", type: "test", href: "subjects/physics/refraction_plane.html#slide-05" }
+    { num: 4, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["9 SLIDES", "25 QUESTIONS", "NUMERICALS"], href: "subjects/physics/refraction_plane.html", desc: "Laws of refraction, Snell's law, refractive index (absolute & relative), glass slab lateral displacement, real/apparent depth, critical angle, total internal reflection (conditions & applications).", modules: [
+        { name: "Lesson: Laws of Refraction & Snell's Law", type: "summary", href: "subjects/physics/refraction_plane.html#slide-02" },
+        { name: "Quiz 1: Snell's Law & Refractive Index", type: "test", href: "subjects/physics/refraction_plane.html#slide-03" },
+        { name: "Lesson: Glass Slab & Real/Apparent Depth", type: "summary", href: "subjects/physics/refraction_plane.html#slide-04" },
+        { name: "Quiz 2: Glass Slab & Depth Problems", type: "test", href: "subjects/physics/refraction_plane.html#slide-05" },
+        { name: "Lesson: Critical Angle & TIR", type: "summary", href: "subjects/physics/refraction_plane.html#slide-06" },
+        { name: "Quiz 3: TIR Conditions & Applications", type: "test", href: "subjects/physics/refraction_plane.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Refraction Challenges", type: "test", href: "subjects/physics/refraction_plane.html#slide-08" }
     ] },
-    { num: 5, subject: "physics",    name: "Refraction Through a Lens",         difficulty: "Difficult", length: "Lengthy", tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/refraction_lens.html", desc: "Convex/concave lenses, image formation, sign convention, lens formula (1/v − 1/u = 1/f), magnification & power of a lens.", modules: [
-        { name: "Lesson: Lenses & Ray Diagrams", type: "summary", href: "subjects/physics/refraction_lens.html#slide-02" },
-        { name: "Quiz: Ray Diagrams & Images", type: "test", href: "subjects/physics/refraction_lens.html#slide-03" },
-        { name: "Lesson: Lens Math & Power", type: "summary", href: "subjects/physics/refraction_lens.html#slide-04" },
-        { name: "Mega Quiz: Lens Masterclass", type: "test", href: "subjects/physics/refraction_lens.html#slide-05" }
+    { num: 5, subject: "physics",    name: "Refraction Through a Lens",         difficulty: "Difficult", length: "Lengthy", tags: ["9 SLIDES", "27 QUESTIONS", "NUMERICALS"], href: "subjects/physics/refraction_lens.html", desc: "Convex/concave lenses, ray diagrams (all 6 positions), sign convention, lens formula (1/v − 1/u = 1/f), magnification, power of a lens (dioptre), corrective lenses.", modules: [
+        { name: "Lesson: Types of Lenses & Ray Diagram Rules", type: "summary", href: "subjects/physics/refraction_lens.html#slide-02" },
+        { name: "Quiz 1: Lens Types & Ray Diagram Rules", type: "test", href: "subjects/physics/refraction_lens.html#slide-03" },
+        { name: "Lesson: Image Formation (all cases)", type: "summary", href: "subjects/physics/refraction_lens.html#slide-04" },
+        { name: "Quiz 2: Image Formation Cases", type: "test", href: "subjects/physics/refraction_lens.html#slide-05" },
+        { name: "Lesson: Lens Formula, Magnification & Power", type: "summary", href: "subjects/physics/refraction_lens.html#slide-06" },
+        { name: "Quiz 3: Lens Formula & Power Numericals", type: "test", href: "subjects/physics/refraction_lens.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Lens Challenges", type: "test", href: "subjects/physics/refraction_lens.html#slide-08" }
     ] },
     { num: 6, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/spectrum.html", desc: "Dispersion of light, electromagnetic spectrum, scattering of light, and prism-based experiments.", modules: [
         { name: "Lesson: Dispersion & Recombination", type: "summary", href: "subjects/physics/spectrum.html#slide-02" },
