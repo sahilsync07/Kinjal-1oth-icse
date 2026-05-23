@@ -25,17 +25,17 @@ window.ICSE_CHAPTERS.push(
         name: "Work, Energy & Power",
         difficulty: "Moderate",
         length: "Normal",
-        tags: ["9 SLIDES", "20 NUMERICALS", "CONSERVATION"],
+        tags: ["9 SLIDES", "20 NUMERICALS", "ENERGY LAWS"],
         href: "subjects/physics/work_power_energy.html",
         desc: "Work done, kinetic/potential energy, conservation of energy, power, and energy transformation numerical problems.",
         modules: [
-            { name: "Lesson: Work & Power", type: "summary", href: "subjects/physics/work_power_energy.html#slide-02" },
-            { name: "Quiz: Work & Power", type: "test", href: "subjects/physics/work_power_energy.html#slide-03" },
+            { name: "Lesson: Work & Power Concept & Math", type: "summary", href: "subjects/physics/work_power_energy.html#slide-02" },
+            { name: "Quiz: Work & Power Calculations", type: "test", href: "subjects/physics/work_power_energy.html#slide-03" },
             { name: "Lesson: Kinetic & Potential Energy", type: "summary", href: "subjects/physics/work_power_energy.html#slide-04" },
-            { name: "Quiz: Energy Calculations", type: "test", href: "subjects/physics/work_power_energy.html#slide-05" },
+            { name: "Quiz: Mechanical Energy", type: "test", href: "subjects/physics/work_power_energy.html#slide-05" },
             { name: "Lesson: Conservation of Energy", type: "summary", href: "subjects/physics/work_power_energy.html#slide-06" },
             { name: "Quiz: Energy Conservation", type: "test", href: "subjects/physics/work_power_energy.html#slide-07" },
-            { name: "Quiz: Mega Revision Work & Energy Challenges", type: "test", href: "subjects/physics/work_power_energy.html#slide-08" }
+            { name: "Quiz: Mega Revision Physics Challenges", type: "test", href: "subjects/physics/work_power_energy.html#slide-08" }
         ]
     },
     {
