@@ -241,9 +241,10 @@ function renderTable(filter) {
                     <tbody>
                         <tr><td>Unit I: Demand and Supply (Ch 1-3)</td><td>~14 - 16 Marks</td></tr>
                         <tr><td>Unit II: Factors of Production (Ch 4)</td><td>~12 - 14 Marks</td></tr>
-                        <tr><td>Unit III: Alternative Market Structures (Ch 5)</td><td>~10 - 12 Marks</td></tr>
-                        <tr><td>Unit IV: The State and Economic Development (Ch 6)</td><td>~14 - 16 Marks</td></tr>
-                        <tr><td>Unit V: Money and Banking (Ch 7-10)</td><td>~22 - 24 Marks</td></tr>
+                        <tr><td>Unit III: Alternative Market Structures (Ch 5)</td><td>~8 - 10 Marks</td></tr>
+                        <tr><td>Unit IV: The State and Economic Development (Ch 6)</td><td>~10 - 12 Marks</td></tr>
+                        <tr><td>Unit V: Money and Banking (Ch 7-10)</td><td>~18 - 20 Marks</td></tr>
+                        <tr><td>Unit VI: Emerging Trends in the Indian Economy (Ch 11)</td><td>~10 - 12 Marks</td></tr>
                     </tbody>
                 </table>
             </div>

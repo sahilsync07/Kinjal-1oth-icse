@@ -3,33 +3,37 @@
 ## 1. SECOND LANGUAGE - ODIA (Code: 07)
 There will be one paper of three hours duration carrying 80 marks and an Internal Assessment of 20 marks.
 
+Under the 2027 bifurcation policy, Class 10 candidates are evaluated **exclusively** on the Class X prescribed literary selections, eliminating cumulative Class 9 texts.
+
 ### 1.1 Question Format-Wise Marks Weightage
 
 | Section | Content Area | Question Format | Marks Allocated |
 |---------|--------------|----------------|-----------------|
-| **Section A (Compulsory)** | Language (40 Marks) | Composition (Essay/Narrative) | 15 Marks |
-| | | Letter Writing (Formal/Informal) | 7 Marks |
-| | | Comprehension (Unseen Passage) | 10 Marks |
-| | | Grammar & Vocabulary | 8 Marks |
+| **Section A (Compulsory)** | Language (40 Marks) | Composition (Essay/Narrative/Reflective: 250-300 words) | 15 Marks |
+| | | Letter Writing (Formal/Informal layout) | 7 Marks |
+| | | Comprehension (Unseen Passage: 250 words) | 10 Marks |
+| | | Grammar & Vocabulary (Sandhi, Samasa, Idioms, Syntax) | 8 Marks |
 | **Section B (Choice-based)** | Prescribed Texts (40 Marks)| Four long-answer questions (10 marks each) to be answered from ONLY TWO prescribed textbooks. | 40 Marks (4 x 10) |
 | **Total** | | | **80 Marks** |
 
 ### 1.2 Chapter-Wise Indicative Marks Weightage
 *(Note: Students must choose any 2 of the 3 text types. Weightage below assumes Prose and Poetry are selected).*
 
-| Unit / Chapter Type | Specific Topics | Indicative Marks |
-|---------------------|-----------------|------------------|
-| **Grammar & Language** | Essay, Letter, Comprehension, Synonyms, Antonyms, Idioms | 40 Marks |
-| **Prose / Short Stories** | e.g., Rebati, Dhauli | 20 Marks (2 Questions) |
-| **Poetry** | e.g., Bande Utkala Janani, etc. | 20 Marks (2 Questions) |
+| Unit / Chapter Type | Prescribed Class 10 Literary Corpus | Indicative Marks |
+|---------------------|-------------------------------------|------------------|
+| **Grammar & Language** | Essay, Letter, Comprehension, Applied Grammar (Sandhi, Samasa, Voice/Sentence Transformation, Idioms) | 40 Marks |
+| **Prose / Short Stories** | Gyananjali Prose: *Dhulia Baba*, *Bhadraloka*, *Shikar*, *Krupan*, *Mukhagni*, *Dimiri Phula*, *Samantara Saralarekha*, *Anguthi* | 20 Marks (2 Questions) |
+| **Poetry** | Gyananjali Poetry: *Jagate Kebala*, *Grampatha*, *Mani Kanchan Joga*, *Bandira Biraha Byatha*, *Khadyotika* | 20 Marks (2 Questions) |
 | **Drama/Novel** | (Alternative if chosen instead of Prose/Poetry) | (20 Marks) |
-| **Internal Assessment** | Oral & Creative Writing Assignments | 20 Marks |
+| **Internal Assessment** | Oral (Listening/Speaking) & Creative Writing Assignments (up to 1500 words) | 20 Marks |
 | **Total** | | **100 Marks** |
 
 ---
 
 ## 2. ECONOMICS (Code: 64)
 There will be one paper of two hours duration carrying 80 marks and an Internal Assessment of 20 marks.
+
+The syllabus transitions students from microeconomic fundamentals to structural macroeconomic trends, specifically aligned with the pure Economics (Code 64) cognate (no consumer awareness).
 
 ### 2.1 Question Format-Wise Marks Weightage
 
@@ -41,32 +45,49 @@ There will be one paper of two hours duration carrying 80 marks and an Internal 
 | **Total** | | | **80 Marks** |
 
 ### 2.2 Unit-Wise Indicative Marks Weightage
-*(Note: ICSE does not prescribe a rigid unit-wise blueprint for Section B, but the following reflects historical distribution trends matching the 10 pure Economics chapters).*
+*(Note: The following represents the updated 6-unit structure matching the pure Economics Code 64 chapters).*
 
-| Unit No. | Unit / Chapter Theme | Indicative Marks (Out of 80) |
-|----------|----------------------|------------------------------|
-| I | **Demand and Supply: Basic Concepts** (Ch 1-3: Demand, Elasticity, Supply) | ~14 - 16 Marks |
-| II | **Factors of Production: Basic Concepts** (Ch 4: Land, Labour, Capital, Entrepreneur) | ~12 - 14 Marks |
-| III | **Alternative Market Structures: Basic Concepts** (Ch 5: Nature & Structure of Markets) | ~10 - 12 Marks |
-| IV | **The State and Economic Development** (Ch 6: Public Finance - Revenue, Taxes, Debt) | ~14 - 16 Marks |
-| V | **Money and Banking: Basic Concepts** (Ch 7-10: Money, Commercial & Central Banks, Inflation) | ~22 - 24 Marks |
-| **Total** | | **~80 Marks (Excluding Options)** |
-| **Internal** | Project Work / Assignments | **20 Marks** |
+| Unit No. | Unit / Chapter Theme | Chapters Covered | Indicative Marks (Out of 80) |
+|----------|----------------------|------------------|------------------------------|
+| I | **Demand and Supply: Basic Concepts** | Ch 1 - 3 | ~14 - 16 Marks |
+| II | **Factors of Production: Basic Concepts** | Ch 4 | ~12 - 14 Marks |
+| III | **Alternative Market Structures: Basic Concepts** | Ch 5 | ~8 - 10 Marks |
+| IV | **The State and Economic Development** | Ch 6 | ~10 - 12 Marks |
+| V | **Money and Banking: Basic Concepts** | Ch 7 - 10 | ~18 - 20 Marks |
+| VI | **Emerging Trends in the Indian Economy** | Ch 11 | ~10 - 12 Marks |
+| **Total** | | | **~80 Marks (Excluding Options)** |
+| **Internal** | Project Work / Surveys | | **20 Marks** |
 
 ---
 
 ### Detailed Syllabus Breakdown
 
 #### SECOND LANGUAGE - ODIA
-- **Composition**: Descriptive, narrative, or argumentative essay (250 words).
-- **Letter Writing**: Formal or informal layout.
-- **Comprehension**: Unseen passage of 250 words.
-- **Grammar**: Vocabulary, syntax, idioms, synthesis. No grammatical terms required.
-- **Literature**: Detailed study of prescribed short stories, poems, or drama.
+- **Composition**: Descriptive, narrative, reflective, or argumentative essay (250-300 words). Evaluates vocabulary, syntax, and coherent ideation.
+- **Letter Writing**: Formal (official requests, letters to editors) or informal (letters to family/friends) layouts.
+- **Comprehension**: Unseen passage of approximately 250 words. Focuses on factual and inferential question formats.
+- **Grammar**: Sandhi, Samasa, sentence and voice transformations, idioms and proverbs, synonyms and antonyms, correction of common syntax errors.
+- **Literature**: Critical analysis of characters, themes, and literary style in Gyananjali (Prose & Poetry):
+  - **Prose (Short Stories)**:
+    - *Mukhagni* (Laxmi Chand) – Traditional rites and emotional frictions.
+    - *Dimiri Phula* (Akhila Mohan Pattnayak) – Human aspirations and chasing the rare.
+    - *Samantara Saralarekha* (Bibhuti Pattanaik) – Socio-economic gaps and parallel lives.
+    - *Anguthi* (Sachidananda Routray) – Psychological depth, guilt, and limits of memory.
+    - *Dhulia Baba* (Fakir Mohan Senapati) – Critique of fake religious ascetics.
+    - *Bhadraloka* (Prativa Ray) – Critique of middle-class hypocrisy.
+    - *Shikar* (Bhagabati Charan Panigrahi) – Critique of tribal exploitation and systemic injustice.
+    - *Krupan* – Familial greed vs. moral values.
+  - **Poetry**:
+    - *Jagate Kebala* (Kabisurya Baladev Ratha) – Transience of life and devotion.
+    - *Grampatha* (Binod Chandra Kayak) – Pastoral celebration vs. urban noise.
+    - *Mani Kanchan Joga* (Radhamohan Gadanaik) – Perfect union of gem and gold (ideal bonds).
+    - *Bandira Biraha Byatha* (Utkalmani Gopabandhu Das) – Deep patriotism and prison isolation.
+    - *Khadyotika* (Bidyutprava Devi) – The value of the small in the vast dark (firefly imagery).
 
 #### ECONOMICS (PURE CLASS 10 COGNATE - CODE 64)
-- **Unit I: Demand and Supply (Basic Concepts)**: Meaning of demand and supply, Law of Demand & Supply, demand and supply schedules/curves, determinants of demand & supply, elasticity of demand (price elasticity, degrees, measurement).
-- **Unit II: Factors of Production (Basic Concepts)**: Land (features), Labour (meaning, efficiency, division of labour), Capital (types, capital formation), and Entrepreneur (role, functions).
-- **Unit III: Alternative Market Structures (Basic Concepts)**: Markets (meaning), Perfect Competition, Monopoly, Monopolistic Competition, Oligopoly (meaning and characteristics of each).
-- **Unit IV: The State and Economic Development**: Public Finance (meaning), Public Revenue (Direct & Indirect Taxes, progressive/regressive/proportional taxes), Public Expenditure (meaning and reasons for growth), Public Debt, Deficit Financing.
-- **Unit V: Money and Banking (Basic Concepts)**: Money (evolution, primary, secondary & contingent functions), Commercial Banks (functions, credit creation), Central Bank (RBI, credit control instruments: CRR, SLR, Repo, Bank Rate, open market operations), Inflation (meaning, creeping/walking/running/galloping types, Demand-Pull vs Cost-Push inflation causes & effects).
+- **Unit I: Demand and Supply (Basic Concepts)**: Meaning of demand and supply, Law of Demand & Supply, demand and supply schedules/curves, determinants of demand & supply, movements vs. shifts along the curves. Price elasticity of demand and supply (meaning, degrees, percentage measurement method, factors affecting elasticity).
+- **Unit II: Factors of Production (Basic Concepts)**: Land (features, ecological destruction of ecosystems), Labour (efficiency of labour, division of labour advantages/disadvantages), Capital (types, physical vs. financial, stages of capital formation), and Entrepreneur (risk-bearing and organizing role, qualities).
+- **Unit III: Alternative Market Structures (Basic Concepts)**: Markets (meaning), Perfect Competition, Monopoly, Monopolistic Competition, Oligopoly (meaning and characteristics of each), and Monopsony (meaning, single buyer power).
+- **Unit IV: The State and Economic Development**: Public Finance (meaning), instruments of state intervention (direct & indirect taxes, subsidies), progressive/regressive/proportional taxation, Public Expenditure (reasons for growth), Public Sector Enterprises (historical role, growth, problems), privatization debate, Public Debt, and Deficit Financing.
+- **Unit V: Money and Banking (Basic Concepts)**: Money (limitations of barter, evolution, primary, secondary & contingent functions), Commercial Banks (functions, mechanism of credit creation), Central Bank (RBI, credit control instruments: quantitative like CRR, SLR, Repo, Bank Rate, open market operations, qualitative tools), Inflation (meaning, creeping/walking/running/galloping, Demand-Pull vs. Cost-Push inflation causes & socio-economic impact).
+- **Unit VI: Emerging Trends in the Indian Economy**: The 1991 LPG Model (Liberalization, Privatization, Globalization) and its structural impacts on growth. Case studies on modern government initiatives: "Smart City", "Digital India", and "Skill India" (infrastructure, poverty alleviation, and human resource enhancement).
