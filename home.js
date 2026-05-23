@@ -46,78 +46,88 @@ function renderHomeGrid() {
         subjectsMap[ch.subject].push(ch);
     });
 
+    html += `<div class="subject-tile-grid">`;
     Object.keys(subjectsMap).forEach(subjKey => {
         const subjChapters = subjectsMap[subjKey];
         const subjLabel = subjectLabels[subjKey] || subjKey.toUpperCase();
-        
+        const completedCount = subjChapters.filter(c => c.href !== '#').length;
+        const totalCount = subjChapters.length;
+        const perc = totalCount === 0 ? 0 : Math.round((completedCount/totalCount)*100);
+
         html += `
-        <div class="subject-accordion">
-            <button class="subject-accordion-btn" onclick="toggleAccordion('acc-${subjKey}')">
-                <span class="subject-title">${subjLabel}</span>
-                <span class="subject-count">${subjChapters.filter(c => c.href !== '#').length} / ${subjChapters.length} CHAPTERS</span>
-                <span class="accordion-icon" style="transition: transform 0.3s ease;">▼</span>
-            </button>
-            <div class="subject-accordion-content" id="acc-${subjKey}" style="display: none; border: 1px solid var(--border-color); border-top: none; padding: 1rem; background: var(--bg-body);">`;
-
-        subjChapters.forEach(ch => {
-            const isPending = ch.href === "#";
-            const cardStyle = isPending ? `opacity: 0.6; cursor: default; background: var(--bg-card); border: 1px dashed var(--border-color); margin-bottom: 1rem; padding: 1rem;` : `background: var(--bg-card); border: 1px solid var(--border-color); margin-bottom: 1rem; padding: 1rem;`;
-            const tagsHtml = (ch.tags || []).map(tag => `<span class="chapter-tag">${tag}</span>`).join('');
-            const tagLabel = isPending ? `<span class="chapter-tag" style="background: #333; color: #888;">PENDING CREATION</span>` : tagsHtml;
-            
-            html += `
-            <div class="chapter-card-nested" style="${cardStyle}">
-                <div class="chapter-header" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
-                    <div class="chapter-number" style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--accent-color); font-weight: bold;">${String(ch.num).padStart(2, '0')}</div>
-                    <div class="chapter-info">
-                        <h2 class="chapter-name" style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-main);">${ch.name.toUpperCase()}</h2>
-                        <div class="chapter-meta">${tagLabel}</div>
-                    </div>
-                </div>`;
-            
-            // Render Modules
-            if (!isPending) {
-                const mods = ch.modules || [];
-                html += `<div class="module-list" style="display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">`;
-                mods.forEach((mod, idx) => {
-                    const icon = mod.type === 'test' ? '📝' : '📖';
-                    html += `
-                    <a href="${mod.href}" class="module-link" style="display: flex; align-items: center; justify-content: space-between; padding: 0.8rem; background: var(--bg-body); border: 1px solid var(--border-color); text-decoration: none; color: var(--text-main); font-family: var(--font-mono); font-size: 0.9rem; transition: border-color 0.2s;">
-                        <span><span style="margin-right:0.5rem;">${icon}</span> MODULE ${idx + 1}: ${mod.name}</span>
-                        <span style="color: var(--accent-color);">→</span>
-                    </a>`;
-                });
-                // Add full chapter button
-                html += `
-                    <a href="${ch.href}" class="module-link primary-module" style="display: flex; align-items: center; justify-content: space-between; padding: 0.8rem; background: var(--accent-color); color: #000; font-family: var(--font-mono); font-size: 0.9rem; font-weight: bold; text-decoration: none; margin-top: 0.5rem;">
-                        <span>🚀 START FULL CHAPTER</span>
-                        <span>→</span>
-                    </a>
-                </div>`;
-            } else {
-                html += `<div class="module-list" style="padding: 1rem; color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-mono); border-top: 1px solid var(--border-color); margin-top: 1rem;">Modules will be generated soon.</div>`;
-            }
-
-            html += `</div>`; // end chapter-card-nested
-        });
-
-        html += `</div></div>`; // end subject-accordion-content & subject-accordion
+        <div class="subject-tile" onclick="renderSubjectView('${subjKey}')">
+            <div class="subject-tile-abbr">[ ${subjKey.substring(0,4).toUpperCase()} ]</div>
+            <h3 class="subject-tile-name">${subjLabel}</h3>
+            <div class="subject-tile-progress-bar">
+                <div class="subject-tile-progress-fill" style="width: ${perc}%"></div>
+            </div>
+            <div class="subject-tile-meta">${completedCount} / ${totalCount} CHAPTERS</div>
+        </div>`;
     });
-
+    html += `</div>`;
     grid.innerHTML = html;
 }
 
-// Add global toggle function
-window.toggleAccordion = function(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (el.style.display === 'block') {
-        el.style.display = 'none';
-        el.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
-    } else {
-        el.style.display = 'block';
-        el.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(180deg)';
-    }
+window.renderSubjectView = function(subjKey) {
+    const grid = document.getElementById('home-grid-container');
+    if (!grid) return;
+    
+    const chapters = window.ICSE_CHAPTERS || [];
+    const subjChapters = chapters.filter(c => c.subject === subjKey);
+    const subjLabel = subjectLabels[subjKey] || subjKey.toUpperCase();
+
+    let html = `
+    <button class="btn-secondary" style="margin-bottom: 2rem;" onclick="renderHomeGrid()">← BACK TO SUBJECTS</button>
+    <div class="dashboard-banner" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.5rem; margin-bottom: 2rem;">
+        <h2 style="font-family: var(--font-mono); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main);">${subjLabel}</h2>
+        <p style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.9rem;">Select a module below to start learning.</p>
+    </div>
+    <div class="subject-chapter-list">`;
+
+    subjChapters.forEach(ch => {
+        const isPending = ch.href === "#";
+        const cardStyle = isPending ? `opacity: 0.6; cursor: default; background: var(--bg-card); border: 1px dashed var(--border-color); margin-bottom: 1rem; padding: 1rem;` : `background: var(--bg-card); border: 1px solid var(--border-color); margin-bottom: 1rem; padding: 1rem;`;
+        const tagsHtml = (ch.tags || []).map(tag => `<span class="chapter-tag">${tag}</span>`).join('');
+        const tagLabel = isPending ? `<span class="chapter-tag" style="background: #333; color: #888;">PENDING CREATION</span>` : tagsHtml;
+        
+        html += `
+        <div class="chapter-card-nested" style="${cardStyle}">
+            <div class="chapter-header" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                <div class="chapter-number" style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--accent-color); font-weight: bold;">${String(ch.num).padStart(2, '0')}</div>
+                <div class="chapter-info">
+                    <h2 class="chapter-name" style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-main);">${ch.name.toUpperCase()}</h2>
+                    <div class="chapter-meta">${tagLabel}</div>
+                </div>
+            </div>`;
+        
+        // Render Modules
+        if (!isPending) {
+            const mods = ch.modules || [];
+            html += `<div class="module-list" style="display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">`;
+            mods.forEach((mod, idx) => {
+                const icon = mod.type === 'test' ? '📝' : '📖';
+                html += `
+                <a href="${mod.href}" class="module-link" style="display: flex; align-items: center; justify-content: space-between; padding: 0.8rem; background: var(--bg-body); border: 1px solid var(--border-color); text-decoration: none; color: var(--text-main); font-family: var(--font-mono); font-size: 0.9rem; transition: border-color 0.2s;">
+                    <span><span style="margin-right:0.5rem;">${icon}</span> MODULE ${idx + 1}: ${mod.name}</span>
+                    <span style="color: var(--accent-color);">→</span>
+                </a>`;
+            });
+            // Add full chapter button
+            html += `
+                <a href="${ch.href}" class="module-link primary-module" style="display: flex; align-items: center; justify-content: space-between; padding: 0.8rem; background: var(--accent-color); color: #000; font-family: var(--font-mono); font-size: 0.9rem; font-weight: bold; text-decoration: none; margin-top: 0.5rem;">
+                    <span>🚀 START FULL CHAPTER</span>
+                    <span>→</span>
+                </a>
+            </div>`;
+        } else {
+            html += `<div class="module-list" style="padding: 1rem; color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-mono); border-top: 1px solid var(--border-color); margin-top: 1rem;">Modules will be generated soon.</div>`;
+        }
+
+        html += `</div>`; // end chapter-card-nested
+    });
+
+    html += `</div>`;
+    grid.innerHTML = html;
 }
 
 // ===================== MODAL FUNCTIONS =====================
