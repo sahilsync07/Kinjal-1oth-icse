@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Parallel lines that never meet!"},{face:"THINKING",text:"Social inequality..."},{face:"THINKING",text:"Quiz!"},{face:"GRADUATION",text:"Great work!"}];
+window.CHAPTER_QUESTIONS={"samantara":[
+{id:"samantara_q1",sentence:"'ସମାନ୍ତର ସରଳରେଖା' ଲେଖକ? _____",options:["ମନୋଜ ଦାସ","ବିଭୂତି ପଟ୍ଟନାୟକ","ଲକ୍ଷ୍ମୀ ଚାନ୍ଦ","ଅଖିଳ ମୋହନ"],correct:1,rule:"Author",explanations:{correct:"ବିଭୂତି ପଟ୍ଟନାୟକ ଲେଖକ।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"samantara_q2",sentence:"ସମାନ୍ତର ସରଳରେଖା ଅର୍ଥ? _____",options:["ଏକ ନଦୀ","ସମାନ୍ତର ଜୀବନ ଯାହା ମିଳେ ନାହିଁ","ଏକ ପାହାଡ","ଏକ ଗାଁ"],correct:1,rule:"Title Meaning",explanations:{correct:"Parallel lines = lives that run parallel but never meet.",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"samantara_q3",sentence:"ଗଳ୍ପର ମୂଳ ଭାବନା? _____",options:["ପ୍ରେମ କାହାଣୀ","ସାମାଜିକ ଅସମାନତା","ବିଜ୍ଞାନ","ଖେଳ"],correct:1,rule:"Theme",explanations:{correct:"ସାମାଜିକ ଅସମାନତା ଓ ଶ୍ରେଣୀ ବିଭେଦ।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"samantara_q4",sentence:"ଗଳ୍ପରେ କେଉଁ ସମସ୍ୟା ଦେଖାଯାଏ? _____",options:["ପ୍ରଦୂଷଣ","ଧନୀ-ଗରିବ ବିଭେଦ","ବନ୍ୟା","ଶିକ୍ଷା ଅଭାବ"],correct:1,rule:"Problem",explanations:{correct:"ଧନୀ ଓ ଗରିବ ମଧ୍ୟରେ ବିଭେଦ।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}}
+]};

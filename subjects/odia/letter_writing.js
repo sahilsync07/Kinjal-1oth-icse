@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Letter writing skills!"},{face:"THINKING",text:"Formal vs informal format."},{face:"THINKING",text:"Quiz!"},{face:"GRADUATION",text:"Great writing skills!"}];
+window.CHAPTER_QUESTIONS={"letter":[
+{id:"letter_q1",sentence:"ସରକାରୀ ପତ୍ରରେ _____ ଆବଶ୍ୟକ।",options:["କେବଳ ନାମ","ଠିକଣା ଓ ତାରିଖ","କେବଳ ଦସ୍ତଖତ","କିଛି ନୁହେଁ"],correct:1,rule:"Format",explanations:{correct:"ଠିକଣା ଓ ତାରିଖ ଆବଶ୍ୟକ।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"letter_q2",sentence:"ବ୍ୟକ୍ତିଗତ ପତ୍ର କାହାକୁ ଲେଖାଯାଏ? _____",options:["ସରକାରଙ୍କୁ","ବନ୍ଧୁ/ପରିବାରକୁ","ଅଦାଲତକୁ","ସମ୍ପାଦକଙ୍କୁ"],correct:1,rule:"Type",explanations:{correct:"ବ୍ୟକ୍ତିଗତ ପତ୍ର ବନ୍ଧୁ/ପରିବାରକୁ ଲେଖାଯାଏ।",wrong:{0:"ସରକାରୀ ପତ୍ର।",2:"ଆଇନି ପତ୍ର।",3:"ସମ୍ପାଦକୀୟ ପତ୍ର।"}}},
+{id:"letter_q3",sentence:"ପତ୍ର ଲିଖନ ICSE ରେ _____ ମାର୍କ। _____",options:["5","7","10","15"],correct:1,rule:"Marks",explanations:{correct:"ପତ୍ର ଲିଖନ 7 ମାର୍କ।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"letter_q4",sentence:"ପତ୍ରର ଶେଷରେ କ'ଣ ଲେଖାଯାଏ? _____",options:["ଶିରୋନାମା","ନିବେଦକ/ଆପଣଙ୍କ ବିଶ୍ୱସ୍ତ","ଠିକଣା","ତାରିଖ"],correct:1,rule:"Format",explanations:{correct:"ଶେଷରେ 'ନିବେଦକ' ବା 'ଆପଣଙ୍କ ବିଶ୍ୱସ୍ତ' + ନାମ।",wrong:{0:"ଶିରୋନାମା ଉପରେ ଥାଏ।",2:"ଠିକଣା ଉପରେ ଥାଏ।",3:"ତାରିଖ ଉପରେ ଥାଏ।"}}}
+]};

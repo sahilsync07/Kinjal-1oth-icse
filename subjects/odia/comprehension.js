@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Comprehension skills!"},{face:"THINKING",text:"Read twice, underline key points."},{face:"THINKING",text:"Quiz!"},{face:"GRADUATION",text:"Sharp reading skills!"}];
+window.CHAPTER_QUESTIONS={"comprehension":[
+{id:"comp2_q1",sentence:"ବୋଧ ଜ୍ଞାନ ପାଇଁ ଗଦ୍ୟାଂଶ _____ ଥର ପଢିବା ଉଚିତ।",options:["ଥରେ","ଦୁଇଥର","ତିନିଥର","ପାଞ୍ଚଥର"],correct:1,rule:"Tips",explanations:{correct:"ଦୁଇଥର ପଢି ମୁଖ୍ୟ ବିଷୟ ବୁଝିବା ଉଚିତ।",wrong:{0:"ଥରେ ଯଥେଷ୍ଟ ନୁହେଁ।",2:"ଦୁଇଥର ଯଥେଷ୍ଟ।",3:"ବେଶୀ ସମୟ ନଷ୍ଟ।"}}},
+{id:"comp2_q2",sentence:"ଉତ୍ତର _____ ବାକ୍ୟରେ ଦେବା ଉଚିତ।",options:["ଅଧା","ପୂର୍ଣ୍ଣ","ଏକ ଶବ୍ଦ","ବିନା"],correct:1,rule:"Answer Format",explanations:{correct:"ପୂର୍ଣ୍ଣ ବାକ୍ୟରେ ଉତ୍ତର ଦେବା ଉଚିତ।",wrong:{0:"Wrong.",2:"ଏକ ଶବ୍ଦ ଯଥେଷ୍ଟ ନୁହେଁ।",3:"Wrong."}}},
+{id:"comp2_q3",sentence:"ବୋଧ ଜ୍ଞାନ ICSE ରେ _____ ମାର୍କ। _____",options:["7","8","10","15"],correct:2,rule:"Marks",explanations:{correct:"ବୋଧ ଜ୍ଞାନ 10 ମାର୍କ ବହନ କରେ।",wrong:{0:"Wrong.",1:"Wrong.",3:"Wrong."}}},
+{id:"comp2_q4",sentence:"ଗଦ୍ୟାଂଶ ପ୍ରାୟ _____ ଶବ୍ଦ ଥାଏ। _____",options:["100","250","500","1000"],correct:1,rule:"Length",explanations:{correct:"ପ୍ରାୟ 250 ଶବ୍ଦର ଅପଠିତ ଗଦ୍ୟାଂଶ।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}}
+]};

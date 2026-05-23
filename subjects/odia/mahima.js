@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Mahima by Gangadhar Meher!"},{face:"THINKING",text:"True greatness is humility."},{face:"THINKING",text:"Quiz!"},{face:"GRADUATION",text:"Well done!"}];
+window.CHAPTER_QUESTIONS={"mahima":[
+{id:"mahima_q1",sentence:"'ମହିମା' କବିତାର କବି? _____",options:["ଲକ୍ଷ୍ମୀକାନ୍ତ","ଗଙ୍ଗାଧର ମେହେର","ଗୋଦାବରୀଶ","କୁନ୍ତଳା"],correct:1,rule:"Poet",explanations:{correct:"ଗଙ୍ଗାଧର ମେହେର 'ମହିମା' ଲେଖିଛନ୍ତି।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"mahima_q2",sentence:"କବିତାର ମୂଳ ଭାବନା? _____",options:["ଧନ","ମହାନତା ଓ ନମ୍ରତା","ଯୁଦ୍ଧ","ପ୍ରେମ"],correct:1,rule:"Theme",explanations:{correct:"ମହାନତା ଓ ନମ୍ରତା ମୂଳ ଭାବନା।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"mahima_q3",sentence:"ଗଙ୍ଗାଧର ମେହେର କେଉଁ ଉପାଧି ପାଇଛନ୍ତି? _____",options:["କାନ୍ତକବି","ଭକ୍ତକବି","ସ୍ୱଭାବକବି","କବିସୂର୍ଯ୍ୟ"],correct:2,rule:"Title",explanations:{correct:"ଗଙ୍ଗାଧର ମେହେର 'ସ୍ୱଭାବକବି' ଭାବେ ପରିଚିତ।",wrong:{0:"କାନ୍ତକବି ଲକ୍ଷ୍ମୀକାନ୍ତ ମହାପାତ୍ର।",1:"ଭକ୍ତକବି ମଧୁସୂଦନ ରାଓ।",3:"କବିସୂର୍ଯ୍ୟ ବାଳଦେବ ରଥ।"}}},
+{id:"mahima_q4",sentence:"ମହିମା କବିତା କେଉଁ ଶ୍ରେଣୀ? _____",options:["ହାସ୍ୟ","ଆଧ୍ୟାତ୍ମିକ","ବିଜ୍ଞାନ","ଇତିହାସ"],correct:1,rule:"Genre",explanations:{correct:"ଆଧ୍ୟାତ୍ମିକ ଓ ନୈତିକ କବିତା।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}}
+]};

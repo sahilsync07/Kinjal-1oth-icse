@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Banaphula by Kuntala Kumari Sabat!"},{face:"THINKING",text:"Wild flowers have their own beauty."},{face:"THINKING",text:"Quiz!"},{face:"GRADUATION",text:"Beautiful work!"}];
+window.CHAPTER_QUESTIONS={"banaphula":[
+{id:"banaphula_q1",sentence:"'ବନଫୁଲ' କବିତାର କବି? _____",options:["ଗଙ୍ଗାଧର ମେହେର","କୁନ୍ତଳା କୁମାରୀ ସାବତ","ଗୋଦାବରୀଶ","କାଳିନ୍ଦୀ ଚରଣ"],correct:1,rule:"Poet",explanations:{correct:"କୁନ୍ତଳା କୁମାରୀ ସାବତ ଲେଖିକା।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"banaphula_q2",sentence:"କବିତାରେ ବନଫୁଲ ଓ _____ ତୁଳନା ହୋଇଛି? _____",options:["ପଥର","ଉଦ୍ୟାନ କୁସୁମ","ସମୁଦ୍ର","ଆକାଶ"],correct:1,rule:"Comparison",explanations:{correct:"ବନଫୁଲ ଓ ଉଦ୍ୟାନ କୁସୁମ (garden flower) ତୁଳନା।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"banaphula_q3",sentence:"କବିତାର ସନ୍ଦେଶ? _____",options:["କୃତ୍ରିମ ସୁନ୍ଦର","ପ୍ରାକୃତିକ ସୌନ୍ଦର୍ଯ୍ୟ ଶ୍ରେଷ୍ଠ","ଫୁଲ ଅକାମି","ବଗିଚା ଭଲ"],correct:1,rule:"Message",explanations:{correct:"ପ୍ରାକୃତିକ/ସହଜ ସୌନ୍ଦର୍ଯ୍ୟ କୃତ୍ରିମ ସୌନ୍ଦର୍ଯ୍ୟଠାରୁ ଶ୍ରେଷ୍ଠ।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"banaphula_q4",sentence:"କୁନ୍ତଳା କୁମାରୀ ସାବତ ଓଡ଼ିଆ ସାହିତ୍ୟରେ _____ ଭାବେ ପରିଚିତ।",options:["ପ୍ରଥମ ପୁରୁଷ ଲେଖକ","ପ୍ରଥମ ମହିଳା କବି","ପ୍ରଥମ ବୈଜ୍ଞାନିକ","ପ୍ରଥମ ଚିତ୍ରକର"],correct:1,rule:"Author Bio",explanations:{correct:"ସେ ଓଡ଼ିଆ ସାହିତ୍ୟର ପ୍ରଥମ ମହିଳା କବି।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}}
+]};

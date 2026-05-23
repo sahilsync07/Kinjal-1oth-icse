@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Sandhi and Samasa!"},{face:"THINKING",text:"Swara, Byanjana, Bisarga..."},{face:"THINKING",text:"Quiz!"},{face:"GRADUATION",text:"Grammar mastered!"}];
+window.CHAPTER_QUESTIONS={"sandhi":[
+{id:"sandhi_q1",sentence:"'ହିମ + ଆଳୟ = ହିମାଳୟ' ଏହା କେଉଁ ସନ୍ଧି? _____",options:["ବ୍ୟଞ୍ଜନ ସନ୍ଧି","ସ୍ୱର ସନ୍ଧି","ବିସର୍ଗ ସନ୍ଧି","ସମାସ"],correct:1,rule:"Swara Sandhi",explanations:{correct:"ସ୍ୱର + ସ୍ୱର = ସ୍ୱର ସନ୍ଧି।",wrong:{0:"ବ୍ୟଞ୍ଜନ ସନ୍ଧିରେ ବ୍ୟଞ୍ଜନ ଯୁକ୍ତ ହୁଏ।",2:"ବିସର୍ଗ ସନ୍ଧିରେ ବିସର୍ଗ ଥାଏ।",3:"ସମାସ ଅଲଗା।"}}},
+{id:"sandhi_q2",sentence:"ସନ୍ଧି କେତେ ପ୍ରକାର? _____",options:["2","3","4","5"],correct:1,rule:"Types",explanations:{correct:"3 ପ୍ରକାର: ସ୍ୱର, ବ୍ୟଞ୍ଜନ, ବିସର୍ଗ ସନ୍ଧି।",wrong:{0:"Wrong.",2:"Wrong.",3:"Wrong."}}},
+{id:"sandhi_q3",sentence:"'ମହାରାଜା' କେଉଁ ସମାସ? _____",options:["ଦ୍ୱନ୍ଦ୍ୱ","କର୍ମଧାରୟ","ତତ୍ପୁରୁଷ","ବହୁବ୍ରୀହି"],correct:1,rule:"Samasa",explanations:{correct:"ମହା + ରାଜା = କର୍ମଧାରୟ ସମାସ (adjective + noun).",wrong:{0:"ଦ୍ୱନ୍ଦ୍ୱ ଦୁଇଟି ସମାନ ପଦ ଯୋଗ।",2:"Wrong.",3:"Wrong."}}},
+{id:"sandhi_q4",sentence:"ବ୍ୟଞ୍ଜନ ସନ୍ଧିରେ _____ ଯୁକ୍ତ ହୁଏ।",options:["ସ୍ୱର + ସ୍ୱର","ବ୍ୟଞ୍ଜନ + ସ୍ୱର/ବ୍ୟଞ୍ଜନ","ବିସର୍ଗ","କିଛି ନୁହେଁ"],correct:1,rule:"Byanjana Sandhi",explanations:{correct:"ବ୍ୟଞ୍ଜନ + ସ୍ୱର ବା ବ୍ୟଞ୍ଜନ = ବ୍ୟଞ୍ଜନ ସନ୍ଧି।",wrong:{0:"ସ୍ୱର + ସ୍ୱର = ସ୍ୱର ସନ୍ଧି।",2:"ବିସର୍ଗ ସନ୍ଧି ଅଲଗା।",3:"Wrong."}}}
+]};

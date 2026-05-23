@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Kalijai story from Chilika Lake!"},{face:"THINKING",text:"A tragic folk legend..."},{face:"THINKING",text:"Quiz time!"},{face:"GRADUATION",text:"Well done!"}];
+window.CHAPTER_QUESTIONS={"kalijai":[
+{id:"kalijai_q1",sentence:"'Kalijai' poem is by which poet? _____",options:["Gangadhar Meher","Godabarish Mishra","Kalindi Charan","Kuntala Kumari"],correct:1,rule:"Poet",explanations:{correct:"Godabarish Mishra wrote Kalijai.",wrong:{0:"Gangadhar Meher wrote Mahima.",2:"Kalindi Charan wrote Gandharira Ashirwad.",3:"Kuntala Kumari wrote Banaphula."}}},
+{id:"kalijai_q2",sentence:"Kalijai is associated with which lake? _____",options:["Ansupa","Chilika","Bhimkund","Hirakud"],correct:1,rule:"Setting",explanations:{correct:"Kalijai temple is on an island in Chilika Lake.",wrong:{0:"Ansupa is a different lake.",2:"Bhimkund is in MP.",3:"Hirakud is a dam."}}},
+{id:"kalijai_q3",sentence:"The theme of Kalijai is: _____",options:["Comedy","Sacrifice and devotion","Science","Politics"],correct:1,rule:"Theme",explanations:{correct:"The poem depicts sacrifice, devotion, and tragic love.",wrong:{0:"Not a comedy.",2:"Not science.",3:"Not politics."}}},
+{id:"kalijai_q4",sentence:"Kalijai is a _____ legend.",options:["Modern","Folk","Foreign","Scientific"],correct:1,rule:"Genre",explanations:{correct:"Kalijai is a folk legend of Odisha.",wrong:{0:"It is ancient, not modern.",2:"It is Odia, not foreign.",3:"It is a legend, not scientific."}}}
+]};

@@ -1,0 +1,7 @@
+﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Let's master essay writing!"},{face:"THINKING",text:"Structure: Intro, Body, Conclusion."},{face:"THINKING",text:"Quiz!"},{face:"GRADUATION",text:"You're a great writer!"}];
+window.CHAPTER_QUESTIONS={"composition":[
+{id:"comp_q1",sentence:"ପ୍ରବନ୍ଧର ପ୍ରଥମ ଭାଗ? _____",options:["ଉପସଂହାର","ଆରମ୍ଭ/ଭୂମିକା","ମୂଳ ବିଷୟ","ଶିରୋନାମା"],correct:1,rule:"Structure",explanations:{correct:"ଆରମ୍ଭ/ଭୂମିକା (Introduction) ପ୍ରଥମ।",wrong:{0:"ଉପସଂହାର ଶେଷ ଭାଗ।",2:"ମୂଳ ବିଷୟ ମଧ୍ୟ ଭାଗ।",3:"ଶିରୋନାମା ବିଷୟ ନୁହେଁ, ନାମ।"}}},
+{id:"comp_q2",sentence:"ICSE ରେ ପ୍ରବନ୍ଧ ପ୍ରାୟ କେତେ ଶବ୍ଦ? _____",options:["100","250","500","1000"],correct:1,rule:"Word Limit",explanations:{correct:"ପ୍ରାୟ 250 ଶବ୍ଦ।",wrong:{0:"ବହୁତ କମ।",2:"ବହୁତ ବେଶୀ।",3:"ବହୁତ ବେଶୀ।"}}},
+{id:"comp_q3",sentence:"ପ୍ରବନ୍ଧର ଶେଷ ଭାଗକୁ କ'ଣ କୁହାଯାଏ? _____",options:["ଆରମ୍ଭ","ମୂଳ ବିଷୟ","ଉପସଂହାର","ଶିରୋନାମା"],correct:2,rule:"Structure",explanations:{correct:"ଉପସଂହାର (Conclusion) ଶେଷ ଭାଗ।",wrong:{0:"ଆରମ୍ଭ ପ୍ରଥମ ଭାଗ।",1:"ମୂଳ ବିଷୟ ମଧ୍ୟ ଭାଗ।",3:"Wrong."}}},
+{id:"comp_q4",sentence:"ପ୍ରବନ୍ଧ Section A ରେ କେତେ ମାର୍କ? _____",options:["7","10","15","20"],correct:2,rule:"Marks",explanations:{correct:"ପ୍ରବନ୍ଧ 15 ମାର୍କ ବହନ କରେ।",wrong:{0:"7 ପତ୍ର ଲିଖନ ପାଇଁ।",1:"10 ବୋଧ ଜ୍ଞାନ ପାଇଁ।",3:"20 Internal Assessment ପାଇଁ।"}}}
+]};
