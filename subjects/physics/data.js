@@ -19,8 +19,42 @@ window.ICSE_CHAPTERS.push(
             { name: "Quiz: Mega Revision Force Challenges", type: "test", href: "subjects/physics/force.html#slide-08" }
         ]
     },
-    { num: 30, subject: "physics",    name: "Work, Energy & Power",              difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Work done, kinetic/potential energy, conservation of energy, power, and energy transformation numerical problems." },
-    { num: 31, subject: "physics",    name: "Machines",                          difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Levers (classes I, II, III), pulleys, mechanical advantage, velocity ratio, efficiency, and ideal vs real machines." },
+    {
+        num: 30,
+        subject: "physics",
+        name: "Work, Energy & Power",
+        difficulty: "Moderate",
+        length: "Normal",
+        tags: ["9 SLIDES", "20 NUMERICALS", "CONSERVATION"],
+        href: "subjects/physics/work_power_energy.html",
+        desc: "Work done, kinetic/potential energy, conservation of energy, power, and energy transformation numerical problems.",
+        modules: [
+            { name: "Lesson: Work & Power", type: "summary", href: "subjects/physics/work_power_energy.html#slide-02" },
+            { name: "Quiz: Work & Power", type: "test", href: "subjects/physics/work_power_energy.html#slide-03" },
+            { name: "Lesson: Kinetic & Potential Energy", type: "summary", href: "subjects/physics/work_power_energy.html#slide-04" },
+            { name: "Quiz: Energy Calculations", type: "test", href: "subjects/physics/work_power_energy.html#slide-05" },
+            { name: "Lesson: Conservation of Energy", type: "summary", href: "subjects/physics/work_power_energy.html#slide-06" },
+            { name: "Quiz: Energy Conservation", type: "test", href: "subjects/physics/work_power_energy.html#slide-07" },
+            { name: "Quiz: Mega Revision Work & Energy Challenges", type: "test", href: "subjects/physics/work_power_energy.html#slide-08" }
+        ]
+    },
+    {
+        num: 31,
+        subject: "physics",
+        name: "Machines",
+        difficulty: "Moderate",
+        length: "Normal",
+        tags: ["7 SLIDES", "16 NUMERICALS", "PULLEYS"],
+        href: "subjects/physics/machines.html",
+        desc: "Levers (classes I, II, III), pulleys, mechanical advantage, velocity ratio, efficiency, and ideal vs real machines.",
+        modules: [
+            { name: "Lesson: Machine Terms & Levers", type: "summary", href: "subjects/physics/machines.html#slide-02" },
+            { name: "Quiz: Levers", type: "test", href: "subjects/physics/machines.html#slide-03" },
+            { name: "Lesson: Pulley Systems", type: "summary", href: "subjects/physics/machines.html#slide-04" },
+            { name: "Quiz: Pulleys", type: "test", href: "subjects/physics/machines.html#slide-05" },
+            { name: "Quiz: Mega Revision Machines Challenges", type: "test", href: "subjects/physics/machines.html#slide-06" }
+        ]
+    },
     { num: 32, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Laws of refraction, Snell's law, refractive index, critical angle, total internal reflection, and real/apparent depth." },
     { num: 33, subject: "physics",    name: "Refraction Through a Lens",         difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Convex/concave lenses, image formation, sign convention, lens formula (1/v − 1/u = 1/f), magnification & power of a lens." },
     { num: 34, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Dispersion of light, electromagnetic spectrum, scattering of light, and prism-based experiments." },
