@@ -946,30 +946,8 @@ button:active {
 }
 
 /* =======================================
-   LOCKED / COMING SOON CARDS
+   CHAPTER TAGS (General)
    ======================================= */
-
-.chapter-card.chapter-locked {
-    cursor: default;
-    opacity: 0.55;
-    border-style: dashed;
-}
-
-.chapter-card.chapter-locked:hover {
-    transform: none;
-    box-shadow: var(--shadow);
-}
-
-.chapter-card.chapter-locked::before {
-    border-style: dashed;
-}
-
-.chapter-lock {
-    font-size: 1.4rem;
-    min-width: 40px;
-    text-align: center;
-    opacity: 0.5;
-}
 
 .chapter-tag.tag-coming {
     background-color: var(--border-color);
