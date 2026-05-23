@@ -1,73 +1,40 @@
-/* rebati.js - Odia Prose: Rebati Data */
-
 window.CHAPTER_COMPANION_MESSAGES = [
-    { face: "WELCOME", text: "Namaskar! Let's explore the first ever Odia short story: Rebati. (ᵔ‿ᵔ)" },
-    { face: "THINKING", text: "Notice how the grandmother's character represents blind superstition holding society back. (o_O)" },
-    { face: "SHOCKED", text: "Cholera (ହଇଜା) was completely untreatable in rural areas back then. Such a heartbreaking tragedy. ( >_<)" },
-    { face: "THINKING", text: "Quiz time! Let's see if you remember the key one-word answers. Select them carefully!" },
-    { face: "GRADUATION", text: "Excellent job, Kinjal! You've mastered this chapter! (ᵔ‿ᵔ)" }
+    { face: "WELCOME", text: "ନମସ୍କାର! ଆଜି ଆମେ ଫକୀର ମୋହନ ସେନାପତିଙ୍କ 'ରେବତୀ' ଗଳ୍ପ ପଢିବା। (Hello! Let's read 'Rebati'.)" },
+    { face: "THINKING", text: "ସେହି ସମୟରେ ଝିଅମାନଙ୍କ ପାଠପଢାକୁ ସମାଜ ଗ୍ରହଣ କରୁନଥିଲା। (Society didn't accept female education then.)" },
+    { face: "SAD", text: "ହଇଜା (Cholera) ଗାଁରେ ବହୁତ ଜୀବନ ନେଇଗଲା। (Cholera took many lives in the village.)" },
+    { face: "THINKING", text: "ଆସ, ଏହି ଗଳ୍ପରୁ କିଛି ପ୍ରଶ୍ନର ଉତ୍ତର ଦେବା। (Let's answer some questions.)" },
+    { face: "GRADUATION", text: "ବହୁତ ସୁନ୍ଦର! ତୁମେ ରେବତୀ ଗଳ୍ପକୁ ଭଲ ଭାବେ ବୁଝିଛ। (Beautiful! You understood the story well.)" }
 ];
 
 window.CHAPTER_QUESTIONS = {
-    // Note: The key 'rebati' must match the HTML container id="quiz-rebati"
-    rebati: [
+    "rebati": [
         {
             id: 'rebati_q1',
-            sentence: 'Who is the author of the story "Rebati"? _____',
-            options: ['Radhanath Ray', 'Fakir Mohan Senapati', 'Gopabandhu Das', 'Madhusudan Rao'],
-            correct: 1,
-            rule: 'Author',
+            sentence: "ରେବତୀକୁ ପାଠ ପଢାଇବା ପାଇଁ କିଏ ରାଜି ହୋଇଥିଲେ? _____",
+            options: ['ଶ୍ୟାମବନ୍ଧୁ', 'ଜେଜେମା', 'ବାସୁଦେବ', 'ଗାଁ ଲୋକ'],
+            correct: 2,
+            rule: 'ଗଳ୍ପର ଚରିତ୍ର (Characters)',
             explanations: {
-                correct: "Fakir Mohan Senapati is the author of Rebati, often called the father of modern Odia fiction.",
+                correct: "ସଠିକ୍! ବାସୁଦେବ (ବାସୁ) ରେବତୀକୁ ପଢାଇବାକୁ ରାଜି ହୋଇଥିଲେ।",
                 wrong: {
-                    0: "Radhanath Ray was a famous poet, not the author of Rebati.",
-                    2: "Gopabandhu Das was a social reformer and poet.",
-                    3: "Madhusudan Rao was known for 'Bhakta Kabi', not this short story."
+                    0: "ଶ୍ୟାମବନ୍ଧୁ ରେବତୀର ବାପା ଥିଲେ।",
+                    1: "ଜେଜେମା ପାଠପଢାର ଘୋର ବିରୋଧୀ ଥିଲେ।",
+                    3: "ଗାଁ ଲୋକେ ଏହାକୁ ପସନ୍ଦ କରୁନଥିଲେ।"
                 }
             }
         },
         {
             id: 'rebati_q2',
-            sentence: 'What was the name of the progressive teacher who taught Rebati? _____',
-            options: ['Hari', 'Shyamabandhu', 'Basudeb', 'Ananta'],
-            correct: 2,
-            rule: 'Character',
-            explanations: {
-                correct: "Basudeb (ବାସୁଦେବ) was the kind teacher who helped Rebati fulfill her desire to study.",
-                wrong: {
-                    0: "Hari is not the teacher.",
-                    1: "Shyamabandhu was Rebati's father.",
-                    3: "Ananta is incorrect."
-                }
-            }
-        },
-        {
-            id: 'rebati_q3',
-            sentence: 'Which deadly epidemic swept through the village, killing Rebati\'s parents and Basudeb? _____',
-            options: ['Malaria', 'Cholera', 'Typhoid', 'Dengue'],
+            sentence: "ଗାଁରେ କେଉଁ ରୋଗ ବ୍ୟାପିଥିଲା? _____",
+            options: ['ମ୍ୟାଲେରିଆ', 'ହଇଜା', 'ବସନ୍ତ', 'ଜ୍ୱର'],
             correct: 1,
-            rule: 'Plot point',
+            rule: 'ଗଳ୍ପର ପୃଷ୍ଠଭୂମି (Background)',
             explanations: {
-                correct: "Cholera (ହଇଜା) was the epidemic that caused the tragic deaths in the story.",
+                correct: "ସଠିକ୍! ଗାଁରେ ମହାମାରୀ 'ହଇଜା' (Cholera) ବ୍ୟାପିଥିଲା।",
                 wrong: {
-                    0: "It was not Malaria.",
-                    2: "It was not Typhoid.",
-                    3: "It was not Dengue."
-                }
-            }
-        },
-        {
-            id: 'rebati_q4',
-            sentence: 'Who blamed Rebati\'s education for bringing bad luck to the family? Her _____',
-            options: ['Father', 'Mother', 'Teacher', 'Grandmother'],
-            correct: 3,
-            rule: 'Character',
-            explanations: {
-                correct: "The grandmother fiercely opposed her education and blamed it for the cholera deaths due to blind superstition.",
-                wrong: {
-                    0: "Her father supported her education.",
-                    1: "Her mother did not blame the education.",
-                    2: "Her teacher (Basudeb) was the one educating her."
+                    0: "ମ୍ୟାଲେରିଆ ନୁହେଁ।",
+                    2: "ବସନ୍ତ ନୁହେଁ।",
+                    3: "କେବଳ ସାଧାରଣ ଜ୍ୱର ନଥିଲା।"
                 }
             }
         }
