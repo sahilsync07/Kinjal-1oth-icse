@@ -1,7 +1,132 @@
-﻿window.CHAPTER_COMPANION_MESSAGES=[{face:"WELCOME",text:"Kalijai story from Chilika Lake!"},{face:"THINKING",text:"A tragic folk legend..."},{face:"THINKING",text:"Quiz time!"},{face:"GRADUATION",text:"Well done!"}];
-window.CHAPTER_QUESTIONS={"kalijai":[
-{id:"kalijai_q1",sentence:"'Kalijai' poem is by which poet? _____",options:["Gangadhar Meher","Godabarish Mishra","Kalindi Charan","Kuntala Kumari"],correct:1,rule:"Poet",explanations:{correct:"Godabarish Mishra wrote Kalijai.",wrong:{0:"Gangadhar Meher wrote Mahima.",2:"Kalindi Charan wrote Gandharira Ashirwad.",3:"Kuntala Kumari wrote Banaphula."}}},
-{id:"kalijai_q2",sentence:"Kalijai is associated with which lake? _____",options:["Ansupa","Chilika","Bhimkund","Hirakud"],correct:1,rule:"Setting",explanations:{correct:"Kalijai temple is on an island in Chilika Lake.",wrong:{0:"Ansupa is a different lake.",2:"Bhimkund is in MP.",3:"Hirakud is a dam."}}},
-{id:"kalijai_q3",sentence:"The theme of Kalijai is: _____",options:["Comedy","Sacrifice and devotion","Science","Politics"],correct:1,rule:"Theme",explanations:{correct:"The poem depicts sacrifice, devotion, and tragic love.",wrong:{0:"Not a comedy.",2:"Not science.",3:"Not politics."}}},
-{id:"kalijai_q4",sentence:"Kalijai is a _____ legend.",options:["Modern","Folk","Foreign","Scientific"],correct:1,rule:"Genre",explanations:{correct:"Kalijai is a folk legend of Odisha.",wrong:{0:"It is ancient, not modern.",2:"It is Odia, not foreign.",3:"It is a legend, not scientific."}}}
-]};
+window.CHAPTER_COMPANION_MESSAGES = [
+    { face: "WELCOME", text: "ନମସ୍କାର! ଆଜି ଆମେ ପଣ୍ଡିତ ଗୋଦାବରୀଶ ମିଶ୍ରଙ୍କ ଅମର ଗାଥା-କବିତା 'କାଳୀଜାଇ' ପଢିବା। (Hello! Today we'll read the immortal ballad 'Kalijai' by Pandit Godabarish Mishra.)" },
+    { face: "THINKING", text: "ଏହା ଚିଲିକା ହ୍ରଦରେ ଝଡ଼ ବେଳେ ବୁଡ଼ିଯାଇଥିବା ନବବଧୂ 'ଜାଇ'ର ଦେବୀ ହେବାର ଏକ କରୁଣ କାହାଣୀ। (It is a tragic story of newly-wed bride 'Jai' who drowned in a storm in Lake Chilika and became a goddess.)" },
+    { face: "SAD", text: "ଚିଲିକାର ସୌନ୍ଦର୍ଯ୍ୟ ପଛରେ ଥିବା ଏହି କରୁଣ ସତ୍ୟ ପ୍ରତ୍ୟେକ ଓଡ଼ିଆଙ୍କ ହୃଦୟକୁ ସ୍ପର୍ଶ କରେ। (This tragic truth behind Chilika's beauty touches every Odia's heart.)" },
+    { face: "THINKING", text: "ଆସ, ଏହି କବିତାରୁ ୮ଟି ମୁଖ୍ୟ ପ୍ରଶ୍ନର ସମାଧାନ କରିବା। (Let's solve 8 main questions from this poem.)" },
+    { face: "GRADUATION", text: "ସାବାସ୍! ତୁମେ କାଳୀଜାଇ କବିତାର ସାରମର୍ମ ଏବଂ ଲୋକକଥାକୁ ସଠିକ୍ ଭାବେ ବୁଝିପାରିଛ। (Bravo! You understood the essence and folklore of the Kalijai poem correctly.)" }
+];
+
+window.CHAPTER_QUESTIONS = {
+    "kalijai": [
+        {
+            id: 'kalijai_q1',
+            sentence: "'କାଳୀଜାଇ' ଗାଥା-କବିତାର ରଚୟିତା କିଏ? _____",
+            options: ['ଉପେନ୍ଦ୍ର ଭଞ୍ଜ', 'ଗୋଦାବରୀଶ ମିଶ୍ର', 'ରାଧାନାଥ ରାୟ', 'ଗୋପବନ୍ଧୁ ଦାସ'],
+            correct: 1,
+            rule: 'କବିଙ୍କ ନାମ (Poet Name)',
+            explanations: {
+                correct: "ସଠିକ୍! ପଣ୍ଡିତ ଗୋଦାବରୀଶ ମିଶ୍ର ଏହି କରୁଣ ଗୀତିକାର ରଚୟିତା।",
+                wrong: {
+                    0: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜ କବିସମ୍ରାଟ ଅଟନ୍ତି, ସେ ରୀତିକାବ୍ୟ ଲେଖିଛନ୍ତି।",
+                    2: "ରାଧାନାଥ ରାୟ 'ଚିଲିକା' କାବ୍ୟ ଲେଖିଛନ୍ତି, କିନ୍ତୁ କାଳୀଜାଇ କବିତା ନୁହେଁ।",
+                    3: "ଗୋପବନ୍ଧୁ ଦାସ 'ଧର୍ମପଦ' ଲେଖିଛନ୍ତି।"
+                }
+            }
+        },
+        {
+            id: 'kalijai_q2',
+            sentence: "କାଳୀଜାଇ ମନ୍ଦିରଟି ଓଡ଼ିଶାର କେଉଁ ପ୍ରସିଦ୍ଧ ହ୍ରଦ ମଧ୍ୟରେ ଅବସ୍ଥିତ? _____",
+            options: ['ଅଂଶୁପା ହ୍ରଦ', 'ଚିଲିକା ହ୍ରଦ', 'କଞ୍ଜିଆ ହ୍ରଦ', 'ହିରାକୁଦ ଜଳାଶୟ'],
+            correct: 1,
+            rule: 'ଭୌଗଳିକ ସ୍ଥିତି (Location)',
+            explanations: {
+                correct: "ସଠିକ୍! କାଳୀଜାଇ ପୀଠ ଚିଲିକା ହ୍ରଦ (Lake Chilika) ମଧ୍ୟରେ ଏକ ଛୋଟ ପାହାଡ଼ିଆ ଦ୍ୱୀପରେ ଅଛି।",
+                wrong: {
+                    0: "ଅଂଶୁପା ଏକ ମଧୁରଜଳ ହ୍ରଦ ଯାହା କଟକ ଜିଲ୍ଲାରେ ଅଛି।",
+                    2: "କଞ୍ଜିଆ ନନ୍ଦନକାନନରେ ଅଛି।",
+                    3: "ହିରାକୁଦ ଏକ କୃତ୍ରିମ ବନ୍ଧ ଅଟେ।"
+                }
+            }
+        },
+        {
+            id: 'kalijai_q3',
+            sentence: "କବିତାରେ ବର୍ଣ୍ଣିତ ନବବଧୂର ପ୍ରକୃତ ନାମ କ'ଣ ଥିଲା? _____",
+            options: ['ଶ୍ରୀମତୀ', 'ଜାଇ', 'ରେବତୀ', 'ଚମ୍ପା'],
+            correct: 1,
+            rule: 'ଚରିତ୍ର (Character)',
+            explanations: {
+                correct: "ସଠିକ୍! ଝିଅଟିର ନାମ 'ଜାଇ' ଥିଲା, ଯାହା ପରେ ହ୍ରଦର ଦେବୀ ଭାବେ ପୂଜା ପାଇଲା।",
+                wrong: {
+                    0: "ଶ୍ରୀମତୀ କବିତାର ଚରିତ୍ର ନୁହେଁ।",
+                    2: "ରେବତୀ ଫକୀର ମୋହନଙ୍କ ଗଳ୍ପର ଚରିତ୍ର।",
+                    3: "ଚମ୍ପା 'ଛ ମାଣ ଆଠ ଗୁଣ୍ଠ' ଉପନ୍ୟାସର ଚରିତ୍ର।"
+                }
+            }
+        },
+        {
+            id: 'kalijai_q4',
+            sentence: "ଜାଇ ନିଜ ପିତାଙ୍କ ସହିତ ଡଙ୍ଗାରେ କେଉଁ ସ୍ଥାନକୁ ଯାତ୍ରା କରୁଥିଲା? _____",
+            options: ['ତୀର୍ଥ କରିବାକୁ', 'ବିବାହ ପରେ ଶାଶୁଘରକୁ (ପାରିକୁଦ ଦ୍ୱୀପ)', 'ବଜାରକୁ ସଉଦା କିଣିବାକୁ', 'ଖେଳିବାକୁ'],
+            correct: 1,
+            rule: 'ଯାତ୍ରାର ଉଦ୍ଦେଶ୍ୟ (Journey)',
+            explanations: {
+                correct: "ସଠିକ୍! ଜାଇର ବିବାହ ହୋଇସାରିଥିଲା, ସେ ଶାଶୁଘର ଯାଉଥିବା ସମୟରେ ଚିଲିକା ପାର ହେଉଥିଲା।",
+                wrong: {
+                    0: "ଏହା ତୀର୍ଥଯାତ୍ରା ନଥିଲା।",
+                    2: "ସଉଦା କିଣିବାର ସମୟ ନଥିଲା।",
+                    3: "ଏହା ଆମୋଦ ଯାତ୍ରା ନଥିଲା।"
+                }
+            }
+        },
+        {
+            id: 'kalijai_q5',
+            sentence: "ଡଙ୍ଗା ଚିଲିକାରେ ଯାଉଥିବା ବେଳେ ହଠାତ୍ କେଉଁ ବିପଦ ଆସିଥିଲା? _____",
+            options: ['ଡଙ୍ଗାଟିରେ ମାଛ ପଶିଗଲେ', 'ଭୟଙ୍କର କାଳବୈଶାଖୀ ଝଡ଼ ଓ ତୋଫାନ ଆସିଲା', 'ଡଙ୍ଗାଟି ଚୋରି ହୋଇଗଲା', 'ନଈ ଶୁଖିଗଲା'],
+            correct: 1,
+            rule: 'ପ୍ରାକୃତିକ ବିପତ୍ତି (Nature Crisis)',
+            explanations: {
+                correct: "ସଠିକ୍! ଚିଲିକାର ମଝିରେ ହଠାତ୍ ଭୀଷଣ ଝଡ଼ତୋଫାନ ଆସି ସବୁକିଛି ଓଲଟପାଲଟ କରିଦେଇଥିଲା।",
+                wrong: {
+                    0: "ମାଛ ପଶିବା ବିପଦ ନଥିଲା।",
+                    2: "ଡଙ୍ଗା ଜଳ ମଧ୍ୟରେ ଥିଲା, ଚୋରି ହୋଇନଥିଲା।",
+                    3: "ହ୍ରଦରେ ନଦୀ ଭଳି ଜଳ ଶୁଖିବାର ତୁରନ୍ତ ଘଟଣା ଘଟେନାହିଁ।"
+                }
+            }
+        },
+        {
+            id: 'kalijai_q6',
+            sentence: "ଡଙ୍ଗା ବୁଡ଼ିବା ଘଟଣାରେ କେଉଁ କରୁଣ ପରିଣତି ଘଟିଥିଲା? _____",
+            options: ['ସମସ୍ତେ ସୁରକ୍ଷିତ ଫେରିଲେ', 'ବାପା ବଞ୍ଚିଗଲେ କିନ୍ତୁ ଜାଇ ହ୍ରଦ ଗର୍ଭରେ ନିଖୋଜ ହୋଇଗଲା', 'ଉଭୟ ବାପା ଓ ଝିଅ ମୃତ୍ୟୁବରଣ କଲେ', 'କେହି ବି ବୁଡ଼ିଲେ ନାହିଁ'],
+            correct: 1,
+            rule: 'କରୁଣ ପରିଣତି (Tragedy)',
+            explanations: {
+                correct: "ସଠିକ୍! ଜାଇର ପିତା ଡଙ୍ଗା ବୁଡ଼ିବା ପରେ ପଥର ପାହାଡ଼ରେ ଲାଗି ବଞ୍ଚିଗଲେ, କିନ୍ତୁ ସ୍ନେହର ଜାଇ ପାଣିରେ ବୁଡ଼ି ପ୍ରାଣ ହରାଇଲା।",
+                wrong: {
+                    0: "ଏହାର ଅନ୍ତ ସୁଖଦ ନଥିଲା।",
+                    2: "କେବଳ ଜାଇ ମୃତ୍ୟୁବରଣ କରିଥିଲା, ବାପା ବଞ୍ଚି ରହି ବିଳାପ କରୁଥିଲେ।",
+                    3: "ଡଙ୍ଗା ନିଶ୍ଚିତ ଭାବେ ବୁଡ଼ିଥିଲା।"
+                }
+            }
+        },
+        {
+            id: 'kalijai_q7',
+            sentence: "କବିତାର ଶେଷରେ ଥିବା ବର୍ଣ୍ଣନା ଅନୁଯାୟୀ, ଜାଇ ମରିବା ପରେ କେଉଁ ସାଂସ୍କୃତିକ ଆସ୍ଥା ସୃଷ୍ଟି ହେଲା? _____",
+            options: ['ଲୋକେ ଚିଲିକା ଯିବା ଛାଡିଦେଲେ', 'ସେ ଚିଲିକାର ମଙ୍ଗଳକାରିଣୀ ଓ ନାଉରିଆମାନଙ୍କର ରକ୍ଷାକର୍ତ୍ତ୍ରୀ 'କାଳୀଜାଇ' ଦେବୀ ପାଲଟିଗଲା', 'ସେଠାରେ ବାତ୍ୟା ଆସିଲା ନାହିଁ', 'ଲୋକେ ବଗିଚା ତିଆରି କଲେ'],
+            correct: 1,
+            rule: 'ସାଂସ୍କୃତିକ ଗୁରୁତ୍ୱ (Cultural Belief)',
+            explanations: {
+                correct: "ସଠିକ୍! ନାଉରିଆମାନେ ବିଶ୍ୱାସ କରନ୍ତି ଯେ ଦେବୀ କାଳୀଜାଇ ସେମାନଙ୍କୁ ଚିଲିକାର ବିପଦ ମଧ୍ୟରୁ ରକ୍ଷା କରନ୍ତି। ତେଣୁ ସେଠାରେ ଆରାଧନା ଆରମ୍ଭ ହେଲା।",
+                wrong: {
+                    0: "ଲୋକେ ଚିଲିକା ଯିବା ଛାଡିନାହାନ୍ତି, ବରଂ ଅଧିକ ପର୍ଯ୍ୟଟକ ଯାଉଛନ୍ତି।",
+                    2: "ବାତ୍ୟା ଆସିବା ପ୍ରକୃତିର ନିୟମ, ତାହା ବନ୍ଦ ହୋଇନାହିଁ।",
+                    3: "ବଗିଚା ସହ ସମ୍ପର୍କ ନାହିଁ।"
+                }
+            }
+        },
+        {
+            id: 'kalijai_q8',
+            sentence: "ଗୋଦାବରୀଶ ମିଶ୍ର କେଉଁ ବିଶିଷ୍ଟ ସତ୍ୟବାଦୀ ସାହିତ୍ୟ ଗୋଷ୍ଠୀର ଜଣେ ମୁଖ୍ୟ ସଦସ୍ୟ ଥିଲେ? _____",
+            options: ['ପ୍ରଗତି ଯୁଗ', 'ସତ୍ୟବାଦୀ ଯୁଗର ପଞ୍ଚସଖା', 'ଆଧୁନିକ ଯୁଗ', 'ରାଧାନାଥ ଯୁଗ'],
+            correct: 1,
+            rule: 'ସାହିତ୍ୟିକ ପରିଚୟ (Literary Movement)',
+            explanations: {
+                correct: "ସଠିକ୍! ସେ ଉତ୍କଳମଣି ଗୋପବନ୍ଧୁ ଦାସଙ୍କ ସହିତ ସତ୍ୟବାଦୀ ବନ ବିଦ୍ୟାଳୟର ପ୍ରସିଦ୍ଧ ପାଞ୍ଚଜଣ ସଖା (ପଞ୍ଚସଖା) ଙ୍କ ମଧ୍ୟରେ ଅନ୍ୟତମ ଥିଲେ।",
+                wrong: {
+                    0: "ସେ ପ୍ରଗତି ଯୁଗର ନଥିଲେ।",
+                    2: "ସେ ସାଧାରଣ ପରବର୍ତ୍ତୀ ଆଧୁନିକ ଯୁଗର ପ୍ରାରମ୍ଭ ଥିଲେ, କିନ୍ତୁ ସତ୍ୟବାଦୀ ତାଙ୍କର ମୁଖ୍ୟ ପରିଚୟ।",
+                    3: "ସେ ରାଧାନାଥ ଯୁଗର ପରବର୍ତ୍ତୀ ସମୟର ଅଟନ୍ତି।"
+                }
+            }
+        }
+    ]
+};
