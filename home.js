@@ -162,6 +162,76 @@ function renderTable(filter) {
         </tr>`;
     });
     tbody.innerHTML = html;
+
+    // Marks Weightage Logic
+    const weightageContainer = document.getElementById('marks-weightage-container');
+    if (!weightageContainer) return;
+
+    if (filter === 'odia') {
+        weightageContainer.style.display = 'block';
+        weightageContainer.innerHTML = `
+            <div style="margin-top: 2rem;">
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">1. QUESTION FORMAT WEIGHTAGE (80 MARKS)</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>SECTION</th><th>CONTENT AREA</th><th>FORMAT</th><th>MARKS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A (Compulsory)</td><td>Language (40)</td><td>Composition, Letter, Comprehension, Grammar</td><td>40 Marks</td></tr>
+                        <tr><td>B (Choice-based)</td><td>Texts (40)</td><td>4 Long Answers (from 2 texts)</td><td>40 Marks (4x10)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">2. CHAPTER-WISE INDICATIVE WEIGHTAGE</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>UNIT / CHAPTER TYPE</th><th>INDICATIVE MARKS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Grammar & Language</td><td>40 Marks</td></tr>
+                        <tr><td>Prose / Short Stories</td><td>20 Marks</td></tr>
+                        <tr><td>Poetry / Drama</td><td>20 Marks</td></tr>
+                        <tr><td>Internal Assessment</td><td>20 Marks</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        `;
+    } else if (filter === 'economics') {
+        weightageContainer.style.display = 'block';
+        weightageContainer.innerHTML = `
+            <div style="margin-top: 2rem;">
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">1. QUESTION FORMAT WEIGHTAGE (80 MARKS)</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>SECTION</th><th>FORMAT</th><th>MARKS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A (Compulsory)</td><td>16 MCQs + Short Answers</td><td>40 Marks</td></tr>
+                        <tr><td>B (Choice-based)</td><td>Attempt 4 out of 6 Long Answers</td><td>40 Marks (4x10)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">2. CHAPTER-WISE INDICATIVE WEIGHTAGE</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>UNIT NO & NAME</th><th>INDICATIVE MARKS (Out of 80)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1. The Productive Mechanism</td><td>~12 - 14 Marks</td></tr>
+                        <tr><td>2. Theory of Demand and Supply</td><td>~14 - 16 Marks</td></tr>
+                        <tr><td>3. Market Structure</td><td>~10 - 12 Marks</td></tr>
+                        <tr><td>4. Banking in India</td><td>~10 - 12 Marks</td></tr>
+                        <tr><td>5. Inflation</td><td>~10 - 12 Marks</td></tr>
+                        <tr><td>6. Public Finance</td><td>~12 - 14 Marks</td></tr>
+                        <tr><td>7. Consumer Awareness</td><td>~8 - 10 Marks</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        `;
+    } else {
+        weightageContainer.style.display = 'none';
+        weightageContainer.innerHTML = '';
+    }
 }
 
 // Tab click handlers
