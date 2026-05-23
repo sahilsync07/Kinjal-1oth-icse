@@ -8,6 +8,7 @@ const subjectLabels = {
     "history":    "HISTORY & CIVICS",
     "geography":  "GEOGRAPHY",
     "computer":   "COMPUTER APPLICATIONS (JAVA)",
+    "odia":       "ODIA (SECOND LANGUAGE)",
 };
 
 document.addEventListener('DOMContentLoaded', () => {
