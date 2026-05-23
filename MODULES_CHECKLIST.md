@@ -69,12 +69,17 @@ This document tracks the progress of the interactive modules across all subjects
 - [ ] Pollution
 
 ## 7. History & Civics [HISTORY]
-- [ ] Civics: The Union Legislature
-- [ ] Civics: The Union Executive
-- [ ] Civics: The Judiciary
-- [ ] History: The Indian National Movement
-- [ ] History: Mass Phase of the National Movement
-- [ ] History: The Contemporary World (WW1, Dictatorships, WW2, UN)
+- [x] Civics: The Union Legislature
+- [x] Civics: The Union Executive
+- [x] Civics: The Judiciary
+- [x] History: First War of Independence (1857)
+- [x] History: Growth of Nationalism
+- [x] History: Early Nationalists (1885–1907)
+- [x] History: Assertive Nationalists (1905–1916)
+- [x] History: Mahatma Gandhi & Mass Movements
+- [x] History: Forward Bloc & INA
+- [x] History: Independence & Partition
+- [x] History: World Wars, Dictatorships & UN
 
 ## 8. Geography [GEO]
 - [ ] Map Study (Topographical Maps)

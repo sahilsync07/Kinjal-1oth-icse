@@ -24,9 +24,37 @@ window.ICSE_CHAPTERS.push(
         { name: "Quiz: Drain of Wealth & Servants of India", type: "test", href: "subjects/history/early_nationalists.html#slide-05" },
         { name: "Mega Quiz: Legacy & Road to 1907 Surat Split", type: "test", href: "subjects/history/early_nationalists.html#slide-06" }
     ] },
-    { num: 7, subject: "history",    name: "Assertive Nationalists (1905–1916)", difficulty: "Moderate", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Partition of Bengal, Swadeshi movement, Tilak-Pal-Lajpat Rai. Muslim League, Lucknow Pact, and Home Rule League." },
-    { num: 8, subject: "history",    name: "Mahatma Gandhi & Mass Movements",   difficulty: "Moderate",  length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Non-Cooperation, Civil Disobedience (Dandi March), Quit India Movement. Gandhi-Irwin Pact & Round Table Conferences." },
-    { num: 9, subject: "history",    name: "Forward Bloc & INA",                difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Subhas Chandra Bose — formation of Forward Bloc, Indian National Army, \"Delhi Chalo\" & the Azad Hind Government." },
-    { num: 10, subject: "history",    name: "Independence & Partition",           difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Wavell Plan, Cabinet Mission, Mountbatten Plan, Indian Independence Act 1947, and the partition consequences." },
-    { num: 11, subject: "history",    name: "World Wars, Dictatorships & UN",    difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "WWI & WWII causes/results. Rise of Fascism & Nazism. United Nations organs & agencies. NAM & Panchsheel principles." }
+    { num: 7, subject: "history",    name: "Assertive Nationalists (1905–1916)", difficulty: "Moderate", length: "Lengthy", tags: ["7 SLIDES", "10 QUESTIONS"], href: "subjects/history/assertive_nationalists.html", desc: "Partition of Bengal, Swadeshi movement, Tilak-Pal-Lajpat Rai. Muslim League, Lucknow Pact, and Home Rule League.", modules: [
+        { name: "Lesson: Rise of Assertive Nationalism & Core Beliefs", type: "summary", href: "subjects/history/assertive_nationalists.html#slide-02" },
+        { name: "Quiz: Radical Ideology & Bengal Partition", type: "test", href: "subjects/history/assertive_nationalists.html#slide-03" },
+        { name: "Lesson: Swadeshi, Boycott & Lal-Bal-Pal Trio", type: "summary", href: "subjects/history/assertive_nationalists.html#slide-04" },
+        { name: "Quiz: Radical Methods & Leadership", type: "test", href: "subjects/history/assertive_nationalists.html#slide-05" },
+        { name: "Mega Quiz: Legacy & Surat Split", type: "test", href: "subjects/history/assertive_nationalists.html#slide-06" }
+    ] },
+    { num: 8, subject: "history",    name: "Mahatma Gandhi & Mass Movements",   difficulty: "Moderate",  length: "Lengthy", tags: ["8 SLIDES", "10 QUESTIONS"], href: "subjects/history/gandhi.html", desc: "Non-Cooperation, Civil Disobedience (Dandi March), Quit India Movement. Gandhi-Irwin Pact & Round Table Conferences.", modules: [
+        { name: "Lesson: Non-Cooperation Movement (1920–22)", type: "summary", href: "subjects/history/gandhi.html#slide-02" },
+        { name: "Quiz: Rowlatt, Jallianwala & Non-Cooperation", type: "test", href: "subjects/history/gandhi.html#slide-03" },
+        { name: "Lesson: Civil Disobedience Movement (1930–34)", type: "summary", href: "subjects/history/gandhi.html#slide-04" },
+        { name: "Quiz: Purna Swaraj, Salt March & Pact", type: "test", href: "subjects/history/gandhi.html#slide-05" },
+        { name: "Lesson: Quit India Movement (1942)", type: "summary", href: "subjects/history/gandhi.html#slide-06" },
+        { name: "Mega Quiz: Gandhian Mass Movements", type: "test", href: "subjects/history/gandhi.html#slide-07" }
+    ] },
+    { num: 9, subject: "history",    name: "Forward Bloc & INA",                difficulty: "Easy",      length: "Short",   tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/history/forward_bloc.html", desc: "Subhas Chandra Bose — formation of Forward Bloc, Indian National Army, \"Delhi Chalo\" & the Azad Hind Government.", modules: [
+        { name: "Lesson: Subhas Chandra Bose & Forward Bloc", type: "summary", href: "subjects/history/forward_bloc.html#slide-02" },
+        { name: "Quiz: Tripuri Session & Forward Bloc", type: "test", href: "subjects/history/forward_bloc.html#slide-03" },
+        { name: "Lesson: Reorganization of INA & Azad Hind", type: "summary", href: "subjects/history/forward_bloc.html#slide-04" },
+        { name: "Mega Quiz: INA Battles & Legacy", type: "test", href: "subjects/history/forward_bloc.html#slide-05" }
+    ] },
+    { num: 10, subject: "history",    name: "Independence & Partition",           difficulty: "Moderate",  length: "Normal",  tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/history/independence.html", desc: "Wavell Plan, Cabinet Mission, Mountbatten Plan, Indian Independence Act 1947, and the partition consequences.", modules: [
+        { name: "Lesson: Cabinet Mission & Mountbatten Plan", type: "summary", href: "subjects/history/independence.html#slide-02" },
+        { name: "Quiz: Cabinet proposals & Partition plan", type: "test", href: "subjects/history/independence.html#slide-03" },
+        { name: "Lesson: The Indian Independence Act 1947", type: "summary", href: "subjects/history/independence.html#slide-04" },
+        { name: "Mega Quiz: Independence & Partition", type: "test", href: "subjects/history/independence.html#slide-05" }
+    ] },
+    { num: 11, subject: "history",    name: "World Wars, Dictatorships & UN",    difficulty: "Difficult", length: "Lengthy", tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/history/world_war.html", desc: "WWI & WWII causes/results. Rise of Fascism & Nazism. United Nations organs & agencies. NAM & Panchsheel principles.", modules: [
+        { name: "Lesson: World Wars & Dictatorships", type: "summary", href: "subjects/history/world_war.html#slide-02" },
+        { name: "Quiz: World Wars & Aggression", type: "test", href: "subjects/history/world_war.html#slide-03" },
+        { name: "Lesson: United Nations & NAM Principles", type: "summary", href: "subjects/history/world_war.html#slide-04" },
+        { name: "Mega Quiz: World Wars, UN & NAM", type: "test", href: "subjects/history/world_war.html#slide-05" }
+    ] },
 );
