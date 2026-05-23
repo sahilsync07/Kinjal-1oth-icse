@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refraction Through a Lens — Physics ICSE | Kinjal's Learning Hub</title>
+    <meta name="description" content="Interactive ICSE Class 10 Physics lesson on Refraction Through a Lens — convex and concave lenses, ray diagrams, lens formula, magnification, and lens power.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-section">
+            <div class="logo-dot"></div>
+            <a href="../../index.html" style="text-decoration:none;color:inherit;margin-right:1rem;">← HOME</a>
+            <span>REFRACT_LENS // KINJAL</span>
+        </div>
+        <div class="nav-progress">
+            <div class="progress-track">
+                <div class="progress-bar" style="width: 0%;"></div>
+            </div>
+            <div class="progress-text">[01/06] PROGRESS: 0%</div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="scroll-container">
+
+        <!-- ============================================
+             SLIDE 1: WELCOME
+             ============================================ -->
+        <section class="slide active" id="slide-01">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_05_INTRO</span>
+                <h1>Chapter 5: Refraction Through a Lens</h1>
+                <p>Welcome, Kinjal! In this chapter, we master the behavior of curved glass: **Refraction Through a Lens**. Lenses bend light systematically to form sharp images. We will deconstruct **Convex (Converging) Lenses** and **Concave (Diverging) Lenses**, trace **Ray Diagrams** for all object positions, and master **Lens Formula ($1/v - 1/u = 1/f$)** numerical calculations, **Magnification**, and **Lens Power**.</p>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <p><strong>Chapter Outline:</strong></p>
+                <ul>
+                    <li><strong>Lesson 1</strong>: Curved Optics — Convex & Concave Focus and Ray Diagrams</li>
+                    <li><strong>Quiz 1</strong>: Focus, image characteristics, and standard ray directions</li>
+                    <li><strong>Lesson 2</strong>: Lens Mathematics — Sign Conventions, Lens Formula, and Power</li>
+                    <li><strong>Mega Quiz</strong>: Ultimate board-style numericals on focal lengths, object distances, and magnification</li>
+                </ul>
+
+                <blockquote>
+                    <span class="tip-badge">BOARD CRITICAL</span>
+                    Always remember the **Cartesian Sign Convention**: The object distance $u$ is **always negative**. For a **Convex Lens**, focal length $f$ is **positive**. For a **Concave Lens**, focal length $f$ is **negative**.
+                </blockquote>
+
+                <div class="btn-container">
+                    <span></span>
+                    <button class="btn-primary btn-next">START LEARNING <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 2: LESSON 1 — Lenses, Focus & Ray Diagrams
+             ============================================ -->
+        <section class="slide locked" id="slide-02">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_05_L1</span>
+                <h1>Lenses, Focus & Ray Diagrams</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Convex vs. Concave Lenses</h2>
+                <ul>
+                    <li><strong>Convex (Converging):</strong> Thicker at the middle, thinner at the edges. Converges parallel rays to a single real point (Focus).</li>
+                    <li><strong>Concave (Diverging):</strong> Thicker at the edges, thinner at the middle. Diverges parallel rays so they appear to originate from a virtual point (Focus).</li>
+                </ul>
+
+                <h2>2. Principal Focus Points</h2>
+                <ul>
+                    <li><strong>First Principal Focus ($F_1$):</strong> Point on principal axis such that rays starting from it (convex) or appearing to meet at it (concave) emerge parallel after refraction.</li>
+                    <li><strong>Second Principal Focus ($F_2$):</strong> Point on principal axis where parallel rays actually meet (convex) or appear to diverge from (concave) after refraction. *Rule:* This is the **primary focus** used in calculations.</li>
+                </ul>
+
+                <h2>3. Ray Diagrams: Convex Lens</h2>
+                <table class="tech-table" style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.05);"><th style="border:1px solid var(--border-color); padding:8px;">Object Position</th><th style="border:1px solid var(--border-color); padding:8px;">Image Position</th><th style="border:1px solid var(--border-color); padding:8px;">Image Nature & Size</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">At Infinity</td><td style="border:1px solid var(--border-color); padding:8px;">At Focus ($F_2$)</td><td style="border:1px solid var(--border-color); padding:8px;">Real, Inverted, Highly Diminished</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Beyond $2F_1$</td><td style="border:1px solid var(--border-color); padding:8px;">Between $F_2$ and $2F_2$</td><td style="border:1px solid var(--border-color); padding:8px;">Real, Inverted, Diminished</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">At $2F_1$</td><td style="border:1px solid var(--border-color); padding:8px;">At $2F_2$</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">Real, Inverted, Same Size</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Between $F_1$ and $2F_1$</td><td style="border:1px solid var(--border-color); padding:8px;">Beyond $2F_2$</td><td style="border:1px solid var(--border-color); padding:8px;">Real, Inverted, Magnified</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">At $F_1$</td><td style="border:1px solid var(--border-color); padding:8px;">At Infinity</td><td style="border:1px solid var(--border-color); padding:8px;">Real, Inverted, Highly Magnified</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Between Lens & $F_1$</td><td style="border:1px solid var(--border-color); padding:8px;">On same side as object</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">Virtual, Erect, Magnified (Magnifier)</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>4. Concave Lens Rule</h2>
+                <p>For **any** position of the object, a concave lens **always** forms a **virtual, erect, and diminished** image, located between the focus ($F_1$) and the optical center on the same side as the object.</p>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 1 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 3: QUIZ 1
+             ============================================ -->
+        <section class="slide locked" id="slide-03">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_05_Q1</span>
+                <h1>Quiz 1: Ray Diagrams & Images</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q1">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q1">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 4: LESSON 2 — Lens Formula, Power & Magnification
+             ============================================ -->
+        <section class="slide locked" id="slide-04">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_05_L2</span>
+                <h1>Lens Mathematics & Formulas</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Lens Formula</h2>
+                <p>The relation between focal length ($f$), object distance ($u$), and image distance ($v$):</p>
+                <p style="font-family: var(--font-mono); font-weight: bold; margin: 1.5rem 0; text-align: center; font-size: 1.1rem; border: 1px solid var(--border-color); padding: 0.75rem; background: rgba(0,0,0,0.02); letter-spacing: -0.5px;">
+                    1 / v - 1 / u = 1 / f
+                </p>
+
+                <h2>2. Magnification ($m$)</h2>
+                <p>The ratio of the height of the image ($I$) to the height of the object ($O$). It is also equal to the ratio of image distance to object distance:</p>
+                <p style="font-family: var(--font-mono); font-weight: bold; margin: 1.5rem 0; text-align: center; font-size: 1.1rem; border: 1px solid var(--border-color); padding: 0.75rem; background: rgba(0,0,0,0.02); letter-spacing: -0.5px;">
+                    m = height of image (I) / height of object (O) = v / u
+                </p>
+                <ul>
+                    <li>If $m$ is **positive**, image is **virtual and erect**.</li>
+                    <li>If $m$ is **negative**, image is **real and inverted**.</li>
+                </ul>
+
+                <h2>3. Power of a Lens ($P$)</h2>
+                <p>Power is the measure of the deviation (converging or diverging capacity) produced by a lens on rays incident on it. It is the reciprocal of the focal length of the lens expressed in **meters**.</p>
+                <p style="font-family: var(--font-mono); font-weight: bold; margin: 1.5rem 0; text-align: center; font-size: 1.1rem; border: 1px solid var(--border-color); padding: 0.75rem; background: rgba(0,0,0,0.02); letter-spacing: -0.5px;">
+                    P = 1 / f (in meters) = 100 / f (in cm)
+                </p>
+                <ul>
+                    <li><strong>Unit of Power:</strong> **Dioptre (D)**. $1\text{ D} = 1\text{ m}^{-1}$.</li>
+                    <li>Convex lenses have **positive power**; Concave lenses have **negative power**.</li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START MEGA QUIZ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 5: MEGA QUIZ
+             ============================================ -->
+        <section class="slide locked" id="slide-05">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_05_MEGA</span>
+                <h1>Mega Quiz: Lens Masterclass</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-mega">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="mega">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>GRADUATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 6: GRADUATION
+             ============================================ -->
+        <section class="slide locked" id="slide-06">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_05_GRADUATION</span>
+                <h1>Chapter Completed!</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">\(^ヮ^)/</div>
+                    <div class="companion-text">Phys-Bot is extremely proud of you!</div>
+                </div>
+
+                <p>Outstanding job, Kinjal! You have successfully mastered **Chapter 5: Refraction Through a Lens**. You have conquered lens diagrams, sign conventions, lens formulas, magnification ratios, and dioptre power scales!</p>
+
+                <div class="graduation-box" style="margin: 2rem 0; border: 4px double var(--border-color); padding: 2rem; text-align: center; background: rgba(0,0,0,0.01);">
+                    <div class="grad-certificate">
+                        <h2 style="border:none;margin-top:0;font-family:var(--font-mono);font-size:1.4rem;">CERTIFICATE OF EXCELLENCE</h2>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin:1.5rem 0;">This certifies that</p>
+                        <h1 style="font-size:2.5rem;letter-spacing:0.5px;font-family:var(--font-mono);font-weight:700;">KINJAL</h1>
+                        <p style="font-family:'JetBrains Mono',monospace;margin:1.5rem 0 0.5rem 0;">has mastered the topic of</p>
+                        <p style="font-weight:700;font-family:var(--font-mono);text-transform:uppercase;font-size:1.2rem;color:var(--text-primary);">PHYSICS: CHAPTER 5 - REFRACTION THROUGH A LENS</p>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;margin-top:1.5rem;">With Final Score: <span id="cert-score" style="font-weight:700;">-</span></p>
+                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);font-family:var(--font-mono);">Verified by Phys-Bot the lens chronicler on <span id="cert-date">-</span></p>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK TO EXERCISES</button>
+                    <div>
+                        <a href="../../index.html" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;">← HOME</a>
+                        <button class="btn-primary" onclick="window.print()">PRINT CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="refraction_lens.js"></script>
+    <script src="../../quiz_engine.js"></script>
+</body>
+</html>
