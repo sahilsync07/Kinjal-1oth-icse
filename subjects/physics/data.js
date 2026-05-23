@@ -55,13 +55,70 @@ window.ICSE_CHAPTERS.push(
             { name: "Quiz: Mega Revision Machines Challenges", type: "test", href: "subjects/physics/machines.html#slide-06" }
         ]
     },
-    { num: 4, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Laws of refraction, Snell's law, refractive index, critical angle, total internal reflection, and real/apparent depth." },
-    { num: 5, subject: "physics",    name: "Refraction Through a Lens",         difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Convex/concave lenses, image formation, sign convention, lens formula (1/v − 1/u = 1/f), magnification & power of a lens." },
-    { num: 6, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Dispersion of light, electromagnetic spectrum, scattering of light, and prism-based experiments." },
-    { num: 7, subject: "physics",    name: "Sound",                             difficulty: "Easy",      length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Reflection of sound, echoes, natural vibrations, forced vibrations, resonance, loudness, pitch, quality, and noise vs music." },
-    { num: 8, subject: "physics",    name: "Current Electricity",               difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Ohm's law, resistance (series & parallel), EMF, internal resistance, electrical energy & power, and Joule's heating effect." },
-    { num: 9, subject: "physics",    name: "Household Circuits",                difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Three-pin plugs, fuses, MCBs, earthing, colour coding of wires, safety precautions, and power consumption calculation." },
-    { num: 10, subject: "physics",    name: "Electro-Magnetism",                 difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Magnetic effect of current, electromagnets, Fleming's Left Hand Rule, DC motor, electromagnetic induction & AC generator." },
-    { num: 11, subject: "physics",    name: "Calorimetry",                       difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Specific heat capacity, principle of calorimetry, latent heat, change of state, and numerical problems on heat exchange." },
-    { num: 12, subject: "physics",    name: "Radioactivity & Nuclear Energy",    difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Alpha, beta, gamma radiation properties, nuclear fission & fusion, chain reactions, and safety measures." }
+    { num: 4, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["9 SLIDES", "25 QUESTIONS", "NUMERICALS"], href: "subjects/physics/refraction_plane.html", desc: "Laws of refraction, Snell's law, refractive index (absolute & relative), glass slab lateral displacement, real/apparent depth, critical angle, total internal reflection (conditions & applications).", modules: [
+        { name: "Lesson: Laws of Refraction & Snell's Law", type: "summary", href: "subjects/physics/refraction_plane.html#slide-02" },
+        { name: "Quiz 1: Snell's Law & Refractive Index", type: "test", href: "subjects/physics/refraction_plane.html#slide-03" },
+        { name: "Lesson: Glass Slab & Real/Apparent Depth", type: "summary", href: "subjects/physics/refraction_plane.html#slide-04" },
+        { name: "Quiz 2: Glass Slab & Depth Problems", type: "test", href: "subjects/physics/refraction_plane.html#slide-05" },
+        { name: "Lesson: Critical Angle & TIR", type: "summary", href: "subjects/physics/refraction_plane.html#slide-06" },
+        { name: "Quiz 3: TIR Conditions & Applications", type: "test", href: "subjects/physics/refraction_plane.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Refraction Challenges", type: "test", href: "subjects/physics/refraction_plane.html#slide-08" }
+    ] },
+    { num: 5, subject: "physics",    name: "Refraction Through a Lens",         difficulty: "Difficult", length: "Lengthy", tags: ["9 SLIDES", "27 QUESTIONS", "NUMERICALS"], href: "subjects/physics/refraction_lens.html", desc: "Convex/concave lenses, ray diagrams (all 6 positions), sign convention, lens formula (1/v − 1/u = 1/f), magnification, power of a lens (dioptre), corrective lenses.", modules: [
+        { name: "Lesson: Types of Lenses & Ray Diagram Rules", type: "summary", href: "subjects/physics/refraction_lens.html#slide-02" },
+        { name: "Quiz 1: Lens Types & Ray Diagram Rules", type: "test", href: "subjects/physics/refraction_lens.html#slide-03" },
+        { name: "Lesson: Image Formation (all cases)", type: "summary", href: "subjects/physics/refraction_lens.html#slide-04" },
+        { name: "Quiz 2: Image Formation Cases", type: "test", href: "subjects/physics/refraction_lens.html#slide-05" },
+        { name: "Lesson: Lens Formula, Magnification & Power", type: "summary", href: "subjects/physics/refraction_lens.html#slide-06" },
+        { name: "Quiz 3: Lens Formula & Power Numericals", type: "test", href: "subjects/physics/refraction_lens.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Lens Challenges", type: "test", href: "subjects/physics/refraction_lens.html#slide-08" }
+    ] },
+    { num: 6, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["9 SLIDES", "20 QUESTIONS"], href: "subjects/physics/spectrum.html", desc: "Dispersion of white light, prism, pure/impure spectrum, recombination, electromagnetic spectrum order, Rayleigh scattering, blue sky, red sunset, infrared & ultraviolet (properties, detection, uses).", modules: [
+        { name: "Lesson: Dispersion & Prism", type: "summary", href: "subjects/physics/spectrum.html#slide-02" },
+        { name: "Quiz 1: Dispersion & Prism", type: "test", href: "subjects/physics/spectrum.html#slide-03" },
+        { name: "Lesson: EM Spectrum & Scattering", type: "summary", href: "subjects/physics/spectrum.html#slide-04" },
+        { name: "Quiz 2: EM Spectrum & Scattering", type: "test", href: "subjects/physics/spectrum.html#slide-05" },
+        { name: "Lesson: IR & UV Radiation", type: "summary", href: "subjects/physics/spectrum.html#slide-06" },
+        { name: "Quiz 3: IR & UV Properties", type: "test", href: "subjects/physics/spectrum.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Spectrum Challenges", type: "test", href: "subjects/physics/spectrum.html#slide-08" }
+    ] },
+    { num: 7, subject: "physics",    name: "Sound",                             difficulty: "Easy",      length: "Normal",  tags: ["9 SLIDES", "22 QUESTIONS"], href: "subjects/physics/sound.html", desc: "Reflection of sound, echoes (minimum distance), SONAR numericals, natural/forced vibrations, damped vibrations, resonance (examples), reverberation, loudness, pitch, quality, noise vs music, audible range.", modules: [
+        { name: "Lesson: Reflection, Echoes & SONAR", type: "summary", href: "subjects/physics/sound.html#slide-02" },
+        { name: "Quiz 1: Echo & SONAR Calculations", type: "test", href: "subjects/physics/sound.html#slide-03" },
+        { name: "Lesson: Vibrations & Resonance", type: "summary", href: "subjects/physics/sound.html#slide-04" },
+        { name: "Quiz 2: Vibrations & Resonance", type: "test", href: "subjects/physics/sound.html#slide-05" },
+        { name: "Lesson: Sound Characteristics", type: "summary", href: "subjects/physics/sound.html#slide-06" },
+        { name: "Quiz 3: Loudness, Pitch & Quality", type: "test", href: "subjects/physics/sound.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Sound Challenges", type: "test", href: "subjects/physics/sound.html#slide-08" }
+    ] },
+    { num: 8, subject: "physics",    name: "Current Electricity",               difficulty: "Difficult", length: "Lengthy", tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/current_electricity.html", desc: "Ohm's law, resistance (series & parallel), EMF, internal resistance, electrical energy & power, and Joule's heating effect.", modules: [
+        { name: "Lesson: Ohm's Law & Resistors", type: "summary", href: "subjects/physics/current_electricity.html#slide-02" },
+        { name: "Quiz: Resistors & Networks", type: "test", href: "subjects/physics/current_electricity.html#slide-03" },
+        { name: "Lesson: EMF & Joule Heating", type: "summary", href: "subjects/physics/current_electricity.html#slide-04" },
+        { name: "Mega Quiz: Circuit Calculations", type: "test", href: "subjects/physics/current_electricity.html#slide-05" }
+    ] },
+    { num: 9, subject: "physics",    name: "Household Circuits",                difficulty: "Easy",      length: "Short",   tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/household_circuits.html", desc: "Three-pin plugs, fuses, MCBs, earthing, colour coding of wires, safety precautions, and power consumption calculation.", modules: [
+        { name: "Lesson: Ring System & Wire Colors", type: "summary", href: "subjects/physics/household_circuits.html#slide-02" },
+        { name: "Quiz: Rings & Wire Coding", type: "test", href: "subjects/physics/household_circuits.html#slide-03" },
+        { name: "Lesson: Safety Devices & Plugs", type: "summary", href: "subjects/physics/household_circuits.html#slide-04" },
+        { name: "Mega Quiz: Circuit Safety", type: "test", href: "subjects/physics/household_circuits.html#slide-05" }
+    ] },
+    { num: 10, subject: "physics",    name: "Electro-Magnetism",                 difficulty: "Moderate",  length: "Normal",  tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/electromagnetism.html", desc: "Magnetic effect of current, electromagnets, Fleming's Left Hand Rule, DC motor, electromagnetic induction & AC generator.", modules: [
+        { name: "Lesson: Fields, Forces & DC Motors", type: "summary", href: "subjects/physics/electromagnetism.html#slide-02" },
+        { name: "Quiz: Fields & Motor Dynamics", type: "test", href: "subjects/physics/electromagnetism.html#slide-03" },
+        { name: "Lesson: Induction & Transformers", type: "summary", href: "subjects/physics/electromagnetism.html#slide-04" },
+        { name: "Mega Quiz: Electro-Magnetic Induction", type: "test", href: "subjects/physics/electromagnetism.html#slide-05" }
+    ] },
+    { num: 11, subject: "physics",    name: "Calorimetry",                       difficulty: "Moderate",  length: "Normal",  tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/calorimetry.html", desc: "Specific heat capacity, principle of calorimetry, latent heat, change of state, and numerical problems on heat exchange.", modules: [
+        { name: "Lesson: Heat Capacity & Mixtures", type: "summary", href: "subjects/physics/calorimetry.html#slide-02" },
+        { name: "Quiz: Heat Capacity & Mixtures", type: "test", href: "subjects/physics/calorimetry.html#slide-03" },
+        { name: "Lesson: Latent Heat & Phase Curves", type: "summary", href: "subjects/physics/calorimetry.html#slide-04" },
+        { name: "Mega Quiz: Calorimetry Mastery", type: "test", href: "subjects/physics/calorimetry.html#slide-05" }
+    ] },
+    { num: 12, subject: "physics",    name: "Radioactivity & Nuclear Energy",    difficulty: "Easy",      length: "Short",   tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/radioactivity.html", desc: "Alpha, beta, gamma radiation properties, nuclear fission & fusion, chain reactions, and safety measures.", modules: [
+        { name: "Lesson: Decay Rules & Radiation Properties", type: "summary", href: "subjects/physics/radioactivity.html#slide-02" },
+        { name: "Quiz: Decay Equations & Properties", type: "test", href: "subjects/physics/radioactivity.html#slide-03" },
+        { name: "Lesson: Fission, Fusion & Safety", type: "summary", href: "subjects/physics/radioactivity.html#slide-04" },
+        { name: "Mega Quiz: Nuclear Energy Mastery", type: "test", href: "subjects/physics/radioactivity.html#slide-05" }
+    ] }
 );

@@ -4,8 +4,8 @@ This document tracks the progress of the interactive modules across all subjects
 
 ## Summary Progress
 - **Total Subjects:** 10
-- **Completed Modules:** 5
-- **Pending Modules:** ~80+
+- **Completed Modules:** 32
+- **Pending Modules:** ~74
 
 ---
 
@@ -42,23 +42,23 @@ This document tracks the progress of the interactive modules across all subjects
 - [ ] Probability
 
 ## 4. Physics [PHYSICS]
-- [ ] Force, Work, Power & Energy
-- [ ] Light
-- [ ] Sound
-- [ ] Electricity & Magnetism
-- [ ] Heat
-- [ ] Modern Physics (Radioactivity)
+- [x] Force, Work, Power & Energy
+- [x] Light
+- [x] Sound
+- [x] Electricity & Magnetism
+- [x] Heat
+- [x] Modern Physics (Radioactivity)
 
 ## 5. Chemistry [CHEMISTRY]
-- [ ] Periodic Table
-- [ ] Chemical Bonding
-- [ ] Acids, Bases & Salts
-- [ ] Analytical Chemistry
-- [ ] Mole Concept & Stoichiometry
-- [ ] Electrolysis
-- [ ] Metallurgy
-- [ ] Study of Compounds (HCl, NH3, HNO3, H2SO4)
-- [ ] Organic Chemistry
+- [x] Periodic Table
+- [x] Chemical Bonding
+- [x] Acids, Bases & Salts
+- [x] Analytical Chemistry
+- [x] Mole Concept & Stoichiometry
+- [x] Electrolysis
+- [x] Metallurgy
+- [x] Study of Compounds (HCl, NH3, HNO3, H2SO4)
+- [x] Organic Chemistry
 
 ## 6. Biology [BIOLOGY]
 - [x] Cell Division

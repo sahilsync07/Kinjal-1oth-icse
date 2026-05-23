@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorimetry — Physics ICSE | Kinjal's Learning Hub</title>
+    <meta name="description" content="Interactive ICSE Class 10 Physics lesson on Calorimetry — heat capacity, mixtures, high specific heat of water, latent heat, and phase change.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-section">
+            <div class="logo-dot"></div>
+            <a href="../../index.html" style="text-decoration:none;color:inherit;margin-right:1rem;">← HOME</a>
+            <span>CALORIMETRY // KINJAL</span>
+        </div>
+        <div class="nav-progress">
+            <div class="progress-track">
+                <div class="progress-bar" style="width: 0%;"></div>
+            </div>
+            <div class="progress-text">[01/06] PROGRESS: 0%</div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="scroll-container">
+
+        <!-- ============================================
+             SLIDE 1: WELCOME
+             ============================================ -->
+        <section class="slide active" id="slide-01">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_11_INTRO</span>
+                <h1>Chapter 11: Calorimetry</h1>
+                <p>Welcome, Kinjal! Today we master the science of heat measurement: **Calorimetry**. In this heavily numerical chapter, we will learn the difference between **Heat and Temperature**, define **Heat Capacity ($C$)** and **Specific Heat Capacity ($c$)**, apply the **Principle of Calorimetry** (heat exchange mixtures), explain the biological and environmental consequences of **Water's anomalous high specific heat**, and unpack the mystery of constant-temperature phase transitions with **Latent Heat ($L$)**.</p>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <p><strong>Chapter Outline:</strong></p>
+                <ul>
+                    <li><strong>Lesson 1</strong>: Heat Exchange Math — Specific Heat Capacity ($Q = mc\Delta T$), Heat Capacity ($C'$), & the Principle of Mixtures</li>
+                    <li><strong>Quiz 1</strong>: Heat capacity definitions, calorimeter materials, and mixture calculations</li>
+                    <li><strong>Lesson 2</strong>: Latent Heat & Phase Changes — Latent Heat of Fusion ($Q = mL$), heating curves, and thermal anomalies of ice and steam</li>
+                    <li><strong>Mega Quiz</strong>: Ultimate board-style multi-step numericals combining temperature changes and ice melting operations</li>
+                </ul>
+
+                <blockquote>
+                    <span class="tip-badge">BOARD CRITICAL</span>
+                    *The Specific Heat of Water:* Water has an exceptionally high specific heat capacity ($4200\text{ J kg}^{-1}\text{ K}^{-1}$ or $4.2\text{ J g}^{-1}\text{ }^\circ\text{C}^{-1}$). Because of this, it absorbs or releases a huge amount of heat for a very small change in temperature, making it a perfect **radiator coolant**, **fomentation fluid**, and **coastal climate stabilizer**.
+                </blockquote>
+
+                <div class="btn-container">
+                    <span></span>
+                    <button class="btn-primary btn-next">START LEARNING <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 2: LESSON 1 — Heat capacity & the Principle of Mixtures
+             ============================================ -->
+        <section class="slide locked" id="slide-02">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_11_L1</span>
+                <h1>Heat Capacity & Mixtures Principle</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Heat Capacity ($C'$) vs Specific Heat Capacity ($c$)</h2>
+                <ul>
+                    <li><strong>Heat Capacity ($C'$):</strong> Heat energy required to raise the temperature of the *entire body* by $1\text{ K}$ (or $1^\circ\text{C}$):
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">C' = Q / &Delta;T = m &times; c</span>
+                        Unit: **$\text{J K}^{-1}$** or **$\text{J }^\circ\text{C}^{-1}$**. It depends on both the material and mass of the body.</li>
+                    <li><strong>Specific Heat Capacity ($c$):</strong> Heat energy required to raise the temperature of a *unit mass (1 kg or 1 g)* of the substance by $1\text{ K}$ (or $1^\circ\text{C}$):
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">c = Q / (m &times; &Delta;T)  &rarr;  Q = m &times; c &times; &Delta;T</span>
+                        Unit: **$\text{J kg}^{-1}\text{ K}^{-1}$** or **$\text{J g}^{-1}\text{ }^\circ\text{C}^{-1}$**. It is a **characteristic property** of the material and does not depend on its mass.</li>
+                </ul>
+
+                <h2>2. Principle of Calorimetry (Method of Mixtures)</h2>
+                <p>When a hot body is mixed with a cold body in an insulated container (Calorimeter):</p>
+                <blockquote>
+                    <strong>Heat Lost by Hot Body = Heat Gained by Cold Body</strong>
+                    <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">m₁ &times; c₁ &times; (T₁ - T_mix) = m₂ &times; c₂ &times; (T_mix - T₂)</span>
+                </blockquote>
+                <p><em>Note:</em> A calorimeter is made of **thin copper** because copper has a low specific heat capacity (requires minimal heat to reach thermal equilibrium) and is highly conductive, ensuring rapid heat transfer.</p>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 1 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 3: QUIZ 1
+             ============================================ -->
+        <section class="slide locked" id="slide-03">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_11_Q1</span>
+                <h1>Quiz 1: Heat Capacity & Mixtures</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q1">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q1">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 4: LESSON 2 — Latent Heat & Phase Changes
+             ============================================ -->
+        <section class="slide locked" id="slide-04">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_11_L2</span>
+                <h1>Latent Heat & Phase Change Curves</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. What is Latent Heat ($L$)?</h2>
+                <p>Latent heat (hidden heat) is the heat absorbed or released by a substance during a **change of state** (phase transition) at **constant temperature**.</p>
+                <ul>
+                    <li>During a change of state, heat is used to break/form intermolecular bonds, **not** to increase the kinetic energy of molecules. Hence, the temperature remains absolutely constant.</li>
+                    <li><strong>Specific Latent Heat ($l$):</strong> The amount of heat required to change the state of $1\text{ kg}$ (or $1\text{ g}$) of a substance at its transition temperature:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">Q = m &times; l</span>
+                        Unit: **$\text{J kg}^{-1}$** or **$\text{J g}^{-1}$**.</li>
+                </ul>
+
+                <h2>2. Values & Phenomena of Latent Heat</h2>
+                <ul>
+                    <li><strong>Specific Latent Heat of Fusion of Ice ($l_{ice}$):</strong> **$336\text{ J g}^{-1}$** (or $3.36 \times 10^5\text{ J kg}^{-1}$).
+                        <br><em>Phenomenon:</em> Lakes do not freeze solid instantly in winter, and soft drinks are cooled much more effectively by $0^\circ\text{C}$ ice than by $0^\circ\text{C}$ water because each gram of melting ice absorbs an additional $336\text{ J}$ of heat from the drink!</li>
+                    <li><strong>Specific Latent Heat of Vaporization of Steam ($l_{steam}$):</strong> **$2260\text{ J g}^{-1}$** (or $2.26 \times 10^6\text{ J kg}^{-1}$).
+                        <br><em>Phenomenon:</em> Burns caused by $100^\circ\text{C}$ steam are much more severe than those caused by $100^\circ\text{C}$ boiling water because steam releases an extra $2260\text{ J}$ of heat per gram upon condensing on the skin!</li>
+                </ul>
+
+                <h2>3. The Heating Curve</h2>
+                <p>A plot of temperature vs time for a heated solid:</p>
+                <ul>
+                    <li><strong>Slanted sections:</strong> Temperature rises. Heat is $Q = mc\Delta T$. Kinetic energy increases.</li>
+                    <li><strong>Flat sections:</strong> Change of state (melting or boiling). Temperature is constant. Heat is $Q = mL$. Potential energy increases.</li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START MEGA QUIZ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 5: MEGA QUIZ
+             ============================================ -->
+        <section class="slide locked" id="slide-05">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_11_MEGA</span>
+                <h1>Mega Quiz: Calorimetry Mastery</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-mega">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="mega">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>GRADUATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 6: GRADUATION
+             ============================================ -->
+        <section class="slide locked" id="slide-06">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_11_GRADUATION</span>
+                <h1>Chapter Completed!</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">\(^ヮ^)/</div>
+                    <div class="companion-text">Phys-Bot is extremely proud of you!</div>
+                </div>
+
+                <p>Outstanding job, Kinjal! You have successfully mastered **Chapter 11: Calorimetry**. You have conquered all capacity differences, copper calorimeter selections, specific heat values, latent phase boundaries, and multi-stage ice melting math!</p>
+
+                <div class="graduation-box" style="margin: 2rem 0; border: 4px double var(--border-color); padding: 2rem; text-align: center; background: rgba(0,0,0,0.01);">
+                    <div class="grad-certificate">
+                        <h2 style="border:none;margin-top:0;font-family:var(--font-mono);font-size:1.4rem;">CERTIFICATE OF EXCELLENCE</h2>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin:1.5rem 0;">This certifies that</p>
+                        <h1 style="font-size:2.5rem;letter-spacing:0.5px;font-family:var(--font-mono);font-weight:700;">KINJAL</h1>
+                        <p style="font-family:'JetBrains Mono',monospace;margin:1.5rem 0 0.5rem 0;">has mastered the topic of</p>
+                        <p style="font-weight:700;font-family:var(--font-mono);text-transform:uppercase;font-size:1.2rem;color:var(--text-primary);">PHYSICS: CHAPTER 11 - CALORIMETRY</p>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;margin-top:1.5rem;">With Final Score: <span id="cert-score" style="font-weight:700;">-</span></p>
+                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);font-family:var(--font-mono);">Verified by Phys-Bot the thermal analyst on <span id="cert-date">-</span></p>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK TO EXERCISES</button>
+                    <div>
+                        <a href="../../index.html" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;">← HOME</a>
+                        <button class="btn-primary" onclick="window.print()">PRINT CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="calorimetry.js"></script>
+    <script src="../../quiz_engine.js"></script>
+</body>
+</html>
