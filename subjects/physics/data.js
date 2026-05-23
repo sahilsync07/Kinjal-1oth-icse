@@ -73,11 +73,14 @@ window.ICSE_CHAPTERS.push(
         { name: "Quiz 3: Lens Formula & Power Numericals", type: "test", href: "subjects/physics/refraction_lens.html#slide-07" },
         { name: "Mega Quiz: Board-Level Lens Challenges", type: "test", href: "subjects/physics/refraction_lens.html#slide-08" }
     ] },
-    { num: 6, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/spectrum.html", desc: "Dispersion of light, electromagnetic spectrum, scattering of light, and prism-based experiments.", modules: [
-        { name: "Lesson: Dispersion & Recombination", type: "summary", href: "subjects/physics/spectrum.html#slide-02" },
-        { name: "Quiz: Dispersion of Light", type: "test", href: "subjects/physics/spectrum.html#slide-03" },
+    { num: 6, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["9 SLIDES", "20 QUESTIONS"], href: "subjects/physics/spectrum.html", desc: "Dispersion of white light, prism, pure/impure spectrum, recombination, electromagnetic spectrum order, Rayleigh scattering, blue sky, red sunset, infrared & ultraviolet (properties, detection, uses).", modules: [
+        { name: "Lesson: Dispersion & Prism", type: "summary", href: "subjects/physics/spectrum.html#slide-02" },
+        { name: "Quiz 1: Dispersion & Prism", type: "test", href: "subjects/physics/spectrum.html#slide-03" },
         { name: "Lesson: EM Spectrum & Scattering", type: "summary", href: "subjects/physics/spectrum.html#slide-04" },
-        { name: "Mega Quiz: Spectrum & Waves", type: "test", href: "subjects/physics/spectrum.html#slide-05" }
+        { name: "Quiz 2: EM Spectrum & Scattering", type: "test", href: "subjects/physics/spectrum.html#slide-05" },
+        { name: "Lesson: IR & UV Radiation", type: "summary", href: "subjects/physics/spectrum.html#slide-06" },
+        { name: "Quiz 3: IR & UV Properties", type: "test", href: "subjects/physics/spectrum.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Spectrum Challenges", type: "test", href: "subjects/physics/spectrum.html#slide-08" }
     ] },
     { num: 7, subject: "physics",    name: "Sound",                             difficulty: "Easy",      length: "Normal",  tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/sound.html", desc: "Reflection of sound, echoes, natural vibrations, forced vibrations, resonance, loudness, pitch, quality, and noise vs music.", modules: [
         { name: "Lesson: Echoes & Sonar Math", type: "summary", href: "subjects/physics/sound.html#slide-02" },
