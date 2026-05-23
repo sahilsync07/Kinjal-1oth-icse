@@ -40,18 +40,16 @@ There will be one paper of two hours duration carrying 80 marks and an Internal 
 | **Section B (Choice-based)**| Entire Syllabus | Long Answer/Structured Questions (Attempt any 4 out of 6 questions). Each question carries 10 marks (often split as 2+2+3+3 or similar). | 40 Marks (4 x 10) |
 | **Total** | | | **80 Marks** |
 
-### 2.2 Chapter-Wise Indicative Marks Weightage
-*(Note: ICSE does not prescribe a rigid chapter-wise blueprint for Section B, but the following reflects historical distribution trends).*
+### 2.2 Unit-Wise Indicative Marks Weightage
+*(Note: ICSE does not prescribe a rigid unit-wise blueprint for Section B, but the following reflects historical distribution trends matching the 10 pure Economics chapters).*
 
-| Unit No. | Chapter Name | Indicative Marks (Out of 80) |
-|----------|--------------|------------------------------|
-| 1 | The Productive Mechanism (Land, Labour, Capital, Entrepreneur) | ~12 - 14 Marks |
-| 2 | Theory of Demand and Supply | ~14 - 16 Marks |
-| 3 | Market Structure (Perfect Competition, Monopoly, Monopolistic) | ~10 - 12 Marks |
-| 4 | Banking in India (Commercial Banks, RBI) | ~10 - 12 Marks |
-| 5 | Inflation (Meaning, Causes, Effects) | ~10 - 12 Marks |
-| 6 | Public Finance (Revenue, Tax, Expenditure, Debt) | ~12 - 14 Marks |
-| 7 | Consumer Awareness | ~8 - 10 Marks |
+| Unit No. | Unit / Chapter Theme | Indicative Marks (Out of 80) |
+|----------|----------------------|------------------------------|
+| I | **Demand and Supply: Basic Concepts** (Ch 84-86: Demand, Elasticity, Supply) | ~14 - 16 Marks |
+| II | **Factors of Production: Basic Concepts** (Ch 87: Land, Labour, Capital, Entrepreneur) | ~12 - 14 Marks |
+| III | **Alternative Market Structures: Basic Concepts** (Ch 88: Nature & Structure of Markets) | ~10 - 12 Marks |
+| IV | **The State and Economic Development** (Ch 89: Public Finance - Revenue, Taxes, Debt) | ~14 - 16 Marks |
+| V | **Money and Banking: Basic Concepts** (Ch 90-93: Money, Commercial & Central Banks, Inflation) | ~22 - 24 Marks |
 | **Total** | | **~80 Marks (Excluding Options)** |
 | **Internal** | Project Work / Assignments | **20 Marks** |
 
@@ -66,11 +64,9 @@ There will be one paper of two hours duration carrying 80 marks and an Internal 
 - **Grammar**: Vocabulary, syntax, idioms, synthesis. No grammatical terms required.
 - **Literature**: Detailed study of prescribed short stories, poems, or drama.
 
-#### ECONOMICS
-- **1. The Productive Mechanism**: Factors of production (Land, Labour, Capital, Entrepreneur) and their characteristics.
-- **2. Theory of Demand and Supply**: Laws, exceptions, equilibrium price.
-- **3. Market**: Types of markets, Perfect Competition, Monopoly, Monopolistic Competition.
-- **4. Banking in India**: Functions of Commercial Banks and the Central Bank (RBI).
-- **5. Inflation**: Types (creeping, walking, running, hyper), Causes (Demand-pull, Cost-push), Effects.
-- **6. Public Finance**: Public Revenue (Tax/Non-tax), Direct/Indirect Taxes, Public Expenditure, Public Debt.
-- **7. Consumer Awareness**: Consumer Exploitation, Rights/Duties, Food Adulteration, COPRA.
+#### ECONOMICS (PURE CLASS 10 COGNATE - CODE 64)
+- **Unit I: Demand and Supply (Basic Concepts)**: Meaning of demand and supply, Law of Demand & Supply, demand and supply schedules/curves, determinants of demand & supply, elasticity of demand (price elasticity, degrees, measurement).
+- **Unit II: Factors of Production (Basic Concepts)**: Land (features), Labour (meaning, efficiency, division of labour), Capital (types, capital formation), and Entrepreneur (role, functions).
+- **Unit III: Alternative Market Structures (Basic Concepts)**: Markets (meaning), Perfect Competition, Monopoly, Monopolistic Competition, Oligopoly (meaning and characteristics of each).
+- **Unit IV: The State and Economic Development**: Public Finance (meaning), Public Revenue (Direct & Indirect Taxes, progressive/regressive/proportional taxes), Public Expenditure (meaning and reasons for growth), Public Debt, Deficit Financing.
+- **Unit V: Money and Banking (Basic Concepts)**: Money (evolution, primary, secondary & contingent functions), Commercial Banks (functions, credit creation), Central Bank (RBI, credit control instruments: CRR, SLR, Repo, Bank Rate, open market operations), Inflation (meaning, creeping/walking/running/galloping types, Demand-Pull vs Cost-Push inflation causes & effects).

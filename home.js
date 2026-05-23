@@ -172,12 +172,11 @@ function renderTable(filter) {
     const filtered = filter === 'all' ? chapters : chapters.filter(c => c.subject === filter);
     
     let html = '';
-    let counter = 1;
     filtered.forEach(ch => {
         const diffClass = 'badge-' + (ch.difficulty || 'moderate').toLowerCase();
         const lenClass  = 'badge-' + (ch.length || 'normal').toLowerCase();
         html += `<tr>
-            <td class="col-num">${String(counter++).padStart(2, '0')}</td>
+            <td class="col-num">${String(ch.num).padStart(2, '0')}</td>
             <td class="col-subject"><span class="table-subject-tag">${subjectLabels[ch.subject] || ch.subject}</span></td>
             <td class="col-chapter">${ch.name}</td>
             <td class="col-diff"><span class="table-badge ${diffClass}">${(ch.difficulty || 'MODERATE').toUpperCase()}</span></td>
@@ -234,19 +233,17 @@ function renderTable(filter) {
                     </tbody>
                 </table>
 
-                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">2. CHAPTER-WISE INDICATIVE WEIGHTAGE</h3>
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">2. UNIT-WISE INDICATIVE WEIGHTAGE</h3>
                 <table class="tech-table">
                     <thead>
                         <tr><th>UNIT NO & NAME</th><th>INDICATIVE MARKS (Out of 80)</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>1. The Productive Mechanism</td><td>~12 - 14 Marks</td></tr>
-                        <tr><td>2. Theory of Demand and Supply</td><td>~14 - 16 Marks</td></tr>
-                        <tr><td>3. Market Structure</td><td>~10 - 12 Marks</td></tr>
-                        <tr><td>4. Banking in India</td><td>~10 - 12 Marks</td></tr>
-                        <tr><td>5. Inflation</td><td>~10 - 12 Marks</td></tr>
-                        <tr><td>6. Public Finance</td><td>~12 - 14 Marks</td></tr>
-                        <tr><td>7. Consumer Awareness</td><td>~8 - 10 Marks</td></tr>
+                        <tr><td>Unit I: Demand and Supply (Ch 84-86)</td><td>~14 - 16 Marks</td></tr>
+                        <tr><td>Unit II: Factors of Production (Ch 87)</td><td>~12 - 14 Marks</td></tr>
+                        <tr><td>Unit III: Alternative Market Structures (Ch 88)</td><td>~10 - 12 Marks</td></tr>
+                        <tr><td>Unit IV: The State and Economic Development (Ch 89)</td><td>~14 - 16 Marks</td></tr>
+                        <tr><td>Unit V: Money and Banking (Ch 90-93)</td><td>~22 - 24 Marks</td></tr>
                     </tbody>
                 </table>
             </div>
