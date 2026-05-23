@@ -13,10 +13,10 @@ window.ICSE_CHAPTERS.push(
         desc: "All 12 tense forms — Simple, Continuous, Perfect & Perfect Continuous across Past, Present, and Future. Sequence of tenses & common errors.",
         modules: [
             { name: "Lesson: Tense Forms", type: "summary", href: "subjects/eng_lang/tenses.html#slide-02" },
-            { name: "Quiz: Tense Mastery", type: "test", href: "subjects/eng_lang/tenses.html#slide-03" },
+            { name: "Quiz 1: Tense Forms", type: "test", href: "subjects/eng_lang/tenses.html#slide-03" },
             { name: "Lesson: Sequence of Tenses", type: "summary", href: "subjects/eng_lang/tenses.html#slide-04" },
-            { name: "Quiz: Sequence Test", type: "test", href: "subjects/eng_lang/tenses.html#slide-05" },
-            { name: "Quiz: Board-style Tense Correction", type: "test", href: "subjects/eng_lang/tenses.html#slide-06" }
+            { name: "Quiz 2: Sequence of Tenses", type: "test", href: "subjects/eng_lang/tenses.html#slide-05" },
+            { name: "Mega Quiz: Board-Style Correction", type: "test", href: "subjects/eng_lang/tenses.html#slide-06" }
         ]
     },
     {
