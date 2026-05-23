@@ -78,5 +78,31 @@ window.CIVICS_SUBJECTIVE_DATA = {
             rubric: "1 Mark: Original: Cases brought directly to SC / Appellate: Cases arising on appeal from High Court decisions.\n1 Mark: Original examples: Dispute between Union and States, and enforcement of Fundamental Rights (Writs).\n1 Mark: Appellate examples: Appeals in constitutional cases, civil disputes, or criminal death sentence appeals.",
             topperAnswer: "1. **Original Jurisdiction**:\n   - **Definition**: The power to hear and decide cases that are brought **directly to the Supreme Court in the first instance**, without passing through lower courts.\n   - **Examples**:\n     1. A boundary or water sharing dispute between the **Government of India and a State** (or between two States).\n     2. Petitions filed for the **enforcement of Fundamental Rights** (Writ petitions under Article 32).\n2. **Appellate Jurisdiction**:\n   - **Definition**: The power to **hear appeals against the decisions** and judgments of the High Courts, reviewing their legal correctness.\n   - **Examples**:\n     1. Appeals in **Constitutional cases** where the High Court certifies that the case involves a substantial question of law.\n     2. Appeals in **Criminal cases** where a High Court has reversed an acquittal and sentenced a person to death."
         }
+    ],
+    "war_1857": [
+        {
+            type: "reason",
+            question: "Why did the annexation of Awadh by Lord Dalhousie trigger a widespread revolt among the Bengal Army sepoys?",
+            tip: "Detail that sepoys were recruited heavily from Awadh, and their families' financial privileges were abolished by the annexation.",
+            pitfall: "Writing 'Because they liked the Nawab.' (Gets 0/3 marks. Completely misses the socio-financial impact on recruit families).",
+            rubric: "1 Mark: 75,000 sepoys in the Bengal Army belonged to Awadh.\n1 Mark: Annexation meant their families lost tax exemptions on land and faced higher revenues.\n1 Mark: It was seen as a betrayal of a loyal ally, sparking deep moral resentment.",
+            topperAnswer: "1. **Awadh Recruitment Base**: Over **75,000 sepoys in the Bengal Army** hailed from Awadh. Anything affecting Awadh directly affected their families.\n2. **Financial Hardship**: Following the annexation, the **tax-free privileges of sepoy family lands** were abolished. Land revenue was inflated, placing a direct financial burden on the sepoys' homes.\n3. **Moral Betrayal**: The sepoys viewed the annexation of their highly loyal native kingdom as a **betrayal of trust** by the Company, turning their military loyalty into active resistance."
+        },
+        {
+            type: "short",
+            question: "State two military grievances of the Indian sepoys that led to the First War of Independence in 1857.",
+            tip: "Focus on pay disparities and the overseas service enlistment mandate.",
+            pitfall: "Writing 'They did not like British food.' (Gets 0/2 marks. Not a recorded military grievance).",
+            rubric: "1 Mark: Pay and promotion disparity (capped ranks like Havildar, paid 1/8th of European counterparts).\n1 Mark: The General Service Enlistment Act (1856) requiring overseas travel, violating Hindu caste rules.",
+            topperAnswer: "1. **Extreme Pay & Promotion Disparity**: Indian sepoys were paid a fraction of the salary of European soldiers of equivalent rank. Furthermore, promotions were capped, meaning they could **never rise above the rank of Subedar/Havildar** regardless of service.\n2. **General Service Enlistment Act (1856)**: This act made it compulsory for new recruits to **serve overseas**. Orthodox Hindus believed crossing the sea (Kala Pani) led to loss of caste and social exclusion."
+        },
+        {
+            type: "structured",
+            question: "Explain three major administrative consequences of the First War of Independence introduced by the Government of India Act 1858.",
+            tip: "Highlight the Crown takeover, Secretary of State creation, and princely states assurance.",
+            pitfall: "Confusing the Act date or listing 'British soldiers went home.' (India remained highly militarized; the administration shifted from Company to Crown).",
+            rubric: "1 Mark: Abolition of East India Company rule and direct transfer of power to the British Crown.\n1 Mark: Introduction of the office of Secretary of State for India and Council of India.\n1 Mark: Change of title from Governor-General to Viceroy, representing the direct Crown representative.",
+            topperAnswer: "The Government of India Act 1858 introduced structural administrative shifts:\n\n1. **Transfer of Sovereignty**: The rule of the **British East India Company was abolished**. All governing powers, territories, and revenues were transferred **directly to the British Crown**.\n2. **Creation of Secretary of State**: The office of the **Secretary of State for India** was created. Backed by a 15-member **Council of India**, he was made directly responsible to the British Parliament for governing India.\n3. **Viceroy Designation**: The Governor-General of India was given the new title of **Viceroy**, acting as the direct representative of the British Crown in the subcontinent."
+        }
     ]
 };
