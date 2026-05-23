@@ -50,15 +50,23 @@ window.ICSE_CHAPTERS.push(
         href: "articles.html",
         desc: "Functional grammar: Articles, Subject-Verb Agreement, Tenses, Prepositions, Conjunctions, Transformations, and Conditional Sentences.",
         modules: [
-            { name: "Lesson: Articles (A, An, The)", type: "summary", href: "articles.html" },
+            { name: "Lesson: Articles", type: "summary", href: "articles.html" },
             { name: "Lesson: Subject-Verb Agreement", type: "summary", href: "sva.html" },
-            { name: "Lesson: Tenses & Sequence of Tenses", type: "summary", href: "subjects/eng_lang/tenses.html" },
+            { name: "Lesson: Tenses and Their Uses", type: "summary", href: "subjects/eng_lang/tenses.html" },
+            { name: "Lesson: The Sequence of Tenses", type: "summary", href: "subjects/eng_lang/tenses.html#slide-04" },
+            { name: "Lesson: Adjectives", type: "summary", href: "#" },
+            { name: "Lesson: Adverbs", type: "summary", href: "#" },
             { name: "Lesson: Prepositions", type: "summary", href: "subjects/eng_lang/prepositions.html" },
-            { name: "Lesson: Active & Passive Voice", type: "summary", href: "#" },
-            { name: "Lesson: Direct & Indirect Speech", type: "summary", href: "#" },
-            { name: "Lesson: Conjunctions & Synthesis", type: "summary", href: "#" },
-            { name: "Lesson: Sentence Transformation", type: "summary", href: "#" },
-            { name: "Lesson: Conditional Sentences", type: "summary", href: "#" }
+            { name: "Lesson: Conjunctions", type: "summary", href: "#" },
+            { name: "Lesson: Direct and Indirect Speech", type: "summary", href: "#" },
+            { name: "Lesson: Active and Passive Voice", type: "summary", href: "#" },
+            { name: "Lesson: Synthesis of Sentences", type: "summary", href: "#" },
+            { name: "Lesson: Transformation of Sentences", type: "summary", href: "#" },
+            { name: "Lesson: Conditional Sentences", type: "summary", href: "#" },
+            { name: "Lesson: Words Often Confused", type: "summary", href: "#" },
+            { name: "Lesson: Spell Well Corner", type: "summary", href: "#" },
+            { name: "Lesson: Some Common Errors", type: "summary", href: "#" },
+            { name: "Lesson: Express Well with Right Words", type: "summary", href: "#" }
         ]
     },
     {
