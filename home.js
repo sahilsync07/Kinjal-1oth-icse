@@ -20,11 +20,26 @@ function renderHomeGrid() {
     const grid = document.getElementById('home-grid-container');
     if (!grid) return;
     
-    let html = '';
-    let currentSubject = null;
-
     // Assuming window.ICSE_CHAPTERS is populated and sorted by num
     const chapters = window.ICSE_CHAPTERS || [];
+    const completed = chapters.filter(c => c.href !== "#").length;
+    const total = chapters.length;
+    const percentage = total === 0 ? 0 : Math.round((completed / total) * 100);
+
+    let html = `
+    <div class="dashboard-banner" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.5rem; margin-bottom: 2rem;">
+        <h2 style="font-family: var(--font-mono); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-muted);">PROJECT CREATION PROGRESS</h2>
+        <div style="width: 100%; height: 8px; background: var(--bg-body); border: 1px solid var(--border-color); margin-bottom: 1rem;">
+            <div style="width: ${percentage}%; height: 100%; background: var(--accent-color);"></div>
+        </div>
+        <div style="display: flex; gap: 2rem; font-family: var(--font-mono); font-size: 0.9rem;">
+            <span><strong style="color: var(--text-main);">${completed}</strong> COMPLETED MODULES</span>
+            <span><strong style="color: var(--text-muted);">${total - completed}</strong> PENDING MODULES</span>
+            <span><strong style="color: var(--accent-color);">${percentage}%</strong> OVERALL</span>
+        </div>
+    </div>`;
+
+    let currentSubject = null;
     
     chapters.forEach(ch => {
         // Render subject divider if new subject
@@ -38,20 +53,22 @@ function renderHomeGrid() {
             </div>`;
         }
 
-        // Render chapter card (No locks!)
+        const isPending = ch.href === "#";
+        const cardStyle = isPending ? `opacity: 0.5; border-style: dashed; cursor: not-allowed;` : ``;
         const tagsHtml = (ch.tags || []).map(tag => `<span class="chapter-tag">${tag}</span>`).join('');
+        const tagLabel = isPending ? `<span class="chapter-tag" style="background: #333; color: #888;">PENDING CREATION</span>` : tagsHtml;
         
         html += `
-        <a href="${ch.href}" class="chapter-card" id="ch-${ch.num}">
+        <a href="${isPending ? 'javascript:void(0)' : ch.href}" class="chapter-card" id="ch-${ch.num}" style="${cardStyle}">
             <div class="chapter-number">${String(ch.num).padStart(2, '0')}</div>
             <div class="chapter-info">
                 <h2 class="chapter-name">${ch.name.toUpperCase()}</h2>
                 <p class="chapter-desc">${ch.desc}</p>
                 <div class="chapter-meta">
-                    ${tagsHtml}
+                    ${tagLabel}
                 </div>
             </div>
-            <div class="chapter-arrow">→</div>
+            <div class="chapter-arrow" style="${isPending ? 'display:none;' : ''}">→</div>
         </a>`;
     });
 
