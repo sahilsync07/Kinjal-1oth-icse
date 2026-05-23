@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Electricity — Physics ICSE | Kinjal's Learning Hub</title>
+    <meta name="description" content="Interactive ICSE Class 10 Physics lesson on Current Electricity — Ohm's law, series and parallel resistors, cell EMF and internal resistance, electrical energy and power.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-section">
+            <div class="logo-dot"></div>
+            <a href="../../index.html" style="text-decoration:none;color:inherit;margin-right:1rem;">← HOME</a>
+            <span>CURRENT_ELEC // KINJAL</span>
+        </div>
+        <div class="nav-progress">
+            <div class="progress-track">
+                <div class="progress-bar" style="width: 0%;"></div>
+            </div>
+            <div class="progress-text">[01/06] PROGRESS: 0%</div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="scroll-container">
+
+        <!-- ============================================
+             SLIDE 1: WELCOME
+             ============================================ -->
+        <section class="slide active" id="slide-01">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_08_INTRO</span>
+                <h1>Chapter 8: Current Electricity</h1>
+                <p>Welcome, Kinjal! In this highly numerical-heavy chapter, we master electric charge and circuits: **Current Electricity**. We will explore **Ohm's Law ($V = IR$)**, calculate equivalent resistances for **Series & Parallel Resistors**, deconstruct cell **Electromotive Force (EMF)** and **Internal Resistance ($r$)**, and master **Joule Heating** and the commercial unit of electrical energy (**kilowatt-hour, kWh**).</p>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <p><strong>Chapter Outline:</strong></p>
+                <ul>
+                    <li><strong>Lesson 1</strong>: Circuit Rules — Ohm's Law, Resistivity, & Resistor Combinations (Series & Parallel)</li>
+                    <li><strong>Quiz 1</strong>: Resistances, network calculations, and resistivity factors</li>
+                    <li><strong>Lesson 2</strong>: Cell Dynamics & Heating — EMF, Internal Resistance ($r$), & Electrical Power (kWh)</li>
+                    <li><strong>Mega Quiz</strong>: Ultimate board-style numericals on battery terminal voltages, heating power, and network equivalent loads</li>
+                </ul>
+
+                <blockquote>
+                    <span class="tip-badge">BOARD CRITICAL</span>
+                    *Battery EMF vs Terminal Voltage:* Electromotive Force ($\mathcal{E}$) is the potential difference when the cell is in an **open circuit** (no current drawn). Terminal voltage ($V$) is the potential difference when current ($I$) is drawn in a **closed circuit**. The relation is:
+                    <br><span style="font-family:var(--font-mono);font-weight:bold;margin-top:0.5rem;display:block;text-align:center;">V = E - I &times; r  (or E = I &times; (R + r))</span>
+                    where $r$ is the internal resistance of the cell.
+                </blockquote>
+
+                <div class="btn-container">
+                    <span></span>
+                    <button class="btn-primary btn-next">START LEARNING <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 2: LESSON 1 — Ohm's Law, Resistivity & Networks
+             ============================================ -->
+        <section class="slide locked" id="slide-02">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_08_L1</span>
+                <h1>Ohm's Law & Resistor Networks</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Current, Voltage & Ohm's Law</h2>
+                <ul>
+                    <li><strong>Current ($I$):</strong> The rate of flow of charge: $I = Q/t$. Unit: **Ampere (A)**.</li>
+                    <li><strong>Potential Difference ($V$):</strong> Work done per unit charge in moving it from one point to another: $V = W/Q$. Unit: **Volt (V)**.</li>
+                    <li><strong>Ohm's Law:</strong> Current flowing through a metallic conductor is directly proportional to the potential difference across its ends, provided temperature remains constant: $V \propto I \rightarrow V = IR$ (where $R$ is resistance).</li>
+                </ul>
+
+                <h2>2. Resistance & Specific Resistivity</h2>
+                <p>Resistance is the obstruction offered to the flow of current. $R = \rho \times (l / A)$ where $\rho$ is the specific resistance (resistivity), $l$ is length, and $A$ is area of cross-section.</p>
+                <ul>
+                    <li>$R$ increases with length and temperature; decreases with area.</li>
+                    <li>$\rho$ is a **characteristic of the material**; it changes only with material and temperature, **never** with dimensions ($l$ or $A$). Unit of $\rho$: **Ohm-meter ($\Omega$ m)**.</li>
+                </ul>
+
+                <h2>3. Resistor Networks</h2>
+                <ul>
+                    <li><strong>Series Combination:</strong> Same current passes through each resistor. Total resistance:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">Rₛ = R₁ + R₂ + R₃ + ...</span>
+                    </li>
+                    <li><strong>Parallel Combination:</strong> Same voltage is applied across each resistor. Total resistance:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">1/Rₚ = 1/R₁ + 1/R₂ + 1/R₃ + ...</span>
+                    </li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 1 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 3: QUIZ 1
+             ============================================ -->
+        <section class="slide locked" id="slide-03">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_08_Q1</span>
+                <h1>Quiz 1: Resistors & Networks</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q1">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q1">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 4: LESSON 2 — Cell EMF, Internal Resistance & Power
+             ============================================ -->
+        <section class="slide locked" id="slide-04">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_08_L2</span>
+                <h1>Cell EMF, Internal Resistance & Energy Cost</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Cell EMF, Terminal Voltage & Internal Resistance</h2>
+                <p>A cell has a chemical resistance to ion flow within itself, called **internal resistance ($r$)**.</p>
+                <ul>
+                    <li>When no current is drawn (Open circuit), Voltmeter reading = **EMF ($\mathcal{E}$)**.</li>
+                    <li>When current $I$ is drawn (Closed circuit), Voltmeter reading = **Terminal Voltage ($V$)**.</li>
+                    <li>The potential drop inside the cell due to internal resistance is $v = I \times r$.
+                        <br>Therefore: $\mathcal{E} = V + v = V + Ir \rightarrow V = \mathcal{E} - Ir$.
+                    </li>
+                </ul>
+
+                <h2>2. Electrical Energy & Power</h2>
+                <ul>
+                    <li><strong>Electric Power ($P$):</strong> Rate at which electrical energy is consumed:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">P = V &times; I = I²R = V² / R</span>
+                        Unit: **Watt (W)**.
+                    </li>
+                    <li><strong>Electrical Energy ($W$):</strong> $W = P \times t$. Commercial unit is **kilowatt-hour (kWh)**.
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">1 kWh = 1 kW &times; 1 hour = 1000 W &times; 3600 s = 3.6 &times; 10⁶ Joules</span>
+                    </li>
+                    <li><strong>Calculating Cost of Electricity:</strong>
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">Number of units (kWh) = Total Power (in kW) &times; Total Time (in hours)</span>
+                    </li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START MEGA QUIZ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 5: MEGA QUIZ
+             ============================================ -->
+        <section class="slide locked" id="slide-05">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_08_MEGA</span>
+                <h1>Mega Quiz: Circuit Calculations</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-mega">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="mega">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>GRADUATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 6: GRADUATION
+             ============================================ -->
+        <section class="slide locked" id="slide-06">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_08_GRADUATION</span>
+                <h1>Chapter Completed!</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">\(^ヮ^)/</div>
+                    <div class="companion-text">Phys-Bot is extremely proud of you!</div>
+                </div>
+
+                <p>Outstanding job, Kinjal! You have successfully mastered **Chapter 8: Current Electricity**. You have conquered all circuit grids, parallel equivalent formulas, cell potential drops, and commercial power calculations!</p>
+
+                <div class="graduation-box" style="margin: 2rem 0; border: 4px double var(--border-color); padding: 2rem; text-align: center; background: rgba(0,0,0,0.01);">
+                    <div class="grad-certificate">
+                        <h2 style="border:none;margin-top:0;font-family:var(--font-mono);font-size:1.4rem;">CERTIFICATE OF EXCELLENCE</h2>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin:1.5rem 0;">This certifies that</p>
+                        <h1 style="font-size:2.5rem;letter-spacing:0.5px;font-family:var(--font-mono);font-weight:700;">KINJAL</h1>
+                        <p style="font-family:'JetBrains Mono',monospace;margin:1.5rem 0 0.5rem 0;">has mastered the topic of</p>
+                        <p style="font-weight:700;font-family:var(--font-mono);text-transform:uppercase;font-size:1.2rem;color:var(--text-primary);">PHYSICS: CHAPTER 8 - CURRENT ELECTRICITY</p>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;margin-top:1.5rem;">With Final Score: <span id="cert-score" style="font-weight:700;">-</span></p>
+                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);font-family:var(--font-mono);">Verified by Phys-Bot the circuit chronicler on <span id="cert-date">-</span></p>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK TO EXERCISES</button>
+                    <div>
+                        <a href="../../index.html" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;">← HOME</a>
+                        <button class="btn-primary" onclick="window.print()">PRINT CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="current_electricity.js"></script>
+    <script src="../../quiz_engine.js"></script>
+</body>
+</html>

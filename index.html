@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinjal's ICSE Hub — Class 10 Learning Platform</title>
+    <meta name="description" content="Interactive ICSE Class 10 learning system — all subjects, chapters, difficulty ratings, and study guides aligned to the 2027 CISCE syllabus.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-body">
+
+    <div class="home-container">
+        <!-- Hero Section -->
+        <div class="home-hero">
+            <div class="home-hero-dot"></div>
+            <h1 class="home-title">KINJAL'S<br>ICSE HUB</h1>
+            <p class="home-subtitle">ICSE CLASS 10 — INTERACTIVE LEARNING SYSTEM</p>
+            <div class="home-companion">
+                <pre class="home-artie"> (•‿•)
+&lt;| |&gt;
+ / \</pre>
+                <p class="home-companion-msg">Hey Kinjal! Pick a chapter below to start learning. Each chapter teaches you the rules, tests you, and gives you a certificate when you're done!</p>
+            </div>
+        </div>
+
+        <!-- Info Button -->
+        <button class="info-fab" id="info-fab" onclick="openInfoModal()" aria-label="View full syllabus breakdown">
+            <span class="info-fab-icon">ℹ</span>
+            <span class="info-fab-label">SYLLABUS BREAKDOWN</span>
+        </button>
+
+        <!-- ======================== CHAPTER GRID ======================== -->
+        <div class="home-grid" id="home-grid-container">
+            <!-- Dynamically populated by home.js -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="home-footer">
+            <span>BUILT WITH ♥ FOR KINJAL // ICSE 2027 SYLLABUS-ALIGNED // VERIFIED VIA CISCE.ORG</span>
+        </footer>
+    </div>
+
+    <!-- ======================== INFO MODAL ======================== -->
+    <div class="info-modal-overlay" id="info-modal-overlay" onclick="closeInfoModal()">
+        <div class="info-modal" onclick="event.stopPropagation()">
+            <div class="info-modal-header">
+                <div>
+                    <h2 class="info-modal-title">ICSE 2027 — FULL SYLLABUS BREAKDOWN</h2>
+                    <p class="info-modal-subtitle">Verified via official CISCE board syllabus (cisce.org)</p>
+                </div>
+                <button class="info-modal-close" onclick="closeInfoModal()" aria-label="Close modal">✕</button>
+            </div>
+
+            <!-- Subject Filter Tabs -->
+            <div class="info-tabs" id="info-tabs">
+                <button class="info-tab active" data-subject="all">ALL</button>
+                <button class="info-tab" data-subject="eng-lang">ENG LANG</button>
+                <button class="info-tab" data-subject="eng-lit">ENG LIT</button>
+                <button class="info-tab" data-subject="math">MATHS</button>
+                <button class="info-tab" data-subject="physics">PHYSICS</button>
+                <button class="info-tab" data-subject="chemistry">CHEMISTRY</button>
+                <button class="info-tab" data-subject="biology">BIOLOGY</button>
+                <button class="info-tab" data-subject="history">HISTORY</button>
+                <button class="info-tab" data-subject="geography">GEO</button>
+                <button class="info-tab" data-subject="economics">ECON</button>
+                <button class="info-tab" data-subject="odia">ODIA</button>
+            </div>
+
+            <!-- Legend -->
+            <div class="info-legend">
+                <div class="legend-group">
+                    <span class="legend-label">DIFFICULTY:</span>
+                    <span class="legend-badge badge-easy">EASY</span>
+                    <span class="legend-badge badge-moderate">MODERATE</span>
+                    <span class="legend-badge badge-difficult">DIFFICULT</span>
+                </div>
+                <div class="legend-group">
+                    <span class="legend-label">LENGTH:</span>
+                    <span class="legend-badge badge-short">SHORT</span>
+                    <span class="legend-badge badge-normal">NORMAL</span>
+                    <span class="legend-badge badge-lengthy">LENGTHY</span>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="info-table-wrap">
+                <table class="info-table" id="info-table">
+                    <thead>
+                        <tr>
+                            <th class="col-num">#</th>
+                            <th class="col-subject">SUBJECT</th>
+                            <th class="col-chapter">CHAPTER</th>
+                            <th class="col-diff">DIFFICULTY</th>
+                            <th class="col-length">LENGTH</th>
+                        </tr>
+                    </thead>
+                    <tbody id="info-table-body">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Marks Weightage Container (Populated by JS for specific subjects) -->
+            <div id="marks-weightage-container" style="margin-top: 1.5rem; display: none;"></div>
+
+            <div class="info-modal-footer">
+                <span>SOURCE: CISCE Official Regulations & Syllabuses — Year 2027 // cisce.org</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Files -->
+    <script src="subjects/eng_lang/data.js"></script>
+    <script src="subjects/eng_lit/data.js"></script>
+    <script src="subjects/math/data.js"></script>
+    <script src="subjects/physics/data.js"></script>
+    <script src="subjects/chemistry/data.js"></script>
+    <script src="subjects/biology/data.js"></script>
+    <script src="subjects/history/data.js"></script>
+    <script src="subjects/geography/data.js"></script>
+    <script src="subjects/economics/data.js"></script>
+    <script src="subjects/odia/data.js"></script>
+    
+    <!-- App Logic -->
+    <script src="home.js"></script>
+
+</body>
+</html>

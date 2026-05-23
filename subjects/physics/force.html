@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Force — Physics ICSE | Kinjal's Learning Hub</title>
+    <meta name="description" content="Interactive ICSE Class 10 Physics chapter on Force — turning effect, torque, center of gravity, uniform circular motion, with detailed quizzes and step-by-step numerical explanations.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-section">
+            <div class="logo-dot"></div>
+            <a href="../../index.html" style="text-decoration:none;color:inherit;margin-right:1rem;">← HOME</a>
+            <span>PHYS.EDU // KINJAL</span>
+        </div>
+        <div class="nav-progress">
+            <div class="progress-track">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-text">[01/09] PROGRESS: 0%</div>
+        </div>
+    </header>
+
+    <!-- Main Horizontal Scrolling Container -->
+    <main class="scroll-container">
+
+        <!-- ============================================
+             SLIDE 1: WELCOME
+             ============================================ -->
+        <section class="slide active" id="slide-01">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_INTRO</span>
+                <h1>Chapter 29: Force</h1>
+                <p>Welcome, Kinjal! We are starting the Physics curriculum with the mechanics of <strong>Force</strong>. In this chapter, we will learn about the turning effect of a force (torque), the principle of moments, centers of gravity, and the differences between uniform linear and circular motions.</p>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <p><strong>Chapter Outline:</strong></p>
+                <ul>
+                    <li><strong>Lesson 1</strong>: Moment of a Force (Torque) & Equilibrium</li>
+                    <li><strong>Quiz 1</strong>: Torque & Moment calculations</li>
+                    <li><strong>Lesson 2</strong>: Principle of Moments & Center of Gravity</li>
+                    <li><strong>Quiz 2</strong>: Balancing rules & CG positions</li>
+                    <li><strong>Lesson 3</strong>: Uniform Circular Motion (Centripetal vs Centrifugal)</li>
+                    <li><strong>Quiz 3</strong>: Circular Motion concepts</li>
+                    <li><strong>Mega Quiz</strong>: Master-level cumulative numerical challenges</li>
+                </ul>
+
+                <blockquote>
+                    <span class="tip-badge">ICSE 2027 SYLLABUS</span>
+                    This chapter covers: Turning effect of a force, moment of a force (&tau; = F &times; d), factors affecting it, units (SI: N m); Principle of moments and its numerical problems; Center of gravity (definition, location for common bodies); Uniform circular motion (centripetal and centrifugal force - qualitative).
+                </blockquote>
+
+                <div class="btn-container">
+                    <span></span>
+                    <button class="btn-primary btn-next">START LEARNING <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 2: LESSON 1 — Torque & Equilibrium
+             ============================================ -->
+        <section class="slide locked" id="slide-02">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_L1</span>
+                <h1>Moment of a Force (Torque)</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Turning Effect of Force</h2>
+                <p>When a force acts on a body pivoted at a point, it turns or rotates the body about that pivot (axis of rotation). This turning effect is called the <strong>Moment of Force</strong> or <strong>Torque</strong> (&tau;).</p>
+
+                <h2>2. Mathematical Expression</h2>
+                <p>The moment of force depends on two factors:</p>
+                <ul>
+                    <li>The magnitude of the force applied ($F$).</li>
+                    <li>The perpendicular distance of the line of action of force from the pivot ($d$).</li>
+                </ul>
+                <p style="font-family: var(--font-mono); font-weight: bold; margin: 1.5rem 0; text-align: center; font-size: 1.1rem; border: 1px solid var(--border-color); padding: 0.75rem; background: rgba(0,0,0,0.02); letter-spacing: -0.5px;">
+                    Moment of Force (&tau;) = Force (F) &times; Perpendicular Distance (d)
+                </p>
+
+                <h2>3. Units and Conversions</h2>
+                <table class="tech-table" style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.05);"><th style="border:1px solid var(--border-color); padding:8px;">System</th><th style="border:1px solid var(--border-color); padding:8px;">Unit of Force</th><th style="border:1px solid var(--border-color); padding:8px;">Unit of Distance</th><th style="border:1px solid var(--border-color); padding:8px;">Unit of Torque</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">SI System</td><td style="border:1px solid var(--border-color); padding:8px;">Newton (N)</td><td style="border:1px solid var(--border-color); padding:8px;">Meter (m)</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">Newton-meter (N m)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">CGS System</td><td style="border:1px solid var(--border-color); padding:8px;">Dyne (dyn)</td><td style="border:1px solid var(--border-color); padding:8px;">Centimeter (cm)</td><td style="border:1px solid var(--border-color); padding:8px;">Dyne-centimeter (dyn cm)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Gravitational</td><td style="border:1px solid var(--border-color); padding:8px;">kgf / gf</td><td style="border:1px solid var(--border-color); padding:8px;">m / cm</td><td style="border:1px solid var(--border-color); padding:8px;">kgf m / gf cm</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Conversion Factors:</strong></p>
+                <ul>
+                    <li>1 N m = 10<sup>5</sup> dyn &times; 10<sup>2</sup> cm = 10<sup>7</sup> dyn cm</li>
+                    <li>1 kgf m = 9.8 N m</li>
+                    <li>1 gf cm = 980 dyn cm</li>
+                </ul>
+
+                <h2>4. Sign Convention</h2>
+                <ul>
+                    <li><strong>Anti-clockwise moment:</strong> Tends to turn the body anti-clockwise. Taken as <strong>positive (+)</strong>.</li>
+                    <li><strong>Clockwise moment:</strong> Tends to turn the body clockwise. Taken as <strong>negative (-)</strong>.</li>
+                </ul>
+
+                <h2>5. State of Equilibrium</h2>
+                <p>When a number of forces acting on a body produce no change in its state of rest or of linear/rotational motion, the body is in <strong>equilibrium</strong>.</p>
+                <ul>
+                    <li><strong>Static Equilibrium:</strong> Body remains at rest (e.g., book on a table, balanced scale).</li>
+                    <li><strong>Dynamic Equilibrium:</strong> Body remains in uniform motion (e.g., rain falling at terminal velocity, planet orbiting).</li>
+                    <li><strong>Conditions for Equilibrium:</strong>
+                        <ol>
+                            <li>The algebraic sum of all forces must be zero (&sum; F = 0).</li>
+                            <li>The algebraic sum of moments of all forces about any point must be zero (&sum; &tau; = 0, i.e., Sum of Anti-clockwise Moments = Sum of Clockwise Moments).</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 1 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 3: QUIZ 1
+             ============================================ -->
+        <section class="slide locked" id="slide-03">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_Q1</span>
+                <h1>Quiz 1: Torque & Moment of Force</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q1">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q1">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 4: LESSON 2 — Principle of Moments & CG
+             ============================================ -->
+        <section class="slide locked" id="slide-04">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_L2</span>
+                <h1>Principle of Moments & Center of Gravity</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Principle of Moments</h2>
+                <p>According to this principle, if a body is pivoted and is in rotational equilibrium, then:</p>
+                <p style="font-family: var(--font-mono); font-weight: bold; margin: 1.5rem 0; text-align: center; font-size: 1.1rem; border: 1px solid var(--border-color); padding: 0.75rem; background: rgba(0,0,0,0.02); letter-spacing: -0.5px;">
+                    Sum of Anti-clockwise Moments = Sum of Clockwise Moments
+                </p>
+                <p>For a pivoted beam with masses W<sub>1</sub> and W<sub>2</sub> suspended at distances d<sub>1</sub> (left) and d<sub>2</sub> (right) from the fulcrum:</p>
+                <p style="text-align:center; font-family: var(--font-mono); margin-bottom:1.5rem; font-weight:bold;">W<sub>1</sub> &times; d<sub>1</sub> = W<sub>2</sub> &times; d<sub>2</sub></p>
+
+                <h2>2. Center of Gravity (CG)</h2>
+                <p>The <strong>Center of Gravity</strong> of a body is that point through which the entire weight of the body acts, regardless of the body's orientation. The algebraic sum of moments of weights of all particles of the body about the CG is zero.</p>
+                <ul>
+                    <li>The CG of a body can lie <strong>within</strong> or <strong>outside</strong> its physical material (e.g., geometric center of a hollow sphere or ring contains no material, but is its CG).</li>
+                    <li>The position of the CG depends on the <strong>shape</strong> of the body and the <strong>distribution of mass</strong> within it. If a body is deformed, its CG shifts.</li>
+                </ul>
+
+                <h2>3. CG of Regular Uniform Bodies</h2>
+                <table class="tech-table" style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.05);"><th style="border:1px solid var(--border-color); padding:8px; width:35%;">Body Shape</th><th style="border:1px solid var(--border-color); padding:8px; width:65%;">Location of Center of Gravity (CG)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Rod / Scale</td><td style="border:1px solid var(--border-color); padding:8px;">Midpoint of the rod (e.g., 50 cm mark for a 100 cm rule)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Circular Disc / Ring</td><td style="border:1px solid var(--border-color); padding:8px;">Geometric center</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Triangular Lamina</td><td style="border:1px solid var(--border-color); padding:8px;">Centroid (intersection of medians, 1/3 height from base BC along median AD)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Rectangle / Square</td><td style="border:1px solid var(--border-color); padding:8px;">Intersection of diagonals</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Solid / Hollow Cone</td><td style="border:1px solid var(--border-color); padding:8px;">On the axis, at a height h/4 from base (solid) or h/3 from base (hollow)</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 2 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 5: QUIZ 2
+             ============================================ -->
+        <section class="slide locked" id="slide-05">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_Q2</span>
+                <h1>Quiz 2: Principle of Moments & CG</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q2">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q2">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 6: LESSON 3 — Circular Motion
+             ============================================ -->
+        <section class="slide locked" id="slide-06">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_L3</span>
+                <h1>Uniform Circular Motion</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Defining Circular Motion</h2>
+                <p>When a particle moves along a circular path, its motion is called circular motion. If the particle travels with a constant speed, the motion is called <strong>Uniform Circular Motion</strong>.</p>
+
+                <h2>2. Circular vs Linear Motion</h2>
+                <table class="tech-table" style="width:100%; border-collapse:collapse; margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.05);"><th style="border:1px solid var(--border-color); padding:8px;">Property</th><th style="border:1px solid var(--border-color); padding:8px;">Uniform Linear Motion</th><th style="border:1px solid var(--border-color); padding:8px;">Uniform Circular Motion</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Speed</td><td style="border:1px solid var(--border-color); padding:8px;">Constant</td><td style="border:1px solid var(--border-color); padding:8px;">Constant</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Velocity</td><td style="border:1px solid var(--border-color); padding:8px;">Constant (direction does not change)</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">Variable (direction changes continuously)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Acceleration</td><td style="border:1px solid var(--border-color); padding:8px;">Zero (a = 0)</td><td style="border:1px solid var(--border-color); padding:8px; font-weight:700;">Non-zero (Centripetal Acceleration acts inwards)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:8px;" class="mono-cell">Net Force</td><td style="border:1px solid var(--border-color); padding:8px;">Zero</td><td style="border:1px solid var(--border-color); padding:8px;">Non-zero (Centripetal Force acts inwards)</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Note:</strong> Uniform Circular Motion is always an <strong>accelerated motion</strong>, even though the speed is constant, because the velocity vector is constantly changing direction.</p>
+
+                <h2>3. Centripetal Force</h2>
+                <p>A force acting on a body performing circular motion, directed towards the center of the circular path, is called <strong>Centripetal Force</strong>. Without it, the body would fly off tangentially due to inertia.</p>
+                <ul>
+                    <li>It is a <strong>real force</strong>, provided by physical mechanisms:
+                        <ul>
+                            <li><strong>Earth orbiting Sun</strong>: Gravitational force provides centripetal force.</li>
+                            <li><strong>Stone whirled on a string</strong>: Tension in string provides centripetal force.</li>
+                            <li><strong>Car turning a corner</strong>: Friction between tyres and road provides centripetal force.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>4. Centrifugal Force</h2>
+                <p>A pseudo-force (fictitious force) that appears to act radially outwards on a body in a rotating (non-inertial) frame of reference is called <strong>Centrifugal Force</strong>.</p>
+                <ul>
+                    <li>It is <strong>not</strong> a real force; it does not exist in an inertial frame.</li>
+                    <li>It is <strong>not</strong> the reaction force of centripetal force. Action-reaction pairs act on different bodies. Centripetal and centrifugal forces act on the <em>same</em> body in different reference frames, so they cannot be Newton's third law pairs.</li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 3 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 7: QUIZ 3
+             ============================================ -->
+        <section class="slide locked" id="slide-07">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_Q3</span>
+                <h1>Quiz 3: Uniform Circular Motion</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q3">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q3">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>MEGA REVISION <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 8: MEGA REVISION
+             ============================================ -->
+        <section class="slide locked" id="slide-08">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_MEGA</span>
+                <h1>Mega Revision: Cumulative Force Challenges</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-mega">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="mega">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>GRADUATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 9: GRADUATION
+             ============================================ -->
+        <section class="slide locked" id="slide-09">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_29_GRADUATION</span>
+                <h1>Chapter Completed!</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">\(^ヮ^)/</div>
+                    <div class="companion-text">Phys-Bot is proud of you!</div>
+                </div>
+
+                <p>Congratulations, Kinjal! You have successfully completed <strong>Force</strong>. You have mastered turning moments, scale balancing, center of gravity points, and the mechanics of circular motion!</p>
+
+                <div class="graduation-box" style="margin: 2rem 0; border: 4px double var(--border-color); padding: 2rem; text-align: center; background: rgba(0,0,0,0.01);">
+                    <div class="grad-certificate">
+                        <h2 style="border:none;margin-top:0;font-family:var(--font-mono);font-size:1.4rem;">CERTIFICATE OF EXCELLENCE</h2>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin:1.5rem 0;">This certifies that</p>
+                        <h1 style="font-size:2.5rem;letter-spacing:0.5px;font-family:var(--font-mono);font-weight:700;">KINJAL</h1>
+                        <p style="font-family:'JetBrains Mono',monospace;margin:1.5rem 0 0.5rem 0;">has mastered the topic of</p>
+                        <p style="font-weight:700;font-family:var(--font-mono);text-transform:uppercase;font-size:1.2rem;color:var(--text-primary);">PHYSICS: CHAPTER 29 - FORCE</p>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;margin-top:1.5rem;">With Final Score: <span id="cert-score" style="font-weight:700;">-</span></p>
+                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);font-family:var(--font-mono);">Verified by Phys-Bot the Learning Guide on <span id="cert-date">-</span></p>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK TO EXERCISES</button>
+                    <div>
+                        <a href="../../index.html" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;">← HOME</a>
+                        <button class="btn-primary" onclick="window.print()">PRINT CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="force.js"></script>
+    <script src="../../quiz_engine.js"></script>
+</body>
+</html>

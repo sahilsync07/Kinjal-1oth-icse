@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radioactivity & Nuclear Energy — Physics ICSE | Kinjal's Learning Hub</title>
+    <meta name="description" content="Interactive ICSE Class 10 Physics lesson on Radioactivity & Nuclear Energy — Alpha, Beta, Gamma emissions, decay equations, nuclear fission, and fusion.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-section">
+            <div class="logo-dot"></div>
+            <a href="../../index.html" style="text-decoration:none;color:inherit;margin-right:1rem;">← HOME</a>
+            <span>RADIOACTIVITY // KINJAL</span>
+        </div>
+        <div class="nav-progress">
+            <div class="progress-track">
+                <div class="progress-bar" style="width: 0%;"></div>
+            </div>
+            <div class="progress-text">[01/06] PROGRESS: 0%</div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="scroll-container">
+
+        <!-- ============================================
+             SLIDE 1: WELCOME
+             ============================================ -->
+        <section class="slide active" id="slide-01">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_12_INTRO</span>
+                <h1>Chapter 12: Radioactivity & Nuclear Energy</h1>
+                <p>Welcome, Kinjal! We arrive at the grand finale of Class 10 Physics: **Radioactivity & Nuclear Energy**. Radioactivity is a pure **nuclear phenomenon** unaffected by any physical or chemical changes. In this chapter, we will master **Alpha ($\alpha$), Beta ($\beta$), and Gamma ($\gamma$) emissions**, practice completing balancing **Nuclear Decay Equations**, understand **Background Radiation**, and unlock the physics of massive power release: **Nuclear Fission & Fusion**.</p>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <p><strong>Chapter Outline:</strong></p>
+                <ul>
+                    <li><strong>Lesson 1</strong>: Radioactive Decay — Alpha, Beta, and Gamma radiation properties, field deflections, & balancing decay equations</li>
+                    <li><strong>Quiz 1</strong>: Penetration ranks, ionization scales, and atomic/mass number changes</li>
+                    <li><strong>Lesson 2</strong>: Nuclear Power — Fission chain reactions, Fusion stellar engines, safety shielding, & background radiation</li>
+                    <li><strong>Mega Quiz</strong>: Ultimate board-style review of decay series, reactor control rods, and thermonuclear temperature thresholds</li>
+                </ul>
+
+                <blockquote>
+                    <span class="tip-badge">BOARD CRITICAL</span>
+                    *Beta Decay Trap:* In a $\beta$-decay, a fast-moving electron is emitted from the **nucleus**, not the orbital shell! Inside an unstable nucleus, a neutron spontaneously converts into a proton and an electron:
+                    <br><span style="font-family:var(--font-mono);font-weight:bold;margin-top:0.5rem;display:block;text-align:center;">₁⁰n  &rarr;  ₁¹p + ₀⁻¹e (beta particle)</span>
+                    As a result, the atomic number ($Z$) increases by 1, while the mass number ($A$) remains completely unchanged.
+                </blockquote>
+
+                <div class="btn-container">
+                    <span></span>
+                    <button class="btn-primary btn-next">START LEARNING <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 2: LESSON 1 — Radiation Properties & Decay Equations
+             ============================================ -->
+        <section class="slide locked" id="slide-02">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_12_L1</span>
+                <h1>Nuclear Radiations & Decay Rules</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Comparison of Alpha, Beta, and Gamma</h2>
+                <table class="tech-table" style="width:100%; border-collapse:collapse; margin:1.5rem 0; font-size: 0.95rem;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.05);"><th style="border:1px solid var(--border-color); padding:6px;">Property</th><th style="border:1px solid var(--border-color); padding:6px; width:28%;">Alpha (&alpha;)</th><th style="border:1px solid var(--border-color); padding:6px; width:28%;">Beta (&beta;)</th><th style="border:1px solid var(--border-color); padding:6px; width:28%;">Gamma (&gamma;)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="border:1px solid var(--border-color); padding:6px;" class="mono-cell">Nature</td><td style="border:1px solid var(--border-color); padding:6px;">Helium Nucleus ($\text{He}^{2+}$)</td><td style="border:1px solid var(--border-color); padding:6px;">Fast-moving electron ($\text{e}^-$)</td><td style="border:1px solid var(--border-color); padding:6px;">Electromagnetic photons</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:6px;" class="mono-cell">Charge</td><td style="border:1px solid var(--border-color); padding:6px;">$+2e$</td><td style="border:1px solid var(--border-color); padding:6px;">$-1e$</td><td style="border:1px solid var(--border-color); padding:6px;">Neutral ($0$)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:6px;" class="mono-cell">Speed</td><td style="border:1px solid var(--border-color); padding:6px;">$\approx 10^7\text{ m/s}$ ($0.05c$)</td><td style="border:1px solid var(--border-color); padding:6px;">Up to $90\%$ of light speed</td><td style="border:1px solid var(--border-color); padding:6px;">Speed of light ($3 \times 10^8\text{ m/s}$)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:6px;" class="mono-cell">Ionizing Power</td><td style="border:1px solid var(--border-color); padding:6px; font-weight:bold;">Maximum (10,000x of &gamma;)</td><td style="border:1px solid var(--border-color); padding:6px;">Moderate (100x of &gamma;)</td><td style="border:1px solid var(--border-color); padding:6px;">Minimum ($1$)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:6px;" class="mono-cell">Penetrating</td><td style="border:1px solid var(--border-color); padding:6px;">Minimum (stopped by paper)</td><td style="border:1px solid var(--border-color); padding:6px;">Moderate (stopped by 5mm Al)</td><td style="border:1px solid var(--border-color); padding:6px; font-weight:bold;">Maximum (needs thick Lead)</td></tr>
+                        <tr><td style="border:1px solid var(--border-color); padding:6px;" class="mono-cell">E/M Deflection</td><td style="border:1px solid var(--border-color); padding:6px;">Deflected slightly</td><td style="border:1px solid var(--border-color); padding:6px;">Deflected strongly (opposite)</td><td style="border:1px solid var(--border-color); padding:6px;">Undeflected (straight)</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>2. Radioactive Decay Equations</h2>
+                <ul>
+                    <li><strong>Alpha (&alpha;) Decay:</strong>
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">_Z^A X  &rarr;  _{Z-2}^{A-4} Y + ₂⁴He (or &alpha;) + Energy</span>
+                        *Result:* Mass number ($A$) decreases by 4; Atomic number ($Z$) decreases by 2.
+                    </li>
+                    <li><strong>Beta (&beta;) Decay:</strong>
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">_Z^A X  &rarr;  _{Z+1}^A Y + _{-1}⁰e (or &beta;) + Energy</span>
+                        *Result:* Mass number ($A$) is unchanged; Atomic number ($Z$) increases by 1.
+                    </li>
+                    <li><strong>Gamma (&gamma;) Emission:</strong>
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">_Z^A X*  &rarr;  _Z^A X + &gamma; (photon)</span>
+                        *Result:* Excited nucleus releases energy; $A$ and $Z$ remain exactly the same.
+                    </li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START QUIZ 1 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 3: QUIZ 1
+             ============================================ -->
+        <section class="slide locked" id="slide-03">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_12_Q1</span>
+                <h1>Quiz 1: Decay Equations & Properties</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-q1">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="q1">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>NEXT LESSON <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 4: LESSON 2 — Nuclear Fission, Fusion & Safety
+             ============================================ -->
+        <section class="slide locked" id="slide-04">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_12_L2</span>
+                <h1>Nuclear Fission, Fusion & Radiation Safety</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <h2>1. Nuclear Fission</h2>
+                <p>The splitting of a heavy nucleus into two lighter nuclei of nearly equal mass, accompanied by the release of neutrons and huge energy.</p>
+                <ul>
+                    <li><strong>Example:</strong> Uranium-235 hit by a slow (thermal) neutron:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">₉₂²³⁵U + ₀¹n  &rarr;  ₅₆¹⁴⁴Ba + ₃₆⁸⁹Kr + 3(₀¹n) + ~190 MeV Energy</span>
+                    </li>
+                    <li><strong>Chain Reaction:</strong> The 3 released neutrons trigger fission in other U-235 atoms.
+                        <br>1. *Controlled (Nuclear Reactor):* Excess neutrons are absorbed using **boron/cadmium control rods** and slowed down using **heavy water/graphite moderators**.
+                        <br>2. *Uncontrolled (Atomic Bomb):* All neutrons cause cascade fission, releasing energy instantaneously.
+                    </li>
+                </ul>
+
+                <h2>2. Nuclear Fusion</h2>
+                <p>The combining of two or more light nuclei to form a single heavier nucleus with massive energy release.</p>
+                <ul>
+                    <li><strong>Example:</strong> Hydrogen isotopes combining:
+                        <br><span style="font-family:var(--font-mono);font-weight:bold;display:block;text-align:center;margin:0.5rem 0;">₁²H + ₁³H  &rarr;  ₂⁴He + ₀¹n + 17.6 MeV Energy</span>
+                    </li>
+                    <li><strong>Thermonuclear Reaction:</strong> Requires extremely high temperature ($\approx 10^7\text{ K}$) and pressure to overcome the electrostatic repulsion between positively charged hydrogen nuclei. This is the **energy source of the Sun and Stars**.</li>
+                </ul>
+
+                <h2>3. Safety & Background Radiation</h2>
+                <ul>
+                    <li><strong>Background Radiation:</strong> Radioactive rays present in the atmosphere at all times.
+                        <br>1. *Internal (Natural):* Potassium-40, Carbon-14 inside food and tissues.
+                        <br>2. *External (Natural/Artificial):* Cosmic rays, Radon gas, nuclear medical waste.
+                    </li>
+                    <li><strong>Safety Rules:</strong> Store waste in **thick lead casks** buried deep underground; use **robotic arms** and **lead-apron clothing**; monitor dosage with **film badges**.</li>
+                </ul>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <button class="btn-primary btn-next">START MEGA QUIZ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 5: MEGA QUIZ
+             ============================================ -->
+        <section class="slide locked" id="slide-05">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_12_MEGA</span>
+                <h1>Mega Quiz: Nuclear Energy Mastery</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">(•‿•)</div>
+                    <div class="companion-text">Loading Phys-Bot...</div>
+                </div>
+
+                <div class="quiz-container" id="quiz-mega">
+                    <div class="score-summary"></div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK</button>
+                    <div>
+                        <button class="btn-secondary check-btn" data-check="mega">CHECK ANSWERS</button>
+                        <button class="btn-primary btn-next" disabled>GRADUATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SLIDE 6: GRADUATION
+             ============================================ -->
+        <section class="slide locked" id="slide-06">
+            <div class="card">
+                <span class="meta-ref">REF_ID: PHY_12_GRADUATION</span>
+                <h1>Subject Mastery Achieved!</h1>
+
+                <div class="companion-box">
+                    <div class="companion-avatar">\(^ヮ^)/</div>
+                    <div class="companion-text">Phys-Bot and the entire faculty salute you!</div>
+                </div>
+
+                <p>Incredible, stellar, mind-blowing job, Kinjal! You have successfully mastered **Chapter 12: Radioactivity & Nuclear Energy**! You have conquered all alpha-beta balancing acts, field deflection curves, fission reactor controls, and thermonuclear stellar fusion parameters!</p>
+                
+                <p style="margin-bottom:1.5rem;">With this chapter completed, you have successfully finished the **ENTIRE CLASS 10 PHYSICS SYLLABUS**! You are fully prepared to secure a perfect centum in your ICSE board examinations!</p>
+
+                <div class="graduation-box" style="margin: 2rem 0; border: 4px double var(--border-color); padding: 2rem; text-align: center; background: rgba(0,0,0,0.01);">
+                    <div class="grad-certificate">
+                        <h2 style="border:none;margin-top:0;font-family:var(--font-mono);font-size:1.4rem;">PHYSICS SYLLABUS CONQUEROR</h2>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin:1.5rem 0;">This ultimate certificate proclaims that</p>
+                        <h1 style="font-size:2.5rem;letter-spacing:0.5px;font-family:var(--font-mono);font-weight:700;">KINJAL</h1>
+                        <p style="font-family:'JetBrains Mono',monospace;margin:1.5rem 0 0.5rem 0;">has successfully completed all 12 chapters of the</p>
+                        <p style="font-weight:700;font-family:var(--font-mono);text-transform:uppercase;font-size:1.2rem;color:var(--text-primary);">ICSE CLASS 10 PHYSICS CURRICULUM</p>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;margin-top:1.5rem;">Graduating with outstanding performance in all Interactive Modules.</p>
+                        <p style="font-size:0.8rem;margin-top:2rem;color:var(--text-secondary);font-family:var(--font-mono);">Certified by Phys-Bot the core reactor warden on <span id="cert-date">-</span></p>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn-secondary btn-prev">BACK TO EXERCISES</button>
+                    <div>
+                        <a href="../../index.html" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;">← HOME</a>
+                        <button class="btn-primary" onclick="window.print()">PRINT CERTIFICATE <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="radioactivity.js"></script>
+    <script src="../../quiz_engine.js"></script>
+</body>
+</html>
