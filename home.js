@@ -81,8 +81,20 @@ window.renderSubjectView = function(subjKey) {
     <div class="dashboard-banner" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.5rem; margin-bottom: 2rem;">
         <h2 style="font-family: var(--font-mono); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main);">${subjLabel}</h2>
         <p style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.9rem;">Select a module below to start learning.</p>
-    </div>
-    <div class="subject-chapter-list">`;
+    </div>`;
+
+    if (subjKey === 'geography') {
+        html += `
+        <div class="dashboard-banner" style="background: linear-gradient(rgba(96, 165, 250, 0.1), rgba(0, 0, 0, 0.4)); border: 1px solid #60a5fa; padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; box-shadow: 0 4px 20px rgba(96, 165, 250, 0.15);">
+            <div>
+                <h2 style="font-family: var(--font-mono); font-size: 1.2rem; margin: 0 0 0.5rem 0; color: #60a5fa;">🌟 BOARD TOPPER'S SUBJECTIVE HUB</h2>
+                <p style="color: var(--text-muted); margin: 0; font-size: 0.85rem;">Interactive answer sheets featuring <strong>Oswaal's Pitfalls</strong>, <strong>Together With's Reasons</strong>, and <strong>Arihant's Structured Point rubrics</strong>.</p>
+            </div>
+            <a href="subjects/geography/subjective_hub.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; background: #60a5fa; color: #000; font-family: var(--font-mono); font-size: 0.85rem; font-weight: bold; padding: 0.75rem 1.5rem; border-radius: 4px; border: 1px solid #60a5fa; transition: all 0.2s;">LAUNCH SUBJECTIVE HUB →</a>
+        </div>`;
+    }
+
+    html += `<div class="subject-chapter-list">`;
 
     subjChapters.forEach(ch => {
         const isPending = ch.href === "#";
