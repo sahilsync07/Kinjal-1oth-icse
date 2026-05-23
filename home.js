@@ -228,6 +228,34 @@ function renderTable(filter) {
                 </table>
             </div>
         `;
+    } else if (filter === 'geography') {
+        weightageContainer.style.display = 'block';
+        weightageContainer.innerHTML = `
+            <div style="margin-top: 2rem;">
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">1. QUESTION FORMAT WEIGHTAGE (80 MARKS)</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>SECTION</th><th>CONTENT AREA</th><th>FORMAT</th><th>MARKS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Part I (Compulsory)</td><td>Topography & Maps</td><td>Topo Map (10), Outline Map (10), MCQs (10)</td><td>30 Marks</td></tr>
+                        <tr><td>Part II (Choice-based)</td><td>Geography Chapters</td><td>Attempt any 5 out of 9 questions. (Usually formatted as 2+2+3+3 marks per question)</td><td>50 Marks (5x10)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">2. CHAPTER-WISE STRATEGY & QUESTION TYPES</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>QUESTION TYPE</th><th>DESCRIPTION & STRATEGY</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Give Reason (3 Marks)</td><td>Requires explicit geographical reasoning (e.g., "Why does Chennai get winter rain?"). Covered heavily in our 'Masterclass' sections.</td></tr>
+                        <tr><td>Definitions & Distinctions (2 Marks)</td><td>Direct definitions or "Differentiate between X and Y" (e.g., Inundation vs Perennial canals).</td></tr>
+                        <tr><td>Characteristics (2-3 Marks)</td><td>Listing features of soil types, forest types, or crop requirements.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        `;
     } else {
         weightageContainer.style.display = 'none';
         weightageContainer.innerHTML = '';
