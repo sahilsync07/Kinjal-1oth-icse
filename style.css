@@ -1410,3 +1410,44 @@ button:active {
         font-size: 0.65rem;
     }
 }
+
+/* Accordion UI Styles */
+.subject-accordion {
+    margin-bottom: 1rem;
+}
+.subject-accordion-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    cursor: pointer;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    text-align: left;
+    transition: border-color 0.2s, background 0.2s;
+}
+.subject-accordion-btn:hover {
+    border-color: var(--accent-color);
+    background: var(--bg-body);
+}
+.subject-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-grow: 1;
+}
+.subject-count {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-right: 1.5rem;
+}
+.module-link:hover {
+    border-color: var(--accent-color) !important;
+}
+.primary-module:hover {
+    background: #000 !important;
+    color: var(--accent-color) !important;
+    border: 1px solid var(--accent-color) !important;
+}

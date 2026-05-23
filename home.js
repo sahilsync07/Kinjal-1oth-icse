@@ -39,40 +39,85 @@ function renderHomeGrid() {
         </div>
     </div>`;
 
-    let currentSubject = null;
-    
+    // Group by subject
+    const subjectsMap = {};
     chapters.forEach(ch => {
-        // Render subject divider if new subject
-        if (ch.subject !== currentSubject) {
-            currentSubject = ch.subject;
-            html += `
-            <div class="subject-divider" id="subject-${ch.subject}">
-                <span class="subject-divider-dot"></span>
-                <span class="subject-divider-text">${subjectLabels[ch.subject] || ch.subject.toUpperCase()}</span>
-                <span class="subject-divider-line"></span>
-            </div>`;
-        }
+        if (!subjectsMap[ch.subject]) subjectsMap[ch.subject] = [];
+        subjectsMap[ch.subject].push(ch);
+    });
 
-        const isPending = ch.href === "#";
-        const cardStyle = isPending ? `opacity: 0.5; border-style: dashed; cursor: not-allowed;` : ``;
-        const tagsHtml = (ch.tags || []).map(tag => `<span class="chapter-tag">${tag}</span>`).join('');
-        const tagLabel = isPending ? `<span class="chapter-tag" style="background: #333; color: #888;">PENDING CREATION</span>` : tagsHtml;
+    Object.keys(subjectsMap).forEach(subjKey => {
+        const subjChapters = subjectsMap[subjKey];
+        const subjLabel = subjectLabels[subjKey] || subjKey.toUpperCase();
         
         html += `
-        <a href="${isPending ? 'javascript:void(0)' : ch.href}" class="chapter-card" id="ch-${ch.num}" style="${cardStyle}">
-            <div class="chapter-number">${String(ch.num).padStart(2, '0')}</div>
-            <div class="chapter-info">
-                <h2 class="chapter-name">${ch.name.toUpperCase()}</h2>
-                <p class="chapter-desc">${ch.desc}</p>
-                <div class="chapter-meta">
-                    ${tagLabel}
-                </div>
-            </div>
-            <div class="chapter-arrow" style="${isPending ? 'display:none;' : ''}">→</div>
-        </a>`;
+        <div class="subject-accordion">
+            <button class="subject-accordion-btn" onclick="toggleAccordion('acc-${subjKey}')">
+                <span class="subject-title">${subjLabel}</span>
+                <span class="subject-count">${subjChapters.filter(c => c.href !== '#').length} / ${subjChapters.length} CHAPTERS</span>
+                <span class="accordion-icon" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="subject-accordion-content" id="acc-${subjKey}" style="display: none; border: 1px solid var(--border-color); border-top: none; padding: 1rem; background: var(--bg-body);">`;
+
+        subjChapters.forEach(ch => {
+            const isPending = ch.href === "#";
+            const cardStyle = isPending ? `opacity: 0.6; cursor: default; background: var(--bg-card); border: 1px dashed var(--border-color); margin-bottom: 1rem; padding: 1rem;` : `background: var(--bg-card); border: 1px solid var(--border-color); margin-bottom: 1rem; padding: 1rem;`;
+            const tagsHtml = (ch.tags || []).map(tag => `<span class="chapter-tag">${tag}</span>`).join('');
+            const tagLabel = isPending ? `<span class="chapter-tag" style="background: #333; color: #888;">PENDING CREATION</span>` : tagsHtml;
+            
+            html += `
+            <div class="chapter-card-nested" style="${cardStyle}">
+                <div class="chapter-header" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="chapter-number" style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--accent-color); font-weight: bold;">${String(ch.num).padStart(2, '0')}</div>
+                    <div class="chapter-info">
+                        <h2 class="chapter-name" style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-main);">${ch.name.toUpperCase()}</h2>
+                        <div class="chapter-meta">${tagLabel}</div>
+                    </div>
+                </div>`;
+            
+            // Render Modules
+            if (!isPending) {
+                const mods = ch.modules || [];
+                html += `<div class="module-list" style="display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">`;
+                mods.forEach((mod, idx) => {
+                    const icon = mod.type === 'test' ? '📝' : '📖';
+                    html += `
+                    <a href="${mod.href}" class="module-link" style="display: flex; align-items: center; justify-content: space-between; padding: 0.8rem; background: var(--bg-body); border: 1px solid var(--border-color); text-decoration: none; color: var(--text-main); font-family: var(--font-mono); font-size: 0.9rem; transition: border-color 0.2s;">
+                        <span><span style="margin-right:0.5rem;">${icon}</span> MODULE ${idx + 1}: ${mod.name}</span>
+                        <span style="color: var(--accent-color);">→</span>
+                    </a>`;
+                });
+                // Add full chapter button
+                html += `
+                    <a href="${ch.href}" class="module-link primary-module" style="display: flex; align-items: center; justify-content: space-between; padding: 0.8rem; background: var(--accent-color); color: #000; font-family: var(--font-mono); font-size: 0.9rem; font-weight: bold; text-decoration: none; margin-top: 0.5rem;">
+                        <span>🚀 START FULL CHAPTER</span>
+                        <span>→</span>
+                    </a>
+                </div>`;
+            } else {
+                html += `<div class="module-list" style="padding: 1rem; color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-mono); border-top: 1px solid var(--border-color); margin-top: 1rem;">Modules will be generated soon.</div>`;
+            }
+
+            html += `</div>`; // end chapter-card-nested
+        });
+
+        html += `</div></div>`; // end subject-accordion-content & subject-accordion
     });
 
     grid.innerHTML = html;
+}
+
+// Add global toggle function
+window.toggleAccordion = function(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.style.display === 'block') {
+        el.style.display = 'none';
+        el.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+    } else {
+        el.style.display = 'block';
+        el.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(180deg)';
+    }
 }
 
 // ===================== MODAL FUNCTIONS =====================
