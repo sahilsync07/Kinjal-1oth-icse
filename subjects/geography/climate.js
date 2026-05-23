@@ -460,7 +460,7 @@ window.CHAPTER_QUESTIONS = {
         },
         {
             id: 'mega_8',
-            sentence: 'In which season do the 'Mango Showers' occur?',
+            sentence: "In which season do the 'Mango Showers' occur?",
             options: ['Winter', 'Hot Dry (Summer)', 'South-West Monsoon', 'Retreating Monsoon'],
             correct: 1,
             rule: 'Seasons',
