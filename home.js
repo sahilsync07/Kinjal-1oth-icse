@@ -94,6 +94,17 @@ window.renderSubjectView = function(subjKey) {
         </div>`;
     }
 
+    if (subjKey === 'history') {
+        html += `
+        <div class="dashboard-banner" style="background: linear-gradient(rgba(234, 179, 8, 0.1), rgba(0, 0, 0, 0.4)); border: 1px solid #eab308; padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; box-shadow: 0 4px 20px rgba(234, 179, 8, 0.15);">
+            <div>
+                <h2 style="font-family: var(--font-mono); font-size: 1.2rem; margin: 0 0 0.5rem 0; color: #eab308;">🌟 BOARD TOPPER'S SUBJECTIVE HUB</h2>
+                <p style="color: var(--text-muted); margin: 0; font-size: 0.85rem;">Interactive answer sheets featuring <strong>Oswaal's Pitfalls</strong>, <strong>Together With's Reasons</strong>, and <strong>Arihant's Structured Point rubrics</strong>.</p>
+            </div>
+            <a href="subjects/history/subjective_hub.html" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; background: #eab308; color: #000; font-family: var(--font-mono); font-size: 0.85rem; font-weight: bold; padding: 0.75rem 1.5rem; border-radius: 4px; border: 1px solid #eab308; transition: all 0.2s;">LAUNCH SUBJECTIVE HUB →</a>
+        </div>`;
+    }
+
     html += `<div class="subject-chapter-list">`;
 
     subjChapters.forEach(ch => {
