@@ -88,15 +88,14 @@ This document tracks the progress of the interactive modules across all subjects
 - [ ] Transport
 - [ ] Waste Management
 
-## 9. Computer Applications (Java) [COMP]
-- [ ] Revision of Class IX Syllabus
-- [ ] Class as the Basis of all Computation
-- [ ] User-defined Methods
-- [ ] Constructors
-- [ ] Library classes
-- [ ] Encapsulation
-- [ ] Arrays (1D and 2D)
-- [ ] String Handling
+## 9. Economics [ECON]
+- [ ] The Productive Mechanism
+- [ ] Theory of Demand and Supply
+- [ ] Market Structure
+- [ ] Banking in India
+- [ ] Inflation
+- [ ] Public Finance
+- [ ] Consumer Awareness
 
 ## 10. Odia (Second Language) [ODIA]
 - [x] Grammar & Composition
