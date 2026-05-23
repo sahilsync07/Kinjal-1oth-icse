@@ -1,5 +1,5 @@
 const subjectLabels = {
-    "eng-lang":   "ENGLISH LANGUAGE — GRAMMAR",
+    "eng-lang":   "ENGLISH LANGUAGE",
     "eng-lit":    "ENGLISH LITERATURE",
     "math":       "MATHEMATICS",
     "physics":    "PHYSICS",
@@ -189,7 +189,39 @@ function renderTable(filter) {
     const weightageContainer = document.getElementById('marks-weightage-container');
     if (!weightageContainer) return;
 
-    if (filter === 'odia') {
+    if (filter === 'eng-lang') {
+        weightageContainer.style.display = 'block';
+        weightageContainer.innerHTML = `
+            <div style="margin-top: 2rem;">
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">1. QUESTION FORMAT WEIGHTAGE (80 MARKS)</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>QUESTION NO</th><th>TOPIC / FOCUS</th><th>MARKS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Question 1</td><td>Composition / Essay Writing (300-350 words)</td><td>20 Marks</td></tr>
+                        <tr><td>Question 2</td><td>Letter Writing (Formal / Informal layout)</td><td>10 Marks</td></tr>
+                        <tr><td>Question 3</td><td>Notice Writing (5) & E-mail Writing (5)</td><td>10 Marks</td></tr>
+                        <tr><td>Question 4</td><td>Unseen Comprehension (Prose passage + Summary)</td><td>20 Marks</td></tr>
+                        <tr><td>Question 5</td><td>Functional Grammar (Prepositions, Tenses, Transformations)</td><td>20 Marks</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family: var(--font-mono); font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">2. DETAILED GRAMMAR SUB-TOPICS (CHAPTER 5)</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>SUB-TOPIC</th><th>CORE FOCUS AREAS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Articles & SVA</td><td>Definite/Indefinite articles, omission rules; Singular/plural agreement rules.</td></tr>
+                        <tr><td>Tenses & Sequence</td><td>Tense corrections, conditional structures, sequence of main and subordinate clauses.</td></tr>
+                        <tr><td>Prepositions & Conjunctions</td><td>Fixed prepositions, common confusions, sentence synthesizers.</td></tr>
+                        <tr><td>Transformations</td><td>Active/Passive, Direct/Indirect, Degrees of comparison, Simple/Compound/Complex.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        `;
+    } else if (filter === 'odia') {
         weightageContainer.style.display = 'block';
         weightageContainer.innerHTML = `
             <div style="margin-top: 2rem;">

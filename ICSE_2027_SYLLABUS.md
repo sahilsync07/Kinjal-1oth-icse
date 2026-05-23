@@ -91,3 +91,40 @@ The syllabus transitions students from microeconomic fundamentals to structural 
 - **Unit IV: The State and Economic Development**: Public Finance (meaning), instruments of state intervention (direct & indirect taxes, subsidies), progressive/regressive/proportional taxation, Public Expenditure (reasons for growth), Public Sector Enterprises (historical role, growth, problems), privatization debate, Public Debt, and Deficit Financing.
 - **Unit V: Money and Banking (Basic Concepts)**: Money (limitations of barter, evolution, primary, secondary & contingent functions), Commercial Banks (functions, mechanism of credit creation), Central Bank (RBI, credit control instruments: quantitative like CRR, SLR, Repo, Bank Rate, open market operations, qualitative tools), Inflation (meaning, creeping/walking/running/galloping, Demand-Pull vs. Cost-Push inflation causes & socio-economic impact).
 - **Unit VI: Emerging Trends in the Indian Economy**: The 1991 LPG Model (Liberalization, Privatization, Globalization) and its structural impacts on growth. Case studies on modern government initiatives: "Smart City", "Digital India", and "Skill India" (infrastructure, poverty alleviation, and human resource enhancement).
+
+---
+
+## 3. ENGLISH LANGUAGE (Code: 15)
+There will be two papers: Paper 1 (English Language - 80 Marks theory, 20 Marks internal) and Paper 2 (Literature in English - 80 Marks theory, 20 Marks internal). This section outlines the English Language (Paper 1) structure.
+
+### 3.1 Question Format-Wise Marks Weightage
+
+| Question No. | Syllabus Section | Focus / Assignment Details | Marks Allocated |
+|--------------|------------------|---------------------------|-----------------|
+| **Question 1** | **Composition** | Choice of Narrative, Descriptive, Argumentative, Critical, Factual, Story, or Picture composition (300-350 words). | 20 Marks |
+| **Question 2** | **Letter Writing** | Draft either a Formal or Informal letter adhering to standard layouts and appropriate tone. | 10 Marks |
+| **Question 3** | **Notice & Email** | Unified prompt demanding a formal notice (5 marks) and a matching email (5 marks). | 10 Marks |
+| **Question 4** | **Unseen Comprehension**| Passage of ~700 words. Literal/inferential answers, words-in-context vocabulary, and a 100-word grid summary. | 20 Marks |
+| **Question 5** | **Functional Grammar** | Articles, SVA, prepositions, verb tenses/sequence, conjunctions, sentence transformations. | 20 Marks |
+| **Total** | | | **80 Marks** |
+
+---
+
+### Detailed Syllabus Breakdown
+
+#### ENGLISH LANGUAGE
+*   **Composition (Chapter 1)**: Fosters coherent ideation, rich vocabulary, and structural layout.
+    - *Narrative & Descriptive*: Developing vivid imagery and chronological storytelling.
+    - *Argumentative & Critical*: Expressing logical arguments with clear debate structures and counterpoints.
+    - *Picture Composition*: Analytical and imaginative response to a visual stimulus.
+*   **Letter Writing (Chapter 2)**: Core formal layout (sender/receiver addresses, formal salutation, concise subject, formal signature) and informal structure (friendly tone, relative address). Evaluates applications, letters of complaint, and invitations.
+*   **Notice and Email Writing (Chapter 3)**: Unified digital and public communications. Public notices must be brief and feature specific titles, dates, times, and venues. Emails must list precise addresses, formal subject lines, and professional salutations.
+*   **Unseen Comprehension (Chapter 4)**: Deducing direct meanings, context-specific definitions, and extracting concise structural summaries formatted strictly in a 100-word grid.
+*   **Grammar (Chapter 5)**: Rigorous evaluation of the following 17 functional grammar sub-topics:
+    - *Articles*: Definite (*the*) and Indefinite (*a/an*) article placement and zero-article omission patterns.
+    - *Subject-Verb Agreement (SVA)*: Singular/plural agreement rules, handling collective nouns, distributive qualifiers (*each/every*), and correlative structures (*either/or*).
+    - *Tenses & Sequence of Tenses*: Conjugation of all 12 tenses, and logical matching of principal and subordinate clause verb tenses.
+    - *Prepositions*: Time, place, direction, and verb-preposition combinations (fixed prepositions).
+    - *Conjunctions & Synthesis*: Joining sentences without using basic coordinates (*and*, *but*, *so*).
+    - *Sentence Transformations*: Active to Passive voice shifts, Direct to Indirect reported speech, conditional clause structures (*if/unless*), interchange of degrees of comparison, and swapping simple/compound/complex structures.
+*   **Aural & Oral English (Chapter 6)**: Mandatory internal school assessment of oral speech fluency and real-time auditory listening comprehension checks.

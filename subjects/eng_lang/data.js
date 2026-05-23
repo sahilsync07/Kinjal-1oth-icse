@@ -1,43 +1,74 @@
 window.ICSE_CHAPTERS = window.ICSE_CHAPTERS || [];
 window.ICSE_CHAPTERS.push(
-    { num: 1, subject: "eng-lang", name: "Articles (A, An, The)", difficulty: "Easy", length: "Short", tags: ["10 SLIDES", "7 QUESTIONS"], href: "articles.html", desc: "Learn the difference between definite and indefinite articles, and when to omit them entirely.", modules: [{ name: "Lesson: Indefinite Articles (A/An)", type: "summary", href: "articles.html#slide-02" }, { name: "Lesson: Definite Article (The)", type: "summary", href: "articles.html#slide-05" }, { name: "Quiz: Article Mastery", type: "test", href: "articles.html#slide-10" }] },
-    { num: 2, subject: "eng-lang", name: "Subject-Verb Agreement", difficulty: "Moderate", length: "Normal", tags: ["7 SLIDES", "5 QUESTIONS"], href: "sva.html", desc: "Master the rules of matching singular/plural subjects with the correct verbs.", modules: [{ name: "Lesson: Basic Rules", type: "summary", href: "sva.html#slide-02" }, { name: "Lesson: Tricky Subjects (Each/Every)", type: "summary", href: "sva.html#slide-04" }, { name: "Quiz: Agreement Test", type: "test", href: "sva.html#slide-06" }] },
+    {
+        num: 1,
+        subject: "eng-lang",
+        name: "Composition",
+        difficulty: "Moderate",
+        length: "Lengthy",
+        tags: ["COMING SOON"],
+        href: "#",
+        desc: "Narrative, Descriptive, Argumentative, Critical, Factual, Story, and Picture Compositions, and Summary Writing."
+    },
+    {
+        num: 2,
+        subject: "eng-lang",
+        name: "Letter Writing",
+        difficulty: "Moderate",
+        length: "Normal",
+        tags: ["COMING SOON"],
+        href: "#",
+        desc: "Personal/Informal Letters, Formal Letters (Applications, Letters of Complaint), and Invitations."
+    },
     {
         num: 3,
         subject: "eng-lang",
-        name: "Tenses",
-        difficulty: "Moderate",
-        length: "Lengthy",
-        tags: ["7 SLIDES", "24 QUESTIONS"],
-        href: "subjects/eng_lang/tenses.html",
-        desc: "All 12 tense forms — Simple, Continuous, Perfect & Perfect Continuous across Past, Present, and Future. Sequence of tenses & common errors.",
-        modules: [
-            { name: "Lesson: Tense Forms", type: "summary", href: "subjects/eng_lang/tenses.html#slide-02" },
-            { name: "Quiz 1: Tense Forms", type: "test", href: "subjects/eng_lang/tenses.html#slide-03" },
-            { name: "Lesson: Sequence of Tenses", type: "summary", href: "subjects/eng_lang/tenses.html#slide-04" },
-            { name: "Quiz 2: Sequence of Tenses", type: "test", href: "subjects/eng_lang/tenses.html#slide-05" },
-            { name: "Mega Quiz: Board-Style Correction", type: "test", href: "subjects/eng_lang/tenses.html#slide-06" }
-        ]
+        name: "Notice Writing & E-mail Writing",
+        difficulty: "Easy",
+        length: "Short",
+        tags: ["COMING SOON"],
+        href: "#",
+        desc: "Public notices and modern email writing layout and conventions, based on a unified situational prompt."
     },
     {
         num: 4,
         subject: "eng-lang",
-        name: "Prepositions",
-        difficulty: "Easy",
+        name: "Comprehension",
+        difficulty: "Moderate",
         length: "Normal",
-        tags: ["7 SLIDES", "24 QUESTIONS"],
-        href: "subjects/eng_lang/prepositions.html",
-        desc: "Time, place, movement & fixed prepositions. Verb-preposition combinations, common confusions (in/into, on/upon, between/among).",
+        tags: ["COMING SOON"],
+        href: "#",
+        desc: "Unseen prose passage reading, word-in-context vocabulary exercises, factual and inferential question structures, and summary grid drafting."
+    },
+    {
+        num: 5,
+        subject: "eng-lang",
+        name: "Grammar",
+        difficulty: "Difficult",
+        length: "Lengthy",
+        tags: ["4 COMPLETED", "17 GRAMMAR TOPICS"],
+        href: "articles.html",
+        desc: "Functional grammar: Articles, Subject-Verb Agreement, Tenses, Prepositions, Conjunctions, Transformations, and Conditional Sentences.",
         modules: [
-            { name: "Lesson: Time & Place Prepositions", type: "summary", href: "subjects/eng_lang/prepositions.html#slide-02" },
-            { name: "Quiz: Basic Prepositions", type: "test", href: "subjects/eng_lang/prepositions.html#slide-03" },
-            { name: "Lesson: Fixed Prepositions", type: "summary", href: "subjects/eng_lang/prepositions.html#slide-04" },
-            { name: "Quiz: Fixed Prepositions", type: "test", href: "subjects/eng_lang/prepositions.html#slide-05" },
-            { name: "Quiz: Board-style Prepositions", type: "test", href: "subjects/eng_lang/prepositions.html#slide-06" }
+            { name: "Lesson: Articles (A, An, The)", type: "summary", href: "articles.html" },
+            { name: "Lesson: Subject-Verb Agreement", type: "summary", href: "sva.html" },
+            { name: "Lesson: Tenses & Sequence of Tenses", type: "summary", href: "subjects/eng_lang/tenses.html" },
+            { name: "Lesson: Prepositions", type: "summary", href: "subjects/eng_lang/prepositions.html" },
+            { name: "Lesson: Active & Passive Voice", type: "summary", href: "#" },
+            { name: "Lesson: Direct & Indirect Speech", type: "summary", href: "#" },
+            { name: "Lesson: Conjunctions & Synthesis", type: "summary", href: "#" },
+            { name: "Lesson: Sentence Transformation", type: "summary", href: "#" },
+            { name: "Lesson: Conditional Sentences", type: "summary", href: "#" }
         ]
     },
-    { num: 5,  subject: "eng-lang",   name: "Active & Passive Voice",            difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Transformation rules for all tenses, modals, imperatives, and interrogative sentences. Board-style \"Do as Directed\" practice." },
-    { num: 6,  subject: "eng-lang",   name: "Direct & Indirect Speech",          difficulty: "Moderate",  length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Reported speech rules — statements, questions, commands, requests, exclamations. Tense shifts, pronoun changes & time expression updates." },
-    { num: 7,  subject: "eng-lang",   name: "Sentence Transformation",           difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Simple↔Compound↔Complex, affirmative/negative interchange, degree conversions, exclamatory/assertive & sentence synthesis." },
-    { num: 8,  subject: "eng-lang",   name: "Conditional Sentences",             difficulty: "Moderate",  length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Zero, First, Second & Third conditionals. \"If\" clause patterns, mixed conditionals, and \"unless/provided that\" variations." }
+    {
+        num: 6,
+        subject: "eng-lang",
+        name: "Aural and Oral English",
+        difficulty: "Easy",
+        length: "Short",
+        tags: ["COMING SOON"],
+        href: "#",
+        desc: "Listening (Aural) skills and Speaking (Oral) skills development, including speeches, impromptu debates, and listening tasks."
+    }
 );
