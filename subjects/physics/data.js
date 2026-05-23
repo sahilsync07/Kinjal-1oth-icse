@@ -82,11 +82,14 @@ window.ICSE_CHAPTERS.push(
         { name: "Quiz 3: IR & UV Properties", type: "test", href: "subjects/physics/spectrum.html#slide-07" },
         { name: "Mega Quiz: Board-Level Spectrum Challenges", type: "test", href: "subjects/physics/spectrum.html#slide-08" }
     ] },
-    { num: 7, subject: "physics",    name: "Sound",                             difficulty: "Easy",      length: "Normal",  tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/sound.html", desc: "Reflection of sound, echoes, natural vibrations, forced vibrations, resonance, loudness, pitch, quality, and noise vs music.", modules: [
-        { name: "Lesson: Echoes & Sonar Math", type: "summary", href: "subjects/physics/sound.html#slide-02" },
-        { name: "Quiz: Echoes & Sonar Calculations", type: "test", href: "subjects/physics/sound.html#slide-03" },
+    { num: 7, subject: "physics",    name: "Sound",                             difficulty: "Easy",      length: "Normal",  tags: ["9 SLIDES", "22 QUESTIONS"], href: "subjects/physics/sound.html", desc: "Reflection of sound, echoes (minimum distance), SONAR numericals, natural/forced vibrations, damped vibrations, resonance (examples), reverberation, loudness, pitch, quality, noise vs music, audible range.", modules: [
+        { name: "Lesson: Reflection, Echoes & SONAR", type: "summary", href: "subjects/physics/sound.html#slide-02" },
+        { name: "Quiz 1: Echo & SONAR Calculations", type: "test", href: "subjects/physics/sound.html#slide-03" },
         { name: "Lesson: Vibrations & Resonance", type: "summary", href: "subjects/physics/sound.html#slide-04" },
-        { name: "Mega Quiz: Acoustic Mastery", type: "test", href: "subjects/physics/sound.html#slide-05" }
+        { name: "Quiz 2: Vibrations & Resonance", type: "test", href: "subjects/physics/sound.html#slide-05" },
+        { name: "Lesson: Sound Characteristics", type: "summary", href: "subjects/physics/sound.html#slide-06" },
+        { name: "Quiz 3: Loudness, Pitch & Quality", type: "test", href: "subjects/physics/sound.html#slide-07" },
+        { name: "Mega Quiz: Board-Level Sound Challenges", type: "test", href: "subjects/physics/sound.html#slide-08" }
     ] },
     { num: 8, subject: "physics",    name: "Current Electricity",               difficulty: "Difficult", length: "Lengthy", tags: ["6 SLIDES", "10 QUESTIONS"], href: "subjects/physics/current_electricity.html", desc: "Ohm's law, resistance (series & parallel), EMF, internal resistance, electrical energy & power, and Joule's heating effect.", modules: [
         { name: "Lesson: Ohm's Law & Resistors", type: "summary", href: "subjects/physics/current_electricity.html#slide-02" },
