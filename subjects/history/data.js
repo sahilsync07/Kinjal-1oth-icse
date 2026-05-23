@@ -10,7 +10,13 @@ window.ICSE_CHAPTERS.push(
         { name: "Quiz: Sepoy Grievances & Enfield Cartridges", type: "test", href: "subjects/history/war_1857.html#slide-05" },
         { name: "Mega Quiz: Administrative Shifts & Consequences", type: "test", href: "subjects/history/war_1857.html#slide-06" }
     ] },
-    { num: 5, subject: "history",    name: "Growth of Nationalism",             difficulty: "Easy",      length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Factors: economic exploitation, repressive policies, role of press. Socio-religious reform movements and key reformers." },
+    { num: 5, subject: "history",    name: "Growth of Nationalism",             difficulty: "Easy",      length: "Normal",  tags: ["7 SLIDES", "10 QUESTIONS"], href: "subjects/history/nationalism.html", desc: "Factors: economic exploitation, repressive policies, role of press. Socio-religious reform movements and key reformers.", modules: [
+        { name: "Lesson: Factors Promoting Nationalism", type: "summary", href: "subjects/history/nationalism.html#slide-02" },
+        { name: "Quiz: Press, Westernization & Reforms", type: "test", href: "subjects/history/nationalism.html#slide-03" },
+        { name: "Lesson: Repressive Acts & Birth of the INC", type: "summary", href: "subjects/history/nationalism.html#slide-04" },
+        { name: "Quiz: Lord Lytton, Ilbert Bill & first session", type: "test", href: "subjects/history/nationalism.html#slide-05" },
+        { name: "Mega Quiz: Pre-Congress & INC details", type: "test", href: "subjects/history/nationalism.html#slide-06" }
+    ] },
     { num: 6, subject: "history",    name: "Early Nationalists (1885–1907)",    difficulty: "Easy",      length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Aims & methods of Moderates — Dadabhai Naoroji, Gokhale, Banerjee. Formation of INC and the Surat Split." },
     { num: 7, subject: "history",    name: "Assertive Nationalists (1905–1916)", difficulty: "Moderate", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Partition of Bengal, Swadeshi movement, Tilak-Pal-Lajpat Rai. Muslim League, Lucknow Pact, and Home Rule League." },
     { num: 8, subject: "history",    name: "Mahatma Gandhi & Mass Movements",   difficulty: "Moderate",  length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Non-Cooperation, Civil Disobedience (Dandi March), Quit India Movement. Gandhi-Irwin Pact & Round Table Conferences." },

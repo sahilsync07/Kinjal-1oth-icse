@@ -104,5 +104,31 @@ window.CIVICS_SUBJECTIVE_DATA = {
             rubric: "1 Mark: Abolition of East India Company rule and direct transfer of power to the British Crown.\n1 Mark: Introduction of the office of Secretary of State for India and Council of India.\n1 Mark: Change of title from Governor-General to Viceroy, representing the direct Crown representative.",
             topperAnswer: "The Government of India Act 1858 introduced structural administrative shifts:\n\n1. **Transfer of Sovereignty**: The rule of the **British East India Company was abolished**. All governing powers, territories, and revenues were transferred **directly to the British Crown**.\n2. **Creation of Secretary of State**: The office of the **Secretary of State for India** was created. Backed by a 15-member **Council of India**, he was made directly responsible to the British Parliament for governing India.\n3. **Viceroy Designation**: The Governor-General of India was given the new title of **Viceroy**, acting as the direct representative of the British Crown in the subcontinent."
         }
+    ],
+    "nationalism": [
+        {
+            type: "reason",
+            question: "Why did the British residents in India launch a fierce protest against the Ilbert Bill in 1883?",
+            tip: "Detail their belief in racial superiority and their outrage at the prospect of being tried by Indian judges.",
+            pitfall: "Writing 'Because they did not like Ripon.' (Gets 0/3 marks. Completely misses the racial-legal aspect of the protest).",
+            rubric: "1 Mark: The bill proposed allowing senior Indian judges to try European offenders.\n1 Mark: Europeans considered this an insult to their racial superiority ('trial by a native').\n1 Mark: They formed a defense association to protect their racial privileges, forcing the government to withdraw the bill.",
+            topperAnswer: "1. **End of Judicial Privilege**: The **Ilbert Bill (1883)** proposed allowing Indian magistrates to try **European offenders** in criminal cases, which threatened the exclusive legal immunity Europeans had previously enjoyed.\n2. **Racial Supremacy Bias**: British residents held a deeply ingrained belief in **white racial superiority**. They viewed the prospect of a European being tried by an Indian judge as an intolerable racial insult.\n3. **Organized Agitation**: They established the **Anglo-Indian Defense Association** and raised massive funds to lobby the government, successfully forcing the Viceroy to dilute the bill, which proved to Indians the efficacy of organized political agitation."
+        },
+        {
+            type: "short",
+            question: "State two contributions of the East India Association established by Dadabhai Naoroji in 1866.",
+            tip: "Focus on London lobbying and raising awareness in British Parliament.",
+            pitfall: "Writing 'It raised an army to fight British.' (Gets 0/2 marks. It was a strictly constitutional lobbying group).",
+            rubric: "1 Mark: Promoted understanding of Indian grievances among the British public and politicians in London.\n1 Mark: Influenced British parliamentary opinion to be more sympathetic to Indian administrative reforms.",
+            topperAnswer: "1. **Lobbying British Parliament**: The association successfully **presented Indian grievances** and administrative problems directly to British MPs and the London public.\n2. **Influencing British Opinion**: It built a strong, sympathetic **public opinion in England** in support of India's welfare, paving the way for early constitutional reforms."
+        },
+        {
+            type: "structured",
+            question: "Explain the three repressive policies of Lord Lytton (1876–1880) that catalyzed the growth of Indian nationalism.",
+            tip: "Outline the Vernacular Press Act, the Arms Act, and the Delhi Durbar of 1877.",
+            pitfall: "Confusing the details of the Acts (e.g. saying the Arms Act was about soldiers' salaries). (Loses 1.5 marks instantly).",
+            rubric: "1 Mark: The Vernacular Press Act (1878) gagged Indian regional newspapers while sparing English ones.\n1 Mark: The Arms Act (1878) made carrying weapons without a license a crime for Indians only, exempting Europeans.\n1 Mark: The Grand Delhi Durbar (1877) was held amid a devastating South Indian famine, demonstrating shocking colonial extravagance.",
+            topperAnswer: "Lord Lytton's administration implemented three highly controversial policies:\n\n1. **The Vernacular Press Act (1878)**:\n   - **Mechanism**: Gagged the **Indian regional press** by allowing the confiscation of printing presses if they published articles critical of the government. Crucially, **English papers were exempted**, displaying blatant racial discrimination.\n2. **The Arms Act (1878)**:\n   - **Mechanism**: Made it a **criminal offense for Indians** to carry, manufacture, or possess arms without a license. However, **all Europeans and Anglo-Indians were exempted** from this licensing law.\n3. **The Grand Delhi Durbar (1877)**:\n   - **Mechanism**: A lavish, highly expensive imperial durbar was held to crown Queen Victoria as Empress of India at a time when **millions of Indians were starving** to death during a catastrophic South Indian famine."
+        }
     ]
 };
