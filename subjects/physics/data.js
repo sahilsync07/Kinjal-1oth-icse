@@ -1,7 +1,7 @@
 window.ICSE_CHAPTERS = window.ICSE_CHAPTERS || [];
 window.ICSE_CHAPTERS.push(
     {
-        num: 29,
+        num: 1,
         subject: "physics",
         name: "Force",
         difficulty: "Moderate",
@@ -20,7 +20,7 @@ window.ICSE_CHAPTERS.push(
         ]
     },
     {
-        num: 30,
+        num: 2,
         subject: "physics",
         name: "Work, Energy & Power",
         difficulty: "Moderate",
@@ -39,7 +39,7 @@ window.ICSE_CHAPTERS.push(
         ]
     },
     {
-        num: 31,
+        num: 3,
         subject: "physics",
         name: "Machines",
         difficulty: "Moderate",
@@ -55,13 +55,13 @@ window.ICSE_CHAPTERS.push(
             { name: "Quiz: Mega Revision Machines Challenges", type: "test", href: "subjects/physics/machines.html#slide-06" }
         ]
     },
-    { num: 32, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Laws of refraction, Snell's law, refractive index, critical angle, total internal reflection, and real/apparent depth." },
-    { num: 33, subject: "physics",    name: "Refraction Through a Lens",         difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Convex/concave lenses, image formation, sign convention, lens formula (1/v − 1/u = 1/f), magnification & power of a lens." },
-    { num: 34, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Dispersion of light, electromagnetic spectrum, scattering of light, and prism-based experiments." },
-    { num: 35, subject: "physics",    name: "Sound",                             difficulty: "Easy",      length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Reflection of sound, echoes, natural vibrations, forced vibrations, resonance, loudness, pitch, quality, and noise vs music." },
-    { num: 36, subject: "physics",    name: "Current Electricity",               difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Ohm's law, resistance (series & parallel), EMF, internal resistance, electrical energy & power, and Joule's heating effect." },
-    { num: 37, subject: "physics",    name: "Household Circuits",                difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Three-pin plugs, fuses, MCBs, earthing, colour coding of wires, safety precautions, and power consumption calculation." },
-    { num: 38, subject: "physics",    name: "Electro-Magnetism",                 difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Magnetic effect of current, electromagnets, Fleming's Left Hand Rule, DC motor, electromagnetic induction & AC generator." },
-    { num: 39, subject: "physics",    name: "Calorimetry",                       difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Specific heat capacity, principle of calorimetry, latent heat, change of state, and numerical problems on heat exchange." },
-    { num: 40, subject: "physics",    name: "Radioactivity & Nuclear Energy",    difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Alpha, beta, gamma radiation properties, nuclear fission & fusion, chain reactions, and safety measures." }
+    { num: 4, subject: "physics",    name: "Refraction at Plane Surfaces",      difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Laws of refraction, Snell's law, refractive index, critical angle, total internal reflection, and real/apparent depth." },
+    { num: 5, subject: "physics",    name: "Refraction Through a Lens",         difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Convex/concave lenses, image formation, sign convention, lens formula (1/v − 1/u = 1/f), magnification & power of a lens." },
+    { num: 6, subject: "physics",    name: "Spectrum",                          difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Dispersion of light, electromagnetic spectrum, scattering of light, and prism-based experiments." },
+    { num: 7, subject: "physics",    name: "Sound",                             difficulty: "Easy",      length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Reflection of sound, echoes, natural vibrations, forced vibrations, resonance, loudness, pitch, quality, and noise vs music." },
+    { num: 8, subject: "physics",    name: "Current Electricity",               difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Ohm's law, resistance (series & parallel), EMF, internal resistance, electrical energy & power, and Joule's heating effect." },
+    { num: 9, subject: "physics",    name: "Household Circuits",                difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Three-pin plugs, fuses, MCBs, earthing, colour coding of wires, safety precautions, and power consumption calculation." },
+    { num: 10, subject: "physics",    name: "Electro-Magnetism",                 difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Magnetic effect of current, electromagnets, Fleming's Left Hand Rule, DC motor, electromagnetic induction & AC generator." },
+    { num: 11, subject: "physics",    name: "Calorimetry",                       difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Specific heat capacity, principle of calorimetry, latent heat, change of state, and numerical problems on heat exchange." },
+    { num: 12, subject: "physics",    name: "Radioactivity & Nuclear Energy",    difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Alpha, beta, gamma radiation properties, nuclear fission & fusion, chain reactions, and safety measures." }
 );

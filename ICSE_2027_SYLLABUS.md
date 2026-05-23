@@ -45,11 +45,11 @@ There will be one paper of two hours duration carrying 80 marks and an Internal 
 
 | Unit No. | Unit / Chapter Theme | Indicative Marks (Out of 80) |
 |----------|----------------------|------------------------------|
-| I | **Demand and Supply: Basic Concepts** (Ch 84-86: Demand, Elasticity, Supply) | ~14 - 16 Marks |
-| II | **Factors of Production: Basic Concepts** (Ch 87: Land, Labour, Capital, Entrepreneur) | ~12 - 14 Marks |
-| III | **Alternative Market Structures: Basic Concepts** (Ch 88: Nature & Structure of Markets) | ~10 - 12 Marks |
-| IV | **The State and Economic Development** (Ch 89: Public Finance - Revenue, Taxes, Debt) | ~14 - 16 Marks |
-| V | **Money and Banking: Basic Concepts** (Ch 90-93: Money, Commercial & Central Banks, Inflation) | ~22 - 24 Marks |
+| I | **Demand and Supply: Basic Concepts** (Ch 1-3: Demand, Elasticity, Supply) | ~14 - 16 Marks |
+| II | **Factors of Production: Basic Concepts** (Ch 4: Land, Labour, Capital, Entrepreneur) | ~12 - 14 Marks |
+| III | **Alternative Market Structures: Basic Concepts** (Ch 5: Nature & Structure of Markets) | ~10 - 12 Marks |
+| IV | **The State and Economic Development** (Ch 6: Public Finance - Revenue, Taxes, Debt) | ~14 - 16 Marks |
+| V | **Money and Banking: Basic Concepts** (Ch 7-10: Money, Commercial & Central Banks, Inflation) | ~22 - 24 Marks |
 | **Total** | | **~80 Marks (Excluding Options)** |
 | **Internal** | Project Work / Assignments | **20 Marks** |
 

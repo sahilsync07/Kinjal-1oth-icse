@@ -239,11 +239,11 @@ function renderTable(filter) {
                         <tr><th>UNIT NO & NAME</th><th>INDICATIVE MARKS (Out of 80)</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Unit I: Demand and Supply (Ch 84-86)</td><td>~14 - 16 Marks</td></tr>
-                        <tr><td>Unit II: Factors of Production (Ch 87)</td><td>~12 - 14 Marks</td></tr>
-                        <tr><td>Unit III: Alternative Market Structures (Ch 88)</td><td>~10 - 12 Marks</td></tr>
-                        <tr><td>Unit IV: The State and Economic Development (Ch 89)</td><td>~14 - 16 Marks</td></tr>
-                        <tr><td>Unit V: Money and Banking (Ch 90-93)</td><td>~22 - 24 Marks</td></tr>
+                        <tr><td>Unit I: Demand and Supply (Ch 1-3)</td><td>~14 - 16 Marks</td></tr>
+                        <tr><td>Unit II: Factors of Production (Ch 4)</td><td>~12 - 14 Marks</td></tr>
+                        <tr><td>Unit III: Alternative Market Structures (Ch 5)</td><td>~10 - 12 Marks</td></tr>
+                        <tr><td>Unit IV: The State and Economic Development (Ch 6)</td><td>~14 - 16 Marks</td></tr>
+                        <tr><td>Unit V: Money and Banking (Ch 7-10)</td><td>~22 - 24 Marks</td></tr>
                     </tbody>
                 </table>
             </div>
