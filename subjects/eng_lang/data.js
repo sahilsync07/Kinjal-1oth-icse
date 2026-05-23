@@ -26,9 +26,16 @@ window.ICSE_CHAPTERS.push(
         name: "Notice Writing & E-mail Writing",
         difficulty: "Easy",
         length: "Short",
-        tags: ["COMING SOON"],
-        href: "#",
-        desc: "Public notices and modern email writing layout and conventions, based on a unified situational prompt."
+        tags: ["7 SLIDES", "10 QUESTIONS"],
+        href: "subjects/eng_lang/notice_email.html",
+        desc: "Public notices and modern email writing layout and conventions, based on a unified situational prompt.",
+        modules: [
+            { name: "Lesson: The 5-Mark Notice Layout", type: "summary", href: "subjects/eng_lang/notice_email.html#slide-02" },
+            { name: "Quiz: Notice Layout & Common Pitfalls", type: "test", href: "subjects/eng_lang/notice_email.html#slide-03" },
+            { name: "Lesson: The 5-Mark E-mail Layout", type: "summary", href: "subjects/eng_lang/notice_email.html#slide-04" },
+            { name: "Quiz: E-mail Protocols & Formatting", type: "test", href: "subjects/eng_lang/notice_email.html#slide-05" },
+            { name: "Mega Quiz: Unified Prompt Alignment", type: "test", href: "subjects/eng_lang/notice_email.html#slide-06" }
+        ]
     },
     {
         num: 4,
