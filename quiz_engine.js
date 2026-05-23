@@ -102,14 +102,17 @@ function updateCompanionForSlide(index) {
 // 4. QUIZ LOGIC
 // ============================================================
 function checkSection(sectionId) {
-    const selects = document.querySelectorAll(`select.dropdown-select[data-qid^="${sectionId}_"]`);
+    // Get the question IDs for this section from the source data
+    const sectionQuestions = (window.CHAPTER_QUESTIONS || {})[sectionId] || [];
+    const qids = sectionQuestions.map(q => q.id);
+
     let totalQuestions = 0;
     let correctCount = 0;
 
-    selects.forEach(select => {
-        const qid = select.dataset.qid;
+    qids.forEach(qid => {
+        const select = document.querySelector(`select.dropdown-select[data-qid="${qid}"]`);
         const question = ALL_QUESTIONS[qid];
-        if (!question) return;
+        if (!select || !question) return;
 
         totalQuestions++;
         const selectedIndex = parseInt(select.value, 10);
