@@ -130,5 +130,31 @@ window.CIVICS_SUBJECTIVE_DATA = {
             rubric: "1 Mark: The Vernacular Press Act (1878) gagged Indian regional newspapers while sparing English ones.\n1 Mark: The Arms Act (1878) made carrying weapons without a license a crime for Indians only, exempting Europeans.\n1 Mark: The Grand Delhi Durbar (1877) was held amid a devastating South Indian famine, demonstrating shocking colonial extravagance.",
             topperAnswer: "Lord Lytton's administration implemented three highly controversial policies:\n\n1. **The Vernacular Press Act (1878)**:\n   - **Mechanism**: Gagged the **Indian regional press** by allowing the confiscation of printing presses if they published articles critical of the government. Crucially, **English papers were exempted**, displaying blatant racial discrimination.\n2. **The Arms Act (1878)**:\n   - **Mechanism**: Made it a **criminal offense for Indians** to carry, manufacture, or possess arms without a license. However, **all Europeans and Anglo-Indians were exempted** from this licensing law.\n3. **The Grand Delhi Durbar (1877)**:\n   - **Mechanism**: A lavish, highly expensive imperial durbar was held to crown Queen Victoria as Empress of India at a time when **millions of Indians were starving** to death during a catastrophic South Indian famine."
         }
+    ],
+    "moderates": [
+        {
+            type: "reason",
+            question: "Why did the Early Nationalists (Moderates) believe that India's connection with Britain was providential and beneficial?",
+            tip: "Detail their view on modern systems introduced by Britain and their belief in eventual self-government.",
+            pitfall: "Writing 'Because they loved the Queen.' (Gets 0/3 marks. Lacks the developmental and constitutional analysis).",
+            rubric: "1 Mark: Believed British rule introduced essential modernizing forces (Western science, railways, uniform laws).\n1 Mark: Felt that India was not yet ready for immediate, complete self-governance due to social divisions.\n1 Mark: Believed Britain would naturally train India in parliamentary democratic governance over time.",
+            topperAnswer: "1. **Modernizing Forces**: The Moderates believed British rule had successfully introduced **crucial progressive institutions**—including Western scientific thought, modern transport networks, and a uniform legal code—which helped unify the country.\n2. **Socio-Political Readiness**: They believed that due to sharp internal divisions and lack of mass political training, India was not yet ready for absolute, immediate self-rule.\n3. **Democratic Tutelage**: They viewed Britain as a **trustee** that would gradually train India in the art of parliamentary self-governance, eventually granting self-rule within the empire."
+        },
+        {
+            type: "short",
+            question: "State two constitutional methods used by the Early Nationalists to influence British public opinion in England.",
+            tip: "Focus on Dadabhai Naoroji's London lobbying and official deputations.",
+            pitfall: "Writing 'They launched a violent rebellion in London.' (Gets 0/2 marks. Moderates only used peaceful constitutional lobbying).",
+            rubric: "1 Mark: Establishing the East India Association in London (1866) and publishing journals (like 'India').\n1 Mark: Sending official delegations (deputations) of Indian leaders to England to lobby British MPs.",
+            topperAnswer: "1. **London Advocacy Hubs**: They founded the **East India Association (1866)** in London and published the weekly journal ***India*** to keep the British public and Parliament informed about Indian affairs.\n2. **Official Deputations**: They regularly sent **delegations of prominent leaders** to England to meet British politicians, hold lecture campaigns, and lobby in support of administrative reforms."
+        },
+        {
+            type: "structured",
+            question: "Explain the three core economic demands raised by the Early Nationalists at annual Congress sessions.",
+            tip: "Outline the reduction of land revenue, reduction of military expenditure, and tariff protections.",
+            pitfall: "Listing 'Abolishing all taxes' or 'Building heavy steel mills'. (Factual errors. Their demands were focused on revenue reductions, budget cuts, and protective tariffs).",
+            rubric: "1 Mark: Reduction of heavy land revenue assessments to protect peasants from starvation.\n1 Mark: Drastic reduction in military expenditure (which was spent on British imperial foreign campaigns).\n1 Mark: Imposition of protective import tariffs to safeguard infant Indian industries from foreign competition.",
+            topperAnswer: "The Early Nationalists formulated three key economic demands:\n\n1. **Peasant Protection**: A **drastic reduction in heavy land revenue** assessments to save peasants from the grip of local moneylenders and prevent recurrent famines.\n2. **Military Budget Cuts**: A **major reduction in military expenditure**, as the British Indian Army was being heavily funded by Indian taxpayers to fight imperial wars outside India's borders.\n3. **Industrial Safeguards**: The **imposition of protective tariffs** on foreign imports to safeguard infant Indian industries from cheap, machine-made British goods, and the abolition of the salt tax."
+        }
     ]
 };

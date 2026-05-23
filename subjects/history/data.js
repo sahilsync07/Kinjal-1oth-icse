@@ -17,7 +17,13 @@ window.ICSE_CHAPTERS.push(
         { name: "Quiz: Lord Lytton, Ilbert Bill & first session", type: "test", href: "subjects/history/nationalism.html#slide-05" },
         { name: "Mega Quiz: Pre-Congress & INC details", type: "test", href: "subjects/history/nationalism.html#slide-06" }
     ] },
-    { num: 6, subject: "history",    name: "Early Nationalists (1885–1907)",    difficulty: "Easy",      length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Aims & methods of Moderates — Dadabhai Naoroji, Gokhale, Banerjee. Formation of INC and the Surat Split." },
+    { num: 6, subject: "history",    name: "Early Nationalists (1885–1907)",    difficulty: "Easy",      length: "Normal",  tags: ["7 SLIDES", "10 QUESTIONS"], href: "subjects/history/early_nationalists.html", desc: "Aims & methods of Moderates — Dadabhai Naoroji, Gokhale, Banerjee. Formation of INC and the Surat Split.", modules: [
+        { name: "Lesson: Moderate Beliefs & The Three Ps", type: "summary", href: "subjects/history/early_nationalists.html#slide-02" },
+        { name: "Quiz: Beliefs & Petitional Tactics", type: "test", href: "subjects/history/early_nationalists.html#slide-03" },
+        { name: "Lesson: Prominent Leaders & Contributions", type: "summary", href: "subjects/history/early_nationalists.html#slide-04" },
+        { name: "Quiz: Drain of Wealth & Servants of India", type: "test", href: "subjects/history/early_nationalists.html#slide-05" },
+        { name: "Mega Quiz: Legacy & Road to 1907 Surat Split", type: "test", href: "subjects/history/early_nationalists.html#slide-06" }
+    ] },
     { num: 7, subject: "history",    name: "Assertive Nationalists (1905–1916)", difficulty: "Moderate", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Partition of Bengal, Swadeshi movement, Tilak-Pal-Lajpat Rai. Muslim League, Lucknow Pact, and Home Rule League." },
     { num: 8, subject: "history",    name: "Mahatma Gandhi & Mass Movements",   difficulty: "Moderate",  length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Non-Cooperation, Civil Disobedience (Dandi March), Quit India Movement. Gandhi-Irwin Pact & Round Table Conferences." },
     { num: 9, subject: "history",    name: "Forward Bloc & INA",                difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Subhas Chandra Bose — formation of Forward Bloc, Indian National Army, \"Delhi Chalo\" & the Azad Hind Government." },

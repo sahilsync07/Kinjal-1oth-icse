@@ -50,9 +50,13 @@ function navigateSlide(direction) {
 
 function scrollToSlide(index) {
     const allSlides = document.querySelectorAll('.slide');
-    if (allSlides[index]) {
-        allSlides[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-    }
+    allSlides.forEach((slide, idx) => {
+        if (idx === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
 }
 
 function unlockNextSlide() {
