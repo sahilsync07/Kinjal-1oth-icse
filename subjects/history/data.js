@@ -56,5 +56,5 @@ window.ICSE_CHAPTERS.push(
         { name: "Quiz: World Wars & Aggression", type: "test", href: "subjects/history/world_war.html#slide-03" },
         { name: "Lesson: United Nations & NAM Principles", type: "summary", href: "subjects/history/world_war.html#slide-04" },
         { name: "Mega Quiz: World Wars, UN & NAM", type: "test", href: "subjects/history/world_war.html#slide-05" }
-    ] },
+    ] }
 );
