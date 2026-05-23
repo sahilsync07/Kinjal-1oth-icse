@@ -7,7 +7,7 @@ const subjectLabels = {
     "biology":    "BIOLOGY",
     "history":    "HISTORY & CIVICS",
     "geography":  "GEOGRAPHY",
-    "computer":   "COMPUTER APPLICATIONS (JAVA)",
+    "economics":  "ECONOMICS",
     "odia":       "ODIA (SECOND LANGUAGE)",
 };
 
