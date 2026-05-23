@@ -1,6 +1,6 @@
 window.ICSE_CHAPTERS = window.ICSE_CHAPTERS || [];
 window.ICSE_CHAPTERS.push(
-    { num: 50, subject: "biology",    name: "Cell Cycle & Cell Division",        difficulty: "Moderate",  length: "Normal",  tags: ["COMING SOON"], href: "#", desc: "Interphase, mitosis (PMAT), meiosis, significance, comparison of plant & animal cell division, and chromosome structure." },
+    { num: 50, subject: "biology",    name: "Cell Cycle & Cell Division",        difficulty: "Moderate",  length: "Normal",  tags: ["14 SLIDES", "70 QUESTIONS"], href: "subjects/biology/cell_division.html", desc: "Interphase, mitosis (PMAT), meiosis, significance, comparison of plant & animal cell division, and chromosome structure." },
     { num: 51, subject: "biology",    name: "Genetics",                          difficulty: "Difficult", length: "Lengthy", tags: ["COMING SOON"], href: "#", desc: "Mendel's Laws, monohybrid & dihybrid crosses, sex determination, sex-linked inheritance, and genetic disorders." },
     { num: 52, subject: "biology",    name: "Absorption by Roots",               difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Osmosis, diffusion, imbibition, active/passive transport, turgidity, flaccidity, plasmolysis, and root pressure." },
     { num: 53, subject: "biology",    name: "Transpiration",                     difficulty: "Easy",      length: "Short",   tags: ["COMING SOON"], href: "#", desc: "Process, significance, factors affecting transpiration rate, stomatal mechanism, and ganong's potometer experiments." },
